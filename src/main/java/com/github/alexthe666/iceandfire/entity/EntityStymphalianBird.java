@@ -98,7 +98,7 @@ public class EntityStymphalianBird extends Monster implements IAnimatedEntity, E
             //SPEED
             .add(Attributes.MOVEMENT_SPEED, 0.3D)
             //ATTACK
-            .add(Attributes.ATTACK_DAMAGE, IafConfig.myrmexBaseAttackStrength * 2D)
+            .add(Attributes.ATTACK_DAMAGE, IafConfig.stymphalianBirdBaseAttack)
             //FOLLOW RANGE
             .add(Attributes.FOLLOW_RANGE, Math.min(2048, IafConfig.stymphalianBirdTargetSearchLength))
             //ARMOR

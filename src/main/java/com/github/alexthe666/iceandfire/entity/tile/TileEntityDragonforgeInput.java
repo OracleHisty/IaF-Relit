@@ -1,7 +1,10 @@
 package com.github.alexthe666.iceandfire.entity.tile;
 
 import com.github.alexthe666.iceandfire.block.BlockDragonforgeInput;
+import com.github.alexthe666.iceandfire.block.DragonForge;
+import com.github.alexthe666.iceandfire.block.DragonForgeComponent;
 import com.github.alexthe666.iceandfire.block.IafBlockRegistry;
+import com.github.alexthe666.iceandfire.entity.DragonType;
 import com.github.alexthe666.iceandfire.entity.EntityDragonBase;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -26,7 +29,7 @@ public class TileEntityDragonforgeInput extends BlockEntity {
     private static final int LURE_DISTANCE = 50;
     private static final Direction[] HORIZONTALS = new Direction[]{Direction.NORTH, Direction.EAST, Direction.SOUTH, Direction.WEST};
     private int ticksSinceDragonFire;
-    private TileEntityDragonforge core = null;
+    private BlockEntityDragonforge core = null;
 
     public TileEntityDragonforgeInput(BlockPos pos, BlockState state) {
         super(IafTileEntityRegistry.DRAGONFORGE_INPUT.get(), pos, state);
@@ -95,7 +98,7 @@ public class TileEntityDragonforgeInput extends BlockEntity {
         boolean dragonSelected = false;
 
         for (EntityDragonBase dragon : level.getEntitiesOfClass(EntityDragonBase.class, searchArea)) {
-            if (!dragonSelected && /* Dragon Checks */ getDragonType() == dragon.dragonType.getIntFromType() && (dragon.isChained() || dragon.isTame()) && canSeeInput(dragon, targetPosition)) {
+            if (!dragonSelected && /* Dragon Checks */ getDragonType() == dragon.dragonType && (dragon.isChained() || dragon.isTame()) && canSeeInput(dragon, targetPosition)) {
                 dragon.burningTarget = this.worldPosition;
                 dragonSelected = true;
             } else if (dragon.burningTarget == this.worldPosition) {
@@ -125,26 +128,13 @@ public class TileEntityDragonforgeInput extends BlockEntity {
     }
 
     private BlockState getDeactivatedState() {
-        return switch (getDragonType()) {
-            case 0 -> IafBlockRegistry.DRAGONFORGE_FIRE_INPUT.get().defaultBlockState().setValue(BlockDragonforgeInput.ACTIVE, false);
-            case 1 -> IafBlockRegistry.DRAGONFORGE_ICE_INPUT.get().defaultBlockState().setValue(BlockDragonforgeInput.ACTIVE, false);
-            case 2 -> IafBlockRegistry.DRAGONFORGE_LIGHTNING_INPUT.get().defaultBlockState().setValue(BlockDragonforgeInput.ACTIVE, false);
-            default -> IafBlockRegistry.DRAGONFORGE_FIRE_INPUT.get().defaultBlockState().setValue(BlockDragonforgeInput.ACTIVE, false);
-        };
+        return DragonForge.getForge(getDragonType()).input().get().defaultBlockState().setValue(BlockDragonforgeInput.ACTIVE, false);
     }
 
-    private int getDragonType() {
+    private DragonType getDragonType() {
         BlockState state = level.getBlockState(worldPosition);
 
-        if (state.getBlock() == IafBlockRegistry.DRAGONFORGE_FIRE_INPUT.get()) {
-            return 0;
-        } else if (state.getBlock() == IafBlockRegistry.DRAGONFORGE_ICE_INPUT.get()) {
-            return 1;
-        } else if (state.getBlock() == IafBlockRegistry.DRAGONFORGE_LIGHTNING_INPUT.get()) {
-            return 2;
-        }
-
-        return 0;
+        return state.getBlock() instanceof DragonForgeComponent component ? component.type() : DragonType.FIRE;
     }
 
     private boolean isActive() {
@@ -152,9 +142,9 @@ public class TileEntityDragonforgeInput extends BlockEntity {
         return state.getBlock() instanceof BlockDragonforgeInput && state.getValue(BlockDragonforgeInput.ACTIVE);
     }
 
-    private TileEntityDragonforge getConnectedTileEntity(final BlockPos position) {
+    private BlockEntityDragonforge getConnectedTileEntity(final BlockPos position) {
         for (Direction facing : HORIZONTALS) {
-            if (level.getBlockEntity(position.relative(facing)) instanceof TileEntityDragonforge forge) {
+            if (level.getBlockEntity(position.relative(facing)) instanceof BlockEntityDragonforge forge) {
                 return forge;
             }
         }

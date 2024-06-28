@@ -2,6 +2,7 @@ package com.github.alexthe666.iceandfire.client.render.entity;
 
 import com.github.alexthe666.citadel.client.model.TabulaModel;
 import com.github.alexthe666.citadel.client.model.basic.BasicModelPart;
+import com.github.alexthe666.iceandfire.entity.DragonType;
 import com.github.alexthe666.iceandfire.entity.EntityDragonSkull;
 import com.github.alexthe666.iceandfire.enums.EnumDragonTextures;
 import com.mojang.blaze3d.vertex.PoseStack;
@@ -43,14 +44,11 @@ public class RenderDragonSkull extends EntityRenderer<EntityDragonSkull> {
 
     @Override
     public void render(EntityDragonSkull entity, float entityYaw, float partialTicks, @NotNull PoseStack matrixStackIn, @NotNull MultiBufferSource bufferIn, int packedLightIn) {
-        TabulaModel model;
-        if (entity.getDragonType() == 2) {
-            model = lightningDragonModel;
-        } else if (entity.getDragonType() == 1) {
-            model = iceDragonModel;
-        } else {
-            model = fireDragonModel;
-        }
+        TabulaModel model = switch (entity.getDragonType()) {
+            case LIGHTNING -> lightningDragonModel;
+            case ICE -> iceDragonModel;
+            case FIRE -> fireDragonModel;
+        };
         VertexConsumer ivertexbuilder = bufferIn.getBuffer(RenderType.entityTranslucent(getTextureLocation(entity)));
         matrixStackIn.pushPose();
         matrixStackIn.mulPose(Axis.XP.rotationDegrees(-180.0F));
@@ -68,13 +66,11 @@ public class RenderDragonSkull extends EntityRenderer<EntityDragonSkull> {
 
     @Override
     public @NotNull ResourceLocation getTextureLocation(EntityDragonSkull entity) {
-        if (entity.getDragonType() == 2) {
-            return EnumDragonTextures.getLightningDragonSkullTextures(entity);
-        }
-        if (entity.getDragonType() == 1) {
-            return EnumDragonTextures.getIceDragonSkullTextures(entity);
-        }
-        return EnumDragonTextures.getFireDragonSkullTextures(entity);
+        return switch (entity.getDragonType()) {
+            case LIGHTNING -> EnumDragonTextures.getLightningDragonSkullTextures(entity);
+            case ICE -> EnumDragonTextures.getIceDragonSkullTextures(entity);
+            case FIRE -> EnumDragonTextures.getFireDragonSkullTextures(entity);
+        };
     }
 
 

@@ -273,10 +273,6 @@ public class EntityDreadScuttler extends EntityDreadMob implements IAnimatedEnti
         return super.getVoicePitch() * 0.70F;
     }
 
-    protected void playStepSound(BlockPos pos, Block blockIn) {
-        this.playSound(IafSoundRegistry.MYRMEX_WALK, 0.25F, 1.0F);
-    }
-
     @Override
     public float getScale() {
         return getSize();

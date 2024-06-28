@@ -2,6 +2,7 @@ package com.github.alexthe666.iceandfire.item;
 
 import com.github.alexthe666.iceandfire.IafConfig;
 import com.github.alexthe666.iceandfire.IceAndFire;
+import com.github.alexthe666.iceandfire.entity.DragonType;
 import com.github.alexthe666.iceandfire.entity.EntityDragonBase;
 import com.github.alexthe666.iceandfire.world.DragonPosWorldData;
 import net.minecraft.ChatFormatting;
@@ -30,8 +31,11 @@ import java.util.UUID;
 public class ItemSummoningCrystal extends Item {
 
 
-    public ItemSummoningCrystal() {
+    private final DragonType type;
+
+    public ItemSummoningCrystal(DragonType type) {
         super(new Item.Properties()/*.tab(IceAndFire.TAB_ITEMS)*/.stacksTo(1));
+        this.type = type;
     }
 
     public static boolean hasDragon(ItemStack stack) {
@@ -58,13 +62,8 @@ public class ItemSummoningCrystal extends Item {
     public void appendHoverText(ItemStack stack, @Nullable Level worldIn, @NotNull List<Component> tooltip, @NotNull TooltipFlag flagIn) {
 
         boolean flag = false;
-        String desc = "entity.iceandfire.fire_dragon";
-        if (stack.getItem() == IafItemRegistry.SUMMONING_CRYSTAL_ICE.get()) {
-            desc = "entity.iceandfire.ice_dragon";
-        }
-        if (stack.getItem() == IafItemRegistry.SUMMONING_CRYSTAL_LIGHTNING.get()) {
-            desc = "entity.iceandfire.lightning_dragon";
-        }
+        String desc = "entity.iceandfire.%s_dragon".formatted(type);
+
         if (stack.getTag() != null) {
             for (String tagInfo : stack.getTag().getAllKeys()) {
                 if (tagInfo.contains("Dragon")) {

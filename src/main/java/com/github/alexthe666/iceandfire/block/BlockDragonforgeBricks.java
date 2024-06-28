@@ -2,7 +2,7 @@ package com.github.alexthe666.iceandfire.block;
 
 import com.github.alexthe666.iceandfire.IceAndFire;
 import com.github.alexthe666.iceandfire.entity.DragonType;
-import com.github.alexthe666.iceandfire.entity.tile.TileEntityDragonforge;
+import com.github.alexthe666.iceandfire.entity.tile.BlockEntityDragonforge;
 import com.github.alexthe666.iceandfire.entity.tile.TileEntityDragonforgeBrick;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -27,12 +27,12 @@ import org.jetbrains.annotations.NotNull;
 
 import javax.annotation.Nullable;
 
-public class BlockDragonforgeBricks extends BaseEntityBlock implements IDragonProof {
+public class BlockDragonforgeBricks extends BaseEntityBlock implements DragonForgeComponent, IDragonProof {
 
     public static final BooleanProperty GRILL = BooleanProperty.create("grill");
-    private final int isFire;
+    private final DragonType dragonType;
 
-    public BlockDragonforgeBricks(int isFire) {
+    public BlockDragonforgeBricks(DragonType dragonType) {
         super(
             Properties
                 .of()
@@ -43,12 +43,8 @@ public class BlockDragonforgeBricks extends BaseEntityBlock implements IDragonPr
     			.sound(SoundType.METAL)
 		);
 
-        this.isFire = isFire;
+        this.dragonType = dragonType;
         this.registerDefaultState(this.getStateDefinition().any().setValue(GRILL, Boolean.FALSE));
-    }
-
-    static String name(int dragonType) {
-        return "dragonforge_%s_brick".formatted(DragonType.getNameFromInt(dragonType));
     }
 
     @Override
@@ -59,8 +55,8 @@ public class BlockDragonforgeBricks extends BaseEntityBlock implements IDragonPr
     @Override
     public @NotNull InteractionResult use(@NotNull BlockState state, @NotNull Level worldIn, @NotNull BlockPos pos, @NotNull Player player, @NotNull InteractionHand handIn, BlockHitResult resultIn) {
         if (this.getConnectedTileEntity(worldIn, resultIn.getBlockPos()) != null) {
-            TileEntityDragonforge forge = this.getConnectedTileEntity(worldIn, resultIn.getBlockPos());
-            if (forge != null && forge.fireType == isFire) {
+            BlockEntityDragonforge forge = this.getConnectedTileEntity(worldIn, resultIn.getBlockPos());
+            if (forge != null && forge.dragonType == dragonType) {
                 if (worldIn.isClientSide) {
                     IceAndFire.PROXY.setRefrencedTE(worldIn.getBlockEntity(forge.getBlockPos()));
                 } else {
@@ -75,10 +71,10 @@ public class BlockDragonforgeBricks extends BaseEntityBlock implements IDragonPr
         return InteractionResult.FAIL;
     }
 
-    private TileEntityDragonforge getConnectedTileEntity(Level worldIn, BlockPos pos) {
+    private BlockEntityDragonforge getConnectedTileEntity(Level worldIn, BlockPos pos) {
         for (Direction facing : Direction.values()) {
-            if (worldIn.getBlockEntity(pos.relative(facing)) != null && worldIn.getBlockEntity(pos.relative(facing)) instanceof TileEntityDragonforge) {
-                TileEntityDragonforge forge = (TileEntityDragonforge) worldIn.getBlockEntity(pos.relative(facing));
+            if (worldIn.getBlockEntity(pos.relative(facing)) != null && worldIn.getBlockEntity(pos.relative(facing)) instanceof BlockEntityDragonforge) {
+                BlockEntityDragonforge forge = (BlockEntityDragonforge) worldIn.getBlockEntity(pos.relative(facing));
                 if (forge != null && forge.assembled()) {
                     return forge;
                 }
@@ -101,5 +97,10 @@ public class BlockDragonforgeBricks extends BaseEntityBlock implements IDragonPr
     @Override
     public BlockEntity newBlockEntity(@NotNull BlockPos pos, @NotNull BlockState state) {
         return new TileEntityDragonforgeBrick(pos, state);
+    }
+
+    @Override
+    public DragonType type() {
+        return dragonType;
     }
 }

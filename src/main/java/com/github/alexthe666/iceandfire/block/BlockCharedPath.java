@@ -80,14 +80,6 @@ public class BlockCharedPath extends DirtPathBlock {
         }
     }
 
-    public BlockState getStateFromMeta(int meta) {
-        return this.defaultBlockState().setValue(REVERTS, meta == 1);
-    }
-
-    public int getMetaFromState(BlockState state) {
-        return state.getValue(REVERTS) ? 1 : 0;
-    }
-
     @Override
     protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
         builder.add(REVERTS);

@@ -3,7 +3,6 @@ package com.github.alexthe666.iceandfire;
 import com.github.alexthe666.iceandfire.config.BiomeConfig;
 import com.github.alexthe666.iceandfire.config.ConfigHolder;
 import com.github.alexthe666.iceandfire.entity.EntityDragonBase;
-import com.github.alexthe666.iceandfire.entity.util.MyrmexHive;
 import com.github.alexthe666.iceandfire.enums.EnumParticles;
 import com.github.alexthe666.iceandfire.event.ServerEvents;
 import net.minecraft.core.BlockPos;
@@ -35,10 +34,6 @@ public class CommonProxy {
         }
     }
 
-    public void setReferencedHive(MyrmexHive hive) {
-
-    }
-
     public void preInit() {
 
     }
@@ -63,9 +58,6 @@ public class CommonProxy {
     public void openBestiaryGui(ItemStack book) {
     }
 
-    public void openMyrmexStaffGui(ItemStack staff) {
-    }
-
     public Object getFontRenderer() {
         return null;
     }
@@ -75,9 +67,6 @@ public class CommonProxy {
     }
 
     public void setDragon3rdPersonView(int view) {
-    }
-
-    public void openMyrmexAddRoomGui(ItemStack staff, BlockPos pos, Direction facing) {
     }
 
     public int getPreviousViewType() {

@@ -3,7 +3,6 @@ package com.github.alexthe666.iceandfire.entity.tile;
 import com.github.alexthe666.iceandfire.IceAndFire;
 import com.github.alexthe666.iceandfire.inventory.ContainerPodium;
 import com.github.alexthe666.iceandfire.item.ItemDragonEgg;
-import com.github.alexthe666.iceandfire.item.ItemMyrmexEgg;
 import com.github.alexthe666.iceandfire.message.MessageUpdatePodium;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -133,7 +132,7 @@ public class TileEntityPodium extends BaseContainerBlockEntity implements Worldl
 
     @Override
     public boolean canPlaceItemThroughFace(int index, @NotNull ItemStack stack, Direction direction) {
-        return index != 0 || (stack.getItem() instanceof ItemDragonEgg || stack.getItem() instanceof ItemMyrmexEgg);
+        return index != 0 || (stack.getItem() instanceof ItemDragonEgg);
     }
 
     @Override

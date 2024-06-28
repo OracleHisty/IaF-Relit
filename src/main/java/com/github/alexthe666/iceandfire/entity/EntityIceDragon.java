@@ -76,50 +76,8 @@ public class EntityIceDragon extends EntityDragonBase {
     }
 
     @Override
-    public String getVariantName(int variant) {
-        switch (variant) {
-            default:
-                return "blue_";
-            case 1:
-                return "white_";
-            case 2:
-                return "sapphire_";
-            case 3:
-                return "silver_";
-        }
-    }
-
-    @Override
     public boolean canBreatheUnderwater() {
         return true;
-    }
-
-    @Override
-    public Item getVariantScale(int variant) {
-        switch (variant) {
-            default:
-                return IafItemRegistry.DRAGONSCALES_BLUE.get();
-            case 1:
-                return IafItemRegistry.DRAGONSCALES_WHITE.get();
-            case 2:
-                return IafItemRegistry.DRAGONSCALES_SAPPHIRE.get();
-            case 3:
-                return IafItemRegistry.DRAGONSCALES_SILVER.get();
-        }
-    }
-
-    @Override
-    public Item getVariantEgg(int variant) {
-        switch (variant) {
-            default:
-                return IafItemRegistry.DRAGONEGG_BLUE.get();
-            case 1:
-                return IafItemRegistry.DRAGONEGG_WHITE.get();
-            case 2:
-                return IafItemRegistry.DRAGONEGG_SAPPHIRE.get();
-            case 3:
-                return IafItemRegistry.DRAGONEGG_SILVER.get();
-        }
     }
 
     @Override
@@ -421,15 +379,6 @@ public class EntityIceDragon extends EntityDragonBase {
         }
     }
 
-    @Override
-    public ResourceLocation getDeadLootTable() {
-        if (this.getDeathStage() >= (this.getAgeInDays() / 5) / 2) {
-            return SKELETON_LOOT;
-        } else {
-            return isMale() ? MALE_LOOT : FEMALE_LOOT;
-        }
-    }
-
     private void shootIceAtMob(LivingEntity entity) {
         if (this.usingGroundAttack && this.groundAttack == IafDragonAttacks.Ground.FIRE || !this.usingGroundAttack && (this.airAttack == IafDragonAttacks.Air.SCORCH_STREAM || this.airAttack == IafDragonAttacks.Air.HOVER_BLAST)) {
             if (this.usingGroundAttack && this.getRandom().nextInt(5) == 0 || !this.usingGroundAttack && this.airAttack == IafDragonAttacks.Air.HOVER_BLAST) {
@@ -581,26 +530,6 @@ public class EntityIceDragon extends EntityDragonBase {
     }
 
     @Override
-    protected SoundEvent getAmbientSound() {
-        return this.isTeen() ? IafSoundRegistry.ICEDRAGON_TEEN_IDLE : this.shouldDropLoot() ? IafSoundRegistry.ICEDRAGON_ADULT_IDLE : IafSoundRegistry.ICEDRAGON_CHILD_IDLE;
-    }
-
-    @Override
-    protected SoundEvent getHurtSound(@NotNull DamageSource damageSourceIn) {
-        return this.isTeen() ? IafSoundRegistry.ICEDRAGON_TEEN_HURT : this.shouldDropLoot() ? IafSoundRegistry.ICEDRAGON_ADULT_HURT : IafSoundRegistry.ICEDRAGON_CHILD_HURT;
-    }
-
-    @Override
-    protected SoundEvent getDeathSound() {
-        return this.isTeen() ? IafSoundRegistry.ICEDRAGON_TEEN_DEATH : this.shouldDropLoot() ? IafSoundRegistry.ICEDRAGON_ADULT_DEATH : IafSoundRegistry.ICEDRAGON_CHILD_DEATH;
-    }
-
-    @Override
-    public SoundEvent getRoarSound() {
-        return this.isTeen() ? IafSoundRegistry.ICEDRAGON_TEEN_ROAR : this.shouldDropLoot() ? IafSoundRegistry.ICEDRAGON_ADULT_ROAR : IafSoundRegistry.ICEDRAGON_CHILD_ROAR;
-    }
-
-    @Override
     public Animation[] getAnimations() {
         return new Animation[]{IAnimatedEntity.NO_ANIMATION, EntityDragonBase.ANIMATION_EAT, EntityDragonBase.ANIMATION_SPEAK, EntityDragonBase.ANIMATION_BITE, EntityDragonBase.ANIMATION_SHAKEPREY, EntityIceDragon.ANIMATION_TAILWHACK, EntityIceDragon.ANIMATION_FIRECHARGE, EntityIceDragon.ANIMATION_WINGBLAST, EntityIceDragon.ANIMATION_ROAR};
     }
@@ -660,44 +589,13 @@ public class EntityIceDragon extends EntityDragonBase {
         }
     }
 
-    //Required for proper egg drop
-    @Override
-    public int getStartMetaForType() {
-        return 4;
-    }
-
     @Override
     public SoundEvent getBabyFireSound() {
         return SoundEvents.BOTTLE_FILL_DRAGONBREATH;
     }
 
     @Override
-    public ItemStack getSkull() {
-        return new ItemStack(IafItemRegistry.DRAGON_SKULL_ICE.get());
-    }
-
-    @Override
     public boolean useFlyingPathFinder() {
         return (this.isFlying() || this.isInWater()) && this.getControllingPassenger() == null;
-    }
-
-    @Override
-    public Item getSummoningCrystal() {
-        return IafItemRegistry.SUMMONING_CRYSTAL_ICE.get();
-    }
-
-    @Override
-    public Item getBloodItem() {
-        return IafItemRegistry.ICE_DRAGON_BLOOD.get();
-    }
-
-    @Override
-    public Item getFleshItem() {
-        return IafItemRegistry.ICE_DRAGON_FLESH.get();
-    }
-
-    @Override
-    public ItemLike getHeartItem() {
-        return IafItemRegistry.ICE_DRAGON_HEART.get();
     }
 }
