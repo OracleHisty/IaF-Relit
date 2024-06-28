@@ -1,6 +1,5 @@
 package com.github.alexthe666.iceandfire.entity.ai;
 
-import com.github.alexthe666.iceandfire.entity.EntityDeathWorm;
 import net.minecraft.world.entity.ai.goal.WaterAvoidingRandomStrollGoal;
 
 public class DeathWormAIWander extends WaterAvoidingRandomStrollGoal {

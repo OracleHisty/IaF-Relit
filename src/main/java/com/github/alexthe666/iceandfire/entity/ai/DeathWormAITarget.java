@@ -1,6 +1,5 @@
 package com.github.alexthe666.iceandfire.entity.ai;
 
-import com.github.alexthe666.iceandfire.entity.EntityDeathWorm;
 import com.github.alexthe666.iceandfire.entity.IafEntityRegistry;
 import com.google.common.base.Predicate;
 import net.minecraft.world.entity.LivingEntity;

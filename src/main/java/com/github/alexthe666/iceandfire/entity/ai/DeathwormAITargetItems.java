@@ -1,6 +1,5 @@
 package com.github.alexthe666.iceandfire.entity.ai;
 
-import com.github.alexthe666.iceandfire.entity.EntityDeathWorm;
 import com.github.alexthe666.iceandfire.util.IAFMath;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.tags.BlockTags;
