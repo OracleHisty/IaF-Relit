@@ -24,7 +24,7 @@ import java.util.stream.Collectors;
 
 
 @Mod.EventBusSubscriber(modid = IceAndFire.MODID, bus = Mod.EventBusSubscriber.Bus.MOD)
-public class =DataGenerators {
+public class DataGenerators {
 
     @SubscribeEvent
     public static void gatherData(GatherDataEvent event) {
