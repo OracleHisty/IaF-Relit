@@ -44,7 +44,6 @@ public class BiomeConfig {
     public static Pair<String, SpawnBiomeData> gorgonTempleBiomes = Pair.of("iceandfire:gorgon_temple_biomes", DefaultBiomes.BEACHES);
 
     public static Pair<String, SpawnBiomeData> cockatriceBiomes = Pair.of("iceandfire:cockatrice_biomes", DefaultBiomes.SAVANNAS);
-    public static Pair<String, SpawnBiomeData> deathwormBiomes = Pair.of("iceandfire:deathworm_biomes", DefaultBiomes.DESERT);
     public static Pair<String, SpawnBiomeData> wanderingCyclopsBiomes = Pair.of("iceandfire:wandering_cyclops_biomes", DefaultBiomes.PLAINS);
     public static Pair<String, SpawnBiomeData> lightningDragonSkeletonBiomes = Pair.of("iceandfire:lightning_dragon_skeleton_biomes", DefaultBiomes.SAVANNAS);
     public static Pair<String, SpawnBiomeData> fireDragonSkeletonBiomes = Pair.of("iceandfire:fire_dragon_skeleton_biomes", DefaultBiomes.DESERT);

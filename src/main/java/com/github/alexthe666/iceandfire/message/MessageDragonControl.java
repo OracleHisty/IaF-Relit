@@ -91,9 +91,6 @@ public class MessageDragonControl {
                             }
 
                             hippo.setPos(message.getPosX(), message.getPosY(), message.getPosZ());
-                        } else if (entity instanceof EntityDeathWorm deathWorm) {
-                            deathWorm.setControlState(message.controlState);
-                            deathWorm.setPos(message.getPosX(), message.getPosY(), message.getPosZ());
                         } else if (entity instanceof EntityAmphithere amphithere) {
                             if (amphithere.isOwnedBy(player)) {
                                 amphithere.setControlState(message.controlState);

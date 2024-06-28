@@ -122,22 +122,6 @@ public final class IafSoundRegistry {
 
     public static final SoundEvent HIPPOCAMPUS_DIE = createSoundEvent("hippocampus_die");
 
-    public static final SoundEvent DEATHWORM_IDLE = createSoundEvent("deathworm_idle");
-
-    public static final SoundEvent DEATHWORM_ATTACK = createSoundEvent("deathworm_attack");
-
-    public static final SoundEvent DEATHWORM_HURT = createSoundEvent("deathworm_hurt");
-
-    public static final SoundEvent DEATHWORM_DIE = createSoundEvent("deathworm_die");
-
-    public static final SoundEvent DEATHWORM_GIANT_IDLE = createSoundEvent("deathworm_giant_idle");
-
-    public static final SoundEvent DEATHWORM_GIANT_ATTACK = createSoundEvent("deathworm_giant_attack");
-
-    public static final SoundEvent DEATHWORM_GIANT_HURT = createSoundEvent("deathworm_giant_hurt");
-
-    public static final SoundEvent DEATHWORM_GIANT_DIE = createSoundEvent("deathworm_giant_die");
-
     public static final SoundEvent NAGA_IDLE = createSoundEvent("naga_idle");
 
     public static final SoundEvent NAGA_ATTACK = createSoundEvent("naga_attack");

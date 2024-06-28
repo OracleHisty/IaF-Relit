@@ -29,7 +29,6 @@ public enum EnumBestiaryPages {
     CYCLOPS(2),
     SIREN(2),
     HIPPOCAMPUS(2),
-    DEATHWORM(3),
     COCKATRICE(2),
     STYMPHALIANBIRD(1),
     TROLL(2),

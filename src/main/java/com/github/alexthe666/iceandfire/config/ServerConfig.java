@@ -55,11 +55,6 @@ public class ServerConfig {
     public final ForgeConfigSpec.IntValue sirenTimeBetweenSongs;
     public final ForgeConfigSpec.IntValue generateSirenChance;
     public final ForgeConfigSpec.IntValue hippocampusSpawnChance;
-    public final ForgeConfigSpec.IntValue deathWormTargetSearchLength;
-    public final ForgeConfigSpec.DoubleValue deathWormMaxHealth;
-    public final ForgeConfigSpec.DoubleValue deathWormAttackStrength;
-    public final ForgeConfigSpec.BooleanValue deathWormAttackMonsters;
-    public final ForgeConfigSpec.IntValue deathWormSpawnRate;
     public final ForgeConfigSpec.IntValue cockatriceChickenSearchLength;
     public final ForgeConfigSpec.IntValue cockatriceEggChance;
     public final ForgeConfigSpec.DoubleValue cockatriceMaxHealth;
@@ -215,13 +210,6 @@ public class ServerConfig {
         this.generateSirenChance = buildInt(builder, "Spawn Sirens Chance", "all", 400, 1, 10000, "1 out of this number chance per chunk for generation");
         this.sirenMaxSingTime = buildInt(builder, "Siren Max Sing Time", "all", 12000, 100, 24000, "how long(in ticks) can a siren use its sing effect on a player, without a cooldown.");
         this.sirenTimeBetweenSongs = buildInt(builder, "Siren Time Between Songs", "all", 2000, 100, 24000, "how long(in ticks) a siren has to wait after failing to lure in a player");
-        builder.pop();
-        builder.push("DeathWorms");
-        this.deathWormTargetSearchLength = buildInt(builder, "Death Worm Target Search Length", "all", 64, 1, 10000, "How many blocks away can death worms spot potential prey. Note that increasing this could cause lag");
-        this.deathWormMaxHealth = buildDouble(builder, "Death Worm Base Health", "all", 10, 1, 10000, "Default deathworm health, this is scaled to the worm's particular size");
-        this.deathWormAttackStrength = buildDouble(builder, "Death Worm Base Attack Strength", "all", 3, 1, 10000, "Default deathworm attack strength, this is scaled to the worm's particular size");
-        this.deathWormAttackMonsters = buildBoolean(builder, "Death Worms Target Monsters", "all", true, "True if wild deathworms are allowed to target and attack monsters");
-        this.deathWormSpawnRate = buildInt(builder, "Death Worm Spawn Weight", "all", 30, 1, 10000, "Deathworm spawn weight. Higher = lower chance to spawn");
         builder.pop();
         builder.push("Cockatrice");
         this.cockatriceMaxHealth = buildDouble(builder, "Cockatrice Health", "all", 40, 1, 10000, "Maximum cockatrice health");
