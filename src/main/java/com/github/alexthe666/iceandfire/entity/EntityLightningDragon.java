@@ -41,9 +41,6 @@ import org.jetbrains.annotations.NotNull;
 import java.util.Random;
 
 public class EntityLightningDragon extends EntityDragonBase {
-    public static final ResourceLocation FEMALE_LOOT = new ResourceLocation("iceandfire", "entities/dragon/lightning_dragon_female");
-    public static final ResourceLocation MALE_LOOT = new ResourceLocation("iceandfire", "entities/dragon/lightning_dragon_male");
-    public static final ResourceLocation SKELETON_LOOT = new ResourceLocation("iceandfire", "entities/dragon/lightning_dragon_skeleton");
     private static final EntityDataAccessor<Boolean> HAS_LIGHTNING_TARGET = SynchedEntityData.defineId(EntityLightningDragon.class, EntityDataSerializers.BOOLEAN);
     private static final EntityDataAccessor<Float> LIGHTNING_TARGET_X = SynchedEntityData.defineId(EntityLightningDragon.class, EntityDataSerializers.FLOAT);
     private static final EntityDataAccessor<Float> LIGHTNING_TARGET_Y = SynchedEntityData.defineId(EntityLightningDragon.class, EntityDataSerializers.FLOAT);
@@ -82,11 +79,6 @@ public class EntityLightningDragon extends EntityDragonBase {
     }
 
     @Override
-    public int getStartMetaForType() {
-        return 8;
-    }
-
-    @Override
     protected boolean shouldTarget(Entity entity) {
         if (entity instanceof EntityDragonBase && !this.isTame()) {
             return entity.getType() != this.getType() && this.getBbWidth() >= entity.getBbWidth() && !((EntityDragonBase) entity).isMobDead();
@@ -106,19 +98,6 @@ public class EntityLightningDragon extends EntityDragonBase {
     }
 
     @Override
-    public String getVariantName(int variant) {
-        switch (variant) {
-            default:
-                return "electric_";
-            case 1:
-                return "amythest_";
-            case 2:
-                return "copper_";
-            case 3:
-                return "black_";
-        }
-    }
-    @Override
     public boolean isInvulnerableTo(DamageSource i) {
         if (i.getMsgId().equals(this.level().damageSources().lightningBolt().getMsgId())) {
             this.heal(15F);
@@ -126,33 +105,6 @@ public class EntityLightningDragon extends EntityDragonBase {
             return true;
         }
         return super.isInvulnerableTo(i);
-    }
-    @Override
-    public Item getVariantScale(int variant) {
-        switch (variant) {
-            default:
-                return IafItemRegistry.DRAGONSCALES_ELECTRIC.get();
-            case 1:
-                return IafItemRegistry.DRAGONSCALES_AMYTHEST.get();
-            case 2:
-                return IafItemRegistry.DRAGONSCALES_COPPER.get();
-            case 3:
-                return IafItemRegistry.DRAGONSCALES_BLACK.get();
-        }
-    }
-
-    @Override
-    public Item getVariantEgg(int variant) {
-        switch (variant) {
-            default:
-                return IafItemRegistry.DRAGONEGG_ELECTRIC.get();
-            case 1:
-                return IafItemRegistry.DRAGONEGG_AMYTHEST.get();
-            case 2:
-                return IafItemRegistry.DRAGONEGG_COPPER.get();
-            case 3:
-                return IafItemRegistry.DRAGONEGG_BLACK.get();
-        }
     }
 
     public void setHasLightningTarget(boolean lightning_target) {
@@ -181,11 +133,6 @@ public class EntityLightningDragon extends EntityDragonBase {
         return this.entityData.get(LIGHTNING_TARGET_Z);
     }
 
-    @Override
-    public Item getSummoningCrystal() {
-        return IafItemRegistry.SUMMONING_CRYSTAL_LIGHTNING.get();
-    }
-
 /*    @Override
     public boolean canBeControlledByRider() {
         return true;
@@ -196,16 +143,12 @@ public class EntityLightningDragon extends EntityDragonBase {
         this.getLookControl().setLookAt(entityIn, 30.0F, 30.0F);
         if (!this.isPlayingAttackAnimation()) {
             switch (groundAttack) {
-                case BITE:
-                    this.setAnimation(ANIMATION_BITE);
-                    break;
-                case TAIL_WHIP:
-                    this.setAnimation(ANIMATION_TAILWHACK);
-                    break;
-                case SHAKE_PREY:
+                case BITE -> this.setAnimation(ANIMATION_BITE);
+                case TAIL_WHIP -> this.setAnimation(ANIMATION_TAILWHACK);
+                case SHAKE_PREY -> {
                     boolean flag = false;
                     if (new Random().nextInt(2) == 0 && isDirectPathBetweenPoints(this, this.position().add(0, this.getBbHeight() / 2, 0), entityIn.position().add(0, entityIn.getBbHeight() / 2, 0)) &&
-                        entityIn.getBbWidth() < this.getBbWidth() * 0.5F && this.getControllingPassenger() == null && this.getDragonStage() > 1 && !(entityIn instanceof EntityDragonBase) && !DragonUtils.isAnimaniaMob(entityIn)) {
+                            entityIn.getBbWidth() < this.getBbWidth() * 0.5F && this.getControllingPassenger() == null && this.getDragonStage() > 1 && !(entityIn instanceof EntityDragonBase) && !DragonUtils.isAnimaniaMob(entityIn)) {
                         this.setAnimation(ANIMATION_SHAKEPREY);
                         flag = true;
                         entityIn.startRiding(this);
@@ -214,10 +157,8 @@ public class EntityLightningDragon extends EntityDragonBase {
                         groundAttack = IafDragonAttacks.Ground.BITE;
                         this.setAnimation(ANIMATION_BITE);
                     }
-                    break;
-                case WING_BLAST:
-                    this.setAnimation(ANIMATION_WINGBLAST);
-                    break;
+                }
+                case WING_BLAST -> this.setAnimation(ANIMATION_WINGBLAST);
             }
         }
         return false;
@@ -307,30 +248,6 @@ public class EntityLightningDragon extends EntityDragonBase {
             } else {
                 this.setBreathingFire(true);
             }
-        }
-    }
-
-    @Override
-    public Item getBloodItem() {
-        return IafItemRegistry.LIGHTNING_DRAGON_BLOOD.get();
-    }
-
-    @Override
-    public Item getFleshItem() {
-        return IafItemRegistry.LIGHTNING_DRAGON_FLESH.get();
-    }
-
-    @Override
-    public ItemLike getHeartItem() {
-        return IafItemRegistry.LIGHTNING_DRAGON_HEART.get();
-    }
-
-    @Override
-    public ResourceLocation getDeadLootTable() {
-        if (this.getDeathStage() >= (this.getAgeInDays() / 5) / 2) {
-            return SKELETON_LOOT;
-        } else {
-            return isMale() ? MALE_LOOT : FEMALE_LOOT;
         }
     }
 
@@ -471,26 +388,6 @@ public class EntityLightningDragon extends EntityDragonBase {
     }
 
     @Override
-    protected SoundEvent getAmbientSound() {
-        return this.isTeen() ? IafSoundRegistry.LIGHTNINGDRAGON_TEEN_IDLE : this.shouldDropLoot() ? IafSoundRegistry.LIGHTNINGDRAGON_ADULT_IDLE : IafSoundRegistry.LIGHTNINGDRAGON_CHILD_IDLE;
-    }
-
-    @Override
-    protected SoundEvent getHurtSound(@NotNull DamageSource damageSourceIn) {
-        return this.isTeen() ? IafSoundRegistry.LIGHTNINGDRAGON_TEEN_HURT : this.shouldDropLoot() ? IafSoundRegistry.LIGHTNINGDRAGON_ADULT_HURT : IafSoundRegistry.LIGHTNINGDRAGON_CHILD_HURT;
-    }
-
-    @Override
-    protected SoundEvent getDeathSound() {
-        return this.isTeen() ? IafSoundRegistry.LIGHTNINGDRAGON_TEEN_DEATH : this.shouldDropLoot() ? IafSoundRegistry.LIGHTNINGDRAGON_ADULT_DEATH : IafSoundRegistry.LIGHTNINGDRAGON_CHILD_DEATH;
-    }
-
-    @Override
-    public SoundEvent getRoarSound() {
-        return this.isTeen() ? IafSoundRegistry.LIGHTNINGDRAGON_TEEN_ROAR : this.shouldDropLoot() ? IafSoundRegistry.LIGHTNINGDRAGON_ADULT_ROAR : IafSoundRegistry.LIGHTNINGDRAGON_CHILD_ROAR;
-    }
-
-    @Override
     public Animation[] getAnimations() {
         return new Animation[]{IAnimatedEntity.NO_ANIMATION, EntityDragonBase.ANIMATION_EAT, EntityDragonBase.ANIMATION_SPEAK, EntityDragonBase.ANIMATION_BITE, EntityDragonBase.ANIMATION_SHAKEPREY, EntityLightningDragon.ANIMATION_TAILWHACK, EntityLightningDragon.ANIMATION_FIRECHARGE, EntityLightningDragon.ANIMATION_WINGBLAST, EntityLightningDragon.ANIMATION_ROAR, EntityLightningDragon.ANIMATION_EPIC_ROAR};
     }
@@ -524,11 +421,6 @@ public class EntityLightningDragon extends EntityDragonBase {
             float headPosY = (float) (this.getZ() + 0.5 * getRenderSize() * 0.3F);
             level().addParticle(ParticleTypes.LARGE_SMOKE, headPosX, headPosY, headPosZ, 0, 0, 0);
         }
-    }
-
-    @Override
-    public ItemStack getSkull() {
-        return new ItemStack(IafItemRegistry.DRAGON_SKULL_LIGHTNING.get());
     }
 
     /* FIXME :: Check -> why is this the only dragon overriding this?

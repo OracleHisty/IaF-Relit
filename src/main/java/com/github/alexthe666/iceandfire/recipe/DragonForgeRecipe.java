@@ -1,8 +1,10 @@
 package com.github.alexthe666.iceandfire.recipe;
 
 import com.github.alexthe666.citadel.client.model.container.JsonUtils;
+import com.github.alexthe666.iceandfire.block.DragonForge;
 import com.github.alexthe666.iceandfire.block.IafBlockRegistry;
-import com.github.alexthe666.iceandfire.entity.tile.TileEntityDragonforge;
+import com.github.alexthe666.iceandfire.entity.DragonType;
+import com.github.alexthe666.iceandfire.entity.tile.BlockEntityDragonforge;
 import com.google.gson.JsonObject;
 import net.minecraft.core.RegistryAccess;
 import net.minecraft.network.FriendlyByteBuf;
@@ -14,15 +16,15 @@ import net.minecraftforge.registries.NewRegistryEvent;
 import org.jetbrains.annotations.NotNull;
 
 
-public class DragonForgeRecipe implements Recipe<TileEntityDragonforge> {
+public class DragonForgeRecipe implements Recipe<BlockEntityDragonforge> {
     private final Ingredient input;
     private final Ingredient blood;
     private final ItemStack result;
-    private final String dragonType;
+    private final DragonType dragonType;
     private final int cookTime;
     private final ResourceLocation recipeId;
 
-    public DragonForgeRecipe(ResourceLocation recipeId, Ingredient input, Ingredient blood, ItemStack result, String dragonType, int cookTime) {
+    public DragonForgeRecipe(ResourceLocation recipeId, Ingredient input, Ingredient blood, ItemStack result, DragonType dragonType, int cookTime) {
         this.recipeId = recipeId;
         this.input = input;
         this.blood = blood;
@@ -43,7 +45,7 @@ public class DragonForgeRecipe implements Recipe<TileEntityDragonforge> {
         return cookTime;
     }
 
-    public String getDragonType() {
+    public DragonType getDragonType() {
         return dragonType;
     }
 
@@ -53,8 +55,8 @@ public class DragonForgeRecipe implements Recipe<TileEntityDragonforge> {
     }
 
     @Override
-    public boolean matches(TileEntityDragonforge inv, @NotNull Level worldIn) {
-        return this.input.test(inv.getItem(0)) && this.blood.test(inv.getItem(1)) && this.dragonType.equals(inv.getTypeID());
+    public boolean matches(BlockEntityDragonforge inv, @NotNull Level worldIn) {
+        return this.input.test(inv.getItem(0)) && this.blood.test(inv.getItem(1)) && this.dragonType.equals(inv.dragonType);
     }
 
     public boolean isValidInput(ItemStack stack) {
@@ -75,7 +77,7 @@ public class DragonForgeRecipe implements Recipe<TileEntityDragonforge> {
     }
 
     @Override
-    public @NotNull ItemStack assemble(@NotNull TileEntityDragonforge dragonforge, RegistryAccess registryAccess) {
+    public @NotNull ItemStack assemble(@NotNull BlockEntityDragonforge dragonforge, RegistryAccess registryAccess) {
         return result;
     }
 
@@ -91,7 +93,7 @@ public class DragonForgeRecipe implements Recipe<TileEntityDragonforge> {
 
     @Override
     public @NotNull ItemStack getToastSymbol() {
-        return new ItemStack(IafBlockRegistry.DRAGONFORGE_FIRE_CORE.get());
+        return new ItemStack(DragonForge.getCore(DragonType.FIRE, true));
     }
 
     @Override
@@ -104,10 +106,10 @@ public class DragonForgeRecipe implements Recipe<TileEntityDragonforge> {
         return IafRecipeRegistry.DRAGON_FORGE_TYPE.get();
     }
 
-    public static class Serializer extends NewRegistryEvent implements RecipeSerializer<DragonForgeRecipe> {
+    public static class Serializer implements RecipeSerializer<DragonForgeRecipe> {
         @Override
         public @NotNull DragonForgeRecipe fromJson(@NotNull ResourceLocation recipeId, @NotNull JsonObject json) {
-            String dragonType = JsonUtils.getString(json, "dragon_type");
+            DragonType dragonType = DragonType.valueOf(JsonUtils.getString(json, "dragon_type"));
             Ingredient input = Ingredient.fromJson(JsonUtils.getJsonObject(json, "input"));
             Ingredient blood = Ingredient.fromJson(JsonUtils.getJsonObject(json, "blood"));
             int cookTime = JsonUtils.getInt(json, "cook_time");
@@ -118,7 +120,7 @@ public class DragonForgeRecipe implements Recipe<TileEntityDragonforge> {
         @Override
         public DragonForgeRecipe fromNetwork(@NotNull ResourceLocation recipeId, FriendlyByteBuf buffer) {
             int cookTime = buffer.readInt();
-            String dragonType = buffer.readUtf();
+            DragonType dragonType = buffer.readEnum(DragonType.class);
             Ingredient input = Ingredient.fromNetwork(buffer);
             Ingredient blood = Ingredient.fromNetwork(buffer);
             ItemStack result = buffer.readItem();
@@ -128,7 +130,7 @@ public class DragonForgeRecipe implements Recipe<TileEntityDragonforge> {
         @Override
         public void toNetwork(FriendlyByteBuf buffer, DragonForgeRecipe recipe) {
             buffer.writeInt(recipe.cookTime);
-            buffer.writeUtf(recipe.dragonType);
+            buffer.writeEnum(recipe.dragonType);
             recipe.input.toNetwork(buffer);
             recipe.blood.toNetwork(buffer);
             buffer.writeItemStack(recipe.result, true);

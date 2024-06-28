@@ -2,6 +2,7 @@ package com.github.alexthe666.iceandfire.item;
 
 import com.github.alexthe666.iceandfire.IceAndFire;
 import com.github.alexthe666.iceandfire.block.IafBlockRegistry;
+import com.github.alexthe666.iceandfire.entity.DragonType;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.CreativeModeTab;
@@ -40,7 +41,7 @@ public class IafTabRegistry {
             // Set name of tab to display
             .title(Component.translatable("itemGroup." + IceAndFire.MODID + ".items"))
             // Set icon of creative tab
-            .icon(() -> new ItemStack(IafItemRegistry.DRAGON_SKULL_FIRE.get()))
+            .icon(() -> new ItemStack(DragonItems.getDragonItems(DragonType.FIRE).skull().get()))
             // properly order tab after block tab
             .withTabsBefore(TAB_BLOCKS.getKey())
             // Add default items to tab

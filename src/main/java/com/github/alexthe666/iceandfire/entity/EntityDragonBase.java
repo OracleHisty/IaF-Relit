@@ -18,6 +18,7 @@ import com.github.alexthe666.iceandfire.entity.tile.TileEntityDragonforgeInput;
 import com.github.alexthe666.iceandfire.entity.util.*;
 import com.github.alexthe666.iceandfire.enums.EnumDragonEgg;
 import com.github.alexthe666.iceandfire.inventory.ContainerDragon;
+import com.github.alexthe666.iceandfire.item.DragonItems;
 import com.github.alexthe666.iceandfire.item.IafItemRegistry;
 import com.github.alexthe666.iceandfire.item.ItemDragonArmor;
 import com.github.alexthe666.iceandfire.item.ItemSummoningCrystal;
@@ -1207,7 +1208,7 @@ public abstract class EntityDragonBase extends TamableAnimal implements IPassabi
                     this.openInventory(player);
                     return InteractionResult.SUCCESS;
                 } else {
-                    int itemFoodAmount = FoodUtils.getFoodPoints(stack, true, dragonType.isPiscivore());
+                    int itemFoodAmount = FoodUtils.getFoodPoints(stack, true, dragonType.eatsFish());
                     if (itemFoodAmount > 0 && (this.getHunger() < 100 || this.getHealth() < this.getMaxHealth())) {
                         this.setHunger(this.getHunger() + itemFoodAmount);
                         this.setHealth(Math.min(this.getMaxHealth(), (int) (this.getHealth() + (itemFoodAmount / 10))));
@@ -1286,12 +1287,6 @@ public abstract class EntityDragonBase extends TamableAnimal implements IPassabi
 
     }
 
-    public abstract ItemLike getHeartItem();
-
-    public abstract Item getBloodItem();
-
-    public abstract Item getFleshItem();
-
     public ItemStack getSkull() {
         return ItemStack.EMPTY;
     }
@@ -1312,7 +1307,9 @@ public abstract class EntityDragonBase extends TamableAnimal implements IPassabi
         return dist <= 1.0D || result.getType() == HitResult.Type.MISS;
     }
 
-    public abstract ResourceLocation getDeadLootTable();
+    public ResourceLocation getDeadLootTable() {
+        return this.getDeathStage() >= (this.getAgeInDays() / 5) / 2 ? dragonType.skeletonLoot() : isMale() ? dragonType.maleLoot() : dragonType.femaleLoot();
+    }
 
     public ItemStack getItemFromLootTable() {
         LootTable loottable = this.level().getServer().getServerResources().managers().getLootData().getLootTable(getDeadLootTable());
@@ -1542,7 +1539,9 @@ public abstract class EntityDragonBase extends TamableAnimal implements IPassabi
         return this.flyTicks > 6000 || isGoingDown() || flyTicks > 40 && this.flyProgress == 0 || this.isChained() && flyTicks > 100;
     }
 
-    public abstract String getVariantName(int variant);
+    public String getVariantName(int variant) {
+        return dragonType.getEgg(variant).getSerializedName() + "_";
+    }
 
     @Override
     public boolean shouldRiderSit() {
@@ -1937,13 +1936,9 @@ public abstract class EntityDragonBase extends TamableAnimal implements IPassabi
 
     public EntityDragonEgg createEgg(EntityDragonBase ageable) { // FIXME :: Unused parameter
         EntityDragonEgg dragon = new EntityDragonEgg(IafEntityRegistry.DRAGON_EGG.get(), this.level());
-        dragon.setEggType(EnumDragonEgg.byMetadata(new Random().nextInt(4) + getStartMetaForType()));
+        dragon.setEggType(dragonType.getRandomEgg(random));
         dragon.setPos(Mth.floor(this.getX()) + 0.5, Mth.floor(this.getY()) + 1, Mth.floor(this.getZ()) + 0.5);
         return dragon;
-    }
-
-    public int getStartMetaForType() {
-        return 0;
     }
 
     public boolean isTargetBlocked(Vec3 target) {
@@ -1994,11 +1989,29 @@ public abstract class EntityDragonBase extends TamableAnimal implements IPassabi
         return f * f + f1 * f1 + f2 * f2;
     }
 
-    public abstract Item getVariantScale(int variant);
+    public Item getVariantScale(int variant) {
+        return dragonType.getEgg(variant).getScaleItem();
+    }
 
-    public abstract Item getVariantEgg(int variant);
+    public Item getVariantEgg(int variant) {
+        return dragonType.getEgg(variant).getEggItem();
+    }
 
-    public abstract Item getSummoningCrystal();
+    public Item getSummoningCrystal() {
+        return DragonItems.getDragonItems(dragonType).summoningCrystal().get();
+    }
+
+    public ItemLike getHeartItem() {
+        return DragonItems.getDragonItems(dragonType).heart().get();
+    }
+
+    public Item getBloodItem() {
+        return DragonItems.getDragonItems(dragonType).blood().get();
+    }
+
+    public Item getFleshItem() {
+        return DragonItems.getDragonItems(dragonType).flesh().get();
+    }
 
     @Override
     public boolean isImmobile() {
@@ -2470,7 +2483,24 @@ public abstract class EntityDragonBase extends TamableAnimal implements IPassabi
         }
     }
 
-    public abstract SoundEvent getRoarSound();
+    @Override
+    protected SoundEvent getAmbientSound() {
+        return this.isTeen() ? dragonType.teenIdleSound() : this.shouldDropLoot() ? dragonType.adultIdleSound() : dragonType.childIdleSound();
+    }
+
+    @Override
+    protected SoundEvent getHurtSound(@NotNull DamageSource damageSourceIn) {
+        return this.isTeen() ? dragonType.teenHurtSound() : this.shouldDropLoot() ? dragonType.adultHurtSound() : dragonType.childHurtSound();
+    }
+
+    @Override
+    protected SoundEvent getDeathSound() {
+        return this.isTeen() ? dragonType.teenDeathSound() : this.shouldDropLoot() ? dragonType.adultDeathSound() : dragonType.childDeathSound();
+    }
+
+    public SoundEvent getRoarSound() {
+        return this.isTeen() ? dragonType.teenRoarSound() : this.shouldDropLoot() ? dragonType.adultRoarSound() : dragonType.childRoarSound();
+    }
 
     public void roar() {
         if (EntityGorgon.isStoneMob(this) || this.isModelDead()) {

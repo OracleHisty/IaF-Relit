@@ -1,6 +1,7 @@
 package com.github.alexthe666.iceandfire.block;
 
 import com.github.alexthe666.iceandfire.IceAndFire;
+import com.github.alexthe666.iceandfire.entity.DragonType;
 import com.github.alexthe666.iceandfire.enums.EnumDragonEgg;
 import com.github.alexthe666.iceandfire.item.BlockItemWithRender;
 import com.github.alexthe666.iceandfire.item.IafItemRegistry;
@@ -16,11 +17,13 @@ import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
 import net.minecraft.world.level.material.MapColor;
 import net.minecraft.world.level.material.PushReaction;
+import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
+import java.util.Arrays;
 import java.util.function.Supplier;
 
 @Mod.EventBusSubscriber(modid = IceAndFire.MODID, bus = Mod.EventBusSubscriber.Bus.MOD)
@@ -86,21 +89,8 @@ public class IafBlockRegistry {
     public static final RegistryObject<Block> DRAGON_SCALE_AMYTHEST = register("dragonscale_amythest", () -> new BlockDragonScales(EnumDragonEgg.AMYTHEST));
     public static final RegistryObject<Block> DRAGON_SCALE_COPPER = register("dragonscale_copper", () -> new BlockDragonScales(EnumDragonEgg.COPPER));
     public static final RegistryObject<Block> DRAGON_SCALE_BLACK = register("dragonscale_black", () -> new BlockDragonScales(EnumDragonEgg.BLACK));
-
     public static final RegistryObject<Block> DRAGON_BONE_BLOCK = register("dragon_bone_block", BlockDragonBone::new);
     public static final RegistryObject<Block> DRAGON_BONE_BLOCK_WALL = register("dragon_bone_wall", () -> new BlockDragonBoneWall(BlockBehaviour.Properties.copy(IafBlockRegistry.DRAGON_BONE_BLOCK.get())));
-    public static final RegistryObject<Block> DRAGONFORGE_FIRE_BRICK = register(BlockDragonforgeBricks.name(0), () -> new BlockDragonforgeBricks(0));
-    public static final RegistryObject<Block> DRAGONFORGE_ICE_BRICK = register(BlockDragonforgeBricks.name(1), () -> new BlockDragonforgeBricks(1));
-    public static final RegistryObject<Block> DRAGONFORGE_LIGHTNING_BRICK = register(BlockDragonforgeBricks.name(2), () -> new BlockDragonforgeBricks(2));
-    public static final RegistryObject<Block> DRAGONFORGE_FIRE_INPUT = register(BlockDragonforgeInput.name(0), () -> new BlockDragonforgeInput(0));
-    public static final RegistryObject<Block> DRAGONFORGE_ICE_INPUT = register(BlockDragonforgeInput.name(1), () -> new BlockDragonforgeInput(1));
-    public static final RegistryObject<Block> DRAGONFORGE_LIGHTNING_INPUT = register(BlockDragonforgeInput.name(2), () -> new BlockDragonforgeInput(2));
-    public static final RegistryObject<Block> DRAGONFORGE_FIRE_CORE = register(BlockDragonforgeCore.name(0, true), () -> new BlockDragonforgeCore(0, true));
-    public static final RegistryObject<Block> DRAGONFORGE_ICE_CORE = register(BlockDragonforgeCore.name(1, true), () -> new BlockDragonforgeCore(1, true));
-    public static final RegistryObject<Block> DRAGONFORGE_LIGHTNING_CORE = register(BlockDragonforgeCore.name(2, true), () -> new BlockDragonforgeCore(2, true));
-    public static final RegistryObject<Block> DRAGONFORGE_FIRE_CORE_DISABLED = register(BlockDragonforgeCore.name(0, false), () -> new BlockDragonforgeCore(0, false));
-    public static final RegistryObject<Block> DRAGONFORGE_ICE_CORE_DISABLED = register(BlockDragonforgeCore.name(1, false), () -> new BlockDragonforgeCore(1, false));
-    public static final RegistryObject<Block> DRAGONFORGE_LIGHTNING_CORE_DISABLED = register(BlockDragonforgeCore.name(2, false), () -> new BlockDragonforgeCore(2, false));
     public static final RegistryObject<Block> EGG_IN_ICE = register("egginice", BlockEggInIce::new);
     public static final RegistryObject<Block> PIXIE_HOUSE_MUSHROOM_RED = registerWithRender(BlockPixieHouse.name("mushroom_red"), BlockPixieHouse::new);
     public static final RegistryObject<Block> PIXIE_HOUSE_MUSHROOM_BROWN = registerWithRender(BlockPixieHouse.name("mushroom_brown"), BlockPixieHouse::new);
@@ -150,6 +140,10 @@ public class IafBlockRegistry {
     public static final RegistryObject<Block> GHOST_CHEST = registerWithRender("ghost_chest", BlockGhostChest::new);
     public static final RegistryObject<Block> GRAVEYARD_SOIL = register("graveyard_soil", BlockGraveyardSoil::new);
 
+    public static void register(IEventBus modBus) {
+        BLOCKS.register(modBus);
+        Arrays.stream(DragonType.values()).forEach(DragonForge::of);
+    }
 
     public static <T extends Block> RegistryObject<T> register(String name, Supplier<T> block) {
         RegistryObject<T> ret = BLOCKS.register(name, block);

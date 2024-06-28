@@ -1,5 +1,6 @@
 package com.github.alexthe666.iceandfire.item;
 
+import com.github.alexthe666.iceandfire.entity.DragonType;
 import com.github.alexthe666.iceandfire.entity.EntityDragonSkull;
 import com.github.alexthe666.iceandfire.entity.IafEntityRegistry;
 import net.minecraft.ChatFormatting;
@@ -21,9 +22,9 @@ import javax.annotation.Nullable;
 import java.util.List;
 
 public class ItemDragonSkull extends Item {
-    private final int dragonType;
+    private final DragonType dragonType;
 
-    public ItemDragonSkull(int dragonType) {
+    public ItemDragonSkull(DragonType dragonType) {
         super(new Item.Properties()/*.tab(IceAndFire.TAB_ITEMS)*/.stacksTo(1));
         this.dragonType = dragonType;
     }
@@ -58,7 +59,7 @@ public class ItemDragonSkull extends Item {
 
     @Override
     public void appendHoverText(ItemStack stack, @Nullable Level worldIn, List<Component> tooltip, @NotNull TooltipFlag flagIn) {
-        String iceorfire = "dragon." + getType(dragonType);
+        String iceorfire = "dragon." + dragonType;
         tooltip.add(Component.translatable(iceorfire).withStyle(ChatFormatting.GRAY));
         if (stack.getTag() != null) {
             tooltip.add(Component.translatable("dragon.stage").withStyle(ChatFormatting.GRAY).append(Component.literal(" " + stack.getTag().getInt("Stage"))));

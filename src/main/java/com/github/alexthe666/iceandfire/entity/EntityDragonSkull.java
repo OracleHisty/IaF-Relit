@@ -2,6 +2,7 @@ package com.github.alexthe666.iceandfire.entity;
 
 import com.github.alexthe666.iceandfire.entity.util.IBlacklistedFromStatues;
 import com.github.alexthe666.iceandfire.entity.util.IDeadMob;
+import com.github.alexthe666.iceandfire.item.DragonItems;
 import com.github.alexthe666.iceandfire.item.IafItemRegistry;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.syncher.EntityDataAccessor;
@@ -92,23 +93,23 @@ public class EntityDragonSkull extends Animal implements IBlacklistedFromStatues
     }
 
     public float getYaw() {
-        return this.getEntityData().get(DRAGON_DIRECTION).floatValue();
+        return this.getEntityData().get(DRAGON_DIRECTION);
     }
 
     public void setYaw(float var1) {
         this.getEntityData().set(DRAGON_DIRECTION, var1);
     }
 
-    public int getDragonType() {
-        return this.getEntityData().get(DRAGON_TYPE).intValue();
+    public DragonType getDragonType() {
+        return DragonType.values()[this.getEntityData().get(DRAGON_TYPE)];
     }
 
-    public void setDragonType(int var1) {
-        this.getEntityData().set(DRAGON_TYPE, var1);
+    public void setDragonType(DragonType var1) {
+        this.getEntityData().set(DRAGON_TYPE, var1.ordinal());
     }
 
     public int getStage() {
-        return this.getEntityData().get(DRAGON_STAGE).intValue();
+        return this.getEntityData().get(DRAGON_STAGE);
     }
 
     public void setStage(int var1) {
@@ -148,16 +149,7 @@ public class EntityDragonSkull extends Animal implements IBlacklistedFromStatues
     }
 
     public Item getDragonSkullItem() {
-        switch (getDragonType()) {
-            case 0:
-                return IafItemRegistry.DRAGON_SKULL_FIRE.get();
-            case 1:
-                return IafItemRegistry.DRAGON_SKULL_ICE.get();
-            case 2:
-                return IafItemRegistry.DRAGON_SKULL_LIGHTNING.get();
-            default:
-                return IafItemRegistry.DRAGON_SKULL_FIRE.get();
-        }
+        return DragonItems.getDragonItems(getDragonType()).skull().get();
     }
 
     @Nullable
@@ -176,7 +168,7 @@ public class EntityDragonSkull extends Animal implements IBlacklistedFromStatues
 
     @Override
     public void readAdditionalSaveData(CompoundTag compound) {
-        this.setDragonType(compound.getInt("Type"));
+        this.setDragonType(DragonType.values()[compound.getInt("Type")]);
         this.setStage(compound.getInt("Stage"));
         this.setDragonAge(compound.getInt("DragonAge"));
         this.setYaw(compound.getFloat("DragonYaw"));
@@ -185,7 +177,7 @@ public class EntityDragonSkull extends Animal implements IBlacklistedFromStatues
 
     @Override
     public void addAdditionalSaveData(CompoundTag compound) {
-        compound.putInt("Type", this.getDragonType());
+        compound.putInt("Type", this.getDragonType().ordinal());
         compound.putInt("Stage", this.getStage());
         compound.putInt("DragonAge", this.getDragonAge());
         compound.putFloat("DragonYaw", this.getYaw());

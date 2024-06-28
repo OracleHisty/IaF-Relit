@@ -88,8 +88,8 @@ public class IceAndFire {
         biomeModifiers.register("iaf_mob_spawns", IafMobSpawnBiomeModifier::makeCodec);
         biomeModifiers.register("iaf_features", IafFeatureBiomeModifier::makeCodec);
 
-        IafItemRegistry.ITEMS.register(modBus);
-        IafBlockRegistry.BLOCKS.register(modBus);
+        IafItemRegistry.register(modBus);
+        IafBlockRegistry.register(modBus);
         IafTabRegistry.TAB_REGISTER.register(modBus);
         IafEntityRegistry.ENTITIES.register(modBus);
         IafTileEntityRegistry.TYPES.register(modBus);

@@ -13,12 +13,10 @@ import com.github.alexthe666.iceandfire.client.model.animator.SeaSerpentTabulaMo
 import com.github.alexthe666.iceandfire.client.model.util.*;
 import com.github.alexthe666.iceandfire.client.render.entity.*;
 import com.github.alexthe666.iceandfire.client.render.tile.*;
+import com.github.alexthe666.iceandfire.entity.DragonType;
 import com.github.alexthe666.iceandfire.entity.IafEntityRegistry;
 import com.github.alexthe666.iceandfire.entity.tile.IafTileEntityRegistry;
-import com.github.alexthe666.iceandfire.item.IafItemRegistry;
-import com.github.alexthe666.iceandfire.item.ItemDragonBow;
-import com.github.alexthe666.iceandfire.item.ItemDragonHorn;
-import com.github.alexthe666.iceandfire.item.ItemSummoningCrystal;
+import com.github.alexthe666.iceandfire.item.*;
 import com.mojang.blaze3d.vertex.DefaultVertexFormat;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
@@ -36,8 +34,10 @@ import net.minecraftforge.client.event.RegisterShadersEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
+import net.minecraftforge.registries.RegistryObject;
 
 import java.io.IOException;
+import java.util.function.Consumer;
 
 @Mod.EventBusSubscriber(value = Dist.CLIENT, bus = Mod.EventBusSubscriber.Bus.MOD, modid = IceAndFire.MODID)
 public class IafClientSetup {
@@ -205,15 +205,11 @@ public class IafClientSetup {
             ItemProperties.register(IafItemRegistry.DRAGON_HORN.get(), new ResourceLocation("iceorfire"), (stack, level, entity, p) -> {
                 return ItemDragonHorn.getDragonType(stack) * 0.25F;
             });
-            ItemProperties.register(IafItemRegistry.SUMMONING_CRYSTAL_FIRE.get(), new ResourceLocation("has_dragon"), (stack, level, entity, p) -> {
-                return ItemSummoningCrystal.hasDragon(stack) ? 1.0F : 0.0F;
-            });
-            ItemProperties.register(IafItemRegistry.SUMMONING_CRYSTAL_ICE.get(), new ResourceLocation("has_dragon"), (stack, level, entity, p) -> {
-                return ItemSummoningCrystal.hasDragon(stack) ? 1.0F : 0.0F;
-            });
-            ItemProperties.register(IafItemRegistry.SUMMONING_CRYSTAL_LIGHTNING.get(), new ResourceLocation("has_dragon"), (stack, level, entity, p) -> {
-                return ItemSummoningCrystal.hasDragon(stack) ? 1.0F : 0.0F;
-            });
+
+            var hasDragon = new ResourceLocation("has_dragon");
+            ItemPropertyFunction function = (stack, level, entity, p) -> ItemSummoningCrystal.hasDragon(stack) ? 1.0F : 0.0F;
+            DragonItems.dragonItems().stream().map(DragonItems::summoningCrystal).map(RegistryObject::get).forEach(itemSummoningCrystal -> ItemProperties.register(itemSummoningCrystal, hasDragon, function));
+
             ItemProperties.register(IafItemRegistry.TIDE_TRIDENT.get(), new ResourceLocation("throwing"), (stack, level, entity, p) -> {
                 return entity != null && entity.isUsingItem() && entity.getUseItem() == stack ? 1.0F : 0.0F;
             });

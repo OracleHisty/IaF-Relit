@@ -3,7 +3,6 @@ package com.github.alexthe666.iceandfire.client.model;
 import com.github.alexthe666.citadel.client.model.AdvancedEntityModel;
 import com.github.alexthe666.citadel.client.model.AdvancedModelBox;
 import com.github.alexthe666.citadel.client.model.basic.BasicModelPart;
-import com.github.alexthe666.iceandfire.entity.DragonType;
 import com.github.alexthe666.iceandfire.entity.EntityDragonEgg;
 import com.github.alexthe666.iceandfire.entity.tile.TileEntityEggInIce;
 import com.google.common.collect.ImmutableList;
@@ -53,12 +52,12 @@ public class ModelDragonEgg<T extends LivingEntity> extends AdvancedEntityModel<
         this.Egg1.setPos(0.0F, 19.6F, 0.0F);
         this.Egg4.setPos(0.0F, -0.9F, 0.0F);
         if (entity instanceof EntityDragonEgg egg) {
-            boolean isLocationValid = false;
-            if (egg.getEggType().dragonType == DragonType.FIRE) {
-                isLocationValid = egg.level().getBlockState(egg.blockPosition()).isBurning(entity.level(), egg.blockPosition());
-            } else if (egg.getEggType().dragonType == DragonType.LIGHTNING) {
-                isLocationValid = egg.level().isRainingAt(egg.blockPosition());
-            }
+            boolean isLocationValid = switch (egg.getEggType().dragonType) {
+                case FIRE -> egg.level().getBlockState(egg.blockPosition()).isBurning(entity.level(), egg.blockPosition());
+                case LIGHTNING -> egg.level().isRainingAt(egg.blockPosition());
+                default -> false;
+            };
+
             if (isLocationValid) {
                 this.walk(Egg1, 0.3F, 0.3F, true, 1, 0, f2, 1);
                 this.flap(Egg1, 0.3F, 0.3F, false, 0, 0, f2, 1);

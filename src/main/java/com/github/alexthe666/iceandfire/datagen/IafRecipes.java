@@ -1,11 +1,14 @@
 package com.github.alexthe666.iceandfire.datagen;
 
 import com.github.alexthe666.iceandfire.IceAndFire;
+import com.github.alexthe666.iceandfire.block.DragonForge;
 import com.github.alexthe666.iceandfire.block.IafBlockRegistry;
 import com.github.alexthe666.iceandfire.datagen.tags.IafItemTags;
+import com.github.alexthe666.iceandfire.entity.DragonType;
 import com.github.alexthe666.iceandfire.enums.EnumDragonArmor;
 import com.github.alexthe666.iceandfire.enums.EnumSeaSerpent;
 import com.github.alexthe666.iceandfire.enums.EnumTroll;
+import com.github.alexthe666.iceandfire.item.DragonItems;
 import com.github.alexthe666.iceandfire.item.IafItemRegistry;
 import com.github.alexthe666.iceandfire.item.ItemDragonArmor;
 import net.minecraft.data.PackOutput;
@@ -19,10 +22,13 @@ import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.common.Tags;
 import net.minecraftforge.registries.ForgeRegistries;
+import net.minecraftforge.registries.RegistryObject;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.Arrays;
 import java.util.function.Consumer;
+
+import static com.github.alexthe666.iceandfire.entity.DragonType.*;
 
 /**
  * Generates recipes without advancements
@@ -290,17 +296,12 @@ public class IafRecipes extends RecipeProvider {
                 .unlockedBy("has_item", has(IafItemRegistry.DRAGON_BONE.get()))
                 .save(consumer);
 
-        forgeBrick(consumer, Items.STONE_BRICKS, IafItemTags.STORAGE_BLOCKS_SCALES_DRAGON_FIRE, IafBlockRegistry.DRAGONFORGE_FIRE_BRICK.get());
-        forgeCore(consumer, IafBlockRegistry.DRAGONFORGE_FIRE_BRICK.get(), IafItemRegistry.FIRE_DRAGON_HEART.get(), IafBlockRegistry.DRAGONFORGE_FIRE_CORE_DISABLED.get());
-        forgeInput(consumer, IafBlockRegistry.DRAGONFORGE_FIRE_BRICK.get(), Tags.Items.INGOTS_IRON, IafBlockRegistry.DRAGONFORGE_FIRE_INPUT.get());
-
-        forgeBrick(consumer, Items.STONE_BRICKS, IafItemTags.STORAGE_BLOCKS_SCALES_DRAGON_ICE, IafBlockRegistry.DRAGONFORGE_ICE_BRICK.get());
-        forgeCore(consumer, IafBlockRegistry.DRAGONFORGE_ICE_BRICK.get(), IafItemRegistry.ICE_DRAGON_HEART.get(), IafBlockRegistry.DRAGONFORGE_ICE_CORE_DISABLED.get());
-        forgeInput(consumer, IafBlockRegistry.DRAGONFORGE_ICE_BRICK.get(), Tags.Items.INGOTS_IRON, IafBlockRegistry.DRAGONFORGE_ICE_INPUT.get());
-
-        forgeBrick(consumer, Items.STONE_BRICKS, IafItemTags.STORAGE_BLOCKS_SCALES_DRAGON_LIGHTNING, IafBlockRegistry.DRAGONFORGE_LIGHTNING_BRICK.get());
-        forgeCore(consumer, IafBlockRegistry.DRAGONFORGE_LIGHTNING_BRICK.get(), IafItemRegistry.LIGHTNING_DRAGON_HEART.get(), IafBlockRegistry.DRAGONFORGE_LIGHTNING_CORE_DISABLED.get());
-        forgeInput(consumer, IafBlockRegistry.DRAGONFORGE_LIGHTNING_BRICK.get(), Tags.Items.INGOTS_IRON, IafBlockRegistry.DRAGONFORGE_LIGHTNING_INPUT.get());
+        for (var type : DragonType.values()) {
+            var dragonForge = DragonForge.getForge(type);
+            forgeBrick(consumer, Items.STONE_BRICKS, IafItemTags.STORAGE_BLOCKS_SCALES_DRAGON.get(type), dragonForge.bricks().get());
+            forgeCore(consumer, dragonForge.bricks().get(), DragonItems.getDragonItems(type).heart().get(), dragonForge.coreDisabled().get());
+            forgeInput(consumer, dragonForge.bricks().get(), Tags.Items.INGOTS_IRON, dragonForge.input().get());
+        }
 
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, IafItemRegistry.DRAGON_MEAL.get())
                 .pattern("BMB")
@@ -709,29 +710,24 @@ public class IafRecipes extends RecipeProvider {
                 .unlockedBy("has_item", has(IafItemTags.CRACKLED_BLOCKS))
                 .save(consumer, location("crackled_to_gravel"));
 
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.COMBAT, IafItemRegistry.DRAGONBONE_SWORD_FIRE.get())
-                .requires(IafItemRegistry.DRAGONBONE_SWORD.get())
-                .requires(IafItemRegistry.FIRE_DRAGON_BLOOD.get())
-                .unlockedBy("has_item", has(IafItemRegistry.FIRE_DRAGON_BLOOD.get()))
-                .save(consumer, location("dragonbone_sword_fire"));
-
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.COMBAT, IafItemRegistry.DRAGONBONE_SWORD_ICE.get())
-                .requires(IafItemRegistry.DRAGONBONE_SWORD.get())
-                .requires(IafItemRegistry.ICE_DRAGON_BLOOD.get())
-                .unlockedBy("has_item", has(IafItemRegistry.ICE_DRAGON_BLOOD.get()))
-                .save(consumer, location("dragonbone_sword_ice"));
-
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.COMBAT, IafItemRegistry.DRAGONBONE_SWORD_LIGHTNING.get())
-                .requires(IafItemRegistry.DRAGONBONE_SWORD.get())
-                .requires(IafItemRegistry.LIGHTNING_DRAGON_BLOOD.get())
-                .unlockedBy("has_item", has(IafItemRegistry.LIGHTNING_DRAGON_BLOOD.get()))
-                .save(consumer, location("dragonbone_sword_lightning"));
+        createDragonBoneSowrd(FIRE, IafItemRegistry.DRAGONBONE_SWORD_FIRE, consumer);
+        createDragonBoneSowrd(LIGHTNING, IafItemRegistry.DRAGONBONE_SWORD_LIGHTNING, consumer);
+        createDragonBoneSowrd(ICE, IafItemRegistry.DRAGONBONE_SWORD_ICE, consumer);
 
         ShapelessRecipeBuilder.shapeless(RecipeCategory.COMBAT, IafItemRegistry.GHOST_SWORD.get())
                 .requires(IafItemRegistry.DRAGONBONE_SWORD.get())
                 .requires(IafItemRegistry.GHOST_INGOT.get())
                 .unlockedBy("has_item", has(IafItemRegistry.GHOST_INGOT.get()))
                 .save(consumer, location("ghost_sword"));
+    }
+
+    private void createDragonBoneSowrd(DragonType dragonType, RegistryObject<Item> dragonboneSword, Consumer<FinishedRecipe> consumer) {
+        var blood = DragonItems.getDragonItems(dragonType).blood();
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.COMBAT, dragonboneSword.get())
+                .requires(IafItemRegistry.DRAGONBONE_SWORD.get())
+                .requires(blood.get())
+                .unlockedBy("has_item", has(blood.get()))
+                .save(consumer, location("dragonbone_sword_%s".formatted(dragonType)));
     }
 
     private void compact(@NotNull final Consumer<FinishedRecipe> consumer, final ItemLike unpacked, final ItemLike packed) {

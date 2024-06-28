@@ -1,7 +1,7 @@
 package com.github.alexthe666.iceandfire.message;
 
 import com.github.alexthe666.iceandfire.IceAndFire;
-import com.github.alexthe666.iceandfire.entity.tile.TileEntityDragonforge;
+import com.github.alexthe666.iceandfire.entity.tile.BlockEntityDragonforge;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.world.entity.player.Player;
@@ -51,7 +51,7 @@ public class MessageUpdateDragonforge {
                 if (player != null) {
                     BlockPos pos = BlockPos.of(message.blockPos);
 
-                    if (player.level().getBlockEntity(pos) instanceof TileEntityDragonforge forge) {
+                    if (player.level().getBlockEntity(pos) instanceof BlockEntityDragonforge forge) {
                         forge.cookTime = message.cookTime;
 
                         if (message.cookTime > 0) {

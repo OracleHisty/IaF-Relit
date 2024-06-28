@@ -1,5 +1,6 @@
 package com.github.alexthe666.iceandfire.compat.jei.firedragonforge;
 
+import com.github.alexthe666.iceandfire.entity.DragonType;
 import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.blaze3d.vertex.BufferBuilder;
 import com.mojang.blaze3d.vertex.DefaultVertexFormat;
@@ -12,8 +13,10 @@ import net.minecraft.resources.ResourceLocation;
 import org.jetbrains.annotations.NotNull;
 import org.joml.Matrix4f;
 
-public class FireDragonForgeDrawable implements IDrawable {
-    private static final ResourceLocation TEXTURE = new ResourceLocation("iceandfire:textures/gui/dragonforge_fire.png");
+public record DragonForgeDrawable(DragonType type, ResourceLocation texture) implements IDrawable {
+    public static DragonForgeDrawable of(DragonType type) {
+        return new DragonForgeDrawable(type, new ResourceLocation("iceandfire:textures/gui/dragonforge_%s.png".formatted(type.getSerializedName())));
+    }
 
     @Override
     public int getWidth() {
@@ -28,13 +31,13 @@ public class FireDragonForgeDrawable implements IDrawable {
     @Override
     public void draw(@NotNull GuiGraphics ms, int xOffset, int yOffset) {
         RenderSystem.setShaderColor(1.0F, 1.0F, 1.0F, 1.0F);
-        RenderSystem.setShaderTexture(0, TEXTURE);
-        this.drawTexturedModalRect(ms, xOffset, yOffset, 3, 4, 170, 79);
+        RenderSystem.setShaderTexture(0, texture);
+        drawTexturedModalRect(ms, xOffset, yOffset, 3, 4, 170, 79);
         int scaledProgress = (Minecraft.getInstance().player.tickCount % 100) * 128 / 100;
-        this.drawTexturedModalRect(ms, xOffset + 9, yOffset + 19, 0, 166, scaledProgress, 38);
+        drawTexturedModalRect(ms, xOffset + 9, yOffset + 19, 0, 166, scaledProgress, 38);
     }
 
-    public void drawTexturedModalRect(GuiGraphics ms, int x, int y, int textureX, int textureY, int width, int height) {
+    private static void drawTexturedModalRect(GuiGraphics ms, int x, int y, int textureX, int textureY, int width, int height) {
         Tesselator tessellator = Tesselator.getInstance();
         BufferBuilder bufferbuilder = tessellator.getBuilder();
         Matrix4f matrix4f = ms.pose().last().pose();

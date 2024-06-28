@@ -1,5 +1,6 @@
 package com.github.alexthe666.iceandfire.item;
 
+import com.github.alexthe666.iceandfire.entity.DragonType;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.EntityType;
@@ -10,9 +11,9 @@ import net.minecraft.world.level.Level;
 
 public class ItemDragonFlesh extends ItemGenericFood {
 
-    int dragonType;
+    public final DragonType dragonType;
 
-    public ItemDragonFlesh(int dragonType) {
+    public ItemDragonFlesh(DragonType dragonType) {
         super(8, 0.8F, true, false, false);
         this.dragonType = dragonType;
     }
@@ -29,16 +30,16 @@ public class ItemDragonFlesh extends ItemGenericFood {
     @Override
     public void onFoodEaten(ItemStack stack, Level worldIn, LivingEntity livingEntity) {
         if (!worldIn.isClientSide) {
-            if (dragonType == 0) {
-                livingEntity.setSecondsOnFire(5);
-            } else if (dragonType == 1) {
-                livingEntity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 100, 2));
-            } else {
-                if (!livingEntity.level().isClientSide) {
-                    LightningBolt lightningboltentity = EntityType.LIGHTNING_BOLT.create(livingEntity.level());
-                    lightningboltentity.moveTo(livingEntity.position());
+            switch (dragonType) {
+                case FIRE -> livingEntity.setSecondsOnFire(5);
+                case ICE -> livingEntity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 100, 2));
+                default -> {
                     if (!livingEntity.level().isClientSide) {
-                        livingEntity.level().addFreshEntity(lightningboltentity);
+                        LightningBolt lightningboltentity = EntityType.LIGHTNING_BOLT.create(livingEntity.level());
+                        lightningboltentity.moveTo(livingEntity.position());
+                        if (!livingEntity.level().isClientSide) {
+                            livingEntity.level().addFreshEntity(lightningboltentity);
+                        }
                     }
                 }
             }

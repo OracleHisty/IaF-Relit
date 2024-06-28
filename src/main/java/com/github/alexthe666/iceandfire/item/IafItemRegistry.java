@@ -6,6 +6,7 @@ import com.github.alexthe666.iceandfire.IafConfig;
 import com.github.alexthe666.iceandfire.IceAndFire;
 import com.github.alexthe666.iceandfire.datagen.tags.BannerPatternTagGenerator;
 import com.github.alexthe666.iceandfire.datagen.tags.IafItemTags;
+import com.github.alexthe666.iceandfire.entity.DragonType;
 import com.github.alexthe666.iceandfire.entity.IafEntityRegistry;
 import com.github.alexthe666.iceandfire.enums.*;
 import net.minecraft.core.registries.Registries;
@@ -18,10 +19,12 @@ import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.common.ForgeSpawnEggItem;
 import net.minecraftforge.common.Tags;
 import net.minecraftforge.eventbus.api.EventPriority;
+import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.registries.*;
 
+import java.util.Arrays;
 import java.util.function.Supplier;
 
 import static com.github.alexthe666.iceandfire.item.DragonSteelTier.*;
@@ -129,11 +132,8 @@ public class IafItemRegistry {
     public static final RegistryObject<Item> DRAGONBONE_SWORD_FIRE = registerItem("dragonbone_sword_fire", () -> new ItemAlchemySword(FIRE_DRAGONBONE_TOOL_MATERIAL));
     public static final RegistryObject<Item> DRAGONBONE_SWORD_ICE = registerItem("dragonbone_sword_ice", () -> new ItemAlchemySword(ICE_DRAGONBONE_TOOL_MATERIAL));
     public static final RegistryObject<Item> DRAGONBONE_SWORD_LIGHTNING = registerItem("dragonbone_sword_lightning", () -> new ItemAlchemySword(LIGHTNING_DRAGONBONE_TOOL_MATERIAL));
-    public static final RegistryObject<Item> DRAGONBONE_ARROW = registerItem("dragonbone_arrow", () -> new ItemDragonArrow());
-    public static final RegistryObject<Item> DRAGON_BOW = registerItem("dragonbone_bow", () -> new ItemDragonBow());
-    public static final RegistryObject<Item> DRAGON_SKULL_FIRE = registerItem(ItemDragonSkull.getName(0), () -> new ItemDragonSkull(0));
-    public static final RegistryObject<Item> DRAGON_SKULL_ICE = registerItem(ItemDragonSkull.getName(1), () -> new ItemDragonSkull(1));
-    public static final RegistryObject<Item> DRAGON_SKULL_LIGHTNING = registerItem(ItemDragonSkull.getName(2), () -> new ItemDragonSkull(2));
+    public static final RegistryObject<Item> DRAGONBONE_ARROW = registerItem("dragonbone_arrow", ItemDragonArrow::new);
+    public static final RegistryObject<Item> DRAGON_BOW = registerItem("dragonbone_bow", ItemDragonBow::new);
     public static final RegistryObject<ItemDragonArmor> DRAGONARMOR_IRON_0 = registerItem("dragonarmor_iron_" + ItemDragonArmor.getNameForSlot(0), () -> new ItemDragonArmor(ItemDragonArmor.DragonArmorType.IRON, 0));
     public static final RegistryObject<ItemDragonArmor> DRAGONARMOR_IRON_1 = registerItem("dragonarmor_iron_" + ItemDragonArmor.getNameForSlot(1), () -> new ItemDragonArmor(ItemDragonArmor.DragonArmorType.IRON, 1));
     public static final RegistryObject<ItemDragonArmor> DRAGONARMOR_IRON_2 = registerItem("dragonarmor_iron_" + ItemDragonArmor.getNameForSlot(2), () -> new ItemDragonArmor(ItemDragonArmor.DragonArmorType.IRON, 2));
@@ -169,21 +169,9 @@ public class IafItemRegistry {
     public static final RegistryObject<Item> DRAGON_MEAL = registerItem("dragon_meal", ItemGeneric::new);
     public static final RegistryObject<Item> SICKLY_DRAGON_MEAL = registerItem("sickly_dragon_meal", () -> new ItemGeneric(1));
     public static final RegistryObject<Item> CREATIVE_DRAGON_MEAL = registerItem("creative_dragon_meal", () -> new ItemGeneric(2));
-    public static final RegistryObject<Item> FIRE_DRAGON_FLESH = registerItem(ItemDragonFlesh.getNameForType(0), () -> new ItemDragonFlesh(0));
-    public static final RegistryObject<Item> ICE_DRAGON_FLESH = registerItem(ItemDragonFlesh.getNameForType(1), () -> new ItemDragonFlesh(1));
-    public static final RegistryObject<Item> LIGHTNING_DRAGON_FLESH = registerItem(ItemDragonFlesh.getNameForType(2), () -> new ItemDragonFlesh(2));
-    public static final RegistryObject<Item> FIRE_DRAGON_HEART = registerItem("fire_dragon_heart", ItemGeneric::new);
-    public static final RegistryObject<Item> ICE_DRAGON_HEART = registerItem("ice_dragon_heart", ItemGeneric::new);
-    public static final RegistryObject<Item> LIGHTNING_DRAGON_HEART = registerItem("lightning_dragon_heart", ItemGeneric::new);
-    public static final RegistryObject<Item> FIRE_DRAGON_BLOOD = registerItem("fire_dragon_blood", ItemGeneric::new);
-    public static final RegistryObject<Item> ICE_DRAGON_BLOOD = registerItem("ice_dragon_blood", ItemGeneric::new);
-    public static final RegistryObject<Item> LIGHTNING_DRAGON_BLOOD = registerItem("lightning_dragon_blood", ItemGeneric::new);
-    public static final RegistryObject<Item> DRAGON_STAFF = registerItem("dragon_stick", () -> new ItemDragonStaff());
-    public static final RegistryObject<Item> DRAGON_HORN = registerItem("dragon_horn", () -> new ItemDragonHorn());
+    public static final RegistryObject<Item> DRAGON_STAFF = registerItem("dragon_stick", ItemDragonStaff::new);
+    public static final RegistryObject<Item> DRAGON_HORN = registerItem("dragon_horn", ItemDragonHorn::new);
     public static final RegistryObject<Item> DRAGON_FLUTE = registerItem("dragon_flute", () -> new ItemDragonFlute());
-    public static final RegistryObject<Item> SUMMONING_CRYSTAL_FIRE = registerItem("summoning_crystal_fire", () -> new ItemSummoningCrystal());
-    public static final RegistryObject<Item> SUMMONING_CRYSTAL_ICE = registerItem("summoning_crystal_ice", () -> new ItemSummoningCrystal());
-    public static final RegistryObject<Item> SUMMONING_CRYSTAL_LIGHTNING = registerItem("summoning_crystal_lightning", () -> new ItemSummoningCrystal());
     public static final RegistryObject<Item> HIPPOGRYPH_EGG = registerItem("hippogryph_egg", () -> new ItemHippogryphEgg());
     public static final RegistryObject<Item> IRON_HIPPOGRYPH_ARMOR = registerItem("iron_hippogryph_armor", () -> new ItemGeneric(0, 1));
     public static final RegistryObject<Item> GOLD_HIPPOGRYPH_ARMOR = registerItem("gold_hippogryph_armor", () -> new ItemGeneric(0, 1));
@@ -360,6 +348,11 @@ public class IafItemRegistry {
 
     public static Item.Properties unstackable() {
         return defaultBuilder().stacksTo(1);
+    }
+
+    public static void register(IEventBus modBus) {
+        ITEMS.register(modBus);
+        Arrays.stream(DragonType.values()).forEach(DragonItems::of);
     }
 
     @SubscribeEvent(priority = EventPriority.HIGH)
