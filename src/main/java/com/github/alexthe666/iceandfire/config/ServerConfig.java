@@ -67,7 +67,9 @@ public class ServerConfig {
     public final ForgeConfigSpec.BooleanValue spawnCockatrices;
     public final ForgeConfigSpec.IntValue cockatriceSpawnRate;
     public final ForgeConfigSpec.IntValue stymphalianBirdTargetSearchLength;
-    public final ForgeConfigSpec.IntValue stymphalianBirdFeatherDropChance ;
+    public final ForgeConfigSpec.IntValue stymphalianBirdFeatherDropChance;
+
+    public final ForgeConfigSpec.DoubleValue stymphalianBirdBaseAttack;
     public final ForgeConfigSpec.DoubleValue stymphalianBirdFeatherAttackStength;
     public final ForgeConfigSpec.IntValue stymphalianBirdFlockLength;
     public final ForgeConfigSpec.IntValue stymphalianBirdFlightHeight;
@@ -81,14 +83,6 @@ public class ServerConfig {
     public final ForgeConfigSpec.DoubleValue trollAttackStrength;
     public final ForgeConfigSpec.BooleanValue villagersFearDragons;
     public final ForgeConfigSpec.BooleanValue animalsFearDragons;
-    public final ForgeConfigSpec.IntValue myrmexPregnantTicks;
-    public final ForgeConfigSpec.IntValue myrmexEggTicks;
-    public final ForgeConfigSpec.IntValue myrmexLarvaTicks;
-    public final ForgeConfigSpec.IntValue myrmexColonyGenChance ;
-    public final ForgeConfigSpec.IntValue myrmexColonySize;
-    public final ForgeConfigSpec.DoubleValue myrmexBaseAttackStrength ;
-    public final ForgeConfigSpec.IntValue myrmexMaximumWanderRadius;
-    public final ForgeConfigSpec.BooleanValue myrmexHiveIgnoreDaytime;
     public final ForgeConfigSpec.BooleanValue spawnAmphitheres;
     public final ForgeConfigSpec.IntValue amphithereSpawnRate;
     public final ForgeConfigSpec.IntValue amphithereVillagerSearchLength ;
@@ -240,6 +234,7 @@ public class ServerConfig {
         builder.push("Stymphalians");
         this.stymphalianBirdTargetSearchLength = buildInt(builder, "Stymphalian Bird Target Search Length", "all", 64, 1, 10000, "How many blocks away can stymphalian birds spot potential prey. Note that increasing this could cause lag.");
         this.stymphalianBirdFeatherDropChance = buildInt(builder, "Stymphalian Bird Feather Drop Chance", "all", 25, 0, 10000, "1/this number chance for a stymphalian feather to turn into an item before despawning. Zero means never.");
+        this.stymphalianBirdBaseAttack = buildDouble(builder, "Stymphalian Bird Base Attack", "all", 6, 0, 10000, "Base Attack of Stymphalian Bird");
         this.stymphalianBirdFeatherAttackStength = buildDouble(builder, "Stymphalian Bird Feather Attack Strength", "all", 1, 0, 10000, "Stymphalian bird feather attack strength.");
         this.stymphalianBirdFlockLength = buildInt(builder, "Stymphalian Bird Flock Length", "all", 40, 1, 10000, "How far away stymphalian birds will consider other birds to be in the same flock.");
         this.stymphalianBirdFlightHeight = buildInt(builder, "Max Stymphalian Bird Flight Height", "all", 80, 10, Integer.MAX_VALUE, "How high stymphalian birds can fly, in Y height.");
@@ -253,16 +248,6 @@ public class ServerConfig {
         this.trollSpawnRate = buildInt(builder, "Troll Spawn Weight", "all", 40, 1, 10000, "Troll spawn weight. Lower = lower chance to spawn");
         this.trollMaxHealth = buildDouble(builder, "Troll Max Health", "all", 50, 1, 10000, "Maximum troll health");
         this.trollAttackStrength = buildDouble(builder, "Troll Attack Strength", "all", 10, 1, 10000, "Troll attack strength");
-        builder.pop();
-        builder.push("Myrmex");
-        this.myrmexPregnantTicks = buildInt(builder, "Myrmex Gestation Length", "all", 2500, 1, 10000, "How many ticks it takes for a Myrmex Queen to produce an egg.");
-        this.myrmexEggTicks = buildInt(builder, "Myrmex Hatch Length", "all", 3000, 1, 10000, "How many ticks it takes for a Myrmex Egg to hatch.");
-        this.myrmexLarvaTicks = buildInt(builder, "Myrmex Hatch Length", "all", 35000, 1, 100000, "How many ticks it takes for a Myrmex to move from a larva to a pupa, and from a pupa to an adult.");
-        this.myrmexColonyGenChance = buildInt(builder, "Myrmex Colony Gen Chance", "all", 150, 1, 10000, "One out of this number chance per chunk to generate a myrmex hive.");
-        this.myrmexColonySize = buildInt(builder, "Myrmex Colony Max Size", "all", 80, 10, 10000, "How many maximum individuals a myrmex colony can have.");
-        this.myrmexBaseAttackStrength = buildDouble(builder, "Myrmex Base Attack Strength", "all", 3, 1, 10000, "Base Myrmex(worker) attack strength");
-        this.myrmexMaximumWanderRadius = buildInt(builder,"Myrmex Maximum Wander Radius","all",50,25,4000,"The maximum radius myrmex area allowed to wander/forage");
-        this.myrmexHiveIgnoreDaytime = buildBoolean(builder, "Myrmex Hive Ignore Daytime", "all", false, "Myrmex hives will ignore daytime");
         builder.pop();
         builder.push("Amphitheres");
         this.spawnAmphitheres = buildBoolean(builder, "Spawn Amphitheres", "all", true, "True if amphitheres are allowed to spawn");
@@ -321,8 +306,8 @@ public class ServerConfig {
         this.dragonWeaponLightningAbility = buildBoolean(builder, "Dragon Bone Lightning Abilities", "all", true, "True if the dragon bone lightning sword strikes attackers.");
         builder.pop();
         builder.push("Pathfinding");
-        this.dragonPathfindingThreads = buildInt(builder, "Dragon Pathfinding Threads", "all", 3, 1, Integer.MAX_VALUE, "Maximum threads to use for dragon/myrmex pathfinding. Increase this number if pathing is slow and you have many cores.");
-        this.maxDragonPathingNodes = buildInt(builder, "Dragon Max Pathfinding Nodes", "all", 5000, 1, Integer.MAX_VALUE, "Maximum nodes for dragons/myrmex to path too. Decrease this is dragon pathfinding is super slow or intensive.");
+        this.dragonPathfindingThreads = buildInt(builder, "Dragon Pathfinding Threads", "all", 3, 1, Integer.MAX_VALUE, "Maximum threads to use for dragon pathfinding. Increase this number if pathing is slow and you have many cores.");
+        this.maxDragonPathingNodes = buildInt(builder, "Dragon Max Pathfinding Nodes", "all", 5000, 1, Integer.MAX_VALUE, "Maximum nodes for dragons to path too. Decrease this is dragon pathfinding is super slow or intensive.");
         this.pathfindingDebug = buildBoolean(builder, "Debug Pathfinding Mode", "all", false, "Enables the option to draw the pathfinding nodes when enabled (use a stick on an entity)");
     }
 

@@ -46,8 +46,6 @@ public class IafWorldRegistry {
     public static final RegistryObject<Feature<NoneFeatureConfiguration>> PIXIE_VILLAGE = register("pixie_village", () -> new WorldGenPixieVillage(NoneFeatureConfiguration.CODEC));
     public static final RegistryObject<Feature<NoneFeatureConfiguration>> SIREN_ISLAND = register("siren_island", () -> new WorldGenSirenIsland(NoneFeatureConfiguration.CODEC));
     public static final RegistryObject<Feature<NoneFeatureConfiguration>> HYDRA_CAVE = register("hydra_cave", () -> new WorldGenHydraCave(NoneFeatureConfiguration.CODEC));
-    public static final RegistryObject<Feature<NoneFeatureConfiguration>> MYRMEX_HIVE_DESERT = register("myrmex_hive_desert", () -> new WorldGenMyrmexHive(false, false, NoneFeatureConfiguration.CODEC));
-    public static final RegistryObject<Feature<NoneFeatureConfiguration>> MYRMEX_HIVE_JUNGLE = register("myrmex_hive_jungle", () -> new WorldGenMyrmexHive(false, true, NoneFeatureConfiguration.CODEC));
     public static final RegistryObject<Feature<NoneFeatureConfiguration>> SPAWN_DEATH_WORM = register("spawn_death_worm", () -> new SpawnDeathWorm(NoneFeatureConfiguration.CODEC));
     public static final RegistryObject<Feature<NoneFeatureConfiguration>> SPAWN_DRAGON_SKELETON_L = register("spawn_dragon_skeleton_lightning",
             () -> new SpawnDragonSkeleton(IafEntityRegistry.LIGHTNING_DRAGON.get(), NoneFeatureConfiguration.CODEC));
@@ -99,8 +97,6 @@ public class IafWorldRegistry {
         LOADED_FEATURES.put("iceandfire:pixie_village", false);
         LOADED_FEATURES.put("iceandfire:siren_island", false);
         LOADED_FEATURES.put("iceandfire:hydra_cave", false);
-        LOADED_FEATURES.put("iceandfire:myrmex_hive_desert", false);
-        LOADED_FEATURES.put("iceandfire:myrmex_hive_jungle", false);
         LOADED_FEATURES.put("iceandfire:spawn_death_worm", false);
         LOADED_FEATURES.put("iceandfire:spawn_dragon_skeleton_lightning", false);
         LOADED_FEATURES.put("iceandfire:spawn_dragon_skeleton_fire", false);
@@ -164,12 +160,6 @@ public class IafWorldRegistry {
         }
         if (safelyTestBiome(BiomeConfig.hydraBiomes, biome)) {
             addFeatureToBiome(IafPlacedFeatures.PLACED_HYDRA_CAVE, features, builder);
-        }
-        if (safelyTestBiome(BiomeConfig.desertMyrmexBiomes, biome)) {
-            addFeatureToBiome(IafPlacedFeatures.PLACED_MYRMEX_HIVE_DESERT, features, builder);
-        }
-        if (safelyTestBiome(BiomeConfig.jungleMyrmexBiomes, biome)) {
-            addFeatureToBiome(IafPlacedFeatures.PLACED_MYRMEX_HIVE_JUNGLE, features, builder);
         }
         if (safelyTestBiome(BiomeConfig.sirenBiomes, biome)) {
             addFeatureToBiome(IafPlacedFeatures.PLACED_SIREN_ISLAND, features, builder);

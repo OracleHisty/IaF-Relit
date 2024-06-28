@@ -528,20 +528,6 @@ public class IafRecipes extends RecipeProvider {
                 .unlockedBy("has_item", has(IafItemRegistry.ECTOPLASM.get()))
                 .save(consumer);
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, IafBlockRegistry.MYRMEX_DESERT_RESIN.get())
-                .pattern("RR")
-                .pattern("RR")
-                .define('R', IafItemRegistry.MYRMEX_DESERT_RESIN.get())
-                .unlockedBy("has_item", has(IafItemRegistry.MYRMEX_DESERT_RESIN.get()))
-                .save(consumer);
-
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, IafBlockRegistry.MYRMEX_JUNGLE_RESIN.get())
-                .pattern("RR")
-                .pattern("RR")
-                .define('R', IafItemRegistry.MYRMEX_JUNGLE_RESIN.get())
-                .unlockedBy("has_item", has(IafItemRegistry.MYRMEX_JUNGLE_RESIN.get()))
-                .save(consumer);
-
         ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, IafItemRegistry.SEA_SERPENT_ARROW.get(), 4)
                 .pattern("X")
                 .pattern("#")
@@ -551,36 +537,6 @@ public class IafRecipes extends RecipeProvider {
                 .define('Y', IafItemTags.SCALES_SEA_SERPENT)
                 .unlockedBy("has_item", has(IafItemRegistry.SERPENT_FANG.get()))
                 .save(consumer);
-
-        armorSet(consumer, IafItemRegistry.MYRMEX_DESERT_CHITIN.get(),
-                IafItemRegistry.MYRMEX_DESERT_HELMET.get(),
-                IafItemRegistry.MYRMEX_DESERT_CHESTPLATE.get(),
-                IafItemRegistry.MYRMEX_DESERT_LEGGINGS.get(),
-                IafItemRegistry.MYRMEX_DESERT_BOOTS.get()
-        );
-
-        toolSet(consumer, IafItemRegistry.MYRMEX_DESERT_CHITIN.get(), IafItemTags.BONES_WITHER,
-                IafItemRegistry.MYRMEX_DESERT_SWORD.get(),
-                IafItemRegistry.MYRMEX_DESERT_PICKAXE.get(),
-                IafItemRegistry.MYRMEX_DESERT_AXE.get(),
-                IafItemRegistry.MYRMEX_DESERT_SHOVEL.get(),
-                IafItemRegistry.MYRMEX_DESERT_HOE.get()
-        );
-
-        armorSet(consumer, IafItemRegistry.MYRMEX_JUNGLE_CHITIN.get(),
-                IafItemRegistry.MYRMEX_JUNGLE_HELMET.get(),
-                IafItemRegistry.MYRMEX_JUNGLE_CHESTPLATE.get(),
-                IafItemRegistry.MYRMEX_JUNGLE_LEGGINGS.get(),
-                IafItemRegistry.MYRMEX_JUNGLE_BOOTS.get()
-        );
-
-        toolSet(consumer, IafItemRegistry.MYRMEX_JUNGLE_CHITIN.get(), IafItemTags.BONES_WITHER,
-                IafItemRegistry.MYRMEX_JUNGLE_SWORD.get(),
-                IafItemRegistry.MYRMEX_JUNGLE_PICKAXE.get(),
-                IafItemRegistry.MYRMEX_JUNGLE_AXE.get(),
-                IafItemRegistry.MYRMEX_JUNGLE_SHOVEL.get(),
-                IafItemRegistry.MYRMEX_JUNGLE_HOE.get()
-        );
 
         SimpleCookingRecipeBuilder.smelting(Ingredient.of(IafItemRegistry.RAW_SILVER.get()), RecipeCategory.TOOLS, IafItemRegistry.SILVER_INGOT.get(), 0.7f, 200)
                 .group("raw_silver")

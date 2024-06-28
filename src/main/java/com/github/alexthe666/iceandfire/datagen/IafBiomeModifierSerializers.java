@@ -41,8 +41,6 @@ public class IafBiomeModifierSerializers {
                 IafPlacedFeatures.PLACED_PIXIE_VILLAGE,
                 IafPlacedFeatures.PLACED_SIREN_ISLAND,
                 IafPlacedFeatures.PLACED_HYDRA_CAVE,
-                IafPlacedFeatures.PLACED_MYRMEX_HIVE_DESERT,
-                IafPlacedFeatures.PLACED_MYRMEX_HIVE_JUNGLE,
                 IafPlacedFeatures.PLACED_SPAWN_DEATH_WORM,
                 IafPlacedFeatures.PLACED_SPAWN_DRAGON_SKELETON_L,
                 IafPlacedFeatures.PLACED_SPAWN_DRAGON_SKELETON_F,

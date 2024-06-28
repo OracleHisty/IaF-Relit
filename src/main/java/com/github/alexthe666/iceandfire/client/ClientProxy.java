@@ -2,21 +2,16 @@ package com.github.alexthe666.iceandfire.client;
 
 import com.github.alexthe666.iceandfire.CommonProxy;
 import com.github.alexthe666.iceandfire.IceAndFire;
-import com.github.alexthe666.iceandfire.client.gui.GuiMyrmexAddRoom;
-import com.github.alexthe666.iceandfire.client.gui.GuiMyrmexStaff;
 import com.github.alexthe666.iceandfire.client.gui.bestiary.GuiBestiary;
 import com.github.alexthe666.iceandfire.client.particle.*;
 import com.github.alexthe666.iceandfire.client.render.entity.layer.LayerDragonArmor;
 import com.github.alexthe666.iceandfire.entity.EntityDragonBase;
-import com.github.alexthe666.iceandfire.entity.util.MyrmexHive;
 import com.github.alexthe666.iceandfire.enums.EnumParticles;
 import com.github.alexthe666.iceandfire.event.ClientEvents;
 import com.github.alexthe666.iceandfire.event.PlayerRenderEvents;
 import com.mojang.blaze3d.platform.InputConstants;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.multiplayer.ClientLevel;
-import net.minecraft.core.BlockPos;
-import net.minecraft.core.Direction;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
@@ -34,20 +29,10 @@ import java.util.UUID;
 public class ClientProxy extends CommonProxy {
 
     public static Set<UUID> currentDragonRiders = new HashSet<UUID>();
-    private static MyrmexHive referedClientHive = null;
     private int previousViewType = 0;
     private int thirdPersonViewDragon = 0;
     private Entity referencedMob = null;
     private BlockEntity referencedTE = null;
-
-    public static MyrmexHive getReferedClientHive() {
-        return referedClientHive;
-    }
-
-    @Override
-    public void setReferencedHive(MyrmexHive hive) {
-        referedClientHive = hive;
-    }
 
     @Override
     public void init() {
@@ -139,18 +124,6 @@ public class ClientProxy extends CommonProxy {
     @Override
     public void openBestiaryGui(ItemStack book) {
         Minecraft.getInstance().setScreen(new GuiBestiary(book));
-    }
-
-    @OnlyIn(Dist.CLIENT)
-    @Override
-    public void openMyrmexStaffGui(ItemStack staff) {
-        Minecraft.getInstance().setScreen(new GuiMyrmexStaff(staff));
-    }
-
-    @OnlyIn(Dist.CLIENT)
-    @Override
-    public void openMyrmexAddRoomGui(ItemStack staff, BlockPos pos, Direction facing) {
-        Minecraft.getInstance().setScreen(new GuiMyrmexAddRoom(staff, pos, facing));
     }
 
     @OnlyIn(Dist.CLIENT)

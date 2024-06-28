@@ -32,8 +32,6 @@ public class BiomeConfig {
     public static Pair<String, SpawnBiomeData> seaSerpentBiomes = Pair.of("iceandfire:sea_serpent_biomes", DefaultBiomes.OCEANS);
     public static Pair<String, SpawnBiomeData> sirenBiomes = Pair.of("iceandfire:siren_biomes", DefaultBiomes.OCEANS);
     public static Pair<String, SpawnBiomeData> amphithereBiomes = Pair.of("iceandfire:amphithere_biomes", DefaultBiomes.JUNGLE);
-    public static Pair<String, SpawnBiomeData> desertMyrmexBiomes = Pair.of("iceandfire:desert_myrmex_biomes", DefaultBiomes.DESERT);
-    public static Pair<String, SpawnBiomeData> jungleMyrmexBiomes = Pair.of("iceandfire:jungle_myrmex_biomes", DefaultBiomes.JUNGLE);
     public static Pair<String, SpawnBiomeData> snowyTrollBiomes = Pair.of("iceandfire:snowy_troll_biomes", DefaultBiomes.SNOWY);
     public static Pair<String, SpawnBiomeData> forestTrollBiomes = Pair.of("iceandfire:forest_troll_biomes", DefaultBiomes.WOODLAND);
     public static Pair<String, SpawnBiomeData> mountainTrollBiomes = Pair.of("iceandfire:mountain_troll_biomes", DefaultBiomes.VERY_HILLY);

@@ -178,18 +178,6 @@ public final class IafSoundRegistry {
 
     public static final SoundEvent STYMPHALIAN_BIRD_ATTACK = createSoundEvent("stymphalian_bird_attack");
 
-    public static final SoundEvent MYRMEX_DIE = createSoundEvent("myrmex_die");
-
-    public static final SoundEvent MYRMEX_IDLE = createSoundEvent("myrmex_idle");
-
-    public static final SoundEvent MYRMEX_HURT = createSoundEvent("myrmex_hurt");
-
-    public static final SoundEvent MYRMEX_WALK = createSoundEvent("myrmex_walk");
-
-    public static final SoundEvent MYRMEX_BITE = createSoundEvent("myrmex_bite");
-
-    public static final SoundEvent MYRMEX_STING = createSoundEvent("myrmex_sting");
-
     public static final SoundEvent AMPHITHERE_DIE = createSoundEvent("amphithere_die");
 
     public static final SoundEvent AMPHITHERE_IDLE = createSoundEvent("amphithere_idle");

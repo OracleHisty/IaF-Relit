@@ -78,13 +78,6 @@ public class IafClientSetup {
         EntityRenderers.register(IafEntityRegistry.STYMPHALIAN_FEATHER.get(), RenderStymphalianFeather::new);
         EntityRenderers.register(IafEntityRegistry.STYMPHALIAN_ARROW.get(), RenderStymphalianArrow::new);
         EntityRenderers.register(IafEntityRegistry.TROLL.get(), RenderTroll::new);
-        EntityRenderers.register(IafEntityRegistry.MYRMEX_WORKER.get(), manager -> new RenderMyrmexBase(manager, new ModelMyrmexWorker(), 0.5F));
-        EntityRenderers.register(IafEntityRegistry.MYRMEX_SOLDIER.get(), manager -> new RenderMyrmexBase(manager, new ModelMyrmexSoldier(), 0.75F));
-        EntityRenderers.register(IafEntityRegistry.MYRMEX_QUEEN.get(), manager -> new RenderMyrmexBase(manager, new ModelMyrmexQueen(), 1.25F));
-        EntityRenderers.register(IafEntityRegistry.MYRMEX_EGG.get(), RenderMyrmexEgg::new);
-        EntityRenderers.register(IafEntityRegistry.MYRMEX_SENTINEL.get(), manager -> new RenderMyrmexBase(manager, new ModelMyrmexSentinel(), 0.85F));
-        EntityRenderers.register(IafEntityRegistry.MYRMEX_ROYAL.get(), manager -> new RenderMyrmexBase(manager, new ModelMyrmexRoyal(), 0.75F));
-        EntityRenderers.register(IafEntityRegistry.MYRMEX_SWARMER.get(), manager -> new RenderMyrmexBase(manager, new ModelMyrmexRoyal(), 0.25F));
         EntityRenderers.register(IafEntityRegistry.AMPHITHERE.get(), RenderAmphithere::new);
         EntityRenderers.register(IafEntityRegistry.AMPHITHERE_ARROW.get(), RenderAmphithereArrow::new);
         EntityRenderers.register(IafEntityRegistry.SEA_SERPENT.get(), manager -> new RenderSeaSerpent(manager, SEA_SERPENT_BASE_MODEL));
@@ -165,12 +158,6 @@ public class IafClientSetup {
         ItemBlockRenderTypes.setRenderLayer(IafBlockRegistry.FROST_LILY.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(IafBlockRegistry.LIGHTNING_LILY.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(IafBlockRegistry.DRAGON_ICE_SPIKES.get(), RenderType.cutout());
-        ItemBlockRenderTypes.setRenderLayer(IafBlockRegistry.MYRMEX_DESERT_RESIN_BLOCK.get(), RenderType.translucent());
-        ItemBlockRenderTypes.setRenderLayer(IafBlockRegistry.MYRMEX_DESERT_RESIN_GLASS.get(), RenderType.translucent());
-        ItemBlockRenderTypes.setRenderLayer(IafBlockRegistry.MYRMEX_JUNGLE_RESIN_BLOCK.get(), RenderType.translucent());
-        ItemBlockRenderTypes.setRenderLayer(IafBlockRegistry.MYRMEX_JUNGLE_RESIN_GLASS.get(), RenderType.translucent());
-        ItemBlockRenderTypes.setRenderLayer(IafBlockRegistry.MYRMEX_DESERT_BIOLIGHT.get(), RenderType.cutout());
-        ItemBlockRenderTypes.setRenderLayer(IafBlockRegistry.MYRMEX_JUNGLE_BIOLIGHT.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(IafBlockRegistry.DREAD_STONE_FACE.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(IafBlockRegistry.DREAD_TORCH.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(IafBlockRegistry.BURNT_TORCH.get(), RenderType.cutout());

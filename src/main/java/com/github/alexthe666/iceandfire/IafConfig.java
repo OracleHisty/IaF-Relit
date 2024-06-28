@@ -71,6 +71,7 @@ public class IafConfig {
     public static boolean spawnCockatrices = true;
     public static int cockatriceSpawnRate = 4;
     public static int stymphalianBirdTargetSearchLength = 48;
+    public static double stymphalianBirdBaseAttack = 6D;
     public static int stymphalianBirdFeatherDropChance = 25;
     public static double stymphalianBirdFeatherAttackStength = 1F;
     public static int stymphalianBirdFlockLength = 40;
@@ -85,14 +86,6 @@ public class IafConfig {
     public static double trollAttackStrength = 10;
     public static boolean villagersFearDragons = true;
     public static boolean animalsFearDragons = true;
-    public static int myrmexPregnantTicks = 2500;
-    public static int myrmexEggTicks = 3000;
-    public static int myrmexLarvaTicks = 35000;
-    public static int myrmexColonyGenChance = 150;
-    public static int myrmexColonySize = 80;
-    public static int myrmexMaximumWanderRadius = 50;
-    public static boolean myrmexHiveIgnoreDaytime = false;
-    public static double myrmexBaseAttackStrength = 3.0D;
     public static boolean spawnAmphitheres = true;
     public static int amphithereSpawnRate = 50;
     public static float amphithereVillagerSearchLength = 48;
@@ -217,6 +210,7 @@ public class IafConfig {
             chickensLayRottenEggs = ConfigHolder.SERVER.chickensLayRottenEggs.get();
             spawnCockatrices = ConfigHolder.SERVER.spawnCockatrices.get();
             cockatriceSpawnRate = ConfigHolder.SERVER.cockatriceSpawnRate.get();
+            stymphalianBirdBaseAttack = ConfigHolder.SERVER.stymphalianBirdBaseAttack.get();
             stymphalianBirdTargetSearchLength = ConfigHolder.SERVER.stymphalianBirdTargetSearchLength.get();
             stymphalianBirdFeatherDropChance = ConfigHolder.SERVER.stymphalianBirdFeatherDropChance.get();
             stymphalianBirdFeatherAttackStength = ConfigHolder.SERVER.stymphalianBirdFeatherAttackStength.get();
@@ -232,14 +226,6 @@ public class IafConfig {
             trollAttackStrength = ConfigHolder.SERVER.trollAttackStrength.get();
             villagersFearDragons = ConfigHolder.SERVER.villagersFearDragons.get();
             animalsFearDragons = ConfigHolder.SERVER.animalsFearDragons.get();
-            myrmexPregnantTicks = ConfigHolder.SERVER.myrmexPregnantTicks.get();
-            myrmexEggTicks = ConfigHolder.SERVER.myrmexEggTicks.get();
-            myrmexLarvaTicks = ConfigHolder.SERVER.myrmexLarvaTicks.get();
-            myrmexColonyGenChance = ConfigHolder.SERVER.myrmexColonyGenChance.get();
-            myrmexColonySize = ConfigHolder.SERVER.myrmexColonySize.get();
-            myrmexBaseAttackStrength = ConfigHolder.SERVER.myrmexBaseAttackStrength.get();
-            myrmexMaximumWanderRadius = ConfigHolder.SERVER.myrmexMaximumWanderRadius.get();
-            myrmexHiveIgnoreDaytime = ConfigHolder.SERVER.myrmexHiveIgnoreDaytime.get();
             spawnAmphitheres = ConfigHolder.SERVER.spawnAmphitheres.get();
             amphithereSpawnRate = ConfigHolder.SERVER.amphithereSpawnRate.get();
             amphithereVillagerSearchLength = ConfigHolder.SERVER.amphithereVillagerSearchLength.get();
