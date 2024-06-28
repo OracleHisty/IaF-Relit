@@ -124,57 +124,6 @@ public class IafRecipes extends RecipeProvider {
                 IafItemRegistry.COPPER_HOE.get()
         );
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, IafItemRegistry.DEATHWORM_GAUNTLET_RED.get())
-                .pattern(" T ")
-                .pattern("CHC")
-                .pattern("CCC")
-                .define('C', IafItemRegistry.DEATH_WORM_CHITIN_RED.get())
-                .define('H', IafItemRegistry.CHAIN.get())
-                .define('T', IafItemRegistry.DEATHWORM_TOUNGE.get())
-                .unlockedBy("has_item", has(IafItemRegistry.DEATHWORM_TOUNGE.get()))
-                .save(consumer);
-
-        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, IafItemRegistry.DEATHWORM_GAUNTLET_WHITE.get())
-                .pattern(" T ")
-                .pattern("CHC")
-                .pattern("CCC")
-                .define('C', IafItemRegistry.DEATH_WORM_CHITIN_WHITE.get())
-                .define('H', IafItemRegistry.CHAIN.get())
-                .define('T', IafItemRegistry.DEATHWORM_TOUNGE.get())
-                .unlockedBy("has_item", has(IafItemRegistry.DEATHWORM_TOUNGE.get()))
-                .save(consumer);
-
-        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, IafItemRegistry.DEATHWORM_GAUNTLET_YELLOW.get())
-                .pattern(" T ")
-                .pattern("CHC")
-                .pattern("CCC")
-                .define('C', IafItemRegistry.DEATH_WORM_CHITIN_YELLOW.get())
-                .define('H', IafItemRegistry.CHAIN.get())
-                .define('T', IafItemRegistry.DEATHWORM_TOUNGE.get())
-                .unlockedBy("has_item", has(IafItemRegistry.DEATHWORM_TOUNGE.get()))
-                .save(consumer);
-
-        armorSet(consumer, IafItemRegistry.DEATH_WORM_CHITIN_RED.get(),
-                IafItemRegistry.DEATHWORM_RED_HELMET.get(),
-                IafItemRegistry.DEATHWORM_RED_CHESTPLATE.get(),
-                IafItemRegistry.DEATHWORM_RED_LEGGINGS.get(),
-                IafItemRegistry.DEATHWORM_RED_BOOTS.get()
-        );
-
-        armorSet(consumer, IafItemRegistry.DEATH_WORM_CHITIN_WHITE.get(),
-                IafItemRegistry.DEATHWORM_WHITE_HELMET.get(),
-                IafItemRegistry.DEATHWORM_WHITE_CHESTPLATE.get(),
-                IafItemRegistry.DEATHWORM_WHITE_LEGGINGS.get(),
-                IafItemRegistry.DEATHWORM_WHITE_BOOTS.get()
-        );
-
-        armorSet(consumer, IafItemRegistry.DEATH_WORM_CHITIN_YELLOW.get(),
-                IafItemRegistry.DEATHWORM_YELLOW_HELMET.get(),
-                IafItemRegistry.DEATHWORM_YELLOW_CHESTPLATE.get(),
-                IafItemRegistry.DEATHWORM_YELLOW_LEGGINGS.get(),
-                IafItemRegistry.DEATHWORM_YELLOW_BOOTS.get()
-        );
-
         dragonArmorSet(consumer, Tags.Items.STORAGE_BLOCKS_COPPER,
                 IafItemRegistry.DRAGONARMOR_COPPER_0.get(),
                 IafItemRegistry.DRAGONARMOR_COPPER_1.get(),
