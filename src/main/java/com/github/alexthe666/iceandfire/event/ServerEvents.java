@@ -452,13 +452,6 @@ public class ServerEvents {
     }
 
     @SubscribeEvent
-    public void onEntityStopUsingItem(LivingEntityUseItemEvent.Tick event) {
-        if (event.getItem().getItem() instanceof ItemDeathwormGauntlet || event.getItem().getItem() instanceof ItemCockatriceScepter) {
-            event.setDuration(20);
-        }
-    }
-
-    @SubscribeEvent
     public void onEntityUseItem(PlayerInteractEvent.RightClickItem event) {
         if (event.getEntity() != null && event.getEntity().getXRot() > 87 && event.getEntity().getVehicle() != null && event.getEntity().getVehicle() instanceof EntityDragonBase) {
             ((EntityDragonBase) event.getEntity().getVehicle()).mobInteract(event.getEntity(), event.getHand());

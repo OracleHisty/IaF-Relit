@@ -59,11 +59,6 @@ public class IafConfig {
     public static int sirenTimeBetweenSongs = 2000;
     public static int generateSirenChance = 400;
     public static int hippocampusSpawnChance = 40;
-    public static int deathWormTargetSearchLength = 48;
-    public static double deathWormMaxHealth = 10D;
-    public static double deathWormAttackStrength = 3D;
-    public static boolean deathWormAttackMonsters = true;
-    public static int deathWormSpawnRate = 30;
     public static int cockatriceChickenSearchLength = 32;
     public static int cockatriceEggChance = 30;
     public static double cockatriceMaxHealth = 40.0D;
@@ -199,11 +194,6 @@ public class IafConfig {
             sirenTimeBetweenSongs = ConfigHolder.SERVER.sirenTimeBetweenSongs.get();
             generateSirenChance = ConfigHolder.SERVER.generateSirenChance.get();
             hippocampusSpawnChance = ConfigHolder.SERVER.hippocampusSpawnChance.get();
-            deathWormTargetSearchLength = ConfigHolder.SERVER.deathWormTargetSearchLength.get();
-            deathWormMaxHealth = ConfigHolder.SERVER.deathWormMaxHealth.get();
-            deathWormAttackStrength = ConfigHolder.SERVER.deathWormAttackStrength.get();
-            deathWormAttackMonsters = ConfigHolder.SERVER.deathWormAttackMonsters.get();
-            deathWormSpawnRate = ConfigHolder.SERVER.deathWormSpawnRate.get();
             cockatriceChickenSearchLength = ConfigHolder.SERVER.cockatriceChickenSearchLength.get();
             cockatriceEggChance = ConfigHolder.SERVER.cockatriceEggChance.get();
             cockatriceMaxHealth = ConfigHolder.SERVER.cockatriceMaxHealth.get();

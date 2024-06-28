@@ -115,26 +115,6 @@ public class IafRecipeRegistry {
                         position.z(), worldIn);
                 }
             });
-            DispenserBlock.registerBehavior(IafItemRegistry.DEATHWORM_EGG.get(), new AbstractProjectileDispenseBehavior() {
-                /**
-                 * Return the projectile entity spawned by this dispense behavior.
-                 */
-                @Override
-                protected @NotNull Projectile getProjectile(@NotNull Level worldIn, @NotNull Position position, @NotNull ItemStack stackIn) {
-                    return new EntityDeathWormEgg(IafEntityRegistry.DEATH_WORM_EGG.get(), position.x(), position.y(),
-                        position.z(), worldIn, false);
-                }
-            });
-            DispenserBlock.registerBehavior(IafItemRegistry.DEATHWORM_EGG_GIGANTIC.get(), new AbstractProjectileDispenseBehavior() {
-                /**
-                 * Return the projectile entity spawned by this dispense behavior.
-                 */
-                @Override
-                protected @NotNull Projectile getProjectile(@NotNull Level worldIn, @NotNull Position position, @NotNull ItemStack stackIn) {
-                    return new EntityDeathWormEgg(IafEntityRegistry.DEATH_WORM_EGG.get(), position.x(), position.y(),
-                        position.z(), worldIn, true);
-                }
-            });
 
             BrewingRecipeRegistry.addRecipe(Ingredient.of(createPotion(Potions.WATER).getItem()), Ingredient.of(IafItemRegistry.SHINY_SCALES.get()), createPotion(Potions.WATER_BREATHING));
         });

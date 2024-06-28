@@ -134,7 +134,6 @@ public class IceAndFire {
 
     private void setup(final FMLCommonSetupEvent event) {
         NETWORK_WRAPPER.registerMessage(packetsRegistered++, MessageDaytime.class, MessageDaytime::write, MessageDaytime::read, MessageHandler.handle(MessageDaytime.Handler::handle));
-        NETWORK_WRAPPER.registerMessage(packetsRegistered++, MessageDeathWormHitbox.class, MessageDeathWormHitbox::write, MessageDeathWormHitbox::read, MessageHandler.handle(MessageDeathWormHitbox.Handler::handle));
         NETWORK_WRAPPER.registerMessage(packetsRegistered++, MessageDragonControl.class, MessageDragonControl::write, MessageDragonControl::read, MessageHandler.handle(MessageDragonControl.Handler::handle));
         NETWORK_WRAPPER.registerMessage(packetsRegistered++, MessageDragonSetBurnBlock.class, MessageDragonSetBurnBlock::write, MessageDragonSetBurnBlock::read, MessageHandler.handle(MessageDragonSetBurnBlock.Handler::handle));
         NETWORK_WRAPPER.registerMessage(packetsRegistered++, MessageDragonSyncFire.class, MessageDragonSyncFire::write, MessageDragonSyncFire::read, MessageHandler.handle(MessageDragonSyncFire.Handler::handle));

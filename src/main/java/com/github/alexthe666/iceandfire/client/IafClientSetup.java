@@ -70,8 +70,6 @@ public class IafClientSetup {
         EntityRenderers.register(IafEntityRegistry.CYCLOPS.get(), RenderCyclops::new);
         EntityRenderers.register(IafEntityRegistry.SIREN.get(), RenderSiren::new);
         EntityRenderers.register(IafEntityRegistry.HIPPOCAMPUS.get(), RenderHippocampus::new);
-        EntityRenderers.register(IafEntityRegistry.DEATH_WORM.get(), RenderDeathWorm::new);
-        EntityRenderers.register(IafEntityRegistry.DEATH_WORM_EGG.get(), ThrownItemRenderer::new);
         EntityRenderers.register(IafEntityRegistry.COCKATRICE.get(), RenderCockatrice::new);
         EntityRenderers.register(IafEntityRegistry.COCKATRICE_EGG.get(), ThrownItemRenderer::new);
         EntityRenderers.register(IafEntityRegistry.STYMPHALIAN_BIRD.get(), RenderStymphalianBird::new);
