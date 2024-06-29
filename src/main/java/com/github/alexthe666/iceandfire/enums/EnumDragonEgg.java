@@ -5,6 +5,7 @@ import com.github.alexthe666.iceandfire.item.IafItemRegistry;
 import net.minecraft.ChatFormatting;
 import net.minecraft.util.StringRepresentable;
 import net.minecraft.world.item.Item;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.function.Supplier;
 
@@ -44,7 +45,7 @@ public enum EnumDragonEgg implements StringRepresentable {
     }
 
     @Override
-    public String getSerializedName() {
+    public @NotNull String getSerializedName() {
         return name().toLowerCase();
     }
 }

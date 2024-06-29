@@ -96,7 +96,6 @@ public class IafWorldRegistry {
         LOADED_FEATURES.put("iceandfire:pixie_village", false);
         LOADED_FEATURES.put("iceandfire:siren_island", false);
         LOADED_FEATURES.put("iceandfire:hydra_cave", false);
-        LOADED_FEATURES.put("iceandfire:spawn_death_worm", false);
         LOADED_FEATURES.put("iceandfire:spawn_dragon_skeleton_lightning", false);
         LOADED_FEATURES.put("iceandfire:spawn_dragon_skeleton_fire", false);
         LOADED_FEATURES.put("iceandfire:spawn_dragon_skeleton_ice", false);

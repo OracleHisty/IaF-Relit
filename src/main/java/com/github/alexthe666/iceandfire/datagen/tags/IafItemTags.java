@@ -133,7 +133,7 @@ public class IafItemTags extends ItemTagsProvider {
                 .add(IafItemRegistry.WITHERBONE.get());
 
         tag(Tags.Items.EGGS)
-                .add(IafItemRegistry.HIPPOGRYPH_EGG.get())
+                .add(IafItemRegistry.HIPPOGRYPH_EGG.get());
 
         // Not sure if this should be in the forge namespace or not (or if the recipes should be using tags here)
         tag(STORAGE_BLOCKS_SCALES_DRAGON.get(DragonType.FIRE))

@@ -17,7 +17,7 @@ public record DragonItems(RegistryObject<ItemSummoningCrystal> summoningCrystal,
         var blood = registerItem("%s_dragon_blood".formatted(type), ItemGeneric::new);
         var flesh = registerItem("%s_dragon_flesh".formatted(type), () -> new ItemDragonFlesh(type));
         var heart = registerItem("%s_dragon_heart".formatted(type), ItemGeneric::new);
-        var skull = registerItem("%s_dragon_heart".formatted(type), () -> new ItemDragonSkull(type));
+        var skull = registerItem("%s_dragon_skull".formatted(type), () -> new ItemDragonSkull(type));
 
         var items = new DragonItems(summoningCrystal, blood, flesh, heart, skull);
         DRAGON_ITEMS.put(type, items);

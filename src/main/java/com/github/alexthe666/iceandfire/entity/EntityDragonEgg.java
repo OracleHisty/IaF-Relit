@@ -105,6 +105,7 @@ public class EntityDragonEgg extends LivingEntity implements IBlacklistedFromSta
     }
 
     public EnumDragonEgg getEggType() {
+        System.out.println("eggbugs_gobrrt: " + this.getEntityData().get(DRAGON_TYPE) + " bugtype:eggvariant");
         return EnumDragonEgg.values()[this.getEntityData().get(DRAGON_TYPE)];
     }
 
