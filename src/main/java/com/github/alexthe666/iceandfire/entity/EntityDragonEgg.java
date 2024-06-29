@@ -105,7 +105,6 @@ public class EntityDragonEgg extends LivingEntity implements IBlacklistedFromSta
     }
 
     public EnumDragonEgg getEggType() {
-        System.out.println("eggbugs_gobrrt: " + this.getEntityData().get(DRAGON_TYPE) + " bugtype:eggvariant");
         return EnumDragonEgg.values()[this.getEntityData().get(DRAGON_TYPE)];
     }
 
@@ -136,7 +135,7 @@ public class EntityDragonEgg extends LivingEntity implements IBlacklistedFromSta
     }
 
     public void updateEggCondition() {
-        DragonType dragonType = getEggType().dragonType;
+        DragonType dragonType = getEggType().dragonType();
 
         if (dragonType == DragonType.FIRE) {
             if (level().getBlockState(blockPosition()).isBurning(level(), blockPosition())) {
@@ -235,7 +234,7 @@ public class EntityDragonEgg extends LivingEntity implements IBlacklistedFromSta
 
     @Override
     public boolean hurt(@NotNull DamageSource var1, float var2) {
-        if (var1.is(DamageTypeTags.IS_FIRE) && getEggType().dragonType == DragonType.FIRE)
+        if (var1.is(DamageTypeTags.IS_FIRE) && getEggType().dragonType() == DragonType.FIRE)
             return false;
         if (!this.level().isClientSide && !var1.is(DamageTypeTags.BYPASSES_INVULNERABILITY) && !isRemoved()) {
             this.spawnAtLocation(this.getItem().getItem(), 1);

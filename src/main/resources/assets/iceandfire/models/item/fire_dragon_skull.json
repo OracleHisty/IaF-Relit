@@ -1,7 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "iceandfire:item/dragon_skull_ice"
+    "layer0": "iceandfire:item/fire_dragon_skull"
   }
 }
-

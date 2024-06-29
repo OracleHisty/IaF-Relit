@@ -52,7 +52,7 @@ public class ModelDragonEgg<T extends LivingEntity> extends AdvancedEntityModel<
         this.Egg1.setPos(0.0F, 19.6F, 0.0F);
         this.Egg4.setPos(0.0F, -0.9F, 0.0F);
         if (entity instanceof EntityDragonEgg egg) {
-            boolean isLocationValid = switch (egg.getEggType().dragonType) {
+            boolean isLocationValid = switch (egg.getEggType().dragonType()) {
                 case FIRE -> egg.level().getBlockState(egg.blockPosition()).isBurning(entity.level(), egg.blockPosition());
                 case LIGHTNING -> egg.level().isRainingAt(egg.blockPosition());
                 default -> false;

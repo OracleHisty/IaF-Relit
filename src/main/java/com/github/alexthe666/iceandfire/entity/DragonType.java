@@ -82,7 +82,6 @@ public enum DragonType implements StringRepresentable {
     }
 
     public EnumDragonEgg getEgg(int variant) {
-        System.out.println("eggbugs_gobrrt+: " + variant + " " + eggs.length);
         if(variant > eggs.length) throw new RuntimeException("Egg variant is higher than existing ones");
         return eggs[variant];
     }
