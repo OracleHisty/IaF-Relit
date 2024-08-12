@@ -35,47 +35,21 @@ public class ServerConfig {
     public final ForgeConfigSpec.IntValue dragonTargetSearchLength;
     public final ForgeConfigSpec.IntValue dragonWanderFromHomeDistance;
     public final ForgeConfigSpec.IntValue dragonHungerTickRate;
-    public final ForgeConfigSpec.DoubleValue sirenMaxHealth;
-    public final ForgeConfigSpec.BooleanValue sirenShader;
-    public final ForgeConfigSpec.IntValue sirenMaxSingTime;
-    public final ForgeConfigSpec.IntValue sirenTimeBetweenSongs;
-    public final ForgeConfigSpec.IntValue generateSirenChance;
-    public final ForgeConfigSpec.IntValue hippocampusSpawnChance;
-    public final ForgeConfigSpec.IntValue stymphalianBirdTargetSearchLength;
-    public final ForgeConfigSpec.IntValue stymphalianBirdFeatherDropChance;
-
-    public final ForgeConfigSpec.DoubleValue stymphalianBirdBaseAttack;
-    public final ForgeConfigSpec.DoubleValue stymphalianBirdFeatherAttackStength;
-    public final ForgeConfigSpec.IntValue stymphalianBirdFlockLength;
-    public final ForgeConfigSpec.IntValue stymphalianBirdFlightHeight;
-    public final ForgeConfigSpec.BooleanValue stymphalianBirdsDataTagDrops;
-    public final ForgeConfigSpec.BooleanValue stympahlianBirdAttackAnimals;
-    public final ForgeConfigSpec.IntValue stymphalianBirdSpawnChance;
     public final ForgeConfigSpec.BooleanValue villagersFearDragons;
     public final ForgeConfigSpec.BooleanValue animalsFearDragons;
-    public final ForgeConfigSpec.BooleanValue spawnAmphitheres;
-    public final ForgeConfigSpec.IntValue amphithereSpawnRate;
-    public final ForgeConfigSpec.IntValue amphithereVillagerSearchLength ;
-    public final ForgeConfigSpec.IntValue amphithereTameTime;
-    public final ForgeConfigSpec.DoubleValue amphithereFlightSpeed;
-    public final ForgeConfigSpec.DoubleValue amphithereMaxHealth;
-    public final ForgeConfigSpec.DoubleValue amphithereAttackStrength;
     public final ForgeConfigSpec.DoubleValue dragonsteelBaseDamage;
     public final ForgeConfigSpec.IntValue dragonsteelBaseArmor;
     public final ForgeConfigSpec.DoubleValue dragonsteelBaseArmorToughness;
     public final ForgeConfigSpec.IntValue dragonsteelBaseDurability;
     public final ForgeConfigSpec.IntValue dragonsteelBaseDurabilityEquipment;
-    public final ForgeConfigSpec.BooleanValue dragonMovedWronglyFix; // FIXME :: Unused
-    public final ForgeConfigSpec.BooleanValue weezerTinkers; // FIXME :: Unused
+    public final ForgeConfigSpec.BooleanValue dragonMovedWronglyFix;
     public final ForgeConfigSpec.DoubleValue dragonBlockBreakingDropChance;
     public final ForgeConfigSpec.BooleanValue completeDragonPathfinding; // FIXME :: Unused
     public final ForgeConfigSpec.BooleanValue explosiveDragonBreath;
-    public final ForgeConfigSpec.DoubleValue weezerTinkersDisarmChance; // FIXME :: Unused
     public final ForgeConfigSpec.BooleanValue chunkLoadSummonCrystal;
     public ForgeConfigSpec.IntValue dangerousWorldGenDistanceLimit;
     public ForgeConfigSpec.IntValue dangerousWorldGenSeparationLimit;
     public final ForgeConfigSpec.DoubleValue dragonFlightSpeedMod;
-    public final ForgeConfigSpec.DoubleValue hippocampusSwimSpeedMod;
     public ForgeConfigSpec.IntValue dragonPathfindingThreads;
     public ForgeConfigSpec.IntValue maxDragonPathingNodes;
     public ForgeConfigSpec.BooleanValue pathfindingDebug;
@@ -147,38 +121,6 @@ public class ServerConfig {
         builder.pop();
         builder.pop();
         builder.push("Mobs");
-
-        builder.push("Sirens");
-        this.sirenMaxHealth = buildDouble(builder, "Siren Max Health", "all", 50, 1, 10000, "Maximum siren health");
-        this.sirenShader = buildBoolean(builder, "Use Siren Shader", "all", true, "True to make the screen pink when sirens attract players");
-        this.generateSirenChance = buildInt(builder, "Spawn Sirens Chance", "all", 400, 1, 10000, "1 out of this number chance per chunk for generation");
-        this.sirenMaxSingTime = buildInt(builder, "Siren Max Sing Time", "all", 12000, 100, 24000, "how long(in ticks) can a siren use its sing effect on a player, without a cooldown.");
-        this.sirenTimeBetweenSongs = buildInt(builder, "Siren Time Between Songs", "all", 2000, 100, 24000, "how long(in ticks) a siren has to wait after failing to lure in a player");
-        builder.pop();
-        builder.push("Stymphalians");
-        this.stymphalianBirdTargetSearchLength = buildInt(builder, "Stymphalian Bird Target Search Length", "all", 64, 1, 10000, "How many blocks away can stymphalian birds spot potential prey. Note that increasing this could cause lag.");
-        this.stymphalianBirdFeatherDropChance = buildInt(builder, "Stymphalian Bird Feather Drop Chance", "all", 25, 0, 10000, "1/this number chance for a stymphalian feather to turn into an item before despawning. Zero means never.");
-        this.stymphalianBirdBaseAttack = buildDouble(builder, "Stymphalian Bird Base Attack", "all", 6, 0, 10000, "Base Attack of Stymphalian Bird");
-        this.stymphalianBirdFeatherAttackStength = buildDouble(builder, "Stymphalian Bird Feather Attack Strength", "all", 1, 0, 10000, "Stymphalian bird feather attack strength.");
-        this.stymphalianBirdFlockLength = buildInt(builder, "Stymphalian Bird Flock Length", "all", 40, 1, 10000, "How far away stymphalian birds will consider other birds to be in the same flock.");
-        this.stymphalianBirdFlightHeight = buildInt(builder, "Max Stymphalian Bird Flight Height", "all", 80, 10, Integer.MAX_VALUE, "How high stymphalian birds can fly, in Y height.");
-        this.stymphalianBirdsDataTagDrops = buildBoolean(builder, "Stymphalian Birds drop ore dict items", "all", true, "True if stymphalian birds can drop items registered in the ore dictionary to ingotCopper, ingotBronze, nuggetCopper, nuggetBronze.");
-        this.stympahlianBirdAttackAnimals = buildBoolean(builder, "Stymphalian Birds Target Animals", "all", false, "True if stymphalian birds are allowed to target and attack animals");
-        this.stymphalianBirdSpawnChance = buildInt(builder, "Spawn Stymhphalian Bird Chance", "all", 100, 1, 10000, "1 out of this number chance per chunk for generation");
-        builder.pop();
-        builder.push("Amphitheres");
-        this.spawnAmphitheres = buildBoolean(builder, "Spawn Amphitheres", "all", true, "True if amphitheres are allowed to spawn");
-        this.amphithereSpawnRate = buildInt(builder, "Amphithere Spawn Weight", "all", 50, 1, 10000, "Amphithere spawn weight. Lower = lower chance to spawn");
-        this.amphithereVillagerSearchLength = buildInt(builder, "Amphithere Villager Search Length", "all", 64, 1, 10000, "How many blocks away can ampitheres detect villagers being hurt. Note that increasing this could cause lag.");
-        this.amphithereTameTime = buildInt(builder, "Amphithere Tame Time", "all", 400, 1, 10000, "How many ticks it takes while riding an untamed amphithere to tame it.");
-        this.amphithereFlightSpeed = buildDouble(builder, "Amphithere Flight Speed", "all", 1.75F, 0.0F, 3.0F, "How fast amphitheres fly.");
-        this.amphithereMaxHealth = buildDouble(builder, "Amphithere Max Health", "all", 50, 1, 10000, "Maximum amphithere health");
-        this.amphithereAttackStrength = buildDouble(builder, "Amphithere Attack Strength", "all", 7, 1, 10000, "Amphithere attack strength");
-        builder.pop();
-        builder.push("Hippocampus");
-        this.hippocampusSpawnChance = buildInt(builder, "Spawn Hippocampus Chance", "all", 40, 1, 10000, "1 out of this number chance per chunk for generation");
-        this.hippocampusSwimSpeedMod = buildDouble(builder, "Hippocampus Swim Speed Modifier", "all", 1F, 0.0F, 2.0F, "Change this to slow down or speed up hippocampus swimming.");
-        builder.pop();
         builder.push("Others");
 
         this.villagerHouseWeight = buildInt(builder, "Villager Scribe House Weight", "all", 5, 0, 10000, "Villager Scribe House generation weight. Lower = lower chance to spawn");
@@ -192,8 +134,6 @@ public class ServerConfig {
         this.dragonsteelBaseArmorToughness = buildDouble(builder, "Dragonsteel Base Armor Toughness", "all", 6, 0, Double.MAX_VALUE, "Default armor toughness value of dragonsteel.");
         this.dragonsteelBaseDurability = buildInt(builder, "Dragonsteel Base Durability", "all", 8000, 1, Integer.MAX_VALUE, "Default durability value of dragonsteel tools.");
         this.dragonsteelBaseDurabilityEquipment = buildInt(builder, "Dragonsteel Base Durability Equipment", "all", 8000, 1, Integer.MAX_VALUE, "Default durability value of dragonsteel equipment.");
-        this.weezerTinkers = buildBoolean(builder, "Weezer", "all", true, "Disable this to remove easter egg with tinkers installed.");
-        this.weezerTinkersDisarmChance = buildDouble(builder, "Easter Egg Tinkers Tool Disarm chance", "all", 0.2F, 0F, 1F, "Percentage of critical strike that will disarm with easter egg tinkers material.");
         this.chunkLoadSummonCrystal = buildBoolean(builder, "Chunk Load Summon Crystal", "all", true, "True if the summon crystal can load chunks to find dragons.");
         this.dragonWeaponFireAbility = buildBoolean(builder, "Dragon Bone Fire Abilities", "all", true, "True if the dragon bone fire sword ignites attackers.");
         this.dragonWeaponIceAbility = buildBoolean(builder, "Dragon Bone Ice Abilities", "all", true, "True if the dragon bone ice sword freezes attackers.");

@@ -9,7 +9,6 @@ public class IafGuiRegistry {
         MenuScreens.register(IafContainerRegistry.IAF_LECTERN_CONTAINER.get(), GuiLectern::new);
         MenuScreens.register(IafContainerRegistry.PODIUM_CONTAINER.get(), GuiPodium::new);
         MenuScreens.register(IafContainerRegistry.DRAGON_CONTAINER.get(), GuiDragon::new);
-        MenuScreens.register(IafContainerRegistry.HIPPOCAMPUS_CONTAINER.get(), GuiHippocampus::new);
         MenuScreens.register(IafContainerRegistry.DRAGON_FORGE_CONTAINER.get(), GuiDragonForge::new);
     }
 }
