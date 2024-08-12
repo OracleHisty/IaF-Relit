@@ -89,11 +89,8 @@ public final class IafSoundRegistry {
 
 
 
-    public static final SoundEvent HIPPOCAMPUS_IDLE = createSoundEvent("hippocampus_idle");
 
-    public static final SoundEvent HIPPOCAMPUS_HURT = createSoundEvent("hippocampus_hurt");
 
-    public static final SoundEvent HIPPOCAMPUS_DIE = createSoundEvent("hippocampus_die");
 
     public static final SoundEvent NAGA_IDLE = createSoundEvent("naga_idle");
 

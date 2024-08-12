@@ -1,7 +1,6 @@
 {
   "values": [
     "iceandfire:armor_silver_metal_chestplate",
-    "iceandfire:armor_copper_metal_chestplate",
     "iceandfire:sheep_chestplate",
     "iceandfire:dragonsteel_fire_chestplate",
     "iceandfire:dragonsteel_ice_chestplate",
@@ -16,7 +15,6 @@
     "iceandfire:armor_silver_chestplate",
     "iceandfire:armor_electric_chestplate",
     "iceandfire:armor_amythest_chestplate",
-    "iceandfire:armor_copper_chestplate",
     "iceandfire:armor_black_chestplate"
   ]
 }

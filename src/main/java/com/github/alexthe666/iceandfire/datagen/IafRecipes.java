@@ -76,21 +76,6 @@ public class IafRecipes extends RecipeProvider {
                 Items.CHAINMAIL_BOOTS
         );
 
-        armorSet(consumer, Tags.Items.INGOTS_COPPER,
-                IafItemRegistry.COPPER_HELMET.get(),
-                IafItemRegistry.COPPER_CHESTPLATE.get(),
-                IafItemRegistry.COPPER_LEGGINGS.get(),
-                IafItemRegistry.COPPER_BOOTS.get()
-        );
-
-        toolSet(consumer, Tags.Items.INGOTS_COPPER, Tags.Items.RODS_WOODEN,
-                IafItemRegistry.COPPER_SWORD.get(),
-                IafItemRegistry.COPPER_PICKAXE.get(),
-                IafItemRegistry.COPPER_AXE.get(),
-                IafItemRegistry.COPPER_SHOVEL.get(),
-                IafItemRegistry.COPPER_HOE.get()
-        );
-
         dragonArmorSet(consumer, Tags.Items.STORAGE_BLOCKS_COPPER,
                 IafItemRegistry.DRAGONARMOR_COPPER_0.get(),
                 IafItemRegistry.DRAGONARMOR_COPPER_1.get(),

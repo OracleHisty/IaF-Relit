@@ -48,7 +48,6 @@ public class IafWorldRegistry {
             () -> new SpawnDragonSkeleton(IafEntityRegistry.FIRE_DRAGON.get(), NoneFeatureConfiguration.CODEC));
     public static final RegistryObject<Feature<NoneFeatureConfiguration>> SPAWN_DRAGON_SKELETON_I = register("spawn_dragon_skeleton_ice",
             () -> new SpawnDragonSkeleton(IafEntityRegistry.ICE_DRAGON.get(), NoneFeatureConfiguration.CODEC));
-    public static final RegistryObject<Feature<NoneFeatureConfiguration>> SPAWN_HIPPOCAMPUS = register("spawn_hippocampus", () -> new SpawnHippocampus(NoneFeatureConfiguration.CODEC));
 
     private static <C extends FeatureConfiguration, F extends Feature<C>> RegistryObject<F> register(final String name, final Supplier<? extends F> supplier) {
         return FEATURES.register(name, supplier);
@@ -58,10 +57,6 @@ public class IafWorldRegistry {
         LevelData spawnPoint = level.getLevelData();
         BlockPos spawnRelative = new BlockPos(spawnPoint.getXSpawn(), position.getY(), spawnPoint.getYSpawn());
         return !spawnRelative.closerThan(position, IafConfig.dangerousWorldGenDistanceLimit);
-    }
-
-    public static boolean isFarEnoughFromDangerousGen(final ServerLevelAccessor level, final BlockPos position, final String id) {
-        return isFarEnoughFromDangerousGen(level, position, id, IafWorldData.FeatureType.SURFACE);
     }
 
     public static boolean isFarEnoughFromDangerousGen(final ServerLevelAccessor level, final BlockPos position, final String id, final IafWorldData.FeatureType type) {
@@ -87,7 +82,6 @@ public class IafWorldRegistry {
         LOADED_FEATURES.put("iceandfire:spawn_dragon_skeleton_lightning", false);
         LOADED_FEATURES.put("iceandfire:spawn_dragon_skeleton_fire", false);
         LOADED_FEATURES.put("iceandfire:spawn_dragon_skeleton_ice", false);
-        LOADED_FEATURES.put("iceandfire:spawn_hippocampus", false);
     }
 
     // Only a global variable because it's too bothersome to add it to the method call (alternative: method returns identifier or null)
@@ -142,10 +136,6 @@ public class IafWorldRegistry {
         }
         if (safelyTestBiome(BiomeConfig.iceDragonSkeletonBiomes, biome)) {
             addFeatureToBiome(IafPlacedFeatures.PLACED_SPAWN_DRAGON_SKELETON_I, features, builder);
-        }
-
-        if (safelyTestBiome(BiomeConfig.hippocampusBiomes, biome)) {
-            addFeatureToBiome(IafPlacedFeatures.PLACED_SPAWN_HIPPOCAMPUS, features, builder);
         }
 
         if (!ADDED_FEATURES.isEmpty()) {

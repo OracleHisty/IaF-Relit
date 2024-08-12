@@ -18,7 +18,6 @@ public class IafContainerRegistry {
     public static final RegistryObject<MenuType<ContainerLectern>> IAF_LECTERN_CONTAINER = register("iaf_lectern", ContainerLectern::new);
     public static final RegistryObject<MenuType<ContainerPodium>> PODIUM_CONTAINER = register("podium", ContainerPodium::new);
     public static final RegistryObject<MenuType<ContainerDragon>> DRAGON_CONTAINER = register("dragon", ContainerDragon::new);
-    public static final RegistryObject<MenuType<HippocampusContainerMenu>> HIPPOCAMPUS_CONTAINER = register("hippocampus", HippocampusContainerMenu::new);
     public static final RegistryObject<MenuType<ContainerDragonForge>> DRAGON_FORGE_CONTAINER = register("dragon_forge", ContainerDragonForge::new);
 
     public static <C extends AbstractContainerMenu> RegistryObject<MenuType<C>> register(String name, MenuType.MenuSupplier<C> type) {

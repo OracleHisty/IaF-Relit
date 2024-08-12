@@ -64,10 +64,7 @@ public class IafItemTags extends ItemTagsProvider {
     public static TagKey<Item> DRAGON_HEARTS = createKey("dragon_hearts");
 
     public static TagKey<Item> BREED_AMPITHERE = createKey("breed_ampithere");
-    public static TagKey<Item> BREED_HIPPOCAMPUS = createKey("breed_hippocampus");
-    public static TagKey<Item> HEAL_HIPPOCAMPUS = createKey("heal_hippocampus");
     public static TagKey<Item> TEMPT_DRAGON = createKey("tempt_dragon");
-    public static TagKey<Item> TEMPT_HIPPOCAMPUS = createKey("tempt_hippocampus");
 
     public IafItemTags(PackOutput output, CompletableFuture<HolderLookup.Provider> lookupProvider, CompletableFuture<TagsProvider.TagLookup<Block>> blockTags, ExistingFileHelper helper) {
         super(output, lookupProvider, blockTags, IceAndFire.MODID, helper);
@@ -173,21 +170,8 @@ public class IafItemTags extends ItemTagsProvider {
         tag(BREED_AMPITHERE)
                 .add(Items.COOKIE);
 
-        tag(BREED_HIPPOCAMPUS)
-                .add(Items.PRISMARINE_CRYSTALS);
-
-        tag(HEAL_AMPITHERE)
-                .add(Items.COCOA_BEANS);
-
-        tag(HEAL_HIPPOCAMPUS)
-                .add(Items.KELP);
-
         tag(TEMPT_DRAGON)
                 .add(IafItemRegistry.FIRE_STEW.get());
-
-        tag(TEMPT_HIPPOCAMPUS)
-                .add(Items.KELP)
-                .add(Items.PRISMARINE_CRYSTALS);
 
         tag(SCALES_DRAGON.get(DragonType.FIRE))
                 .add(IafItemRegistry.DRAGONSCALES_RED.get())

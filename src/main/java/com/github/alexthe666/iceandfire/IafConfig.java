@@ -39,7 +39,6 @@ public class IafConfig {
     public static int dragonTargetSearchLength = 128;
     public static int dragonWanderFromHomeDistance = 40;
     public static int dragonHungerTickRate = 3000;
-    public static int hippocampusSpawnChance = 40;
     public static boolean villagersFearDragons = true;
     public static boolean animalsFearDragons = true;
     public static double dragonsteelBaseDamage = 25F;
@@ -55,7 +54,6 @@ public class IafConfig {
     public static double dangerousWorldGenDistanceLimit = 1000;
     public static double dangerousWorldGenSeparationLimit = 300;
     public static double dragonFlightSpeedMod = 1F;
-    public static double hippocampusSwimSpeedMod = 1F;
 
     public static int dragonPathfindingThreads = 3;
     public static int maxDragonPathingNodes = 5000;
@@ -110,7 +108,6 @@ public class IafConfig {
             dragonTargetSearchLength = ConfigHolder.SERVER.dragonTargetSearchLength.get();
             dragonWanderFromHomeDistance = ConfigHolder.SERVER.dragonWanderFromHomeDistance.get();
             dragonHungerTickRate = ConfigHolder.SERVER.dragonHungerTickRate.get();
-            hippocampusSpawnChance = ConfigHolder.SERVER.hippocampusSpawnChance.get();
             villagersFearDragons = ConfigHolder.SERVER.villagersFearDragons.get();
             animalsFearDragons = ConfigHolder.SERVER.animalsFearDragons.get();
             dragonsteelBaseDamage = ConfigHolder.SERVER.dragonsteelBaseDamage.get();
@@ -126,7 +123,6 @@ public class IafConfig {
             dangerousWorldGenDistanceLimit = ConfigHolder.SERVER.dangerousWorldGenDistanceLimit.get();
             dangerousWorldGenSeparationLimit = ConfigHolder.SERVER.dangerousWorldGenSeparationLimit.get();
             dragonFlightSpeedMod = ConfigHolder.SERVER.dragonFlightSpeedMod.get();
-            hippocampusSwimSpeedMod = ConfigHolder.SERVER.hippocampusSwimSpeedMod.get();
             dragonPathfindingThreads = ConfigHolder.SERVER.dragonPathfindingThreads.get();
             maxDragonPathingNodes = ConfigHolder.SERVER.maxDragonPathingNodes.get();
             dragonWeaponFireAbility = ConfigHolder.SERVER.dragonWeaponFireAbility.get();

@@ -40,7 +40,6 @@ public class IafBiomeModifierSerializers {
                 IafPlacedFeatures.PLACED_SPAWN_DRAGON_SKELETON_L,
                 IafPlacedFeatures.PLACED_SPAWN_DRAGON_SKELETON_F,
                 IafPlacedFeatures.PLACED_SPAWN_DRAGON_SKELETON_I,
-                IafPlacedFeatures.PLACED_SPAWN_HIPPOCAMPUS,
                 IafPlacedFeatures.PLACED_SILVER_ORE,
                 IafPlacedFeatures.PLACED_SAPPHIRE_ORE,
                 IafPlacedFeatures.PLACED_FIRE_LILY,

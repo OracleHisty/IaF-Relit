@@ -1,7 +1,6 @@
 {
   "values": [
     "iceandfire:armor_silver_metal_boots",
-    "iceandfire:armor_copper_metal_boots",
     "iceandfire:sheep_boots",
     "iceandfire:dragonsteel_fire_boots",
     "iceandfire:dragonsteel_ice_boots",
@@ -16,7 +15,6 @@
     "iceandfire:armor_silver_boots",
     "iceandfire:armor_electric_boots",
     "iceandfire:armor_amythest_boots",
-    "iceandfire:armor_copper_boots",
     "iceandfire:armor_black_boots"
   ]
 }

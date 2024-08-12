@@ -333,27 +333,6 @@ public class GuiBestiary extends Screen {
                     ms.pose().popPose();
                 }
                 break;
-            case HIPPOCAMPUS:
-                if (bookPages == 0) {
-                    ms.pose().pushPose();
-                    drawImage(ms, DRAWINGS_1, 210, 25, 0, 70, 57, 49, 512F);
-                    drawImage(ms, DRAWINGS_1, 265, 25, 57, 70, 57, 49, 512F);
-                    drawImage(ms, DRAWINGS_1, 320, 25, 0, 119, 57, 49, 512F);
-                    drawImage(ms, DRAWINGS_1, 210, 80, 57, 119, 57, 49, 512F);
-                    drawImage(ms, DRAWINGS_1, 265, 80, 0, 168, 57, 49, 512F);
-                    drawImage(ms, DRAWINGS_1, 320, 80, 57, 168, 57, 49, 512F);
-                    ms.pose().popPose();
-                }
-                if (bookPages == 1) {
-                    // TODO :: Loop through tag
-                    drawItemStack(ms, new ItemStack(Items.KELP), 37, 33, 2.25F);
-                    drawItemStack(ms, new ItemStack(Items.PRISMARINE_CRYSTALS), 37, 73, 2.25F);
-                }
-                if (bookPages == 2) {
-                    drawItemStack(ms, new ItemStack(Items.STICK), 35, 25, 2.25F);
-                    drawItemStack(ms, new ItemStack(IafItemRegistry.SHINY_SCALES.get()), 35, 75, 2.25F);
-                }
-                break;
             default:
                 break;
         }

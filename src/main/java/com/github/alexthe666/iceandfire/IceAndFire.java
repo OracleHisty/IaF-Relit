@@ -85,7 +85,6 @@ public class IceAndFire {
 
         final DeferredRegister<Codec<? extends BiomeModifier>> biomeModifiers = DeferredRegister.create(ForgeRegistries.Keys.BIOME_MODIFIER_SERIALIZERS, IceAndFire.MODID);
         biomeModifiers.register(modBus);
-        biomeModifiers.register("iaf_mob_spawns", IafMobSpawnBiomeModifier::makeCodec);
         biomeModifiers.register("iaf_features", IafFeatureBiomeModifier::makeCodec);
 
         IafItemRegistry.register(modBus);
@@ -145,7 +144,6 @@ public class IceAndFire {
         NETWORK_WRAPPER.registerMessage(packetsRegistered++, MessageUpdateLectern.class, MessageUpdateLectern::write, MessageUpdateLectern::read, MessageHandler.handle(MessageUpdateLectern.Handler::handle));
         NETWORK_WRAPPER.registerMessage(packetsRegistered++, MessageSyncPath.class, MessageSyncPath::write, MessageSyncPath::read, MessageHandler.handle(MessageSyncPath::handle));
         NETWORK_WRAPPER.registerMessage(packetsRegistered++, MessageSyncPathReached.class, MessageSyncPathReached::write, MessageSyncPathReached::read, MessageHandler.handle(MessageSyncPathReached::handle));
-        NETWORK_WRAPPER.registerMessage(packetsRegistered++, MessageSwingArm.class, MessageSwingArm::write, MessageSwingArm::read, MessageHandler.handle(MessageSwingArm.Handler::handle));
         NETWORK_WRAPPER.registerMessage(packetsRegistered++, SyncEntityData.class, SyncEntityData::encode, SyncEntityData::decode, SyncEntityData::handle);
         event.enqueueWork(() -> {
             PROXY.setup();

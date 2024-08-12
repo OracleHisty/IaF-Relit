@@ -1,7 +1,6 @@
 {
   "values": [
     "iceandfire:armor_silver_metal_leggings",
-    "iceandfire:armor_copper_metal_leggings",
     "iceandfire:sheep_leggings",
     "iceandfire:dragonsteel_fire_leggings",
     "iceandfire:dragonsteel_ice_leggings",
@@ -16,7 +15,6 @@
     "iceandfire:armor_silver_leggings",
     "iceandfire:armor_electric_leggings",
     "iceandfire:armor_amythest_leggings",
-    "iceandfire:armor_copper_leggings",
     "iceandfire:armor_black_leggings"
   ]
 }
