@@ -1,8 +1,0 @@
-{
-  "__comment": "all mobs that cannot see (immune to damage from cockatrices).",
-  "replace": false,
-  "values": [
-    "iceandfire:dragon_skull",
-    "iceandfire:mob_skull"
-  ]
-}
