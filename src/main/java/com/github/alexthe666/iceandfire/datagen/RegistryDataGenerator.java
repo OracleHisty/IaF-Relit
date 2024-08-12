@@ -15,10 +15,7 @@ public class RegistryDataGenerator extends DatapackBuiltinEntriesProvider {
     public static final RegistrySetBuilder BUILDER = new RegistrySetBuilder()
             .add(Registries.CONFIGURED_FEATURE, IafConfiguredFeatures::bootstrap)
             .add(Registries.PLACED_FEATURE, IafPlacedFeatures::bootstrap)
-            .add(Registries.STRUCTURE, IafStructures::bootstrap)
-            .add(Registries.STRUCTURE_SET, IafStructureSets::bootstrap)
             .add(Registries.PROCESSOR_LIST, IafProcessorLists::bootstrap)
-            .add(Registries.TEMPLATE_POOL, IafStructurePieces::bootstrap)
             .add(ForgeRegistries.Keys.BIOME_MODIFIERS, IafBiomeModifierSerializers::bootstrap);
 
     public RegistryDataGenerator(PackOutput output, CompletableFuture<HolderLookup.Provider> provider) {

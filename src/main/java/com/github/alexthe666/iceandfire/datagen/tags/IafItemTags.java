@@ -105,7 +105,6 @@ public class IafItemTags extends ItemTagsProvider {
 
         tag(Tags.Items.INGOTS)
 //                .add(IafItemRegistry.COPPER_INGOT.get())
-                .add(IafItemRegistry.GHOST_INGOT.get())
                 .add(IafItemRegistry.SILVER_INGOT.get())
                 .add(IafItemRegistry.DRAGONSTEEL_ICE_INGOT.get())
                 .add(IafItemRegistry.DRAGONSTEEL_FIRE_INGOT.get())

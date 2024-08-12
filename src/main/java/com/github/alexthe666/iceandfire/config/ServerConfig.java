@@ -79,8 +79,6 @@ public class ServerConfig {
     public final ForgeConfigSpec.BooleanValue weezerTinkers; // FIXME :: Unused
     public final ForgeConfigSpec.DoubleValue dragonBlockBreakingDropChance;
     public final ForgeConfigSpec.BooleanValue completeDragonPathfinding; // FIXME :: Unused
-    public final ForgeConfigSpec.DoubleValue hydraMaxHealth;
-    public final ForgeConfigSpec.IntValue generateHydraChance;
     public final ForgeConfigSpec.BooleanValue explosiveDragonBreath;
     public final ForgeConfigSpec.DoubleValue weezerTinkersDisarmChance; // FIXME :: Unused
     public final ForgeConfigSpec.BooleanValue chunkLoadSummonCrystal;
@@ -88,10 +86,6 @@ public class ServerConfig {
     public ForgeConfigSpec.IntValue dangerousWorldGenSeparationLimit;
     public final ForgeConfigSpec.DoubleValue dragonFlightSpeedMod;
     public final ForgeConfigSpec.DoubleValue hippocampusSwimSpeedMod;
-    public final ForgeConfigSpec.DoubleValue ghostMaxHealth;
-    public final ForgeConfigSpec.DoubleValue ghostAttackStrength;
-    public final ForgeConfigSpec.BooleanValue generateGraveyards;
-    public final ForgeConfigSpec.BooleanValue ghostSpawnFromPlayerDeaths;
     public ForgeConfigSpec.IntValue dragonPathfindingThreads;
     public ForgeConfigSpec.IntValue maxDragonPathingNodes;
     public ForgeConfigSpec.BooleanValue pathfindingDebug;
@@ -120,7 +114,6 @@ public class ServerConfig {
 
 
 
-        this.generateGraveyards = buildBoolean(builder, "Generate Graveyards", "all", true, "Whether to generate graveyards or not");
 
 
         builder.pop();
@@ -212,12 +205,6 @@ public class ServerConfig {
         builder.pop();
         builder.push("Others");
 
-        this.hydraMaxHealth = buildDouble(builder, "Hydra Max Health", "all", 250, 1, 10000, "Maximum hydra health");
-        this.generateHydraChance = buildInt(builder, "Hydra Caves Gen Chance", "all", 60, 1, 10000, "One out of this number chance per chunk to generate a hydra cave.");
-
-        this.ghostMaxHealth = buildDouble(builder, "Ghost Max Health", "all", 30F, 1.0F, 10000.0F, "Maximum ghost health.");
-        this.ghostAttackStrength = buildDouble(builder, "Ghost Attack Strength", "all", 3F, 0.0F, 10000.0F, "Maximum ghost attack strength.");
-        this.ghostSpawnFromPlayerDeaths = buildBoolean(builder, "Ghost Spawn from PvP deaths", "all", true, "True if ghosts can rarely spawn from brutal PvP deaths.");
         this.villagerHouseWeight = buildInt(builder, "Villager Scribe House Weight", "all", 5, 0, 10000, "Villager Scribe House generation weight. Lower = lower chance to spawn");
 
         this.allowAttributeOverriding = buildBoolean(builder, "Allow Attribute Overriding", "all", true, "Allows attributes for mobs to be overridden via the config file. One might want to disable this if other mods are enabled that change mob attributes e.g armor, health etc...");

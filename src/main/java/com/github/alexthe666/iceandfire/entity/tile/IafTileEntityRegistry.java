@@ -24,7 +24,6 @@ public class IafTileEntityRegistry {
     public static final RegistryObject<BlockEntityType<BlockEntityDragonforge>> DRAGONFORGE_CORE = registerTileEntity(() -> BlockEntityType.Builder.of(BlockEntityDragonforge::new, DragonForge.forges().stream().flatMap(a -> Stream.of(a.core(), a.coreDisabled())).map(RegistryObject::get).toArray(com.github.alexthe666.iceandfire.block.BlockDragonforgeCore[]::new)), "dragonforge_core");
     public static final RegistryObject<BlockEntityType<TileEntityDragonforgeBrick>> DRAGONFORGE_BRICK = registerTileEntity(() -> BlockEntityType.Builder.of(TileEntityDragonforgeBrick::new, DragonForge.forges().stream().map(DragonForge::bricks).map(RegistryObject::get).toArray(com.github.alexthe666.iceandfire.block.BlockDragonforgeBricks[]::new)), "dragonforge_brick");
     public static final RegistryObject<BlockEntityType<TileEntityDragonforgeInput>> DRAGONFORGE_INPUT = registerTileEntity(() -> BlockEntityType.Builder.of(TileEntityDragonforgeInput::new, DragonForge.forges().stream().map(DragonForge::input).map(RegistryObject::get).toArray(com.github.alexthe666.iceandfire.block.BlockDragonforgeInput[]::new)), "dragonforge_input");
-    public static final RegistryObject<BlockEntityType<TileEntityGhostChest>> GHOST_CHEST = registerTileEntity(() -> BlockEntityType.Builder.of(TileEntityGhostChest::new, IafBlockRegistry.GHOST_CHEST.get()), "ghost_chest");
 
 
     public static <T extends BlockEntity> RegistryObject<BlockEntityType<T>> registerTileEntity(

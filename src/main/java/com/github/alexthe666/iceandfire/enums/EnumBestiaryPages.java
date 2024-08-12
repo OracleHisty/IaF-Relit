@@ -29,10 +29,8 @@ public enum EnumBestiaryPages {
     STYMPHALIANBIRD(1),
     AMPHITHERE(2),
     SEASERPENT(2),
-    HYDRA(2),
     LIGHTNINGDRAGON(5),
-    LIGHTNINGDRAGONEGG(1),
-    GHOST(1);
+    LIGHTNINGDRAGONEGG(1);
 
     public static final ImmutableList<EnumBestiaryPages> ALL_PAGES = ImmutableList.copyOf(EnumBestiaryPages.values());
     public static final ImmutableList<Integer> ALL_INDEXES = ImmutableList

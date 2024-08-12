@@ -3,7 +3,6 @@ package com.github.alexthe666.iceandfire.block;
 import com.github.alexthe666.iceandfire.IceAndFire;
 import com.github.alexthe666.iceandfire.entity.DragonType;
 import com.github.alexthe666.iceandfire.enums.EnumDragonEgg;
-import com.github.alexthe666.iceandfire.item.BlockItemWithRender;
 import com.github.alexthe666.iceandfire.item.IafItemRegistry;
 import com.github.alexthe666.iceandfire.item.IafTabRegistry;
 import com.github.alexthe666.iceandfire.misc.IafSoundRegistry;
@@ -97,8 +96,6 @@ public class IafBlockRegistry {
     public static final RegistryObject<Block> DRAGONSTEEL_LIGHTNING_BLOCK = register("dragonsteel_lightning_block", () -> BlockGeneric.builder(10.0F, 1000.0F, SoundType.METAL, MapColor.METAL, null, null, false));
     public static final RegistryObject<TorchBlock> BURNT_TORCH = registerWallBlock("burnt_torch", BlockBurntTorch::new);
     public static final RegistryObject<BlockBurntTorchWall> BURNT_TORCH_WALL = registerWallTorch("burnt_torch_wall", BlockBurntTorchWall::new);
-    public static final RegistryObject<Block> GHOST_CHEST = registerWithRender("ghost_chest", BlockGhostChest::new);
-    public static final RegistryObject<Block> GRAVEYARD_SOIL = register("graveyard_soil", BlockGraveyardSoil::new);
 
     public static void register(IEventBus modBus) {
         BLOCKS.register(modBus);
@@ -115,13 +112,6 @@ public class IafBlockRegistry {
     public static <T extends TorchBlock> RegistryObject<T> registerWallBlock(String name, Supplier<T> block) {
         RegistryObject<T> ret = BLOCKS.register(name, block);
         IafItemRegistry.registerItem(name, () -> new StandingAndWallBlockItem(ret.get(), ((IWallBlock) ret.get()).wallBlock(), new Item.Properties(), Direction.DOWN), false);
-        IafTabRegistry.TAB_BLOCKS_LIST.add(ret);
-        return ret;
-    }
-
-    public static <T extends Block> RegistryObject<T> registerWithRender(String name, Supplier<T> block) {
-        RegistryObject<T> ret = BLOCKS.register(name, block);
-        IafItemRegistry.registerItem(name, () -> new BlockItemWithRender(ret.get(), new Item.Properties()), false);
         IafTabRegistry.TAB_BLOCKS_LIST.add(ret);
         return ret;
     }

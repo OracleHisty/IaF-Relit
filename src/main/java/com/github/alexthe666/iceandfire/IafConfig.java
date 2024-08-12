@@ -82,8 +82,6 @@ public class IafConfig {
     public static boolean weezerTinkers = true;
     public static double dragonBlockBreakingDropChance = 0.1D;
     public static boolean dragonAuto3rdPerson = true;
-    public static double hydraMaxHealth = 250D;
-    public static int generateHydraChance = 120;
     public static boolean explosiveDragonBreath = false;
     public static double weezerTinkersDisarmChance = 0.2F;
     public static boolean chunkLoadSummonCrystal = true;
@@ -91,10 +89,6 @@ public class IafConfig {
     public static double dangerousWorldGenSeparationLimit = 300;
     public static double dragonFlightSpeedMod = 1F;
     public static double hippocampusSwimSpeedMod = 1F;
-    public static boolean generateGraveyards = true;
-    public static double ghostMaxHealth = 30;
-    public static double ghostAttackStrength = 3;
-    public static boolean ghostsFromPlayerDeaths = true;
 
     public static int dragonPathfindingThreads = 3;
     public static int maxDragonPathingNodes = 5000;
@@ -192,8 +186,6 @@ public class IafConfig {
             weezerTinkers = ConfigHolder.SERVER.weezerTinkers.get();
             dragonBlockBreakingDropChance = ConfigHolder.SERVER.dragonBlockBreakingDropChance.get();
 
-            hydraMaxHealth = ConfigHolder.SERVER.hydraMaxHealth.get();
-            generateHydraChance = ConfigHolder.SERVER.generateHydraChance.get();
             explosiveDragonBreath = ConfigHolder.SERVER.explosiveDragonBreath.get();
             weezerTinkersDisarmChance = ConfigHolder.SERVER.weezerTinkersDisarmChance.get();
             chunkLoadSummonCrystal = ConfigHolder.SERVER.chunkLoadSummonCrystal.get();
@@ -201,10 +193,6 @@ public class IafConfig {
             dangerousWorldGenSeparationLimit = ConfigHolder.SERVER.dangerousWorldGenSeparationLimit.get();
             dragonFlightSpeedMod = ConfigHolder.SERVER.dragonFlightSpeedMod.get();
             hippocampusSwimSpeedMod = ConfigHolder.SERVER.hippocampusSwimSpeedMod.get();
-            generateGraveyards = ConfigHolder.SERVER.generateGraveyards.get();
-            ghostMaxHealth = ConfigHolder.SERVER.ghostMaxHealth.get();
-            ghostAttackStrength = ConfigHolder.SERVER.ghostAttackStrength.get();
-            ghostsFromPlayerDeaths = ConfigHolder.SERVER.ghostSpawnFromPlayerDeaths.get();
             dragonPathfindingThreads = ConfigHolder.SERVER.dragonPathfindingThreads.get();
             maxDragonPathingNodes = ConfigHolder.SERVER.maxDragonPathingNodes.get();
             dragonWeaponFireAbility = ConfigHolder.SERVER.dragonWeaponFireAbility.get();

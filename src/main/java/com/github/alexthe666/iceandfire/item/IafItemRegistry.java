@@ -49,8 +49,6 @@ public class IafItemRegistry {
     public static CustomToolMaterial STYMHALIAN_SWORD_TOOL_MATERIAL = new CustomToolMaterial("StymphalianSword", 2, 500, 2, 10.0F, 10);
     public static CustomToolMaterial AMPHITHERE_SWORD_TOOL_MATERIAL = new CustomToolMaterial("AmphithereSword", 2, 500, 1F, 10F, 10);
     public static CustomToolMaterial HIPPOCAMPUS_SWORD_TOOL_MATERIAL = new CustomToolMaterial("HippocampusSword", 0, 500, -2F, 0F, 50);
-    public static CustomToolMaterial GHOST_SWORD_TOOL_MATERIAL = new CustomToolMaterial("GhostSword", 2, 3000, 5, 10.0F, 25);
-
     public static DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, IceAndFire.MODID);
 
 
@@ -223,14 +221,8 @@ public class IafItemRegistry {
 
     public static final RegistryObject<Item> WEEZER_BLUE_ALBUM = registerItem("weezer_blue_album", () -> new ItemGeneric(1, true));
     public static final RegistryObject<Item> DRAGON_DEBUG_STICK = registerItem("dragon_debug_stick", () -> new ItemGeneric(1, true), false);
-    public static final RegistryObject<Item> HYDRA_FANG = registerItem("hydra_fang", () -> new ItemGeneric(0));
-    public static final RegistryObject<Item> HYDRA_HEART = registerItem("hydra_heart", () -> new ItemHydraHeart());
-    public static final RegistryObject<Item> HYDRA_ARROW = registerItem("hydra_arrow", () -> new ItemHydraArrow());
     public static final RegistryObject<Item> CANNOLI = registerItem("cannoli", () -> new ItemCannoli(), false);
     public static final RegistryObject<Item> ECTOPLASM = registerItem("ectoplasm", ItemGeneric::new);
-    public static final RegistryObject<Item> GHOST_INGOT = registerItem("ghost_ingot", () -> new ItemGeneric(1));
-    public static final RegistryObject<Item> GHOST_SWORD = registerItem("ghost_sword", () -> new ItemGhostSword());
-
     public static final RegistryObject<BannerPatternItem> PATTERN_FIRE = registerItem("banner_pattern_fire", () -> new BannerPatternItem(BannerPatternTagGenerator.FIRE_BANNER_PATTERN, unstackable()));
     public static final RegistryObject<BannerPatternItem> PATTERN_ICE = registerItem("banner_pattern_ice", () -> new BannerPatternItem(BannerPatternTagGenerator.ICE_BANNER_PATTERN, unstackable()));
     public static final RegistryObject<BannerPatternItem> PATTERN_LIGHTNING = registerItem("banner_pattern_lightning", () -> new BannerPatternItem(BannerPatternTagGenerator.LIGHTNING_BANNER_PATTERN, unstackable()));
@@ -254,8 +246,6 @@ public class IafItemRegistry {
     public static final RegistryObject<SpawnEggItem> SPAWN_EGG_STYMPHALIAN_BIRD = registerItem("spawn_egg_stymphalian_bird", () -> new ForgeSpawnEggItem(IafEntityRegistry.STYMPHALIAN_BIRD, 0X744F37, 0X9E6C4B, new Item.Properties()/*.tab(IceAndFire.TAB_ITEMS)*/));
     public static final RegistryObject<SpawnEggItem> SPAWN_EGG_AMPHITHERE = registerItem("spawn_egg_amphithere", () -> new ForgeSpawnEggItem(IafEntityRegistry.AMPHITHERE, 0X597535, 0X00AA98, new Item.Properties()/*.tab(IceAndFire.TAB_ITEMS)*/));
     public static final RegistryObject<SpawnEggItem> SPAWN_EGG_SEA_SERPENT = registerItem("spawn_egg_sea_serpent", () -> new ForgeSpawnEggItem(IafEntityRegistry.SEA_SERPENT, 0X008299, 0XC5E6E7, new Item.Properties()/*.tab(IceAndFire.TAB_ITEMS)*/));
-    public static final RegistryObject<SpawnEggItem> SPAWN_EGG_HYDRA = registerItem("spawn_egg_hydra", () -> new ForgeSpawnEggItem(IafEntityRegistry.HYDRA, 0X8B8B78, 0X2E372B, new Item.Properties()/*.tab(IceAndFire.TAB_ITEMS)*/));
-    public static final RegistryObject<SpawnEggItem> SPAWN_EGG_GHOST = registerItem("spawn_egg_ghost", () -> new ForgeSpawnEggItem(IafEntityRegistry.GHOST, 0XB9EDB8, 0X73B276, new Item.Properties()/*.tab(IceAndFire.TAB_ITEMS)*/));
 
 
     static {

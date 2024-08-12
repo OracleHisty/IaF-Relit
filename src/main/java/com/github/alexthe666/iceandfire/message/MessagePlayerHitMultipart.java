@@ -1,7 +1,6 @@
 package com.github.alexthe666.iceandfire.message;
 
 import com.github.alexthe666.iceandfire.IceAndFire;
-import com.github.alexthe666.iceandfire.entity.EntityHydra;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
@@ -59,10 +58,6 @@ public class MessagePlayerHitMultipart {
 
                         if (dist < 100) {
                             player.attack(livingEntity);
-
-                            if (livingEntity instanceof EntityHydra hydra) {
-                                hydra.triggerHeadFlags(message.extraData);
-                            }
                         }
                     }
                 }

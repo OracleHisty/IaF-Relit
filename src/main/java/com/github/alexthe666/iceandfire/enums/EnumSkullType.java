@@ -11,8 +11,7 @@ public enum EnumSkullType {
     COCKATRICE,
     STYMPHALIAN,
     AMPHITHERE,
-    SEASERPENT,
-    HYDRA;
+    SEASERPENT;
 
     public String itemResourceName;
     public RegistryObject<Item> skull_item;

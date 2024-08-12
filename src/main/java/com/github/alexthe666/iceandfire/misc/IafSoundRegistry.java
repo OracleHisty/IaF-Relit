@@ -151,15 +151,10 @@ public final class IafSoundRegistry {
 
     public static final SoundEvent SEA_SERPENT_SPLASH = createSoundEvent("sea_serpent_splash");
 
-    public static final SoundEvent HYDRA_DIE = createSoundEvent("hydra_die");
 
-    public static final SoundEvent HYDRA_IDLE = createSoundEvent("hydra_idle");
 
-    public static final SoundEvent HYDRA_HURT = createSoundEvent("hydra_hurt");
 
-    public static final SoundEvent HYDRA_SPIT = createSoundEvent("hydra_spit");
 
-    public static final SoundEvent HYDRA_REGEN_HEAD = createSoundEvent("hydra_regen_head");
 
 
 
@@ -192,15 +187,10 @@ public final class IafSoundRegistry {
 
     public static final SoundEvent LIGHTNINGDRAGON_BREATH_CRACKLE = createSoundEvent("lightningdragon_breath_crackle");
 
-    public static final SoundEvent GHOST_IDLE = createSoundEvent("ghost_idle");
 
-    public static final SoundEvent GHOST_HURT = createSoundEvent("ghost_hurt");
 
-    public static final SoundEvent GHOST_DIE = createSoundEvent("ghost_die");
 
-    public static final SoundEvent GHOST_ATTACK = createSoundEvent("ghost_attack");
 
-    public static final SoundEvent GHOST_JUMPSCARE = createSoundEvent("ghost_jumpscare");
 
     private static SoundEvent createSoundEvent(final String soundName) {
         final ResourceLocation soundID = new ResourceLocation(MODID, soundName);

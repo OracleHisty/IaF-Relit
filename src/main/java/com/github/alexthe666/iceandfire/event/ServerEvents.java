@@ -172,9 +172,7 @@ public class ServerEvents {
         if (event.getRayTraceResult() instanceof EntityHitResult result) {
             Entity shotEntity = result.getEntity();
 
-            if (shotEntity instanceof EntityGhost) {
-                event.setCanceled(true);
-            } else if (event.getEntity() instanceof AbstractArrow arrow && arrow.getOwner() != null) {
+            if (event.getEntity() instanceof AbstractArrow arrow && arrow.getOwner() != null) {
                 Entity shootingEntity = arrow.getOwner();
 
                 if (shootingEntity instanceof LivingEntity && isRidingOrBeingRiddenBy(shootingEntity, shotEntity)) {
@@ -213,10 +211,7 @@ public class ServerEvents {
                 IceAndFire.LOGGER.warn("Exception thrown while interacting with entity.", e);
             }
             int extraData = 0;
-            if (event.getTarget() instanceof EntityHydraHead && parent instanceof EntityHydra) {
-                extraData = ((EntityHydraHead) event.getTarget()).headIndex;
-                ((EntityHydra) parent).triggerHeadFlags(extraData);
-            }
+
             if (event.getTarget().level().isClientSide && parent != null) {
                 IceAndFire.NETWORK_WRAPPER.sendToServer(new MessagePlayerHitMultipart(parent.getId(), extraData));
             }
@@ -363,18 +358,6 @@ public class ServerEvents {
             }
         }
     }
-
-    @SubscribeEvent // TODO :: Can this be moved into the item itself?
-    public static void onPlayerLeftClick(PlayerInteractEvent.LeftClickEmpty event) {
-        onLeftClick(event.getEntity(), event.getItemStack());
-        if (event.getLevel().isClientSide) {
-            IceAndFire.sendMSGToServer(new MessageSwingArm());
-        }
-    }
-
-    private static void onLeftClick(Player entity, ItemStack itemStack) {
-    }
-
 
     @SubscribeEvent
     public void onPlayerRightClick(PlayerInteractEvent.RightClickBlock event) {

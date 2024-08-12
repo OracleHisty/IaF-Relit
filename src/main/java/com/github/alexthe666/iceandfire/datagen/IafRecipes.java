@@ -352,30 +352,12 @@ public class IafRecipes extends RecipeProvider {
                 .unlockedBy("has_item", has(ItemTags.PLANKS))
                 .save(consumer);
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, IafBlockRegistry.GHOST_CHEST.get())
-                .pattern(" E ")
-                .pattern("ECE")
-                .pattern(" E ")
-                .define('C', Tags.Items.RODS_WOODEN)
-                .define('E', IafItemRegistry.ECTOPLASM.get())
-                .unlockedBy("has_item", has(IafItemRegistry.ECTOPLASM.get()))
-                .save(consumer);
-
         dragonArmorSet(consumer, Tags.Items.STORAGE_BLOCKS_GOLD,
                 IafItemRegistry.DRAGONARMOR_GOLD_0.get(),
                 IafItemRegistry.DRAGONARMOR_GOLD_1.get(),
                 IafItemRegistry.DRAGONARMOR_GOLD_2.get(),
                 IafItemRegistry.DRAGONARMOR_GOLD_3.get()
         );
-
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, IafBlockRegistry.GRAVEYARD_SOIL.get())
-                .pattern(" E ")
-                .pattern("ECE")
-                .pattern(" E ")
-                .define('C', Items.COARSE_DIRT)
-                .define('E', IafItemRegistry.ECTOPLASM.get())
-                .unlockedBy("has_item", has(IafItemRegistry.ECTOPLASM.get()))
-                .save(consumer);
 
         ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, IafItemRegistry.SEA_SERPENT_ARROW.get(), 4)
                 .pattern("X")
@@ -501,12 +483,6 @@ public class IafRecipes extends RecipeProvider {
         createDragonBoneSowrd(FIRE, IafItemRegistry.DRAGONBONE_SWORD_FIRE, consumer);
         createDragonBoneSowrd(LIGHTNING, IafItemRegistry.DRAGONBONE_SWORD_LIGHTNING, consumer);
         createDragonBoneSowrd(ICE, IafItemRegistry.DRAGONBONE_SWORD_ICE, consumer);
-
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.COMBAT, IafItemRegistry.GHOST_SWORD.get())
-                .requires(IafItemRegistry.DRAGONBONE_SWORD.get())
-                .requires(IafItemRegistry.GHOST_INGOT.get())
-                .unlockedBy("has_item", has(IafItemRegistry.GHOST_INGOT.get()))
-                .save(consumer, location("ghost_sword"));
     }
 
     private void createDragonBoneSowrd(DragonType dragonType, RegistryObject<Item> dragonboneSword, Consumer<FinishedRecipe> consumer) {

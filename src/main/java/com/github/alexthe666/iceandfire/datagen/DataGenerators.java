@@ -41,8 +41,6 @@ public class DataGenerators {
                 Component.literal("Resources for Ice and Fire"),
                 DetectedVersion.BUILT_IN.getPackVersion(PackType.CLIENT_RESOURCES),
                 Arrays.stream(PackType.values()).collect(Collectors.toMap(Function.identity(), DetectedVersion.BUILT_IN::getPackVersion)))));
-        generator.addProvider(event.includeServer(), new IafBiomeTagGenerator(output, lookupProvider, helper));
-        generator.addProvider(event.includeClient(), new AtlasGenerator(output, helper));
         BlockTagsProvider blocktags  = new IafBlockTags(output, provider, helper);
         generator.addProvider(event.includeServer(), blocktags);
         generator.addProvider(event.includeServer(), new IafItemTags(output, provider, blocktags.contentsGetter(), helper));

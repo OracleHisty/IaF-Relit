@@ -43,7 +43,6 @@ public class IafWorldRegistry {
             () -> new WorldGenLightningDragonCave(NoneFeatureConfiguration.CODEC));
     //TODO: Should be a structure
     public static final RegistryObject<Feature<NoneFeatureConfiguration>> SIREN_ISLAND = register("siren_island", () -> new WorldGenSirenIsland(NoneFeatureConfiguration.CODEC));
-    public static final RegistryObject<Feature<NoneFeatureConfiguration>> HYDRA_CAVE = register("hydra_cave", () -> new WorldGenHydraCave(NoneFeatureConfiguration.CODEC));
     public static final RegistryObject<Feature<NoneFeatureConfiguration>> SPAWN_DRAGON_SKELETON_L = register("spawn_dragon_skeleton_lightning",
             () -> new SpawnDragonSkeleton(IafEntityRegistry.LIGHTNING_DRAGON.get(), NoneFeatureConfiguration.CODEC));
     public static final RegistryObject<Feature<NoneFeatureConfiguration>> SPAWN_DRAGON_SKELETON_F = register("spawn_dragon_skeleton_fire",
@@ -90,7 +89,6 @@ public class IafWorldRegistry {
         LOADED_FEATURES.put("iceandfire:ice_dragon_cave", false);
         LOADED_FEATURES.put("iceandfire:lightning_dragon_cave", false);
         LOADED_FEATURES.put("iceandfire:siren_island", false);
-        LOADED_FEATURES.put("iceandfire:hydra_cave", false);
         LOADED_FEATURES.put("iceandfire:spawn_dragon_skeleton_lightning", false);
         LOADED_FEATURES.put("iceandfire:spawn_dragon_skeleton_fire", false);
         LOADED_FEATURES.put("iceandfire:spawn_dragon_skeleton_ice", false);
@@ -143,9 +141,6 @@ public class IafWorldRegistry {
             addFeatureToBiome(IafPlacedFeatures.PLACED_ICE_DRAGON_CAVE, features, builder, GenerationStep.Decoration.UNDERGROUND_STRUCTURES);
         }
 
-        if (safelyTestBiome(BiomeConfig.hydraBiomes, biome)) {
-            addFeatureToBiome(IafPlacedFeatures.PLACED_HYDRA_CAVE, features, builder);
-        }
         if (safelyTestBiome(BiomeConfig.sirenBiomes, biome)) {
             addFeatureToBiome(IafPlacedFeatures.PLACED_SIREN_ISLAND, features, builder);
         }

@@ -214,33 +214,6 @@ public class DragonUtils {
     }
 
 
-    public static BlockPos getBlockInTargetsViewGhost(EntityGhost ghost, LivingEntity target) {
-        float radius = 4 + ghost.getRandom().nextInt(5);
-        float angle = (0.01745329251F * (target.yHeadRot + 90F + ghost.getRandom().nextInt(180)));
-        double extraX = radius * Mth.sin((float) (Math.PI + angle));
-        double extraZ = radius * Mth.cos(angle);
-        BlockPos radialPos = BlockPos.containing(target.getX() + extraX, target.getY(), target.getZ() + extraZ);
-        BlockPos ground = radialPos;
-        if (ghost.distanceToSqr(Vec3.atCenterOf(ground)) > 30) {
-            return ground;
-        }
-        return ghost.blockPosition();
-    }
-
-
-    public static BlockPos getBlockInTargetsViewSeaSerpent(EntitySeaSerpent serpent, LivingEntity target) {
-        float radius = 10 * serpent.getSeaSerpentScale() + serpent.getRandom().nextInt(10);
-        float angle = (0.01745329251F * target.yHeadRot);
-        double extraX = radius * Mth.sin((float) (Math.PI + angle));
-        double extraZ = radius * Mth.cos(angle);
-        BlockPos radialPos = BlockPos.containing(target.getX() + extraX, 0, target.getZ() + extraZ);
-        BlockPos ground = target.level().getHeightmapPos(Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, radialPos);
-        if (serpent.distanceToSqr(Vec3.atCenterOf(ground)) > 30) {
-            return ground;
-        }
-        return target.blockPosition();
-    }
-
     public static boolean canTameDragonAttack(TamableAnimal dragon, Entity entity) {
         if (isVillager(entity)) {
             return false;
