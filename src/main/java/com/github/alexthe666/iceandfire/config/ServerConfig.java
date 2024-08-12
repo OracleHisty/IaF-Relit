@@ -41,12 +41,6 @@ public class ServerConfig {
     public final ForgeConfigSpec.IntValue sirenTimeBetweenSongs;
     public final ForgeConfigSpec.IntValue generateSirenChance;
     public final ForgeConfigSpec.IntValue hippocampusSpawnChance;
-    public final ForgeConfigSpec.IntValue cockatriceChickenSearchLength;
-    public final ForgeConfigSpec.IntValue cockatriceEggChance;
-    public final ForgeConfigSpec.DoubleValue cockatriceMaxHealth;
-    public final ForgeConfigSpec.BooleanValue chickensLayRottenEggs;
-    public final ForgeConfigSpec.BooleanValue spawnCockatrices;
-    public final ForgeConfigSpec.IntValue cockatriceSpawnRate;
     public final ForgeConfigSpec.IntValue stymphalianBirdTargetSearchLength;
     public final ForgeConfigSpec.IntValue stymphalianBirdFeatherDropChance;
 
@@ -160,14 +154,6 @@ public class ServerConfig {
         this.generateSirenChance = buildInt(builder, "Spawn Sirens Chance", "all", 400, 1, 10000, "1 out of this number chance per chunk for generation");
         this.sirenMaxSingTime = buildInt(builder, "Siren Max Sing Time", "all", 12000, 100, 24000, "how long(in ticks) can a siren use its sing effect on a player, without a cooldown.");
         this.sirenTimeBetweenSongs = buildInt(builder, "Siren Time Between Songs", "all", 2000, 100, 24000, "how long(in ticks) a siren has to wait after failing to lure in a player");
-        builder.pop();
-        builder.push("Cockatrice");
-        this.cockatriceMaxHealth = buildDouble(builder, "Cockatrice Health", "all", 40, 1, 10000, "Maximum cockatrice health");
-        this.cockatriceChickenSearchLength = buildInt(builder, "Cockatrice chicken Search Length", "all", 32, 1, 10000, "How many blocks away can cockatrices detect chickens. Note that increasing this could cause lag.");
-        this.cockatriceEggChance = buildInt(builder, "Cockatrice chicken Search Length", "all", 30, 1, Integer.MAX_VALUE, "1 out of this number chance per 6000 ticks for a chicken to lay a cockatrice egg.");
-        this.chickensLayRottenEggs = buildBoolean(builder, "Chickens Lay Rotten Eggs", "all", true, "True if chickens lay rotten eggs.");
-        this.spawnCockatrices = buildBoolean(builder, "Spawn Cockatrices", "all", true, "True if cockatrices are allowed to spawn");
-        this.cockatriceSpawnRate = buildInt(builder, "Cockatrice Spawn Weight", "all", 4, 1, 10000, "Cockatrice spawn weight. Lower = lower chance to spawn");
         builder.pop();
         builder.push("Stymphalians");
         this.stymphalianBirdTargetSearchLength = buildInt(builder, "Stymphalian Bird Target Search Length", "all", 64, 1, 10000, "How many blocks away can stymphalian birds spot potential prey. Note that increasing this could cause lag.");

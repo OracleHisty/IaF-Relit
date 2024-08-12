@@ -45,12 +45,6 @@ public class IafConfig {
     public static int sirenTimeBetweenSongs = 2000;
     public static int generateSirenChance = 400;
     public static int hippocampusSpawnChance = 40;
-    public static int cockatriceChickenSearchLength = 32;
-    public static int cockatriceEggChance = 30;
-    public static double cockatriceMaxHealth = 40.0D;
-    public static boolean chickensLayRottenEggs = true;
-    public static boolean spawnCockatrices = true;
-    public static int cockatriceSpawnRate = 4;
     public static int stymphalianBirdTargetSearchLength = 48;
     public static double stymphalianBirdBaseAttack = 6D;
     public static int stymphalianBirdFeatherDropChance = 25;
@@ -145,12 +139,6 @@ public class IafConfig {
             sirenTimeBetweenSongs = ConfigHolder.SERVER.sirenTimeBetweenSongs.get();
             generateSirenChance = ConfigHolder.SERVER.generateSirenChance.get();
             hippocampusSpawnChance = ConfigHolder.SERVER.hippocampusSpawnChance.get();
-            cockatriceChickenSearchLength = ConfigHolder.SERVER.cockatriceChickenSearchLength.get();
-            cockatriceEggChance = ConfigHolder.SERVER.cockatriceEggChance.get();
-            cockatriceMaxHealth = ConfigHolder.SERVER.cockatriceMaxHealth.get();
-            chickensLayRottenEggs = ConfigHolder.SERVER.chickensLayRottenEggs.get();
-            spawnCockatrices = ConfigHolder.SERVER.spawnCockatrices.get();
-            cockatriceSpawnRate = ConfigHolder.SERVER.cockatriceSpawnRate.get();
             stymphalianBirdBaseAttack = ConfigHolder.SERVER.stymphalianBirdBaseAttack.get();
             stymphalianBirdTargetSearchLength = ConfigHolder.SERVER.stymphalianBirdTargetSearchLength.get();
             stymphalianBirdFeatherDropChance = ConfigHolder.SERVER.stymphalianBirdFeatherDropChance.get();

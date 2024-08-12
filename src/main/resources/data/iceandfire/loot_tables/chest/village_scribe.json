@@ -84,11 +84,6 @@
         },
         {
           "type": "item",
-          "name": "iceandfire:rotten_egg",
-          "weight": 2
-        },
-        {
-          "type": "item",
           "name": "iceandfire:shiny_scales",
           "weight": 2
         }

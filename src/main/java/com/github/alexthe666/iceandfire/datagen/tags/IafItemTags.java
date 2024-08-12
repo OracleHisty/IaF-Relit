@@ -67,8 +67,6 @@ public class IafItemTags extends ItemTagsProvider {
 
     public static TagKey<Item> BREED_AMPITHERE = createKey("breed_ampithere");
     public static TagKey<Item> BREED_HIPPOCAMPUS = createKey("breed_hippocampus");
-    public static TagKey<Item> HEAL_AMPITHERE = createKey("heal_ampithere");
-    public static TagKey<Item> HEAL_COCKATRICE = createKey("heal_cockatrice");
     public static TagKey<Item> HEAL_HIPPOCAMPUS = createKey("heal_hippocampus");
     public static TagKey<Item> TEMPT_DRAGON = createKey("tempt_dragon");
     public static TagKey<Item> TEMPT_HIPPOCAMPUS = createKey("tempt_hippocampus");
@@ -182,10 +180,6 @@ public class IafItemTags extends ItemTagsProvider {
 
         tag(HEAL_AMPITHERE)
                 .add(Items.COCOA_BEANS);
-
-        tag(HEAL_COCKATRICE)
-                .addTag(Tags.Items.SEEDS)
-                .add(Items.ROTTEN_FLESH);
 
         tag(HEAL_HIPPOCAMPUS)
                 .add(Items.KELP);

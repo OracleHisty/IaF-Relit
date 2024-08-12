@@ -25,7 +25,6 @@ public enum EnumBestiaryPages {
     DRAGONFORGE(3),
     SIREN(2),
     HIPPOCAMPUS(2),
-    COCKATRICE(2),
     STYMPHALIANBIRD(1),
     AMPHITHERE(2),
     LIGHTNINGDRAGON(5),

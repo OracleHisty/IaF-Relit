@@ -97,16 +97,6 @@ public class IafRecipes extends RecipeProvider {
                 Items.CHAINMAIL_BOOTS
         );
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, IafItemRegistry.ITEM_COCKATRICE_SCEPTER.get())
-                .pattern("S")
-                .pattern("E")
-                .pattern("W")
-                .define('W', IafItemTags.BONES_WITHER)
-                .define('S', IafItemRegistry.WITHER_SHARD.get())
-                .define('E', IafItemRegistry.COCKATRICE_EYE.get())
-                .unlockedBy("has_item", has(IafItemRegistry.COCKATRICE_EYE.get()))
-                .save(consumer);
-
         armorSet(consumer, Tags.Items.INGOTS_COPPER,
                 IafItemRegistry.COPPER_HELMET.get(),
                 IafItemRegistry.COPPER_CHESTPLATE.get(),

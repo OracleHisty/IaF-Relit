@@ -200,20 +200,6 @@ public class DragonUtils {
         }
     }
 
-    public static BlockPos getBlockInTargetsViewCockatrice(EntityCockatrice cockatrice, LivingEntity target) {
-        float radius = 10 + cockatrice.getRandom().nextInt(10);
-        float angle = (0.01745329251F * target.yHeadRot);
-        double extraX = radius * Mth.sin((float) (Math.PI + angle));
-        double extraZ = radius * Mth.cos(angle);
-        BlockPos radialPos = BlockPos.containing(target.getX() + extraX, 0, target.getZ() + extraZ);
-        BlockPos ground = target.level().getHeightmapPos(Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, radialPos);
-        if (cockatrice.distanceToSqr(Vec3.atCenterOf(ground)) > 30 && !cockatrice.isTargetBlocked(Vec3.atCenterOf(ground))) {
-            return ground;
-        }
-        return target.blockPosition();
-    }
-
-
     public static boolean canTameDragonAttack(TamableAnimal dragon, Entity entity) {
         if (isVillager(entity)) {
             return false;
@@ -260,9 +246,9 @@ public class DragonUtils {
         return block.getExplosionResistance() < 1200 && !state.is(IafBlockTags.DRAGON_BLOCK_BREAK_BLACKLIST);
     }
 
-    public static boolean hasSameOwner(TamableAnimal cockatrice, Entity entity) {
+    public static boolean hasSameOwner(TamableAnimal animal, Entity entity) {
         if (entity instanceof TamableAnimal tameable) {
-            return tameable.getOwnerUUID() != null && cockatrice.getOwnerUUID() != null && tameable.getOwnerUUID().equals(cockatrice.getOwnerUUID());
+            return tameable.getOwnerUUID() != null && animal.getOwnerUUID() != null && tameable.getOwnerUUID().equals(animal.getOwnerUUID());
         }
         return false;
     }

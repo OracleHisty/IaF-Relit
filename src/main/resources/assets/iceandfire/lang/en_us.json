@@ -143,7 +143,6 @@
   "item.iceandfire.dragon_horn_ice": "Dragon Horn",
   "item.iceandfire.dragon_flute": "Dragon Bone Flute",
   "item.iceandfire.shiny_scales": "Shiny Scales",
-  "item.iceandfire.rotten_egg": "Rotten Egg",
 
   "item.iceandfire.sickly_dragon_meal": "Sickly Dragon Meal",
   "item.iceandfire.sickly_dragon_meal.desc_0": "Stunts dragon growth",
@@ -380,8 +379,6 @@
   "advancements.iceandfire.dragonsteel.description": "Create a dragonsteel ingot from dragon blood and iron",
   "advancements.iceandfire.dragonsteel_weapon.title": "Draconic Evolution",
   "advancements.iceandfire.dragonsteel_weapon.description": "Create a weapon from dragonsteel",
-  "advancements.iceandfire.rotten_egg.title": "Rotten to the Core",
-  "advancements.iceandfire.rotten_egg.description": "Obtain a rotten egg",
   "advancements.iceandfire.dragonarmor.title": "Suit Up",
   "advancements.iceandfire.dragonarmor.description": "Obtain dragon armor",
 

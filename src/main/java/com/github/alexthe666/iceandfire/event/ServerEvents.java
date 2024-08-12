@@ -85,26 +85,6 @@ public class ServerEvents {
     private static final Predicate<LivingEntity> VILLAGER_FEAR = entity -> entity instanceof IVillagerFear;
     private final Random rand = new Random();
 
-    private static void signalChickenAlarm(LivingEntity chicken, LivingEntity attacker) {
-        final float d0 = IafConfig.cockatriceChickenSearchLength;
-        final List<EntityCockatrice> list = chicken.level().getEntitiesOfClass(EntityCockatrice.class, (new AABB(chicken.getX(), chicken.getY(), chicken.getZ(), chicken.getX() + 1.0D, chicken.getY() + 1.0D, chicken.getZ() + 1.0D)).inflate(d0, 10.0D, d0));
-        if (list.isEmpty()) return;
-
-        for (final EntityCockatrice cockatrice : list) {
-            if (!(attacker instanceof EntityCockatrice)) {
-                if (!DragonUtils.hasSameOwner(cockatrice, attacker)) {
-                    if (attacker instanceof Player player) {
-                        if (!player.isCreative() && !cockatrice.isOwnedBy(player)) {
-                            cockatrice.setTarget(player);
-                        }
-                    } else {
-                        cockatrice.setTarget(attacker);
-                    }
-                }
-            }
-        }
-    }
-
     private static void signalAmphithereAlarm(LivingEntity villager, LivingEntity attacker) {
         final float d0 = IafConfig.amphithereVillagerSearchLength;
         final List<EntityAmphithere> list = villager.level().getEntitiesOfClass(EntityAmphithere.class, (new AABB(villager.getX() - 1.0D, villager.getY() - 1.0D, villager.getZ() - 1.0D, villager.getX() + 1.0D, villager.getY() + 1.0D, villager.getZ() + 1.0D)).inflate(d0, d0, d0));
@@ -135,22 +115,6 @@ public class ServerEvents {
 
     public static boolean isVillager(Entity entity) {
         return entity != null && isInEntityTag(IafTagRegistry.VILLAGERS, entity.getType());
-    }
-
-    public static boolean isChicken(Entity entity) {
-        return entity != null && isInEntityTag(IafTagRegistry.CHICKENS, entity.getType());
-    }
-
-    public static boolean isCockatriceTarget(Entity entity) {
-        return entity != null && isInEntityTag(IafTagRegistry.COCKATRICE_TARGETS, entity.getType());
-    }
-
-    public static boolean doesScareCockatrice(Entity entity) {
-        return entity != null && isInEntityTag(IafTagRegistry.SCARES_COCKATRICES, entity.getType());
-    }
-
-    public static boolean isBlindMob(Entity entity) {
-        return entity != null && isInEntityTag(IafTagRegistry.BLINDED, entity.getType());
     }
 
     public static boolean isRidingOrBeingRiddenBy(final Entity first, final Entity entityIn) {
@@ -286,9 +250,7 @@ public class ServerEvents {
                     }
                 });
 
-                if (isChicken(event.getEntity())) {
-                    signalChickenAlarm(event.getEntity(), (LivingEntity) attacker);
-                } else if (DragonUtils.isVillager(event.getEntity())) {
+                if (DragonUtils.isVillager(event.getEntity())) {
                     signalAmphithereAlarm(event.getEntity(), (LivingEntity) attacker);
                 }
             }
@@ -301,9 +263,7 @@ public class ServerEvents {
         final LivingEntity target = event.getOriginalTarget();
         if (target != null) {
             final LivingEntity attacker = event.getEntity();
-            if (isChicken(target)) {
-                signalChickenAlarm(target, attacker);
-            } else if (DragonUtils.isVillager(target)) {
+            if (DragonUtils.isVillager(target)) {
                 signalAmphithereAlarm(target, attacker);
             }
         }

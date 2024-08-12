@@ -10,14 +10,12 @@ public class EntityData {
     public FrozenData frozenData = new FrozenData();
     public ChainData chainData = new ChainData();
     public SirenData sirenData = new SirenData();
-    public ChickenData chickenData = new ChickenData();
     public MiscData miscData = new MiscData();
 
     public void tick(final LivingEntity entity) {
         frozenData.tickFrozen(entity);
         chainData.tickChain(entity);
         sirenData.tickCharmed(entity);
-        chickenData.tickChicken(entity);
         miscData.tickMisc(entity);
 
         boolean triggerClientUpdate = frozenData.doesClientNeedUpdate();
@@ -39,7 +37,6 @@ public class EntityData {
         frozenData.serialize(tag);
         chainData.serialize(tag);
         sirenData.serialize(tag);
-        chickenData.serialize(tag);
         miscData.serialize(tag);
         return tag;
     }
@@ -48,7 +45,6 @@ public class EntityData {
         frozenData.deserialize(tag);
         chainData.deserialize(tag);
         sirenData.deserialize(tag);
-        chickenData.deserialize(tag);
         miscData.deserialize(tag);
     }
 }

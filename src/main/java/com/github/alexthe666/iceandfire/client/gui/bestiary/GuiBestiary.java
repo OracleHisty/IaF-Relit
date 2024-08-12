@@ -383,28 +383,6 @@ public class GuiBestiary extends Screen {
                     drawItemStack(ms, new ItemStack(IafItemRegistry.SHINY_SCALES.get()), 35, 75, 2.25F);
                 }
                 break;
-            case COCKATRICE:
-                if (bookPages == 0) {
-                    ms.pose().pushPose();
-                    ms.pose().scale(1.5F, 1.5F, 1F);
-                    drawImage(ms, DRAWINGS_1, 155, 10, 114, 0, 88, 36, 512F);
-                    drawImage(ms, DRAWINGS_1, 155, 45, 114, 36, 88, 36, 512F);
-                    ms.pose().popPose();
-                }
-                if (bookPages == 1) {
-                    ms.pose().pushPose();
-                    ms.pose().scale(1.5F, 1.5F, 1F);
-                    drawImage(ms, DRAWINGS_0, 18, 10, 389, 1, 50, 50, 512F);
-                    ms.pose().popPose();
-
-                    drawItemStack(ms, new ItemStack(Items.STRING), 20, 30, 1.35F);
-                    drawItemStack(ms, new ItemStack(Items.LEATHER), 40, 30, 1.35F);
-                    drawItemStack(ms, new ItemStack(Items.STRING), 59, 30, 1.35F);
-                    drawItemStack(ms, new ItemStack(IafItemRegistry.BLINDFOLD.get()), 60, 18, 2F);
-                    drawItemStack(ms, new ItemStack(IafItemRegistry.WITHERBONE.get()), 30, 58, 2.5F);
-                    drawItemStack(ms, new ItemStack(IafItemRegistry.ROTTEN_EGG.get()), 109, 18, 2.5F);
-                }
-                break;
             case STYMPHALIANBIRD:
                 if (bookPages == 0) {
                     ms.pose().pushPose();

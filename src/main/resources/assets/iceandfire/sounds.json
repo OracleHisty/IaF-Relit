@@ -345,62 +345,6 @@
     ],
     "subtitle": "iceandfire.sound.subtitle.stymphalian_bird_die"
   },
-  "cockatrice_cry": {
-    "category": "hostile",
-    "sounds": [
-      {
-        "name": "iceandfire:mobs/cockatrice/cry",
-        "volume": 0.4
-      }
-    ],
-    "subtitle": "iceandfire.sound.subtitle.cockatrice_cry"
-  },
-  "cockatrice_hurt": {
-    "category": "hostile",
-    "sounds": [
-      {
-        "name": "iceandfire:mobs/cockatrice/hurt_0",
-        "volume": 0.4
-      },
-      {
-        "name": "iceandfire:mobs/cockatrice/hurt_1",
-        "volume": 0.4
-      }
-    ],
-    "subtitle": "iceandfire.sound.subtitle.cockatrice_hurt"
-  },
-  "cockatrice_idle": {
-    "category": "hostile",
-    "sounds": [
-      {
-        "name": "iceandfire:mobs/cockatrice/idle_0",
-        "volume": 0.4
-      },
-      {
-        "name": "iceandfire:mobs/cockatrice/idle_1",
-        "volume": 0.4
-      },
-      {
-        "name": "iceandfire:mobs/cockatrice/idle_2",
-        "volume": 0.4
-      }
-    ],
-    "subtitle": "iceandfire.sound.subtitle.cockatrice_idle"
-  },
-  "cockatrice_die": {
-    "category": "hostile",
-    "sounds": [
-      {
-        "name": "iceandfire:mobs/cockatrice/die_0",
-        "volume": 0.4
-      },
-      {
-        "name": "iceandfire:mobs/cockatrice/die_1",
-        "volume": 0.4
-      }
-    ],
-    "subtitle": "iceandfire.sound.subtitle.cockatrice_die"
-  },
   "naga_attack": {
     "category": "hostile",
     "sounds": [
