@@ -8,7 +8,6 @@ import net.minecraftforge.registries.RegistryObject;
 import java.util.Locale;
 
 public enum EnumSkullType {
-    CYCLOPS,
     COCKATRICE,
     STYMPHALIAN,
     AMPHITHERE,

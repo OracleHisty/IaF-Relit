@@ -6,7 +6,6 @@ import com.github.alexthe666.iceandfire.block.IafBlockRegistry;
 import com.github.alexthe666.iceandfire.datagen.tags.IafItemTags;
 import com.github.alexthe666.iceandfire.entity.*;
 import com.github.alexthe666.iceandfire.entity.ai.AiDebug;
-import com.github.alexthe666.iceandfire.entity.ai.EntitySheepAIFollowCyclops;
 import com.github.alexthe666.iceandfire.entity.ai.VillagerAIFearUntamed;
 import com.github.alexthe666.iceandfire.entity.props.EntityDataProvider;
 import com.github.alexthe666.iceandfire.entity.util.DragonUtils;
@@ -136,10 +135,6 @@ public class ServerEvents {
 
     public static boolean isVillager(Entity entity) {
         return entity != null && isInEntityTag(IafTagRegistry.VILLAGERS, entity.getType());
-    }
-
-    public static boolean isSheep(Entity entity) {
-        return entity != null && isInEntityTag(IafTagRegistry.SHEEP, entity.getType());
     }
 
     public static boolean isChicken(Entity entity) {
@@ -321,20 +316,6 @@ public class ServerEvents {
 
     @SubscribeEvent
     public void onPlayerAttack(final AttackEntityEvent event) {
-        if (event.getTarget() != null && isSheep(event.getTarget())) {
-            float dist = IafConfig.cyclopesSheepSearchLength;
-            final List<Entity> list = event.getTarget().level().getEntities(event.getEntity(), event.getEntity().getBoundingBox().expandTowards(dist, dist, dist));
-            if (!list.isEmpty()) {
-                for (final Entity entity : list) {
-                    if (entity instanceof EntityCyclops cyclops) {
-                        if (!cyclops.isBlinded() && !event.getEntity().isCreative()) {
-                            cyclops.setTarget(event.getEntity());
-                        }
-                    }
-                }
-            }
-        }
-
         if (event.getTarget() instanceof EntityStoneStatue statue) {
             statue.setHealth(statue.getMaxHealth());
 
@@ -580,9 +561,6 @@ public class ServerEvents {
     public void onEntityJoinWorld(MobSpawnEvent.FinalizeSpawn event) {
         Mob mob = event.getEntity();
         try {
-            if (isSheep(mob) && mob instanceof Animal animal) {
-                animal.goalSelector.addGoal(8, new EntitySheepAIFollowCyclops(animal, 1.2D));
-            }
             if (isVillager(mob) && IafConfig.villagersFearDragons) {
                 mob.goalSelector.addGoal(1, new VillagerAIFearUntamed((PathfinderMob) mob, LivingEntity.class, 8.0F, 0.8D, 0.8D, VILLAGER_FEAR));
             }

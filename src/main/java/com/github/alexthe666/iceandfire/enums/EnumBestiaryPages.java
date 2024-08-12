@@ -25,7 +25,6 @@ public enum EnumBestiaryPages {
     DRAGONFORGE(3),
     GORGON(1),
     PIXIE(1),
-    CYCLOPS(2),
     SIREN(2),
     HIPPOCAMPUS(2),
     COCKATRICE(2),

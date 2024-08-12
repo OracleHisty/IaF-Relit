@@ -44,13 +44,6 @@ public class IafConfig {
     public static int spawnPixiesChance = 60;
     public static int pixieVillageSize = 5;
     public static boolean pixiesStealItems = true;
-    public static int spawnWanderingCyclopsChance = 900;
-    public static int spawnCyclopsCaveChance = 170;
-    public static int cyclopesSheepSearchLength = 17;
-    public static double cyclopsMaxHealth = 150;
-    public static double cyclopsAttackStrength = 15;
-    public static double cyclopsBiteStrength = 40;
-    public static boolean cyclopsGriefing = true;
     public static double sirenMaxHealth = 50D;
     public static boolean sirenShader = true;
     public static int sirenMaxSingTime = 12000;
@@ -171,13 +164,6 @@ public class IafConfig {
             spawnPixiesChance = ConfigHolder.SERVER.spawnPixiesChance.get();
             pixieVillageSize = ConfigHolder.SERVER.pixieVillageSize.get();
             pixiesStealItems = ConfigHolder.SERVER.pixiesStealItems.get();
-            spawnWanderingCyclopsChance = ConfigHolder.SERVER.spawnWanderingCyclopsChance.get();
-            spawnCyclopsCaveChance = ConfigHolder.SERVER.spawnCyclopsCaveChance.get();
-            cyclopesSheepSearchLength = ConfigHolder.SERVER.cyclopesSheepSearchLength.get();
-            cyclopsMaxHealth = ConfigHolder.SERVER.cyclopsMaxHealth.get();
-            cyclopsAttackStrength = ConfigHolder.SERVER.cyclopsAttackStrength.get();
-            cyclopsBiteStrength = ConfigHolder.SERVER.cyclopsBiteStrength.get();
-            cyclopsGriefing = ConfigHolder.SERVER.cyclopsGriefing.get();
             sirenMaxHealth = ConfigHolder.SERVER.sirenMaxHealth.get();
             sirenShader = ConfigHolder.SERVER.sirenShader.get();
             sirenMaxSingTime = ConfigHolder.SERVER.sirenMaxSingTime.get();

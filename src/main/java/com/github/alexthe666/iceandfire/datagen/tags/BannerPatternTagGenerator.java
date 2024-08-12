@@ -23,7 +23,6 @@ public class BannerPatternTagGenerator extends TagsProvider<BannerPattern> {
     public static final TagKey<BannerPattern> LIGHTNING_HEAD_BANNER_PATTERN = create("pattern_item/lightning_head");
     public static final TagKey<BannerPattern> AMPHITHERE_BANNER_PATTERN = create("pattern_item/amphithere");
     public static final TagKey<BannerPattern> BIRD_BANNER_PATTERN = create("pattern_item/bird");
-    public static final TagKey<BannerPattern> EYE_BANNER_PATTERN = create("pattern_item/eye");
     public static final TagKey<BannerPattern> FAE_BANNER_PATTERN = create("pattern_item/fae");
     public static final TagKey<BannerPattern> FEATHER_BANNER_PATTERN = create("pattern_item/feather");
     public static final TagKey<BannerPattern> GORGON_BANNER_PATTERN = create("pattern_item/gorgon");
@@ -47,7 +46,6 @@ public class BannerPatternTagGenerator extends TagsProvider<BannerPattern> {
         this.tag(LIGHTNING_HEAD_BANNER_PATTERN).add(IafBannerPatterns.PATTERN_LIGHTNING_HEAD.getKey());
         this.tag(AMPHITHERE_BANNER_PATTERN).add(IafBannerPatterns.PATTERN_AMPHITHERE.getKey());
         this.tag(BIRD_BANNER_PATTERN).add(IafBannerPatterns.PATTERN_BIRD.getKey());
-        this.tag(EYE_BANNER_PATTERN).add(IafBannerPatterns.PATTERN_EYE.getKey());
         this.tag(FAE_BANNER_PATTERN).add(IafBannerPatterns.PATTERN_FAE.getKey());
         this.tag(FEATHER_BANNER_PATTERN).add(IafBannerPatterns.PATTERN_FEATHER.getKey());
         this.tag(GORGON_BANNER_PATTERN).add(IafBannerPatterns.PATTERN_GORGON.getKey());

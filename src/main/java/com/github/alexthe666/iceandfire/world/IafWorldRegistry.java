@@ -42,7 +42,6 @@ public class IafWorldRegistry {
     public static final RegistryObject<Feature<NoneFeatureConfiguration>> LIGHTNING_DRAGON_CAVE = register("lightning_dragon_cave",
             () -> new WorldGenLightningDragonCave(NoneFeatureConfiguration.CODEC));
     //TODO: Should be a structure
-    public static final RegistryObject<Feature<NoneFeatureConfiguration>> CYCLOPS_CAVE = register("cyclops_cave", () -> new WorldGenCyclopsCave(NoneFeatureConfiguration.CODEC));
     public static final RegistryObject<Feature<NoneFeatureConfiguration>> PIXIE_VILLAGE = register("pixie_village", () -> new WorldGenPixieVillage(NoneFeatureConfiguration.CODEC));
     public static final RegistryObject<Feature<NoneFeatureConfiguration>> SIREN_ISLAND = register("siren_island", () -> new WorldGenSirenIsland(NoneFeatureConfiguration.CODEC));
     public static final RegistryObject<Feature<NoneFeatureConfiguration>> HYDRA_CAVE = register("hydra_cave", () -> new WorldGenHydraCave(NoneFeatureConfiguration.CODEC));
@@ -55,7 +54,6 @@ public class IafWorldRegistry {
     public static final RegistryObject<Feature<NoneFeatureConfiguration>> SPAWN_HIPPOCAMPUS = register("spawn_hippocampus", () -> new SpawnHippocampus(NoneFeatureConfiguration.CODEC));
     public static final RegistryObject<Feature<NoneFeatureConfiguration>> SPAWN_SEA_SERPENT = register("spawn_sea_serpent", () -> new SpawnSeaSerpent(NoneFeatureConfiguration.CODEC));
     public static final RegistryObject<Feature<NoneFeatureConfiguration>> SPAWN_STYMPHALIAN_BIRD = register("spawn_stymphalian_bird", () -> new SpawnStymphalianBird(NoneFeatureConfiguration.CODEC));
-    public static final RegistryObject<Feature<NoneFeatureConfiguration>> SPAWN_WANDERING_CYCLOPS = register("spawn_wandering_cyclops", () -> new SpawnWanderingCyclops(NoneFeatureConfiguration.CODEC));
 
 
     private static <C extends FeatureConfiguration, F extends Feature<C>> RegistryObject<F> register(final String name, final Supplier<? extends F> supplier) {
@@ -92,7 +90,6 @@ public class IafWorldRegistry {
         LOADED_FEATURES.put("iceandfire:fire_dragon_cave", false);
         LOADED_FEATURES.put("iceandfire:ice_dragon_cave", false);
         LOADED_FEATURES.put("iceandfire:lightning_dragon_cave", false);
-        LOADED_FEATURES.put("iceandfire:cyclops_cave", false);
         LOADED_FEATURES.put("iceandfire:pixie_village", false);
         LOADED_FEATURES.put("iceandfire:siren_island", false);
         LOADED_FEATURES.put("iceandfire:hydra_cave", false);
@@ -102,7 +99,6 @@ public class IafWorldRegistry {
         LOADED_FEATURES.put("iceandfire:spawn_hippocampus", false);
         LOADED_FEATURES.put("iceandfire:spawn_sea_serpent", false);
         LOADED_FEATURES.put("iceandfire:spawn_stymphalian_bird", false);
-        LOADED_FEATURES.put("iceandfire:spawn_wandering_cyclops", false);
     }
 
     // Only a global variable because it's too bothersome to add it to the method call (alternative: method returns identifier or null)
@@ -149,10 +145,6 @@ public class IafWorldRegistry {
             addFeatureToBiome(IafPlacedFeatures.PLACED_ICE_DRAGON_CAVE, features, builder, GenerationStep.Decoration.UNDERGROUND_STRUCTURES);
         }
 
-
-        if (safelyTestBiome(BiomeConfig.cyclopsCaveBiomes, biome)) {
-            addFeatureToBiome(IafPlacedFeatures.PLACED_CYCLOPS_CAVE, features, builder);
-        }
         if (safelyTestBiome(BiomeConfig.pixieBiomes, biome)) {
             addFeatureToBiome(IafPlacedFeatures.PLACED_PIXIE_VILLAGE, features, builder);
         }
@@ -161,9 +153,6 @@ public class IafWorldRegistry {
         }
         if (safelyTestBiome(BiomeConfig.sirenBiomes, biome)) {
             addFeatureToBiome(IafPlacedFeatures.PLACED_SIREN_ISLAND, features, builder);
-        }
-        if (safelyTestBiome(BiomeConfig.wanderingCyclopsBiomes, biome)) {
-            addFeatureToBiome(IafPlacedFeatures.PLACED_SPAWN_WANDERING_CYCLOPS, features, builder);
         }
 
         if (safelyTestBiome(BiomeConfig.lightningDragonSkeletonBiomes, biome)) {

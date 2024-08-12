@@ -100,15 +100,10 @@ public final class IafSoundRegistry {
 
     public static final SoundEvent DRAGON_FLIGHT = createSoundEvent("dragon_flight");
 
-    public static final SoundEvent CYCLOPS_IDLE = createSoundEvent("cyclops_idle");
 
-    public static final SoundEvent CYCLOPS_HURT = createSoundEvent("cyclops_hurt");
 
-    public static final SoundEvent CYCLOPS_DIE = createSoundEvent("cyclops_die");
 
-    public static final SoundEvent CYCLOPS_BITE = createSoundEvent("cyclops_bite");
 
-    public static final SoundEvent CYCLOPS_BLINDED = createSoundEvent("cyclops_blinded");
 
     public static final SoundEvent HIPPOCAMPUS_IDLE = createSoundEvent("hippocampus_idle");
 

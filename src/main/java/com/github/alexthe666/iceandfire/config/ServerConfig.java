@@ -40,13 +40,6 @@ public class ServerConfig {
     public final ForgeConfigSpec.IntValue spawnPixiesChance;
     public final ForgeConfigSpec.IntValue pixieVillageSize;
     public final ForgeConfigSpec.BooleanValue pixiesStealItems;
-    public final ForgeConfigSpec.IntValue spawnWanderingCyclopsChance;
-    public final ForgeConfigSpec.IntValue spawnCyclopsCaveChance;
-    public final ForgeConfigSpec.IntValue cyclopesSheepSearchLength;
-    public final ForgeConfigSpec.DoubleValue cyclopsMaxHealth;
-    public final ForgeConfigSpec.DoubleValue cyclopsAttackStrength;
-    public final ForgeConfigSpec.DoubleValue cyclopsBiteStrength;
-    public final ForgeConfigSpec.BooleanValue cyclopsGriefing;
     public final ForgeConfigSpec.DoubleValue sirenMaxHealth;
     public final ForgeConfigSpec.BooleanValue sirenShader;
     public final ForgeConfigSpec.IntValue sirenMaxSingTime;
@@ -128,8 +121,8 @@ public class ServerConfig {
         this.oreToStoneRatioForDragonCaves = buildInt(builder, "Dragon Cave Ore Ratio", "all", 45, 1, 10000, "Ratio of Stone(this number) to Ores in Dragon Caves");
         builder.pop();
         builder.push("Structures-Features");
-        this.dangerousWorldGenDistanceLimit = buildInt(builder, "Dangerous World Gen Dist From Spawn", "all", 800, 1, 10000, "How far away dangerous structures(dragon roosts, cyclops caves, etc.) must be from spawn.");
-        this.dangerousWorldGenSeparationLimit = buildInt(builder, "Dangerous World Gen Dist Seperation", "all", 300, 1, 10000, "How far away dangerous structures(dragon roosts, cyclops caves, etc.) must be from the last generated structure.");
+        this.dangerousWorldGenDistanceLimit = buildInt(builder, "Dangerous World Gen Dist From Spawn", "all", 800, 1, 10000, "How far away dangerous structures(dragon roosts, etc.) must be from spawn.");
+        this.dangerousWorldGenSeparationLimit = buildInt(builder, "Dangerous World Gen Dist Seperation", "all", 300, 1, 10000, "How far away dangerous structures(dragon roosts, etc.) must be from the last generated structure.");
 
         this.spawnGlaciers = buildBoolean(builder, "Generate Glaciers", "all", true, "Whether to generate glacier biomes or not");
         this.glacierSpawnChance = buildInt(builder, "Glacier Spawn Weight", "all", 4, 1, 10000, "Glacier Spawn Weight. Higher number = more common");
@@ -186,15 +179,6 @@ public class ServerConfig {
         this.spawnPixiesChance = buildInt(builder, "Spawn Pixies Chance", "all", 60, 1, 10000, "1 out of this number chance per chunk for generation");
         this.pixieVillageSize = buildInt(builder, "Pixie Village Size", "all", 5, 1, 10000, "size of pixie villages");
         this.pixiesStealItems = buildBoolean(builder, "Pixies Steal Items", "all", true, "True if pixies are allowed to steal from players");
-        builder.pop();
-        builder.push("Cyclops");
-        this.spawnCyclopsCaveChance = buildInt(builder, "Spawn Cyclops Cave Chance", "all", 100, 1, 10000, "1 out of this number chance per chunk for generation");
-        this.spawnWanderingCyclopsChance = buildInt(builder, "Spawn Wandering Cyclops Chance", "all", 100, 1, 10000, "1 out of this number chance per chunk for generation");
-        this.cyclopsMaxHealth = buildDouble(builder, "Cyclops Max Health", "all", 150, 1, 10000, "Maximum cyclops health");
-        this.cyclopesSheepSearchLength = buildInt(builder, "Cyclopes Sheep Search Length", "all", 17, 1, 10000, "How many blocks away can cyclopes detect sheep. Note that increasing this could cause lag.");
-        this.cyclopsAttackStrength = buildDouble(builder, "Cyclops Attack Strength", "all", 15, 1, 10000, "Cyclops attack strength");
-        this.cyclopsBiteStrength = buildDouble(builder, "Cyclops Bite Strength", "all", 40, 1, 10000, "Amount of damage done with cyclops bite attack.");
-        this.cyclopsGriefing = buildBoolean(builder, "Cyclops Griefing", "all", true, "Whether or not cyclops can break logs or leaves in their way");
         builder.pop();
         builder.push("Sirens");
         this.sirenMaxHealth = buildDouble(builder, "Siren Max Health", "all", 50, 1, 10000, "Maximum siren health");
