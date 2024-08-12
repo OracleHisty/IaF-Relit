@@ -346,68 +346,6 @@ public class IafRecipes extends RecipeProvider {
                 IafItemRegistry.DRAGONARMOR_DRAGONSTEEL_LIGHTNING_3.get()
         );
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, IafBlockRegistry.DREAD_STONE.get(), 8)
-                .pattern("DDD")
-                .pattern("DSD")
-                .pattern("DDD")
-                .define('S', Tags.Items.STONE)
-                .define('D', IafItemRegistry.DREAD_SHARD.get())
-                .unlockedBy("has_item", has(IafItemRegistry.DREAD_SHARD.get()))
-                .save(consumer);
-
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, IafBlockRegistry.DREAD_STONE_BRICKS.get(), 4)
-                .pattern("DD")
-                .pattern("DD")
-                .define('D', IafBlockRegistry.DREAD_STONE.get())
-                .unlockedBy("has_item", has(IafBlockRegistry.DREAD_STONE.get()))
-                .save(consumer);
-
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, IafBlockRegistry.DREAD_STONE_BRICKS_CHISELED.get())
-                .pattern("D")
-                .pattern("D")
-                .define('D', IafBlockRegistry.DREAD_STONE_BRICKS_SLAB.get())
-                .unlockedBy("has_item", has(IafBlockRegistry.DREAD_STONE_BRICKS_SLAB.get()))
-                .save(consumer);
-
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, IafBlockRegistry.DREAD_STONE_FACE.get(), 8)
-                .pattern("DDD")
-                .pattern("DSD")
-                .pattern("DDD")
-                .define('S', Items.SKELETON_SKULL)
-                .define('D', IafBlockRegistry.DREAD_STONE_BRICKS.get())
-                .unlockedBy("has_item", has(IafBlockRegistry.DREAD_STONE_BRICKS.get()))
-                .save(consumer);
-
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, IafBlockRegistry.DREAD_STONE_BRICKS_SLAB.get(), 6)
-                .pattern("DDD")
-                .define('D', IafBlockRegistry.DREAD_STONE_BRICKS.get())
-                .unlockedBy("has_item", has(IafBlockRegistry.DREAD_STONE_BRICKS.get()))
-                .save(consumer);
-
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, IafBlockRegistry.DREAD_STONE_BRICKS_STAIRS.get(), 4)
-                .pattern("D  ")
-                .pattern("DD ")
-                .pattern("DDD")
-                .define('D', IafBlockRegistry.DREAD_STONE_BRICKS.get())
-                .unlockedBy("has_item", has(IafBlockRegistry.DREAD_STONE_BRICKS.get()))
-                .save(consumer);
-
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, IafBlockRegistry.DREAD_STONE_TILE.get(), 8)
-                .pattern("DDD")
-                .pattern("D D")
-                .pattern("DDD")
-                .define('D', IafBlockRegistry.DREAD_STONE_BRICKS.get())
-                .unlockedBy("has_item", has(IafBlockRegistry.DREAD_STONE_BRICKS.get()))
-                .save(consumer);
-
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, IafBlockRegistry.DREAD_TORCH.get(), 4)
-                .pattern("D")
-                .pattern("S")
-                .define('S', Tags.Items.RODS_WOODEN)
-                .define('D', IafItemRegistry.DREAD_SHARD.get())
-                .unlockedBy("has_item", has(IafItemRegistry.DREAD_SHARD.get()))
-                .save(consumer);
-
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, IafItemRegistry.EARPLUGS.get())
                 .pattern("B B")
                 .define('B', ItemTags.PLANKS)
@@ -534,17 +472,6 @@ public class IafRecipes extends RecipeProvider {
                 .requires(IafItemRegistry.DRAGON_BONE.get())
                 .requires(IafItemRegistry.WITHER_SHARD.get())
                 .unlockedBy("has_item", has(IafItemRegistry.WITHER_SHARD.get()))
-                .save(consumer);
-
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, IafBlockRegistry.DREAD_STONE_BRICKS_MOSSY.get())
-                .requires(Items.VINE)
-                .requires(IafBlockRegistry.DREAD_STONE_BRICKS.get())
-                .unlockedBy("has_item", has(IafBlockRegistry.DREAD_STONE_BRICKS.get()))
-                .save(consumer);
-
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, IafBlockRegistry.DREADWOOD_PLANKS.get(), 4)
-                .requires(IafBlockRegistry.DREADWOOD_LOG.get())
-                .unlockedBy("has_item", has(IafBlockRegistry.DREADWOOD_LOG.get()))
                 .save(consumer);
 
         ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, IafItemRegistry.FIRE_STEW.get())

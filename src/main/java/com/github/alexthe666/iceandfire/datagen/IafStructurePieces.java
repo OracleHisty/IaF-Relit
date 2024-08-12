@@ -15,7 +15,7 @@ import net.minecraft.world.level.levelgen.structure.templatesystem.StructureProc
 
 public class IafStructurePieces {
     public static final ResourceKey<StructureTemplatePool> GRAVEYARD_START = createKey("graveyard/start_pool");
-    public static final ResourceKey<StructureTemplatePool> MAUSOLEUM_START = createKey("mausoleum/start_pool");
+
 
     private static ResourceKey<StructureTemplatePool> createKey(String name) {
         return ResourceKey.create(Registries.TEMPLATE_POOL, new ResourceLocation("iceandfire", name));
@@ -30,16 +30,7 @@ public class IafStructurePieces {
         pContext.register(createKey("graveyard/bottom_pool"), new StructureTemplatePool(fallback, ImmutableList.of(Pair.of(StructurePoolElement.single("iceandfire:graveyard/graveyard_bottom", graveyardProcessor), 1)), StructureTemplatePool.Projection.RIGID));
     }
 
-    public static void registerMausoleum(BootstapContext<StructureTemplatePool> pContext) {
-        HolderGetter<StructureProcessorList> processorListHolderGetter = pContext.lookup(Registries.PROCESSOR_LIST);
-        Holder<StructureProcessorList> graveyardProcessor = processorListHolderGetter.getOrThrow(IafProcessorLists.MAUSOLEUM_PROCESSORS);
-        HolderGetter<StructureTemplatePool> templatePoolHolderGetter = pContext.lookup(Registries.TEMPLATE_POOL);
-        Holder<StructureTemplatePool> fallback = templatePoolHolderGetter.getOrThrow(Pools.EMPTY);
-        pContext.register(MAUSOLEUM_START, new StructureTemplatePool(fallback, ImmutableList.of(Pair.of(StructurePoolElement.single("iceandfire:mausoleum/building", graveyardProcessor), 1)), StructureTemplatePool.Projection.RIGID));
-    }
-
     public static void bootstrap(BootstapContext<StructureTemplatePool> pContext) {
         registerGraveyard(pContext);
-        registerMausoleum(pContext);
     }
 }

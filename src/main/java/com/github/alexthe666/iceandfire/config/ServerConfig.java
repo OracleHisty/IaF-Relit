@@ -79,10 +79,6 @@ public class ServerConfig {
     public final ForgeConfigSpec.BooleanValue weezerTinkers; // FIXME :: Unused
     public final ForgeConfigSpec.DoubleValue dragonBlockBreakingDropChance;
     public final ForgeConfigSpec.BooleanValue completeDragonPathfinding; // FIXME :: Unused
-    public final ForgeConfigSpec.BooleanValue generateMausoleums;
-    public final ForgeConfigSpec.BooleanValue spawnLiches;
-    public final ForgeConfigSpec.IntValue lichSpawnRate;
-    public final ForgeConfigSpec.IntValue lichSpawnChance;
     public final ForgeConfigSpec.DoubleValue hydraMaxHealth;
     public final ForgeConfigSpec.IntValue generateHydraChance;
     public final ForgeConfigSpec.BooleanValue explosiveDragonBreath;
@@ -122,7 +118,7 @@ public class ServerConfig {
         this.spawnGlaciers = buildBoolean(builder, "Generate Glaciers", "all", true, "Whether to generate glacier biomes or not");
         this.glacierSpawnChance = buildInt(builder, "Glacier Spawn Weight", "all", 4, 1, 10000, "Glacier Spawn Weight. Higher number = more common");
 
-        this.generateMausoleums = buildBoolean(builder, "Generate Mausoleums", "all", true, "True if mausoleums are allowed to generate");
+
 
         this.generateGraveyards = buildBoolean(builder, "Generate Graveyards", "all", true, "Whether to generate graveyards or not");
 
@@ -215,9 +211,6 @@ public class ServerConfig {
         this.hippocampusSwimSpeedMod = buildDouble(builder, "Hippocampus Swim Speed Modifier", "all", 1F, 0.0F, 2.0F, "Change this to slow down or speed up hippocampus swimming.");
         builder.pop();
         builder.push("Others");
-        this.spawnLiches = buildBoolean(builder, "Spawn Liches", "all", true, "True if dread liches are allowed to spawn");
-        this.lichSpawnRate = buildInt(builder, "Lich Spawn Weight", "all", 2, 1, 10000, "Dread Lich spawn weight. Lower = lower chance to spawn");
-        this.lichSpawnChance = buildInt(builder, "Lich Spawn Chance", "all", 30, 1, 10000, "Dread Lich spawn chance. Lower = higher chance to spawn");
 
         this.hydraMaxHealth = buildDouble(builder, "Hydra Max Health", "all", 250, 1, 10000, "Maximum hydra health");
         this.generateHydraChance = buildInt(builder, "Hydra Caves Gen Chance", "all", 60, 1, 10000, "One out of this number chance per chunk to generate a hydra cave.");

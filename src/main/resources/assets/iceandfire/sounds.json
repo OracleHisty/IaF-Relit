@@ -271,34 +271,6 @@
     ],
     "subtitle": "iceandfire.sound.subtitle.lightningdragon_death"
   },
-  "dread_ghoul_idle": {
-    "category": "hostile",
-    "sounds": [
-      {
-        "name": "iceandfire:mobs/dread/ghoul_idle_0",
-        "volume": 0.4
-      },
-      {
-        "name": "iceandfire:mobs/dread/ghoul_idle_1",
-        "volume": 0.4
-      }
-    ],
-    "subtitle": "iceandfire.sound.subtitle.dread_ghoul_idle"
-  },
-  "dread_lich_summon": {
-    "category": "hostile",
-    "sounds": [
-      {
-        "name": "iceandfire:mobs/dread/lich_summon_0",
-        "volume": 0.4
-      },
-      {
-        "name": "iceandfire:mobs/dread/lich_summon_1",
-        "volume": 0.4
-      }
-    ],
-    "subtitle": "iceandfire.sound.subtitle.dread_lich_summon"
-  },
   "hydra_regen_head": {
     "category": "hostile",
     "sounds": [

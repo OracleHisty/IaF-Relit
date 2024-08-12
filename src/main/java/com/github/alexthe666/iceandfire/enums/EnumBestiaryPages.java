@@ -30,7 +30,6 @@ public enum EnumBestiaryPages {
     AMPHITHERE(2),
     SEASERPENT(2),
     HYDRA(2),
-    DREAD_MOBS(1),
     LIGHTNINGDRAGON(5),
     LIGHTNINGDRAGONEGG(1),
     GHOST(1);

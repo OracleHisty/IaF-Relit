@@ -10,7 +10,7 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.material.MapColor;
 import org.jetbrains.annotations.NotNull;
 
-public class BlockBurntTorchWall extends WallTorchBlock implements IDreadBlock {
+public class BlockBurntTorchWall extends WallTorchBlock {
 
     public BlockBurntTorchWall() {
         super(

@@ -2359,65 +2359,6 @@ public abstract class EntityDragonBase extends TamableAnimal implements IPassabi
                 this.setFlying(false);
                 this.setHovering(false);
             }
-        } else if (controllingPassenger instanceof EntityDreadQueen) {
-            // Original logic involves riding
-            Player ridingPlayer = this.getRidingPlayer();
-            if (ridingPlayer != null) {
-                if (this.isGoingUp()) {
-                    if (!this.isFlying() && !this.isHovering()) {
-                        this.spacebarTicks += 2;
-                    }
-                } else if (this.isDismounting()) {
-                    if (this.isFlying() || this.isHovering()) {
-                        this.setDeltaMovement(this.getDeltaMovement().add(0, -0.04, 0));
-                        this.setFlying(false);
-                        this.setHovering(false);
-                    }
-                }
-            }
-            if (!this.isDismounting() && (this.isFlying() || this.isHovering())) {
-                this.setDeltaMovement(this.getDeltaMovement().add(0, 0.01, 0));
-            }
-            if (this.isStriking() && this.getControllingPassenger() != null && this.getDragonStage() > 1) {
-                this.setBreathingFire(true);
-                this.riderShootFire(this.getControllingPassenger());
-                this.fireStopTicks = 10;
-            }
-            if (this.isAttacking() && this.getControllingPassenger() != null && this.getControllingPassenger() instanceof Player) {
-                LivingEntity target = DragonUtils.riderLookingAtEntity(this, this.getControllingPassenger(), this.getDragonStage() + (this.getBoundingBox().maxX - this.getBoundingBox().minX));
-                if (this.getAnimation() != EntityDragonBase.ANIMATION_BITE) {
-                    this.setAnimation(EntityDragonBase.ANIMATION_BITE);
-                }
-                if (target != null && !DragonUtils.hasSameOwner(this, target)) {
-                    logic.attackTarget(target, ridingPlayer, (int) this.getAttribute(Attributes.ATTACK_DAMAGE).getValue());
-                }
-            }
-            if (this.getControllingPassenger() != null && this.getControllingPassenger().isShiftKeyDown()) {
-                EntityDataProvider.getCapability(getControllingPassenger()).ifPresent(data -> data.miscData.setDismounted(true));
-                this.getControllingPassenger().stopRiding();
-            }
-            if (this.isFlying()) {
-                if (!this.isHovering() && this.getControllingPassenger() != null && !this.onGround() && Math.max(Math.abs(this.getDeltaMovement().x()), Math.abs(this.getDeltaMovement().z())) < 0.1F) {
-                    this.setHovering(true);
-                    this.setFlying(false);
-                }
-            } else {
-                if (this.isHovering() && this.getControllingPassenger() != null && !this.onGround() && Math.max(Math.abs(this.getDeltaMovement().x()), Math.abs(this.getDeltaMovement().z())) > 0.1F) {
-                    this.setFlying(true);
-                    this.usingGroundAttack = false;
-                    this.setHovering(false);
-                }
-            }
-            if (this.spacebarTicks > 0) {
-                this.spacebarTicks--;
-            }
-            if (this.spacebarTicks > 20 && this.getOwner() != null && this.getPassengers().contains(this.getOwner()) && !this.isFlying() && !this.isHovering()) {
-                this.setHovering(true);
-            }
-
-            if (this.isVehicle() && !this.isOverAir() && this.isFlying() && !this.isHovering() && this.flyTicks > 40) {
-                this.setFlying(false);
-            }
         }
     }
 

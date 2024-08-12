@@ -31,7 +31,7 @@ public class RenderDragonBase extends MobRenderer<EntityDragonBase, AdvancedEnti
     public RenderDragonBase(EntityRendererProvider.Context context, AdvancedEntityModel<EntityDragonBase> model, int dragonType) {
         super(context, model, 0.15F);
         this.addLayer(new LayerDragonEyes(this));
-        this.addLayer(new LayerDragonRider(this, false));
+        this.addLayer(new LayerDragonRider(this));
         this.addLayer(new LayerDragonBanner(this));
         this.addLayer(new LayerDragonArmor(this, dragonType));
         this.dragonType = dragonType;

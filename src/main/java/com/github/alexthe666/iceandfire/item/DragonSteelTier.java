@@ -21,7 +21,6 @@ public class DragonSteelTier {
     public static final Tier DRAGONSTEEL_TIER_ICE = createTierWithRepairItem(() -> Ingredient.of(IafItemRegistry.DRAGONSTEEL_ICE_INGOT.get()), "dragonsteel_tier_ice");
     public static final Tier DRAGONSTEEL_TIER_LIGHTNING = createTierWithRepairItem(() -> Ingredient.of(IafItemRegistry.DRAGONSTEEL_LIGHTNING_INGOT.get()), "dragonsteel_tier_lightning");
     //FIXME: Probably shouldn't be called dragonsteel
-    public static final Tier DRAGONSTEEL_TIER_DREAD_QUEEN = createTierWithRepairItem(() -> Ingredient.of(), "dragonsteel_tier_dread_queen");
 
     private static Tier createTierWithRepairItem(Supplier<Ingredient> ingredient, String name) {
         return TierSortingRegistry.registerTier(

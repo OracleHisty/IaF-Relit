@@ -171,7 +171,7 @@ public class IafDragonLogic {
             if (dragon.getControllingPassenger() == null && dragon.doesWantToLand() && !dragon.onGround() && !dragon.isInWater()) {
                 dragon.setDeltaMovement(dragon.getDeltaMovement().add(0, -0.25, 0));
             } else {
-                if ((dragon.getControllingPassenger() == null || dragon.getControllingPassenger() instanceof EntityDreadQueen) && !dragon.isBeyondHeight()) {
+                if ((dragon.getControllingPassenger() == null) && !dragon.isBeyondHeight()) {
                     double up = dragon.isInWater() ? 0.12D : 0.08D;
                     dragon.setDeltaMovement(dragon.getDeltaMovement().add(0, up, 0));
                 }

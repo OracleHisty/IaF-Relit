@@ -82,11 +82,6 @@ public class IafConfig {
     public static boolean weezerTinkers = true;
     public static double dragonBlockBreakingDropChance = 0.1D;
     public static boolean dragonAuto3rdPerson = true;
-    public static double dreadQueenMaxHealth = 750;
-    public static boolean generateMausoleums = true;
-    public static boolean spawnLiches = true;
-    public static int lichSpawnRate = 4;
-    public static int lichSpawnChance = 30;
     public static double hydraMaxHealth = 250D;
     public static int generateHydraChance = 120;
     public static boolean explosiveDragonBreath = false;
@@ -196,10 +191,7 @@ public class IafConfig {
             dragonMovedWronglyFix = ConfigHolder.SERVER.dragonMovedWronglyFix.get();
             weezerTinkers = ConfigHolder.SERVER.weezerTinkers.get();
             dragonBlockBreakingDropChance = ConfigHolder.SERVER.dragonBlockBreakingDropChance.get();
-            generateMausoleums = ConfigHolder.SERVER.generateMausoleums.get();
-            spawnLiches = ConfigHolder.SERVER.spawnLiches.get();
-            lichSpawnRate = ConfigHolder.SERVER.lichSpawnRate.get();
-            lichSpawnChance = ConfigHolder.SERVER.lichSpawnChance.get();
+
             hydraMaxHealth = ConfigHolder.SERVER.hydraMaxHealth.get();
             generateHydraChance = ConfigHolder.SERVER.generateHydraChance.get();
             explosiveDragonBreath = ConfigHolder.SERVER.explosiveDragonBreath.get();

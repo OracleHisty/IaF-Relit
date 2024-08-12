@@ -162,9 +162,7 @@ public final class IafSoundRegistry {
     public static final SoundEvent HYDRA_REGEN_HEAD = createSoundEvent("hydra_regen_head");
 
 
-    public static final SoundEvent DREAD_LICH_SUMMON = createSoundEvent("dread_lich_summon");
 
-    public static final SoundEvent DREAD_GHOUL_IDLE = createSoundEvent("dread_ghoul_idle");
 
     public static final SoundEvent LIGHTNINGDRAGON_CHILD_IDLE = createSoundEvent("lightningdragon_child_idle");
 
