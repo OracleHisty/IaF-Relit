@@ -34,43 +34,6 @@ public class IafRecipeRegistry {
     @SubscribeEvent
     public static void preInit(FMLCommonSetupEvent event) {
         event.enqueueWork(() -> {
-            DispenserBlock.registerBehavior(IafItemRegistry.STYMPHALIAN_ARROW.get(), new AbstractProjectileDispenseBehavior() {
-                /**
-                 * Return the projectile entity spawned by this dispense behavior.
-                 */
-                @Override
-                protected @NotNull Projectile getProjectile(@NotNull Level worldIn, @NotNull Position position, @NotNull ItemStack stackIn) {
-                    EntityStymphalianArrow entityarrow = new EntityStymphalianArrow(
-                        IafEntityRegistry.STYMPHALIAN_ARROW.get(), worldIn, position.x(), position.y(),
-                        position.z());
-                    entityarrow.pickup = AbstractArrow.Pickup.ALLOWED;
-                    return entityarrow;
-                }
-            });
-            DispenserBlock.registerBehavior(IafItemRegistry.AMPHITHERE_ARROW.get(), new AbstractProjectileDispenseBehavior() {
-                /**
-                 * Return the projectile entity spawned by this dispense behavior.
-                 */
-                @Override
-                protected @NotNull Projectile getProjectile(@NotNull Level worldIn, @NotNull Position position, @NotNull ItemStack stackIn) {
-                    EntityAmphithereArrow entityarrow = new EntityAmphithereArrow(IafEntityRegistry.AMPHITHERE_ARROW.get(),
-                        worldIn, position.x(), position.y(), position.z());
-                    entityarrow.pickup = AbstractArrow.Pickup.ALLOWED;
-                    return entityarrow;
-                }
-            });
-            DispenserBlock.registerBehavior(IafItemRegistry.SEA_SERPENT_ARROW.get(), new AbstractProjectileDispenseBehavior() {
-                /**
-                 * Return the projectile entity spawned by this dispense behavior.
-                 */
-                @Override
-                protected @NotNull Projectile getProjectile(@NotNull Level worldIn, @NotNull Position position, @NotNull ItemStack stackIn) {
-                    EntitySeaSerpentArrow entityarrow = new EntitySeaSerpentArrow(IafEntityRegistry.SEA_SERPENT_ARROW.get(),
-                        worldIn, position.x(), position.y(), position.z());
-                    entityarrow.pickup = AbstractArrow.Pickup.ALLOWED;
-                    return entityarrow;
-                }
-            });
             DispenserBlock.registerBehavior(IafItemRegistry.DRAGONBONE_ARROW.get(), new AbstractProjectileDispenseBehavior() {
                 /**
                  * Return the projectile entity spawned by this dispense behavior.
@@ -78,31 +41,9 @@ public class IafRecipeRegistry {
                 @Override
                 protected @NotNull Projectile getProjectile(@NotNull Level worldIn, @NotNull Position position, @NotNull ItemStack stackIn) {
                     EntityDragonArrow entityarrow = new EntityDragonArrow(IafEntityRegistry.DRAGON_ARROW.get(),
-                        position.x(), position.y(), position.z(), worldIn);
+                            position.x(), position.y(), position.z(), worldIn);
                     entityarrow.pickup = AbstractArrow.Pickup.ALLOWED;
                     return entityarrow;
-                }
-            });
-            DispenserBlock.registerBehavior(IafItemRegistry.HYDRA_ARROW.get(), new AbstractProjectileDispenseBehavior() {
-                /**
-                 * Return the projectile entity spawned by this dispense behavior.
-                 */
-                @Override
-                protected @NotNull Projectile getProjectile(@NotNull Level worldIn, @NotNull Position position, @NotNull ItemStack stackIn) {
-                    EntityHydraArrow entityarrow = new EntityHydraArrow(IafEntityRegistry.HYDRA_ARROW.get(), worldIn,
-                        position.x(), position.y(), position.z());
-                    entityarrow.pickup = AbstractArrow.Pickup.ALLOWED;
-                    return entityarrow;
-                }
-            });
-            DispenserBlock.registerBehavior(IafItemRegistry.ROTTEN_EGG.get(), new AbstractProjectileDispenseBehavior() {
-                /**
-                 * Return the projectile entity spawned by this dispense behavior.
-                 */
-                @Override
-                protected @NotNull Projectile getProjectile(@NotNull Level worldIn, @NotNull Position position, @NotNull ItemStack stackIn) {
-                    return new EntityCockatriceEgg(IafEntityRegistry.COCKATRICE_EGG.get(), position.x(), position.y(),
-                        position.z(), worldIn);
                 }
             });
 

@@ -313,97 +313,6 @@ public class ServerEvents {
             }
         }
     }
-
-    @SubscribeEvent
-    public void onPlayerAttack(final AttackEntityEvent event) {
-        if (event.getTarget() instanceof EntityStoneStatue statue) {
-            statue.setHealth(statue.getMaxHealth());
-
-            if (event.getEntity() != null) {
-                ItemStack stack = event.getEntity().getMainHandItem();
-                event.getTarget().playSound(SoundEvents.STONE_BREAK, 2, 0.5F + (this.rand.nextFloat() - this.rand.nextFloat()) * 0.2F + 0.5F);
-
-                if (stack.getItem().isCorrectToolForDrops(Blocks.STONE.defaultBlockState()) || stack.getItem().getDescriptionId().contains("pickaxe")) {
-                    event.setCanceled(true);
-                    statue.setCrackAmount(statue.getCrackAmount() + 1);
-
-                    if (statue.getCrackAmount() > 9) {
-                        CompoundTag writtenTag = new CompoundTag();
-                        event.getTarget().saveWithoutId(writtenTag);
-                        event.getTarget().playSound(SoundEvents.STONE_BREAK, 2, (this.rand.nextFloat() - this.rand.nextFloat()) * 0.2F + 0.5F);
-                        event.getTarget().remove(Entity.RemovalReason.KILLED);
-
-                        if (stack.getEnchantmentLevel(Enchantments.SILK_TOUCH) > 0) {
-                            ItemStack statuette = new ItemStack(IafItemRegistry.STONE_STATUE.get());
-                            CompoundTag tag = statuette.getOrCreateTag();
-                            tag.putBoolean("IAFStoneStatuePlayerEntity", statue.getTrappedEntityTypeString().equalsIgnoreCase("minecraft:player"));
-                            tag.putString("IAFStoneStatueEntityID", statue.getTrappedEntityTypeString());
-                            tag.put("IAFStoneStatueNBT", writtenTag);
-                            statue.addAdditionalSaveData(tag);
-
-                            if (!statue.level().isClientSide()) {
-                                statue.spawnAtLocation(statuette, 1);
-                            }
-                        } else {
-                            if (!statue.level().isClientSide) {
-                                statue.spawnAtLocation(Blocks.COBBLESTONE.asItem(), 2 + event.getEntity().getRandom().nextInt(4));
-                            }
-                        }
-
-                        statue.remove(Entity.RemovalReason.KILLED);
-                    }
-                }
-            }
-        }
-    }
-
-    @SubscribeEvent
-    public void onEntityDie(LivingDeathEvent event) {
-        EntityDataProvider.getCapability(event.getEntity()).ifPresent(data -> {
-            if (event.getEntity().level().isClientSide()) {
-                return;
-            }
-
-            if (!data.chainData.getChainedTo().isEmpty()) {
-                ItemEntity entityitem = new ItemEntity(event.getEntity().level(),
-                        event.getEntity().getX(),
-                        event.getEntity().getY() + 1,
-                        event.getEntity().getZ(),
-                        new ItemStack(IafItemRegistry.CHAIN.get(), data.chainData.getChainedTo().size()));
-                entityitem.setDefaultPickUpDelay();
-                event.getEntity().level().addFreshEntity(entityitem);
-
-                data.chainData.clearChains();
-            }
-        });
-
-        if (event.getEntity().getUUID().equals(ServerEvents.ALEX_UUID)) {
-            event.getEntity().spawnAtLocation(new ItemStack(IafItemRegistry.WEEZER_BLUE_ALBUM.get()), 1);
-        }
-
-        if (event.getEntity() instanceof Player && IafConfig.ghostsFromPlayerDeaths) {
-            Entity attacker = event.getEntity().getLastHurtByMob();
-            if (attacker instanceof Player && event.getEntity().getRandom().nextInt(3) == 0) {
-                CombatTracker combat = event.getEntity().getCombatTracker();
-                CombatEntry entry = combat.getMostSignificantFall();
-                boolean flag = entry != null && (entry.source().is(DamageTypes.FALL) || entry.source().is(DamageTypes.DROWN) || entry.source().is(DamageTypes.LAVA));
-                if (event.getEntity().hasEffect(MobEffects.POISON)) {
-                    flag = true;
-                }
-                if (flag) {
-                    Level world = event.getEntity().level();
-                    EntityGhost ghost = IafEntityRegistry.GHOST.get().create(world);
-                    ghost.copyPosition(event.getEntity());
-                    if (!world.isClientSide) {
-                        ghost.finalizeSpawn((ServerLevelAccessor) world, world.getCurrentDifficultyAt(event.getEntity().blockPosition()), MobSpawnType.SPAWNER, null, null);
-                        world.addFreshEntity(ghost);
-                    }
-                    ghost.setDaytimeMode(true);
-                }
-            }
-        }
-    }
-
     @SubscribeEvent
     public void onEntityUseItem(PlayerInteractEvent.RightClickItem event) {
         if (event.getEntity() != null && event.getEntity().getXRot() > 87 && event.getEntity().getVehicle() != null && event.getEntity().getVehicle() instanceof EntityDragonBase) {
@@ -463,11 +372,9 @@ public class ServerEvents {
         }
     }
 
-    public static void onLeftClick(final Player playerEntity, final ItemStack stack) {
-        if (stack.getItem() == IafItemRegistry.GHOST_SWORD.get()) {
-            ItemGhostSword.spawnGhostSwordEntity(stack, playerEntity);
-        }
+    private static void onLeftClick(Player entity, ItemStack itemStack) {
     }
+
 
     @SubscribeEvent
     public void onPlayerRightClick(PlayerInteractEvent.RightClickBlock event) {

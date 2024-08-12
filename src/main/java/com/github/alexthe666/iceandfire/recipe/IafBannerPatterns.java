@@ -14,12 +14,5 @@ public class IafBannerPatterns {
     public static final RegistryObject<BannerPattern> PATTERN_FIRE_HEAD = BANNERS.register("fire_head", () -> new BannerPattern("iaf_fire_head"));
     public static final RegistryObject<BannerPattern> PATTERN_ICE_HEAD = BANNERS.register("ice_head", () -> new BannerPattern("iaf_ice_head"));
     public static final RegistryObject<BannerPattern> PATTERN_LIGHTNING_HEAD = BANNERS.register("lightning_head", () -> new BannerPattern("iaf_lightning_head"));
-    public static final RegistryObject<BannerPattern> PATTERN_AMPHITHERE = BANNERS.register("amphithere", () -> new BannerPattern("iaf_amphithere"));
-    public static final RegistryObject<BannerPattern> PATTERN_BIRD = BANNERS.register("bird", () -> new BannerPattern("iaf_bird"));
-    public static final RegistryObject<BannerPattern> PATTERN_FEATHER = BANNERS.register("feather", () -> new BannerPattern("iaf_feather"));
-    public static final RegistryObject<BannerPattern> PATTERN_HIPPOCAMPUS = BANNERS.register("hippocampus", () -> new BannerPattern("iaf_hippocampus"));
-    public static final RegistryObject<BannerPattern> PATTERN_MERMAID = BANNERS.register("mermaid", () -> new BannerPattern("iaf_mermaid"));
-    public static final RegistryObject<BannerPattern> PATTERN_SEA_SERPENT = BANNERS.register("sea_serpent", () -> new BannerPattern("iaf_sea_serpent"));
-    public static final RegistryObject<BannerPattern> PATTERN_WEEZER = BANNERS.register("weezer", () -> new BannerPattern("iaf_weezer"));
 
 }
