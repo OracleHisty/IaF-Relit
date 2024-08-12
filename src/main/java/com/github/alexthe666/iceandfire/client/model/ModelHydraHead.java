@@ -4,7 +4,6 @@ import com.github.alexthe666.citadel.animation.IAnimatedEntity;
 import com.github.alexthe666.citadel.client.model.AdvancedModelBox;
 import com.github.alexthe666.citadel.client.model.ModelAnimator;
 import com.github.alexthe666.citadel.client.model.basic.BasicModelPart;
-import com.github.alexthe666.iceandfire.entity.EntityGorgon;
 import com.github.alexthe666.iceandfire.entity.EntityHydra;
 import com.google.common.collect.ImmutableList;
 import com.mojang.blaze3d.vertex.PoseStack;
@@ -123,9 +122,7 @@ public class ModelHydraHead extends ModelDragonBase<EntityHydra> {
         float speed_idle = 0.05F;
         float degree_walk = 0.2F;
         float degree_idle = 0.5F;
-        if (EntityGorgon.isStoneMob(entity)) {
-            return;
-        }
+
         float partialTicks = Minecraft.getInstance().getFrameTime();
         AdvancedModelBox[] ENTIRE_HEAD = new AdvancedModelBox[]{Neck1, Neck2, Neck3, Neck4};
         this.chainFlap(ENTIRE_HEAD, speed_idle, degree_idle * 0.15F, -3 + headIndex % 4, f2, 1);

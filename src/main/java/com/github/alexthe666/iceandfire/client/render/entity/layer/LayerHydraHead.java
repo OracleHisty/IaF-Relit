@@ -79,8 +79,8 @@ public class LayerHydraHead extends RenderLayer<EntityHydra, ModelHydraBody> {
     }
 
 
-    public static ResourceLocation getHeadTexture(EntityHydra gorgon) {
-        switch (gorgon.getVariant()) {
+    public static ResourceLocation getHeadTexture(EntityHydra hydra) {
+        switch (hydra.getVariant()) {
             default:
                 return RenderHydra.TEXUTURE_0;
             case 1:
@@ -91,8 +91,8 @@ public class LayerHydraHead extends RenderLayer<EntityHydra, ModelHydraBody> {
     }
 
     @Override
-    public @NotNull ResourceLocation getTextureLocation(EntityHydra gorgon) {
-        switch (gorgon.getVariant()) {
+    public @NotNull ResourceLocation getTextureLocation(EntityHydra hydra) {
+        switch (hydra.getVariant()) {
             default:
                 return RenderHydra.TEXUTURE_0;
             case 1:

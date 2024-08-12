@@ -29,8 +29,8 @@ public class RenderHydra extends MobRenderer<EntityHydra, ModelHydraBody> {
     }
 
     @Override
-    public @NotNull ResourceLocation getTextureLocation(EntityHydra gorgon) {
-        switch (gorgon.getVariant()) {
+    public @NotNull ResourceLocation getTextureLocation(EntityHydra hydra) {
+        switch (hydra.getVariant()) {
             default:
                 return TEXUTURE_0;
             case 1:

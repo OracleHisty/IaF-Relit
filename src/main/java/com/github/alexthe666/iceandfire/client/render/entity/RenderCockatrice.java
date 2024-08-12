@@ -5,7 +5,6 @@ import com.github.alexthe666.iceandfire.client.model.ModelCockatrice;
 import com.github.alexthe666.iceandfire.client.model.ModelCockatriceChick;
 import com.github.alexthe666.iceandfire.client.particle.CockatriceBeamRender;
 import com.github.alexthe666.iceandfire.entity.EntityCockatrice;
-import com.github.alexthe666.iceandfire.entity.EntityGorgon;
 import com.mojang.blaze3d.vertex.PoseStack;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.culling.Frustum;
@@ -67,10 +66,8 @@ public class RenderCockatrice extends MobRenderer<EntityCockatrice, AdvancedEnti
         super.render(entityIn, entityYaw, partialTicks, matrixStackIn, bufferIn, packedLightIn);
         LivingEntity livingentity = entityIn.getTargetedEntity();
         boolean blindness = entityIn.hasEffect(MobEffects.BLINDNESS) || livingentity != null && livingentity.hasEffect(MobEffects.BLINDNESS);
-        if (!blindness && livingentity != null && EntityGorgon.isEntityLookingAt(entityIn, livingentity, EntityCockatrice.VIEW_RADIUS) && EntityGorgon.isEntityLookingAt(livingentity, entityIn, EntityCockatrice.VIEW_RADIUS)) {
-            if (livingentity != null) {
-                CockatriceBeamRender.render(entityIn, livingentity, matrixStackIn, bufferIn, partialTicks);
-            }
+        if (!blindness && livingentity != null) {
+            CockatriceBeamRender.render(entityIn, livingentity, matrixStackIn, bufferIn, partialTicks);
         }
 
     }

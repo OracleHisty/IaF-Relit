@@ -8,6 +8,7 @@ import com.github.alexthe666.iceandfire.datagen.tags.IafItemTags;
 import com.github.alexthe666.iceandfire.entity.ai.*;
 import com.github.alexthe666.iceandfire.entity.util.*;
 import com.github.alexthe666.iceandfire.event.ServerEvents;
+import com.github.alexthe666.iceandfire.item.IafItemRegistry;
 import com.github.alexthe666.iceandfire.misc.IafSoundRegistry;
 import com.google.common.base.Predicate;
 import net.minecraft.core.BlockPos;
@@ -301,7 +302,7 @@ public class EntityCockatrice extends TamableAnimal implements IAnimatedEntity, 
 
     @Nullable
     public LivingEntity getTargetedEntity() {
-        boolean blindness = this.hasEffect(MobEffects.BLINDNESS) || this.getTarget() != null && this.getTarget().hasEffect(MobEffects.BLINDNESS) || EntityGorgon.isBlindfolded(this.getTarget());
+        boolean blindness = this.hasEffect(MobEffects.BLINDNESS) || this.getTarget() != null && this.getTarget().hasEffect(MobEffects.BLINDNESS);
         if (blindness) {
             return null;
         }
@@ -566,7 +567,7 @@ public class EntityCockatrice extends TamableAnimal implements IAnimatedEntity, 
         if (blindness) {
             this.setStaring(false);
         }
-        if (!this.level().isClientSide && !blindness && attackTarget != null && EntityGorgon.isEntityLookingAt(this, attackTarget, VIEW_RADIUS) && EntityGorgon.isEntityLookingAt(attackTarget, this, VIEW_RADIUS) && !EntityGorgon.isBlindfolded(attackTarget)) {
+        if (!this.level().isClientSide && !blindness && attackTarget != null && isEntityLookingAt(this, attackTarget, VIEW_RADIUS) && isEntityLookingAt(attackTarget, this, VIEW_RADIUS) && !isBlindfolded(attackTarget)) {
             if (!shouldMelee()) {
                 if (!this.isStaring()) {
                     this.setStaring(true);
@@ -612,7 +613,7 @@ public class EntityCockatrice extends TamableAnimal implements IAnimatedEntity, 
             }
         }
 
-        if (this.level().isClientSide && this.getTargetedEntity() != null && EntityGorgon.isEntityLookingAt(this, this.getTargetedEntity(), VIEW_RADIUS) && EntityGorgon.isEntityLookingAt(this.getTargetedEntity(), this, VIEW_RADIUS) && this.isStaring()) {
+        if (this.level().isClientSide && this.getTargetedEntity() != null && isEntityLookingAt(this, this.getTargetedEntity(), VIEW_RADIUS) && isEntityLookingAt(this.getTargetedEntity(), this, VIEW_RADIUS) && this.isStaring()) {
             if (this.hasTargetedEntity()) {
                 if (this.clientSideAttackTime < this.getAttackDuration()) {
                     ++this.clientSideAttackTime;
@@ -652,7 +653,7 @@ public class EntityCockatrice extends TamableAnimal implements IAnimatedEntity, 
         int i = 0;
         for (EntityCockatrice cockatrice : list) {
             if (!cockatrice.is(this) && cockatrice.getTarget() != null && cockatrice.getTarget() == this.getTarget()) {
-                boolean bothLooking = EntityGorgon.isEntityLookingAt(cockatrice, cockatrice.getTarget(), VIEW_RADIUS) && EntityGorgon.isEntityLookingAt(cockatrice.getTarget(), cockatrice, VIEW_RADIUS);
+                boolean bothLooking = isEntityLookingAt(cockatrice, cockatrice.getTarget(), VIEW_RADIUS) && isEntityLookingAt(cockatrice.getTarget(), cockatrice, VIEW_RADIUS);
                 if (bothLooking) {
                     i++;
                 }
@@ -798,5 +799,19 @@ public class EntityCockatrice extends TamableAnimal implements IAnimatedEntity, 
     @Override
     public boolean removeWhenFarAway(double distanceToClosestPlayer) {
         return false;
+    }
+
+    public static boolean isEntityLookingAt(LivingEntity looker, LivingEntity seen, double degree) {
+        degree *= 1 + (looker.distanceTo(seen) * 0.1);
+        Vec3 Vector3d = looker.getViewVector(1.0F).normalize();
+        Vec3 Vector3d1 = new Vec3(seen.getX() - looker.getX(), seen.getBoundingBox().minY + (double) seen.getEyeHeight() - (looker.getY() + (double) looker.getEyeHeight()), seen.getZ() - looker.getZ());
+        double d0 = Vector3d1.length();
+        Vector3d1 = Vector3d1.normalize();
+        double d1 = Vector3d.dot(Vector3d1);
+        return d1 > 1.0D - degree / d0 && (looker.hasLineOfSight(seen));
+    }
+
+    public static boolean isBlindfolded(LivingEntity attackTarget) {
+        return attackTarget != null && (attackTarget.getItemBySlot(EquipmentSlot.HEAD).getItem() == IafItemRegistry.BLINDFOLD.get() || attackTarget.hasEffect(MobEffects.BLINDNESS) || ServerEvents.isBlindMob(attackTarget));
     }
 }

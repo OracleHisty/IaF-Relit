@@ -227,18 +227,6 @@ public class DragonUtils {
         return ghost.blockPosition();
     }
 
-    public static BlockPos getBlockInTargetsViewGorgon(EntityGorgon cockatrice, LivingEntity target) {
-        float radius = 6;
-        float angle = (0.01745329251F * target.yHeadRot);
-        double extraX = radius * Mth.sin((float) (Math.PI + angle));
-        double extraZ = radius * Mth.cos(angle);
-        BlockPos radialPos = BlockPos.containing(target.getX() + extraX, target.getY(), target.getZ() + extraZ);
-        if (cockatrice.distanceToSqr(Vec3.atCenterOf(radialPos)) < 300 && !cockatrice.isTargetBlocked(Vec3.atCenterOf(radialPos).add(0, 0.75, 0))) {
-            return radialPos;
-        }
-        return target.blockPosition();
-    }
-
 
     public static BlockPos getBlockInTargetsViewSeaSerpent(EntitySeaSerpent serpent, LivingEntity target) {
         float radius = 10 * serpent.getSeaSerpentScale() + serpent.getRandom().nextInt(10);
@@ -311,7 +299,7 @@ public class DragonUtils {
             return false;
         }
 
-        return (!(entity instanceof IDeadMob deadMob) || !deadMob.isMobDead()) && !EntityGorgon.isStoneMob(entity);
+        return (!(entity instanceof IDeadMob deadMob) || !deadMob.isMobDead());
     }
 
 

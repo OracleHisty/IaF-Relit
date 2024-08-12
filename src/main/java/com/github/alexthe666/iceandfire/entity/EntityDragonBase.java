@@ -2503,7 +2503,7 @@ public abstract class EntityDragonBase extends TamableAnimal implements IPassabi
     }
 
     public void roar() {
-        if (EntityGorgon.isStoneMob(this) || this.isModelDead()) {
+        if (this.isModelDead()) {
             return;
         }
         if (random.nextBoolean()) {
@@ -2560,7 +2560,7 @@ public abstract class EntityDragonBase extends TamableAnimal implements IPassabi
     }
 
     public boolean shouldRenderEyes() {
-        return !this.isSleeping() && !this.isModelDead() && !this.isBlinking() && !EntityGorgon.isStoneMob(this);
+        return !this.isSleeping() && !this.isModelDead() && !this.isBlinking();
     }
 
     @Override

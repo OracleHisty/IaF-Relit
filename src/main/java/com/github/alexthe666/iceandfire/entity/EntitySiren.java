@@ -272,12 +272,12 @@ public class EntitySiren extends Monster implements IAnimatedEntity, IVillagerFe
         } else if (!swimming && swimProgress > 0.0F) {
             swimProgress -= 0.5F;
         }
-        if (!level().isClientSide && !EntityGorgon.isStoneMob(this) && this.isActuallySinging()) {
+        if (!level().isClientSide && this.isActuallySinging()) {
             updateLure();
             checkForPrey();
 
         }
-        if (!level().isClientSide && EntityGorgon.isStoneMob(this) && this.isSinging()) {
+        if (!level().isClientSide && this.isSinging()) {
             this.setSinging(false);
         }
         if (isActuallySinging() && !this.isInWater()) {

@@ -27,7 +27,6 @@ import static com.github.alexthe666.iceandfire.IceAndFire.MODID;
 
 @Mod.EventBusSubscriber(modid = MODID, bus = Mod.EventBusSubscriber.Bus.MOD)
 public class IafDamageRegistry {
-    public static final ResourceKey<DamageType> GORGON_DMG_TYPE = ResourceKey.create(Registries.DAMAGE_TYPE, new ResourceLocation("iceandfire:gorgon"));
     public static final ResourceKey<DamageType> DRAGON_FIRE_TYPE = ResourceKey.create(Registries.DAMAGE_TYPE, new ResourceLocation("iceandfire:dragon_fire"));
     public static final ResourceKey<DamageType> DRAGON_ICE_TYPE = ResourceKey.create(Registries.DAMAGE_TYPE, new ResourceLocation("iceandfire:dragon_ice"));
     public static final ResourceKey<DamageType> DRAGON_LIGHTNING_TYPE = ResourceKey.create(Registries.DAMAGE_TYPE, new ResourceLocation("iceandfire:dragon_lightning"));
@@ -65,11 +64,6 @@ public class IafDamageRegistry {
         }
     }
 
-    public static CustomEntityDamageSource causeGorgonDamage(@Nullable Entity entity) {
-        Holder<DamageType> holder = entity.level().registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolder(GORGON_DMG_TYPE).get();
-        return new CustomEntityDamageSource(holder, entity);
-    }
-
     public static CustomEntityDamageSource causeDragonFireDamage(@Nullable Entity entity) {
         Holder<DamageType> holder = entity.level().registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolder(DRAGON_FIRE_TYPE).get();
         return new CustomEntityDamageSource(holder, entity);
@@ -98,32 +92,5 @@ public class IafDamageRegistry {
     public static CustomIndirectEntityDamageSource causeIndirectDragonLightningDamage(Entity source, @Nullable Entity indirectEntityIn) {
         Holder<DamageType> holder = indirectEntityIn.level().registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolder(DRAGON_LIGHTNING_TYPE).get();
         return new CustomIndirectEntityDamageSource(holder, source, indirectEntityIn);
-    }
-
-    @SubscribeEvent
-    public void gatherData(GatherDataEvent event) {
-        event.getGenerator().addProvider(
-                // Tell generator to run only when server data are generating
-                event.includeServer(),
-                (DataProvider.Factory<IafDamageTypeTagsProvider>) output -> new IafDamageTypeTagsProvider(
-                        event.getGenerator().getPackOutput(),
-                        event.getLookupProvider(),
-                        MODID,
-                        event.getExistingFileHelper()
-                )
-        );
-    }
-
-    public static class IafDamageTypeTagsProvider extends DamageTypeTagsProvider {
-
-        public IafDamageTypeTagsProvider(PackOutput p_270719_, CompletableFuture<HolderLookup.Provider> p_270256_, String modId, @org.jetbrains.annotations.Nullable ExistingFileHelper existingFileHelper) {
-            super(p_270719_, p_270256_, modId, existingFileHelper);
-        }
-
-        @Override
-        public void addTags(HolderLookup.Provider pProvider) {
-            this.tag(DamageTypeTags.BYPASSES_ARMOR).add(GORGON_DMG_TYPE);
-            this.tag(DamageTypeTags.BYPASSES_EFFECTS).add(GORGON_DMG_TYPE);
-        }
     }
 }

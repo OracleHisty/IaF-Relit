@@ -39,8 +39,6 @@ public class IafConfig {
     public static int dragonTargetSearchLength = 128;
     public static int dragonWanderFromHomeDistance = 40;
     public static int dragonHungerTickRate = 3000;
-    public static boolean generateGorgonTemple = true;
-    public static double gorgonMaxHealth = 100D;
     public static int spawnPixiesChance = 60;
     public static int pixieVillageSize = 5;
     public static boolean pixiesStealItems = true;
@@ -159,8 +157,6 @@ public class IafConfig {
             dragonTargetSearchLength = ConfigHolder.SERVER.dragonTargetSearchLength.get();
             dragonWanderFromHomeDistance = ConfigHolder.SERVER.dragonWanderFromHomeDistance.get();
             dragonHungerTickRate = ConfigHolder.SERVER.dragonHungerTickRate.get();
-            generateGorgonTemple = ConfigHolder.SERVER.generateGorgonTemple.get();
-            gorgonMaxHealth = ConfigHolder.SERVER.gorgonMaxHealth.get();
             spawnPixiesChance = ConfigHolder.SERVER.spawnPixiesChance.get();
             pixieVillageSize = ConfigHolder.SERVER.pixieVillageSize.get();
             pixiesStealItems = ConfigHolder.SERVER.pixiesStealItems.get();

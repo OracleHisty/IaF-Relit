@@ -1,9 +1,10 @@
 package com.github.alexthe666.iceandfire.entity.ai;
 
 import com.github.alexthe666.iceandfire.entity.EntityCockatrice;
-import com.github.alexthe666.iceandfire.entity.EntityGorgon;
+import com.github.alexthe666.iceandfire.entity.EntityStoneStatue;
 import com.github.alexthe666.iceandfire.entity.util.DragonUtils;
 import net.minecraft.core.BlockPos;
+import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.goal.Goal;
 import net.minecraft.world.phys.Vec3;
@@ -58,7 +59,7 @@ public class CockatriceAIStareAttack extends Goal {
         LivingEntity LivingEntity = this.entity.getTarget();
         if (LivingEntity != null) {
 
-            if (EntityGorgon.isStoneMob(LivingEntity) || !LivingEntity.isAlive()) {
+            if (isStoneMob(LivingEntity) || !LivingEntity.isAlive()) {
                 entity.setTarget(null);
                 this.entity.setTargetedEntity(0);
                 stop();
@@ -96,5 +97,10 @@ public class CockatriceAIStareAttack extends Goal {
             this.entity.getLookControl().setLookAt(LivingEntity.getX(), LivingEntity.getY() + LivingEntity.getEyeHeight(), LivingEntity.getZ(), this.entity.getMaxHeadYRot(), this.entity.getMaxHeadXRot());
         }
     }
+
+    public boolean isStoneMob(Entity entity) {
+        return entity instanceof EntityStoneStatue;
+    }
+
 
 }

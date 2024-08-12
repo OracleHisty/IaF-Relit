@@ -1,6 +1,5 @@
 package com.github.alexthe666.iceandfire.item;
 
-import com.github.alexthe666.iceandfire.entity.EntityGorgon;
 import com.github.alexthe666.iceandfire.entity.props.EntityDataProvider;
 import com.github.alexthe666.iceandfire.entity.util.DragonUtils;
 import com.github.alexthe666.iceandfire.entity.util.IBlacklistedFromStatues;
@@ -132,7 +131,7 @@ public class ItemCockatriceScepter extends Item {
             List<LivingEntity> targets = new ArrayList<>(data.miscData.getTargetedByScepter());
 
             for (LivingEntity target : targets) {
-                if (!EntityGorgon.isEntityLookingAt(caster, target, 0.2F) || !caster.isAlive() || !target.isAlive()) {
+                if (!caster.isAlive() || !target.isAlive()) {
                     data.miscData.removeScepterTarget(target);
                     continue;
                 }

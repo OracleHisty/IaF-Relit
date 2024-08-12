@@ -41,7 +41,6 @@ public class IafEntityRegistry {
     public static final RegistryObject<EntityType<EntityDragonIceCharge>> ICE_DRAGON_CHARGE = registerEntity(EntityType.Builder.<EntityDragonIceCharge>of(EntityDragonIceCharge::new, MobCategory.MISC).sized(0.9F, 0.9F).setCustomClientFactory(EntityDragonIceCharge::new), "ice_dragon_charge");
     public static final RegistryObject<EntityType<EntityDragonLightningCharge>> LIGHTNING_DRAGON_CHARGE = registerEntity(EntityType.Builder.<EntityDragonLightningCharge>of(EntityDragonLightningCharge::new, MobCategory.MISC).sized(0.9F, 0.9F).setCustomClientFactory(EntityDragonLightningCharge::new), "lightning_dragon_charge");
     public static final RegistryObject<EntityType<EntityStoneStatue>> STONE_STATUE = registerEntity(EntityType.Builder.of(EntityStoneStatue::new, MobCategory.CREATURE).sized(0.5F, 0.5F), "stone_statue");
-    public static final RegistryObject<EntityType<EntityGorgon>> GORGON = registerEntity(EntityType.Builder.of(EntityGorgon::new, MobCategory.CREATURE).sized(0.8F, 1.99F), "gorgon");
     public static final RegistryObject<EntityType<EntityPixie>> PIXIE = registerEntity(EntityType.Builder.of(EntityPixie::new, MobCategory.CREATURE).sized(0.4F, 0.8F), "pixie");
     public static final RegistryObject<EntityType<EntitySiren>> SIREN = registerEntity(EntityType.Builder.of(EntitySiren::new, MobCategory.CREATURE).sized(1.6F, 0.9F), "siren");
     public static final RegistryObject<EntityType<EntityHippocampus>> HIPPOCAMPUS = registerEntity(EntityType.Builder.of(EntityHippocampus::new, MobCategory.CREATURE).sized(1.95F, 0.95F), "hippocampus");
@@ -84,7 +83,6 @@ public class IafEntityRegistry {
         creationEvent.put(FIRE_DRAGON.get(), EntityFireDragon.bakeAttributes().build());
         creationEvent.put(ICE_DRAGON.get(), EntityIceDragon.bakeAttributes().build());
         creationEvent.put(LIGHTNING_DRAGON.get(), EntityLightningDragon.bakeAttributes().build());
-        creationEvent.put(GORGON.get(), EntityGorgon.bakeAttributes().build());
         creationEvent.put(STONE_STATUE.get(), EntityStoneStatue.bakeAttributes().build());
         creationEvent.put(PIXIE.get(), EntityPixie.bakeAttributes().build());
         creationEvent.put(SIREN.get(), EntitySiren.bakeAttributes().build());

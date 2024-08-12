@@ -35,8 +35,6 @@ public class ServerConfig {
     public final ForgeConfigSpec.IntValue dragonTargetSearchLength;
     public final ForgeConfigSpec.IntValue dragonWanderFromHomeDistance;
     public final ForgeConfigSpec.IntValue dragonHungerTickRate;
-    public final ForgeConfigSpec.BooleanValue generateGorgonTemple;
-    public final ForgeConfigSpec.DoubleValue gorgonMaxHealth;
     public final ForgeConfigSpec.IntValue spawnPixiesChance;
     public final ForgeConfigSpec.IntValue pixieVillageSize;
     public final ForgeConfigSpec.BooleanValue pixiesStealItems;
@@ -131,7 +129,6 @@ public class ServerConfig {
 
         this.generateGraveyards = buildBoolean(builder, "Generate Graveyards", "all", true, "Whether to generate graveyards or not");
 
-        this.generateGorgonTemple = buildBoolean(builder, "Generate Gorgon Temple", "all", true, "True if gorgon temples are allowed to spawn");
 
         builder.pop();
         builder.pop();
@@ -224,9 +221,6 @@ public class ServerConfig {
         builder.push("Hippocampus");
         this.hippocampusSpawnChance = buildInt(builder, "Spawn Hippocampus Chance", "all", 40, 1, 10000, "1 out of this number chance per chunk for generation");
         this.hippocampusSwimSpeedMod = buildDouble(builder, "Hippocampus Swim Speed Modifier", "all", 1F, 0.0F, 2.0F, "Change this to slow down or speed up hippocampus swimming.");
-        builder.pop();
-        builder.push("Gorgons");
-        this.gorgonMaxHealth = buildDouble(builder, "Gorgon Max Health", "all", 100, 1, 10000, "Maximum gorgon health");
         builder.pop();
         builder.push("Others");
         this.spawnLiches = buildBoolean(builder, "Spawn Liches", "all", true, "True if dread liches are allowed to spawn");

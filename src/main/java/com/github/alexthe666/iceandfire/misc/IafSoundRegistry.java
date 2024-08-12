@@ -74,18 +74,6 @@ public final class IafSoundRegistry {
 
     public static final SoundEvent DRAGONFLUTE = createSoundEvent("dragonflute");
 
-    public static final SoundEvent GORGON_IDLE = createSoundEvent("gorgon_idle");
-
-    public static final SoundEvent GORGON_HURT = createSoundEvent("gorgon_hurt");
-
-    public static final SoundEvent GORGON_DIE = createSoundEvent("gorgon_die");
-
-    public static final SoundEvent GORGON_ATTACK = createSoundEvent("gorgon_attack");
-
-    public static final SoundEvent GORGON_PETRIFY = createSoundEvent("gorgon_petrify");
-
-    public static final SoundEvent TURN_STONE = createSoundEvent("turn_stone");
-
     public static final SoundEvent PIXIE_IDLE = createSoundEvent("pixie_idle");
 
     public static final SoundEvent PIXIE_HURT = createSoundEvent("pixie_hurt");

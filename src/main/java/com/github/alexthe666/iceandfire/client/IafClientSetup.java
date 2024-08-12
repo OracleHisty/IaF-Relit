@@ -63,7 +63,6 @@ public class IafClientSetup {
         EntityRenderers.register(IafEntityRegistry.ICE_DRAGON_CHARGE.get(), manager -> new RenderDragonFireCharge(manager, false));
         EntityRenderers.register(IafEntityRegistry.LIGHTNING_DRAGON_CHARGE.get(), RenderDragonLightningCharge::new);
         EntityRenderers.register(IafEntityRegistry.STONE_STATUE.get(), RenderStoneStatue::new);
-        EntityRenderers.register(IafEntityRegistry.GORGON.get(), RenderGorgon::new);
         EntityRenderers.register(IafEntityRegistry.PIXIE.get(), RenderPixie::new);
         EntityRenderers.register(IafEntityRegistry.SIREN.get(), RenderSiren::new);
         EntityRenderers.register(IafEntityRegistry.HIPPOCAMPUS.get(), RenderHippocampus::new);

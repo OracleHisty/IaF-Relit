@@ -162,7 +162,6 @@ public class IafItemRegistry {
     public static final RegistryObject<Item> DRAGON_STAFF = registerItem("dragon_stick", ItemDragonStaff::new);
     public static final RegistryObject<Item> DRAGON_HORN = registerItem("dragon_horn", ItemDragonHorn::new);
     public static final RegistryObject<Item> DRAGON_FLUTE = registerItem("dragon_flute", () -> new ItemDragonFlute());
-    public static final RegistryObject<Item> GORGON_HEAD = registerItem("gorgon_head", () -> new ItemGorgonHead());
     public static final RegistryObject<Item> STONE_STATUE = registerItem("stone_statue", () -> new ItemStoneStatue());
     public static final RegistryObject<Item> BLINDFOLD = registerItem("blindfold", () -> new ItemBlindfold());
     public static final RegistryObject<Item> PIXIE_DUST = registerItem("pixie_dust", () -> new ItemPixieDust());
@@ -255,7 +254,6 @@ public class IafItemRegistry {
     public static final RegistryObject<BannerPatternItem> PATTERN_BIRD = registerItem("banner_pattern_bird", () -> new BannerPatternItem(BannerPatternTagGenerator.BIRD_BANNER_PATTERN, unstackable()));
     public static final RegistryObject<BannerPatternItem> PATTERN_FAE = registerItem("banner_pattern_fae", () -> new BannerPatternItem(BannerPatternTagGenerator.FAE_BANNER_PATTERN, unstackable()));
     public static final RegistryObject<BannerPatternItem> PATTERN_FEATHER = registerItem("banner_pattern_feather", () -> new BannerPatternItem(BannerPatternTagGenerator.FEATHER_BANNER_PATTERN, unstackable()));
-    public static final RegistryObject<BannerPatternItem> PATTERN_GORGON = registerItem("banner_pattern_gorgon", () -> new BannerPatternItem(BannerPatternTagGenerator.GORGON_BANNER_PATTERN, unstackable()));
     public static final RegistryObject<BannerPatternItem> PATTERN_HIPPOCAMPUS = registerItem("banner_pattern_hippocampus", () -> new BannerPatternItem(BannerPatternTagGenerator.HIPPOCAMPUS_BANNER_PATTERN, unstackable()));
     public static final RegistryObject<BannerPatternItem> PATTERN_MERMAID = registerItem("banner_pattern_mermaid", () -> new BannerPatternItem(BannerPatternTagGenerator.MERMAID_BANNER_PATTERN, unstackable()));
     public static final RegistryObject<BannerPatternItem> PATTERN_SEA_SERPENT = registerItem("banner_pattern_sea_serpent", () -> new BannerPatternItem(BannerPatternTagGenerator.SEA_SERPENT_BANNER_PATTERN, unstackable()));
@@ -265,7 +263,6 @@ public class IafItemRegistry {
     public static final RegistryObject<SpawnEggItem> SPAWN_EGG_FIRE_DRAGON = registerItem("spawn_egg_fire_dragon", () -> new ForgeSpawnEggItem(IafEntityRegistry.FIRE_DRAGON, 0X340000, 0XA52929, new Item.Properties()/*.tab(IceAndFire.TAB_ITEMS)*/));
     public static final RegistryObject<SpawnEggItem> SPAWN_EGG_ICE_DRAGON = registerItem("spawn_egg_ice_dragon", () -> new ForgeSpawnEggItem(IafEntityRegistry.ICE_DRAGON, 0XB5DDFB, 0X7EBAF0, new Item.Properties()/*.tab(IceAndFire.TAB_ITEMS)*/));
     public static final RegistryObject<SpawnEggItem> SPAWN_EGG_LIGHTNING_DRAGON = registerItem("spawn_egg_lightning_dragon", () -> new ForgeSpawnEggItem(IafEntityRegistry.LIGHTNING_DRAGON, 0X422367, 0X725691, new Item.Properties()/*.tab(IceAndFire.TAB_ITEMS)*/));
-    public static final RegistryObject<SpawnEggItem> SPAWN_EGG_GORGON = registerItem("spawn_egg_gorgon", () -> new ForgeSpawnEggItem(IafEntityRegistry.GORGON, 0XD0D99F, 0X684530, new Item.Properties()/*.tab(IceAndFire.TAB_ITEMS)*/));
     public static final RegistryObject<SpawnEggItem> SPAWN_EGG_PIXIE = registerItem("spawn_egg_pixie", () -> new ForgeSpawnEggItem(IafEntityRegistry.PIXIE, 0XFF7F89, 0XE2CCE2, new Item.Properties()/*.tab(IceAndFire.TAB_ITEMS)*/));
     public static final RegistryObject<SpawnEggItem> SPAWN_EGG_SIREN = registerItem("spawn_egg_siren", () -> new ForgeSpawnEggItem(IafEntityRegistry.SIREN, 0X8EE6CA, 0XF2DFC8, new Item.Properties()/*.tab(IceAndFire.TAB_ITEMS)*/));
     public static final RegistryObject<SpawnEggItem> SPAWN_EGG_HIPPOCAMPUS = registerItem("spawn_egg_hippocampus", () -> new ForgeSpawnEggItem(IafEntityRegistry.HIPPOCAMPUS, 0X4491C7, 0X4FC56B, new Item.Properties()/*.tab(IceAndFire.TAB_ITEMS)*/));

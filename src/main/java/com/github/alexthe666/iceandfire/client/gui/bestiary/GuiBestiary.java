@@ -334,36 +334,6 @@ public class GuiBestiary extends Screen {
                     ms.pose().popPose();
                 }
                 break;
-            case GORGON:
-                if (bookPages == 0) {
-
-                    ms.pose().pushPose();
-                    ms.pose().scale(1.5F, 1.5F, 1F);
-                    drawImage(ms, DRAWINGS_0, 10, 89, 473, 117, 19, 34, 512F);
-                    drawImage(ms, DRAWINGS_0, 50, 78, 399, 106, 28, 45, 512F);
-                    drawImage(ms, DRAWINGS_0, 100, 89, 455, 117, 18, 34, 512F);
-                    ms.pose().popPose();
-
-                    ms.pose().pushPose();
-                    ms.pose().scale(1.5F, 1.5F, 1F);
-                    drawImage(ms, DRAWINGS_0, 144, 70, 389, 1, 50, 50, 512F);
-                    ms.pose().popPose();
-
-                    drawItemStack(ms, new ItemStack(Items.STRING), 160, 97, 1.35F);
-                    drawItemStack(ms, new ItemStack(Items.LEATHER), 180, 97, 1.35F);
-                    drawItemStack(ms, new ItemStack(Items.STRING), 199, 97, 1.35F);
-                    drawItemStack(ms, new ItemStack(IafItemRegistry.BLINDFOLD.get()), 171, 65, 2F);
-                }
-                if (bookPages == 1) {
-                    drawItemStack(ms, new ItemStack(IafItemRegistry.GORGON_HEAD.get()), 16, 12, 3.75F);
-                    ms.pose().pushPose();
-                    ms.pose().scale(1.7F, 1.7F, 1F);
-                    drawImage(ms, DRAWINGS_0, 37, 95, 473, 117, 19, 34, 512F);
-                    drawImage(ms, DRAWINGS_0, 60, 95, 455, 117, 18, 34, 512F);
-                    ms.pose().popPose();
-
-                }
-                break;
             case PIXIE:
                 if (bookPages == 0) {
                     ms.pose().pushPose();
