@@ -37,7 +37,6 @@ public class IafBiomeModifierSerializers {
                 IafPlacedFeatures.PLACED_FIRE_DRAGON_CAVE,
                 IafPlacedFeatures.PLACED_ICE_DRAGON_CAVE,
                 IafPlacedFeatures.PLACED_LIGHTNING_DRAGON_CAVE,
-                IafPlacedFeatures.PLACED_PIXIE_VILLAGE,
                 IafPlacedFeatures.PLACED_SIREN_ISLAND,
                 IafPlacedFeatures.PLACED_HYDRA_CAVE,
                 IafPlacedFeatures.PLACED_SPAWN_DRAGON_SKELETON_L,

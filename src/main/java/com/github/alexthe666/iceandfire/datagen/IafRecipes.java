@@ -489,12 +489,6 @@ public class IafRecipes extends RecipeProvider {
     }
 
     private void createShapeless(@NotNull final Consumer<FinishedRecipe> consumer) {
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, IafItemRegistry.AMBROSIA.get())
-                .requires(IafItemRegistry.PIXIE_DUST.get())
-                .requires(Items.BOWL)
-                .unlockedBy("has_item", has(IafItemRegistry.PIXIE_DUST.get()))
-                .save(consumer);
-
         ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, IafBlockRegistry.ASH.get())
                 .requires(Ingredient.of(IafItemTags.CHARRED_BLOCKS), 9)
                 .unlockedBy("has_item", has(IafItemTags.CHARRED_BLOCKS))

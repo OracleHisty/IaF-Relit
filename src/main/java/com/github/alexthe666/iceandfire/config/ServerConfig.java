@@ -35,9 +35,6 @@ public class ServerConfig {
     public final ForgeConfigSpec.IntValue dragonTargetSearchLength;
     public final ForgeConfigSpec.IntValue dragonWanderFromHomeDistance;
     public final ForgeConfigSpec.IntValue dragonHungerTickRate;
-    public final ForgeConfigSpec.IntValue spawnPixiesChance;
-    public final ForgeConfigSpec.IntValue pixieVillageSize;
-    public final ForgeConfigSpec.BooleanValue pixiesStealItems;
     public final ForgeConfigSpec.DoubleValue sirenMaxHealth;
     public final ForgeConfigSpec.BooleanValue sirenShader;
     public final ForgeConfigSpec.IntValue sirenMaxSingTime;
@@ -172,11 +169,6 @@ public class ServerConfig {
         builder.pop();
         builder.push("Mobs");
 
-        builder.push("Pixies");
-        this.spawnPixiesChance = buildInt(builder, "Spawn Pixies Chance", "all", 60, 1, 10000, "1 out of this number chance per chunk for generation");
-        this.pixieVillageSize = buildInt(builder, "Pixie Village Size", "all", 5, 1, 10000, "size of pixie villages");
-        this.pixiesStealItems = buildBoolean(builder, "Pixies Steal Items", "all", true, "True if pixies are allowed to steal from players");
-        builder.pop();
         builder.push("Sirens");
         this.sirenMaxHealth = buildDouble(builder, "Siren Max Health", "all", 50, 1, 10000, "Maximum siren health");
         this.sirenShader = buildBoolean(builder, "Use Siren Shader", "all", true, "True to make the screen pink when sirens attract players");

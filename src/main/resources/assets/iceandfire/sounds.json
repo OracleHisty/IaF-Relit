@@ -382,24 +382,6 @@
     ],
     "subtitle": "iceandfire.sound.subtitle.bestiary_page"
   },
-  "pixie_wand": {
-    "category": "player",
-    "sounds": [
-      {
-        "name": "iceandfire:items/pixie_wand_0",
-        "volume": 0.4
-      },
-      {
-        "name": "iceandfire:items/pixie_wand_1",
-        "volume": 0.4
-      },
-      {
-        "name": "iceandfire:items/pixie_wand_2",
-        "volume": 0.4
-      }
-    ],
-    "subtitle": "iceandfire.sound.subtitle.pixie_wand"
-  },
   "sea_serpent_breath": {
     "category": "hostile",
     "sounds": [
@@ -861,77 +843,57 @@
     ],
     "subtitle": "iceandfire.sound.subtitle.gold_pile_break"
   },
-  "pixie_idle": {
     "category": "neutral",
     "sounds": [
       {
-        "name": "iceandfire:mobs/pixie/idle_0",
         "volume": 0.4
       },
       {
-        "name": "iceandfire:mobs/pixie/idle_1",
         "volume": 0.4
       },
       {
-        "name": "iceandfire:mobs/pixie/idle_2",
         "volume": 0.4
       },
       {
-        "name": "iceandfire:mobs/pixie/idle_3",
         "volume": 0.4
       },
       {
-        "name": "iceandfire:mobs/pixie/idle_4",
         "volume": 0.4
       }
     ],
-    "subtitle": "iceandfire.sound.subtitle.pixie_idle"
   },
-  "pixie_hurt": {
     "category": "neutral",
     "sounds": [
       {
-        "name": "iceandfire:mobs/pixie/hurt_0",
         "volume": 0.4
       },
       {
-        "name": "iceandfire:mobs/pixie/hurt_1",
         "volume": 0.4
       },
       {
-        "name": "iceandfire:mobs/pixie/hurt_2",
         "volume": 0.4
       },
       {
-        "name": "iceandfire:mobs/pixie/hurt_3",
         "volume": 0.4
       }
     ],
-    "subtitle": "iceandfire.sound.subtitle.pixie_hurt"
   },
-  "pixie_die": {
     "category": "neutral",
     "sounds": [
       {
-        "name": "iceandfire:mobs/pixie/death_0",
         "volume": 0.4
       }
     ],
-    "subtitle": "iceandfire.sound.subtitle.pixie_die"
   },
-  "pixie_taunt": {
     "category": "neutral",
     "sounds": [
       {
-        "name": "iceandfire:mobs/pixie/taunt_0",
         "volume": 0.4
       },
       {
-        "name": "iceandfire:mobs/pixie/taunt_1",
         "volume": 0.4
       }
     ],
-    "subtitle": "iceandfire.sound.subtitle.pixie_taunt"
   },
   "egg_hatch": {
     "category": "neutral",

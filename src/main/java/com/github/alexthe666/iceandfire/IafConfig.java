@@ -39,9 +39,6 @@ public class IafConfig {
     public static int dragonTargetSearchLength = 128;
     public static int dragonWanderFromHomeDistance = 40;
     public static int dragonHungerTickRate = 3000;
-    public static int spawnPixiesChance = 60;
-    public static int pixieVillageSize = 5;
-    public static boolean pixiesStealItems = true;
     public static double sirenMaxHealth = 50D;
     public static boolean sirenShader = true;
     public static int sirenMaxSingTime = 12000;
@@ -157,9 +154,6 @@ public class IafConfig {
             dragonTargetSearchLength = ConfigHolder.SERVER.dragonTargetSearchLength.get();
             dragonWanderFromHomeDistance = ConfigHolder.SERVER.dragonWanderFromHomeDistance.get();
             dragonHungerTickRate = ConfigHolder.SERVER.dragonHungerTickRate.get();
-            spawnPixiesChance = ConfigHolder.SERVER.spawnPixiesChance.get();
-            pixieVillageSize = ConfigHolder.SERVER.pixieVillageSize.get();
-            pixiesStealItems = ConfigHolder.SERVER.pixiesStealItems.get();
             sirenMaxHealth = ConfigHolder.SERVER.sirenMaxHealth.get();
             sirenShader = ConfigHolder.SERVER.sirenShader.get();
             sirenMaxSingTime = ConfigHolder.SERVER.sirenMaxSingTime.get();

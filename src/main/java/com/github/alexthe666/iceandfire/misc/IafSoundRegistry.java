@@ -74,13 +74,9 @@ public final class IafSoundRegistry {
 
     public static final SoundEvent DRAGONFLUTE = createSoundEvent("dragonflute");
 
-    public static final SoundEvent PIXIE_IDLE = createSoundEvent("pixie_idle");
 
-    public static final SoundEvent PIXIE_HURT = createSoundEvent("pixie_hurt");
 
-    public static final SoundEvent PIXIE_DIE = createSoundEvent("pixie_die");
 
-    public static final SoundEvent PIXIE_TAUNT = createSoundEvent("pixie_taunt");
 
     public static final SoundEvent GOLD_PILE_STEP = createSoundEvent("gold_pile_step");
 
@@ -165,7 +161,6 @@ public final class IafSoundRegistry {
 
     public static final SoundEvent HYDRA_REGEN_HEAD = createSoundEvent("hydra_regen_head");
 
-    public static final SoundEvent PIXIE_WAND = createSoundEvent("pixie_wand");
 
     public static final SoundEvent DREAD_LICH_SUMMON = createSoundEvent("dread_lich_summon");
 

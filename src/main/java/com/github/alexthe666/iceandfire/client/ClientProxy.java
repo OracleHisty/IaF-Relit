@@ -78,7 +78,7 @@ public class ClientProxy extends CommonProxy {
             return;
         }
         net.minecraft.client.particle.Particle particle = null;
-        switch (name) {
+        switch (name) { //TODO: Refractor
             case DragonFire:
                 particle = new ParticleDragonFlame(world, x, y, z, motX, motY, motZ, size);
                 break;
@@ -93,9 +93,6 @@ public class ClientProxy extends CommonProxy {
                 break;
             case Blood:
                 particle = new ParticleBlood(world, x, y, z);
-                break;
-            case If_Pixie:
-                particle = new ParticlePixieDust(world, x, y, z, (float) motX, (float) motY, (float) motZ);
                 break;
             case Siren_Appearance:
                 particle = new ParticleSirenAppearance(world, x, y, z, (int) motX);

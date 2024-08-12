@@ -334,49 +334,6 @@ public class GuiBestiary extends Screen {
                     ms.pose().popPose();
                 }
                 break;
-            case PIXIE:
-                if (bookPages == 0) {
-                    ms.pose().pushPose();
-                    drawImage(ms, DRAWINGS_0, 20, 60, 371, 258, 47, 35, 512F);
-                    drawImage(ms, DRAWINGS_0, 42, 95, 416, 258, 45, 35, 512F);
-                    drawImage(ms, DRAWINGS_0, 67, 60, 462, 258, 47, 35, 512F);
-                    drawImage(ms, DRAWINGS_0, 88, 95, 370, 293, 47, 35, 512F);
-                    drawImage(ms, DRAWINGS_0, 110, 60, 416, 293, 47, 35, 512F);
-                    ms.pose().popPose();
-                    drawItemStack(ms, new ItemStack(IafItemRegistry.PIXIE_DUST.get()), 70, 10, 3.75F);
-                    ms.pose().pushPose();
-                    ms.pose().scale(0.9F, 0.9F, 1F);
-                    ms.pose().translate(20, 24, 0);
-                    ms.pose().pushPose();
-                    ms.pose().pushPose();
-                    ms.pose().scale(1.5F, 1.5F, 1F);
-                    drawImage(ms, DRAWINGS_0, 150, 100, 389, 1, 50, 50, 512F);
-                    ms.pose().popPose();
-                    drawItemStack(ms, new ItemStack(Blocks.GLASS), 160, 113, 1.35F);
-                    drawItemStack(ms, new ItemStack(Blocks.GLASS), 199, 113, 1.35F);
-                    drawItemStack(ms, new ItemStack(Blocks.OAK_PLANKS), 180, 113, 1.35F);
-                    drawItemStack(ms, new ItemStack(Blocks.GLASS), 160, 131, 1.35F);
-                    drawItemStack(ms, new ItemStack(Blocks.GLASS), 199, 131, 1.35F);
-                    drawItemStack(ms, new ItemStack(Blocks.GLASS), 180, 150, 1.35F);
-                    drawItemStack(ms, new ItemStack(Blocks.GLASS), 160, 150, 1.35F);
-                    drawItemStack(ms, new ItemStack(Blocks.GLASS), 199, 150, 1.35F);
-                    drawItemStack(ms, new ItemStack(IafBlockRegistry.JAR_EMPTY.get()), 171, 85, 2F);
-                    ms.pose().popPose();
-                    ms.pose().popPose();
-
-                }
-                if (bookPages == 1) {
-                    drawItemStack(ms, new ItemStack(IafItemRegistry.AMBROSIA.get()), 14, 22, 3.75F);
-                    ms.pose().pushPose();
-                    ms.pose().scale(1.5F, 1.5F, 1F);
-                    drawImage(ms, DRAWINGS_0, 144, 100, 389, 1, 50, 50, 512F);
-                    ms.pose().popPose();
-
-                    drawItemStack(ms, new ItemStack(IafItemRegistry.PIXIE_DUST.get()), 180, 131, 1.35F);
-                    drawItemStack(ms, new ItemStack(Items.BOWL), 180, 150, 1.35F);
-                    drawItemStack(ms, new ItemStack(IafItemRegistry.AMBROSIA.get()), 171, 85, 2F);
-                }
-                break;
             case SIREN:
                 if (bookPages == 0) {
                     ms.pose().pushPose();
