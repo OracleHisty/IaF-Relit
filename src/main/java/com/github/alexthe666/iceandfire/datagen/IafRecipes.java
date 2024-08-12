@@ -45,27 +45,6 @@ public class IafRecipes extends RecipeProvider {
     }
 
     private void createShaped(@NotNull final Consumer<FinishedRecipe> consumer) {
-        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, IafItemRegistry.AMPHITHERE_ARROW.get(), 4)
-                .pattern("X")
-                .pattern("#")
-                .pattern("Y")
-                .define('#', Tags.Items.RODS_WOODEN)
-                .define('X', Items.FLINT)
-                .define('Y', IafItemRegistry.AMPHITHERE_FEATHER.get())
-                .unlockedBy("has_item", has(IafItemRegistry.AMPHITHERE_FEATHER.get()))
-                .save(consumer);
-
-        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, IafItemRegistry.AMPHITHERE_MACUAHUITL.get())
-                .pattern("OXO")
-                .pattern("FXF")
-                .pattern("OSO")
-                .define('X', ItemTags.PLANKS)
-                .define('S', Tags.Items.RODS_WOODEN)
-                .define('O', Tags.Items.OBSIDIAN)
-                .define('F', IafItemRegistry.AMPHITHERE_FEATHER.get())
-                .unlockedBy("has_item", has(IafItemRegistry.AMPHITHERE_FEATHER.get()))
-                .save(consumer);
-
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, Items.CHARCOAL)
                 .pattern("BBB")
                 .pattern("BBB")
@@ -401,11 +380,6 @@ public class IafRecipes extends RecipeProvider {
                 .requires(Ingredient.of(IafItemTags.FROZEN_BLOCKS), 9)
                 .unlockedBy("has_item", has(IafItemTags.FROZEN_BLOCKS))
                 .save(consumer);
-
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, Items.BONE_MEAL, 5)
-                .requires(IafItemTags.MOB_SKULLS)
-                .unlockedBy("has_item", has(IafItemTags.MOB_SKULLS))
-                .save(consumer, location("skull_to_bone_meal"));
 
         ShapelessRecipeBuilder.shapeless(RecipeCategory.COMBAT, IafItemRegistry.DRAGONBONE_ARROW.get(), 5)
                 .requires(IafItemRegistry.DRAGON_BONE.get())

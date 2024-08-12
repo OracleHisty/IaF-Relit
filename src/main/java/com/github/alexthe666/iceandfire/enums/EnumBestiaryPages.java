@@ -24,8 +24,6 @@ public enum EnumBestiaryPages {
     ALCHEMY(1),
     DRAGONFORGE(3),
     HIPPOCAMPUS(2),
-    STYMPHALIANBIRD(1),
-    AMPHITHERE(2),
     LIGHTNINGDRAGON(5),
     LIGHTNINGDRAGONEGG(1);
 

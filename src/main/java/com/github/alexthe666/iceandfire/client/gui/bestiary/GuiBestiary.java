@@ -354,52 +354,6 @@ public class GuiBestiary extends Screen {
                     drawItemStack(ms, new ItemStack(IafItemRegistry.SHINY_SCALES.get()), 35, 75, 2.25F);
                 }
                 break;
-            case STYMPHALIANBIRD:
-                if (bookPages == 0) {
-                    ms.pose().pushPose();
-                    ms.pose().scale(1.5F, 1.5F, 1F);
-                    drawImage(ms, DRAWINGS_1, 34, 46, 114, 72, 59, 37, 512F);
-                    drawImage(ms, DRAWINGS_1, 155, 35, 114, 109, 67, 35, 512F);
-                    ms.pose().popPose();
-                    drawItemStack(ms, new ItemStack(IafItemRegistry.STYMPHALIAN_BIRD_FEATHER.get()), 109, 60, 2.5F);
-                }
-                if (bookPages == 1) {
-                    ms.pose().pushPose();
-                    ms.pose().scale(1.5F, 1.5F, 1F);
-                    drawImage(ms, DRAWINGS_0, 18, 10, 389, 1, 50, 50, 512F);
-                    ms.pose().popPose();
-
-                    drawItemStack(ms, new ItemStack(Items.FLINT), 40, 13, 1.35F);
-                    drawItemStack(ms, new ItemStack(Items.STICK), 40, 30, 1.35F);
-                    drawItemStack(ms, new ItemStack(IafItemRegistry.STYMPHALIAN_BIRD_FEATHER.get()), 40, 49, 1.35F);
-                    drawItemStack(ms, new ItemStack(IafItemRegistry.STYMPHALIAN_ARROW.get()), 60, 18, 2F);
-
-                }
-                break;
-            case AMPHITHERE:
-                if (bookPages == 0) {
-                    ms.pose().pushPose();
-                    ms.pose().scale(0.75F, 0.75F, 0.75F);
-                    drawImage(ms, DRAWINGS_1, 70, 97, 257, 163, 136, 93, 512F);
-                    drawImage(ms, DRAWINGS_1, 270, 50, 148, 267, 120, 51, 512F);
-                    drawImage(ms, DRAWINGS_1, 380, 50, 148, 318, 120, 51, 512F);
-                    drawImage(ms, DRAWINGS_1, 270, 100, 148, 369, 120, 51, 512F);
-                    drawImage(ms, DRAWINGS_1, 380, 100, 148, 420, 120, 51, 512F);
-                    drawImage(ms, DRAWINGS_1, 330, 150, 268, 267, 120, 51, 512F);
-                    ms.pose().popPose();
-                }
-                if (bookPages == 2) {
-                    drawItemStack(ms, new ItemStack(IafItemRegistry.AMPHITHERE_FEATHER.get()), 30, 20, 2.5F);
-                    ms.pose().pushPose();
-                    ms.pose().scale(1.5F, 1.5F, 1F);
-                    drawImage(ms, DRAWINGS_0, 19, 71, 389, 1, 50, 50, 512F);
-                    ms.pose().popPose();
-                    drawItemStack(ms, new ItemStack(Items.FLINT), 36, 73, 1.5F);
-                    drawItemStack(ms, new ItemStack(Items.STICK), 36, 89, 1.5F);
-                    drawItemStack(ms, new ItemStack(IafItemRegistry.AMPHITHERE_FEATHER.get()), 36, 106, 1.5F);
-                    drawItemStack(ms, new ItemStack(IafItemRegistry.AMPHITHERE_ARROW.get()), 60, 65, 2F);
-                }
-                break;
             default:
                 break;
         }

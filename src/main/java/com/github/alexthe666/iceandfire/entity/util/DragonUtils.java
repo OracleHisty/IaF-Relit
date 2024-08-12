@@ -1,7 +1,6 @@
 package com.github.alexthe666.iceandfire.entity.util;
 
 import com.github.alexthe666.iceandfire.IafConfig;
-import com.github.alexthe666.iceandfire.block.IafBlockRegistry;
 import com.github.alexthe666.iceandfire.datagen.tags.IafBlockTags;
 import com.github.alexthe666.iceandfire.entity.*;
 import com.github.alexthe666.iceandfire.misc.IafTagRegistry;
@@ -13,9 +12,7 @@ import net.minecraft.util.Mth;
 import net.minecraft.world.Difficulty;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.PathfinderMob;
 import net.minecraft.world.entity.TamableAnimal;
-import net.minecraft.world.entity.ai.util.DefaultRandomPos;
 import net.minecraft.world.entity.animal.AbstractGolem;
 import net.minecraft.world.entity.npc.AbstractVillager;
 import net.minecraft.world.entity.player.Player;
@@ -155,53 +152,8 @@ public class DragonUtils {
         return (LivingEntity) pointedEntity;
     }
 
-    public static BlockPos getBlockInViewStymphalian(EntityStymphalianBird bird) {
-        float radius = 0.75F * (0.7F * 6) * -3 - bird.getRandom().nextInt(24);
-        float neg = bird.getRandom().nextBoolean() ? 1 : -1;
-        float renderYawOffset = bird.flock != null && !bird.flock.isLeader(bird) ? getStymphalianFlockDirection(bird) : bird.yBodyRot;
-        float angle = (0.01745329251F * renderYawOffset) + 3.15F + (bird.getRandom().nextFloat() * neg);
-        double extraX = radius * Mth.sin((float) (Math.PI + angle));
-        double extraZ = radius * Mth.cos(angle);
-        BlockPos radialPos = getStymphalianFearPos(bird, BlockPos.containing(bird.getX() + extraX, 0, bird.getZ() + extraZ));
-        BlockPos ground = bird.level().getHeightmapPos(Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, radialPos);
-        int distFromGround = (int) bird.getY() - ground.getY();
-        int flightHeight = Math.min(IafConfig.stymphalianBirdFlightHeight, ground.getY() + bird.getRandom().nextInt(16));
-        BlockPos newPos = radialPos.above(distFromGround > 16 ? flightHeight : (int) bird.getY() + bird.getRandom().nextInt(16) + 1);
-        // FIXME :: Unused
-//        BlockPos pos = bird.doesWantToLand() ? ground : newPos;
-        if (bird.getDistanceSquared(Vec3.atCenterOf(newPos)) > 6 && !bird.isTargetBlocked(Vec3.atCenterOf(newPos))) {
-            return newPos;
-        }
-        return null;
-    }
-
-    private static BlockPos getStymphalianFearPos(EntityStymphalianBird bird, BlockPos fallback) {
-        if (bird.getVictor() != null && bird.getVictor() instanceof PathfinderMob) {
-            Vec3 Vector3d = DefaultRandomPos.getPosAway((PathfinderMob) bird.getVictor(), 16, IafConfig.stymphalianBirdFlightHeight, new Vec3(bird.getVictor().getX(), bird.getVictor().getY(), bird.getVictor().getZ()));
-            if (Vector3d != null) {
-                BlockPos pos = BlockPos.containing(Vector3d);
-                return new BlockPos(pos.getX(), 0, pos.getZ());
-            }
-        }
-        return fallback;
-    }
-
-    private static float getStymphalianFlockDirection(EntityStymphalianBird bird) {
-        EntityStymphalianBird leader = bird.flock.getLeader();
-        if (bird.distanceToSqr(leader) > 2) {
-            double d0 = leader.getX() - bird.getX();
-            double d2 = leader.getZ() - bird.getZ();
-            float f = (float) (Mth.atan2(d2, d0) * (180D / Math.PI)) - 90.0F;
-            float degrees = Mth.wrapDegrees(f - bird.getYRot());
-
-            return bird.getYRot() + degrees;
-        } else {
-            return leader.yBodyRot;
-        }
-    }
-
     public static boolean canTameDragonAttack(TamableAnimal dragon, Entity entity) {
-        if (isVillager(entity)) {
+        if (isFleeingDragonTarget(entity)) {
             return false;
         }
         if (entity instanceof AbstractVillager || entity instanceof AbstractGolem || entity instanceof Player) {
@@ -213,11 +165,11 @@ public class DragonUtils {
         return true;
     }
 
-    public static boolean isVillager(Entity entity) {
+    public static boolean isFleeingDragonTarget(Entity entity) {
         var tags =  ForgeRegistries.ENTITY_TYPES.tags();
         if (tags == null)
             return false;
-        return entity.getType().is(tags.createTagKey(IafTagRegistry.VILLAGERS));
+        return entity.getType().is(tags.createTagKey(IafTagRegistry.FLEES_DRAGONS));
     }
 
     public static boolean isAnimaniaMob(Entity entity) {

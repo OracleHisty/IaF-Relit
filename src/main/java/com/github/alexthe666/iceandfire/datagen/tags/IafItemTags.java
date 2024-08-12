@@ -5,7 +5,6 @@ import com.github.alexthe666.iceandfire.block.IafBlockRegistry;
 import com.github.alexthe666.iceandfire.entity.DragonType;
 import com.github.alexthe666.iceandfire.item.DragonItems;
 import com.github.alexthe666.iceandfire.item.IafItemRegistry;
-import com.github.alexthe666.iceandfire.item.ItemMobSkull;
 import net.minecraft.Util;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.Registries;
@@ -24,7 +23,6 @@ import net.minecraftforge.registries.RegistryObject;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.CompletableFuture;
-import java.util.function.Consumer;
 
 public class IafItemTags extends ItemTagsProvider {
     private final static String STORAGE_BLOCK_PATH = Tags.Items.STORAGE_BLOCKS.location().getPath();
@@ -241,8 +239,6 @@ public class IafItemTags extends ItemTagsProvider {
                     case LEGGINGS -> tag(Tags.Items.ARMORS_LEGGINGS).add(item);
                     case BOOTS -> tag(Tags.Items.ARMORS_BOOTS).add(item);
                 }
-            } else if (item instanceof ItemMobSkull) {
-                tag(MOB_SKULLS).add(item);
             }
 
             if (item instanceof TieredItem || item instanceof BowItem || item instanceof TridentItem) {

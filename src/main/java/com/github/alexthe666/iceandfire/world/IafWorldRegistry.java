@@ -49,8 +49,6 @@ public class IafWorldRegistry {
     public static final RegistryObject<Feature<NoneFeatureConfiguration>> SPAWN_DRAGON_SKELETON_I = register("spawn_dragon_skeleton_ice",
             () -> new SpawnDragonSkeleton(IafEntityRegistry.ICE_DRAGON.get(), NoneFeatureConfiguration.CODEC));
     public static final RegistryObject<Feature<NoneFeatureConfiguration>> SPAWN_HIPPOCAMPUS = register("spawn_hippocampus", () -> new SpawnHippocampus(NoneFeatureConfiguration.CODEC));
-    public static final RegistryObject<Feature<NoneFeatureConfiguration>> SPAWN_STYMPHALIAN_BIRD = register("spawn_stymphalian_bird", () -> new SpawnStymphalianBird(NoneFeatureConfiguration.CODEC));
-
 
     private static <C extends FeatureConfiguration, F extends Feature<C>> RegistryObject<F> register(final String name, final Supplier<? extends F> supplier) {
         return FEATURES.register(name, supplier);
@@ -90,7 +88,6 @@ public class IafWorldRegistry {
         LOADED_FEATURES.put("iceandfire:spawn_dragon_skeleton_fire", false);
         LOADED_FEATURES.put("iceandfire:spawn_dragon_skeleton_ice", false);
         LOADED_FEATURES.put("iceandfire:spawn_hippocampus", false);
-        LOADED_FEATURES.put("iceandfire:spawn_stymphalian_bird", false);
     }
 
     // Only a global variable because it's too bothersome to add it to the method call (alternative: method returns identifier or null)
@@ -149,10 +146,6 @@ public class IafWorldRegistry {
 
         if (safelyTestBiome(BiomeConfig.hippocampusBiomes, biome)) {
             addFeatureToBiome(IafPlacedFeatures.PLACED_SPAWN_HIPPOCAMPUS, features, builder);
-        }
-
-        if (safelyTestBiome(BiomeConfig.stymphalianBiomes, biome)) {
-            addFeatureToBiome(IafPlacedFeatures.PLACED_SPAWN_STYMPHALIAN_BIRD, features, builder);
         }
 
         if (!ADDED_FEATURES.isEmpty()) {

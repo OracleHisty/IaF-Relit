@@ -8,12 +8,10 @@ import com.github.alexthe666.iceandfire.entity.*;
 import com.github.alexthe666.iceandfire.entity.ai.AiDebug;
 import com.github.alexthe666.iceandfire.entity.ai.VillagerAIFearUntamed;
 import com.github.alexthe666.iceandfire.entity.props.EntityDataProvider;
-import com.github.alexthe666.iceandfire.entity.util.DragonUtils;
 import com.github.alexthe666.iceandfire.entity.util.IAnimalFear;
 import com.github.alexthe666.iceandfire.entity.util.IVillagerFear;
 import com.github.alexthe666.iceandfire.item.*;
 import com.github.alexthe666.iceandfire.message.MessagePlayerHitMultipart;
-import com.github.alexthe666.iceandfire.message.MessageSwingArm;
 import com.github.alexthe666.iceandfire.message.MessageSyncPath;
 import com.github.alexthe666.iceandfire.misc.IafDamageRegistry;
 import com.github.alexthe666.iceandfire.misc.IafTagRegistry;
@@ -24,29 +22,17 @@ import com.github.alexthe666.iceandfire.world.gen.WorldGenIceDragonCave;
 import com.github.alexthe666.iceandfire.world.gen.WorldGenLightningDragonCave;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.Registries;
-import net.minecraft.nbt.CompoundTag;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerPlayer;
-import net.minecraft.sounds.SoundEvents;
-import net.minecraft.tags.DamageTypeTags;
 import net.minecraft.world.InteractionResult;
-import net.minecraft.world.damagesource.CombatEntry;
-import net.minecraft.world.damagesource.CombatTracker;
-import net.minecraft.world.damagesource.DamageTypes;
-import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.*;
-import net.minecraft.world.entity.animal.Animal;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.monster.WitherSkeleton;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.projectile.AbstractArrow;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
-import net.minecraft.world.item.enchantment.Enchantments;
-import net.minecraft.world.level.Level;
-import net.minecraft.world.level.ServerLevelAccessor;
 import net.minecraft.world.level.block.AbstractChestBlock;
-import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.WallBlock;
 import net.minecraft.world.level.levelgen.structure.pools.StructureTemplatePool;
 import net.minecraft.world.level.levelgen.structure.templatesystem.StructureProcessorList;
@@ -56,7 +42,6 @@ import net.minecraft.world.level.storage.loot.entries.LootItem;
 import net.minecraft.world.level.storage.loot.entries.LootPoolEntryContainer;
 import net.minecraft.world.level.storage.loot.predicates.LootItemRandomChanceCondition;
 import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
-import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.EntityHitResult;
 import net.minecraftforge.event.LootTableLoadEvent;
 import net.minecraftforge.event.entity.EntityStruckByLightningEvent;
@@ -85,36 +70,12 @@ public class ServerEvents {
     private static final Predicate<LivingEntity> VILLAGER_FEAR = entity -> entity instanceof IVillagerFear;
     private final Random rand = new Random();
 
-    private static void signalAmphithereAlarm(LivingEntity villager, LivingEntity attacker) {
-        final float d0 = IafConfig.amphithereVillagerSearchLength;
-        final List<EntityAmphithere> list = villager.level().getEntitiesOfClass(EntityAmphithere.class, (new AABB(villager.getX() - 1.0D, villager.getY() - 1.0D, villager.getZ() - 1.0D, villager.getX() + 1.0D, villager.getY() + 1.0D, villager.getZ() + 1.0D)).inflate(d0, d0, d0));
-        if (list.isEmpty()) return;
-
-        for (final Entity entity : list) {
-            if (entity instanceof EntityAmphithere amphithere && !(attacker instanceof EntityAmphithere)) {
-                if (!DragonUtils.hasSameOwner(amphithere, attacker)) {
-                    if (attacker instanceof Player player) {
-                        if (!player.isCreative() && !amphithere.isOwnedBy(player)) {
-                            amphithere.setTarget(player);
-                        }
-                    } else {
-                        amphithere.setTarget(attacker);
-                    }
-                }
-            }
-        }
-    }
-
     private static boolean isInEntityTag(ResourceLocation loc, EntityType<?> type) {
         return type.is(Objects.requireNonNull(ForgeRegistries.ENTITY_TYPES.tags()).createTagKey(loc));
     }
 
-    public static boolean isLivestock(Entity entity) {
+    public static boolean fearsDragons(Entity entity) {
         return entity != null && isInEntityTag(IafTagRegistry.FEAR_DRAGONS, entity.getType());
-    }
-
-    public static boolean isVillager(Entity entity) {
-        return entity != null && isInEntityTag(IafTagRegistry.VILLAGERS, entity.getType());
     }
 
     public static boolean isRidingOrBeingRiddenBy(final Entity first, final Entity entityIn) {
@@ -249,25 +210,11 @@ public class ServerEvents {
                         event.setCanceled(true);
                     }
                 });
-
-                if (DragonUtils.isVillager(event.getEntity())) {
-                    signalAmphithereAlarm(event.getEntity(), (LivingEntity) attacker);
-                }
             }
         }
 
     }
 
-    @SubscribeEvent
-    public void onLivingSetTarget(LivingChangeTargetEvent event) {
-        final LivingEntity target = event.getOriginalTarget();
-        if (target != null) {
-            final LivingEntity attacker = event.getEntity();
-            if (DragonUtils.isVillager(target)) {
-                signalAmphithereAlarm(target, attacker);
-            }
-        }
-    }
     @SubscribeEvent
     public void onEntityUseItem(PlayerInteractEvent.RightClickItem event) {
         if (event.getEntity() != null && event.getEntity().getXRot() > 87 && event.getEntity().getVehicle() != null && event.getEntity().getVehicle() instanceof EntityDragonBase) {
@@ -411,10 +358,7 @@ public class ServerEvents {
     public void onEntityJoinWorld(MobSpawnEvent.FinalizeSpawn event) {
         Mob mob = event.getEntity();
         try {
-            if (isVillager(mob) && IafConfig.villagersFearDragons) {
-                mob.goalSelector.addGoal(1, new VillagerAIFearUntamed((PathfinderMob) mob, LivingEntity.class, 8.0F, 0.8D, 0.8D, VILLAGER_FEAR));
-            }
-            if (isLivestock(mob) && IafConfig.animalsFearDragons) {
+            if (fearsDragons(mob) && IafConfig.animalsFearDragons) {
                 mob.goalSelector.addGoal(1, new VillagerAIFearUntamed((PathfinderMob) mob, LivingEntity.class, 30, 1.0D, 0.5D, entity -> entity instanceof IAnimalFear && ((IAnimalFear) entity).shouldAnimalsFear(mob)));
             }
         } catch (Exception e) {
