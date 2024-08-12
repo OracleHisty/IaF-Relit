@@ -73,7 +73,6 @@ public class IafClientSetup {
         EntityRenderers.register(IafEntityRegistry.STYMPHALIAN_BIRD.get(), RenderStymphalianBird::new);
         EntityRenderers.register(IafEntityRegistry.STYMPHALIAN_FEATHER.get(), RenderStymphalianFeather::new);
         EntityRenderers.register(IafEntityRegistry.STYMPHALIAN_ARROW.get(), RenderStymphalianArrow::new);
-        EntityRenderers.register(IafEntityRegistry.TROLL.get(), RenderTroll::new);
         EntityRenderers.register(IafEntityRegistry.AMPHITHERE.get(), RenderAmphithere::new);
         EntityRenderers.register(IafEntityRegistry.AMPHITHERE_ARROW.get(), RenderAmphithereArrow::new);
         EntityRenderers.register(IafEntityRegistry.SEA_SERPENT.get(), manager -> new RenderSeaSerpent(manager, SEA_SERPENT_BASE_MODEL));

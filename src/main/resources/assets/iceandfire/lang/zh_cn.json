@@ -224,33 +224,7 @@
   "item.iceandfire.stymphalian_bird_feather": "青铜鹗羽",
   "item.iceandfire.stymphalian_arrow": "铜鹗羽箭",
   "item.iceandfire.stymphalian_arrow.desc": "装上了青铜鹗羽的箭矢能像猛禽一样翱翔。",
-  "item.iceandfire.troll_weapon_axe": "食人妖的大斧",
-  "item.iceandfire.troll_weapon_column": "食人妖的石柱",
-  "item.iceandfire.troll_weapon_column_forest": "食人妖的苔石柱",
-  "item.iceandfire.troll_weapon_column_frost": "食人妖的霜冻石柱",
-  "item.iceandfire.troll_weapon_hammer": "食人妖的大锤",
-  "item.iceandfire.troll_weapon_trunk": "食人妖的树干",
-  "item.iceandfire.troll_weapon_trunk_frost": "食人妖的霜冻树干",
-  "item.iceandfire.troll_tusk": "食人妖长牙",
-  "item.iceandfire.troll_leather_forest": "森林食人妖毛皮",
-  "item.iceandfire.troll_leather_frost": "雪地食人妖毛皮",
-  "item.iceandfire.troll_leather_mountain": "山地食人妖毛皮",
-  "item.iceandfire.forest_troll_leather_helmet": "森林食人妖皮帽",
-  "item.iceandfire.forest_troll_leather_chestplate": "森林食人妖皮袄",
-  "item.iceandfire.forest_troll_leather_leggings": "森林食人妖皮裤",
-  "item.iceandfire.forest_troll_leather_boots": "森林食人妖皮靴",
-  "item.iceandfire.frost_troll_leather_helmet": "雪地食人妖皮帽",
-  "item.iceandfire.frost_troll_leather_chestplate": "雪地食人妖皮袄",
-  "item.iceandfire.frost_troll_leather_leggings": "雪地食人妖皮裤",
-  "item.iceandfire.frost_troll_leather_boots": "雪地食人妖皮靴",
-  "item.iceandfire.mountain_troll_leather_helmet": "山地食人妖皮帽",
-  "item.iceandfire.mountain_troll_leather_chestplate": "山地食人妖皮袄",
-  "item.iceandfire.mountain_troll_leather_leggings": "山地食人妖皮裤",
-  "item.iceandfire.mountain_troll_leather_boots": "山地食人妖皮靴",
-  "item.iceandfire.troll_leather_armor_helmet.desc": "-10%%弹射物伤害",
-  "item.iceandfire.troll_leather_armor_chestplate.desc": "-30%%弹射物伤害",
-  "item.iceandfire.troll_leather_armor_leggings.desc": "-20%%弹射物伤害",
-  "item.iceandfire.troll_leather_armor_boots.desc": "-10%%弹射物伤害",
+
   "item.iceandfire.sickly_dragon_meal": "萎靡龙食",
   "item.iceandfire.sickly_dragon_meal.desc_0": "抑制龙的生长",
 
@@ -357,7 +331,7 @@
   "item.iceandfire.cyclops_skull": "独眼巨人颅骨",
   "item.iceandfire.cockatrice_skull": "鸡蛇颅骨",
   "item.iceandfire.stymphalian_skull": "铜羽泽鹗颅骨",
-  "item.iceandfire.troll_skull": "食人妖颅骨",
+
   "item.iceandfire.amphithere_skull": "翼蚺颅骨",
   "item.iceandfire.seaserpent_skull": "海蟒颅骨",
   "item.iceandfire.hydra_skull": "九头蛇颅骨",
@@ -404,7 +378,7 @@
   "item.iceandfire.spawn_egg_death_worm": "死亡蠕虫刷怪蛋",
   "item.iceandfire.spawn_egg_cockatrice": "鸡蛇刷怪蛋",
   "item.iceandfire.spawn_egg_stymphalian_bird": "铜羽泽鹗刷怪蛋",
-  "item.iceandfire.spawn_egg_troll": "食人妖刷怪蛋",
+
   "item.iceandfire.spawn_egg_amphithere": "翼蚺刷怪蛋",
   "item.iceandfire.spawn_egg_dread_thrall": "悚怖尸奴刷怪蛋",
   "item.iceandfire.spawn_egg_dread_ghoul": "悚怖食尸鬼刷怪蛋",
@@ -447,8 +421,8 @@
   "item.iceandfire.banner_pattern_sea_serpent.desc": "海蟒徽标",
   "item.iceandfire.banner_pattern_weezer": "旗帜图案",
   "item.iceandfire.banner_pattern_weezer.desc": "Weezer纹章",
-  "item.iceandfire.banner_pattern_troll": "旗帜图案",
-  "item.iceandfire.banner_pattern_troll.desc": "食人妖徽标",
+
+
   "item.iceandfire.banner_pattern_dread": "旗帜图案",
   "item.iceandfire.banner_pattern_dread.desc": "悚怖髑髅徽标",
 
@@ -483,7 +457,7 @@
   "entity.iceandfire.stymphalian_bird": "铜羽泽鹗",
   "entity.iceandfire.stymphalian_feather": "青铜鹗羽",
   "entity.iceandfire.stymphalian_arrow": "铜鹗羽箭",
-  "entity.iceandfire.troll": "食人妖",
+
   "entity.iceandfire.amphithere": "翼蚺",
   "entity.iceandfire.sea_serpent": "海蟒",
   "entity.iceandfire.sea_serpent_bubbles": "海蟒水泡",
@@ -585,7 +559,7 @@
   "bestiary.deathworm": "死亡蠕虫",
   "bestiary.cockatrice": "鸡蛇",
   "bestiary.stymphalianbird": "铜羽泽鹗",
-  "bestiary.troll": "食人妖",
+
   "bestiary.amphithere": "翼蚺",
   "bestiary.seaserpent": "海蟒",
   "bestiary.dragonforge": "龙息锻炉",
@@ -712,8 +686,8 @@
   "advancements.iceandfire.kill_stymphalian_bird.description": "猎杀铜羽泽鹗",
   "advancements.iceandfire.stymphalian_arrow.title": "向前方飞啊飞",
   "advancements.iceandfire.stymphalian_arrow.description": "制作能飞得更远的铜鹗羽箭",
-  "advancements.iceandfire.kill_troll.title": "他们带了个食人妖过来！",
-  "advancements.iceandfire.kill_troll.description": "斩杀食人妖",  "advancements.iceandfire.tame_amphithere.title": "林间飞行员",
+
+
   "advancements.iceandfire.tame_amphithere.description": "把翼蚺射下来，骑上去并把它驯化",
   "advancements.iceandfire.kill_sea_serpent.title": "领海问题从来都不是问题",
   "advancements.iceandfire.kill_sea_serpent.description": "捕杀海蟒",
@@ -739,7 +713,7 @@
   "item.iceandfire.cyclops_skull.jei_desc": "可以当成奖杯挂在墙上或者摆在地上。",
   "item.iceandfire.cockatrice_skull.jei_desc": "可以当成奖杯挂在墙上或者摆在地上。",
   "item.iceandfire.stymphalian_skull.jei_desc": "可以当成奖杯挂在墙上或者摆在地上。",
-  "item.iceandfire.troll_skull.jei_desc": "可以当成奖杯挂在墙上或者摆在地上。",
+
   "item.iceandfire.amphithere_skull.jei_desc": "可以当成奖杯挂在墙上或者摆在地上。",
   "item.iceandfire.seaserpent_skull.jei_desc": "可以当成奖杯挂在墙上或者摆在地上。",
   "item.iceandfire.hydra_skull.jei_desc": "可以当成奖杯挂在墙上或者摆在地上。",
@@ -953,22 +927,22 @@
   "block.minecraft.banner.mermaid.red": "红色人鱼徽标",
   "block.minecraft.banner.mermaid.black": "黑色人鱼徽标",
 
-  "block.minecraft.banner.troll.white": "白色食人妖徽标",
-  "block.minecraft.banner.troll.orange": "橙色食人妖徽标",
-  "block.minecraft.banner.troll.magenta": "品红食人妖徽标",
-  "block.minecraft.banner.troll.light_blue": "浅蓝食人妖徽标",
-  "block.minecraft.banner.troll.yellow": "黄色食人妖徽标",
-  "block.minecraft.banner.troll.lime": "黄绿食人妖徽标",
-  "block.minecraft.banner.troll.pink": "粉色食人妖徽标",
-  "block.minecraft.banner.troll.gray": "灰色食人妖徽标",
-  "block.minecraft.banner.troll.silver": "银色食人妖徽标",
-  "block.minecraft.banner.troll.cyan": "青色食人妖徽标",
-  "block.minecraft.banner.troll.purple": "紫色食人妖徽标",
-  "block.minecraft.banner.troll.blue": "蓝色食人妖徽标",
-  "block.minecraft.banner.troll.brown": "棕色食人妖徽标",
-  "block.minecraft.banner.troll.green": "绿色食人妖徽标",
-  "block.minecraft.banner.troll.red": "红色食人妖徽标",
-  "block.minecraft.banner.troll.black": "黑色食人妖徽标",
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   "block.minecraft.banner.eye.white": "白色独眼徽标",
   "block.minecraft.banner.eye.orange": "橙色独眼徽标",
@@ -1124,10 +1098,10 @@
   "iceandfire.sound.subtitle.cockatrice_hurt": "鸡蛇：受伤",
   "iceandfire.sound.subtitle.cockatrice_idle": "鸡蛇：惊鸣",
   "iceandfire.sound.subtitle.cockatrice_die": "鸡蛇：死亡",
-  "iceandfire.sound.subtitle.troll_idle": "食人妖：咆哮",
-  "iceandfire.sound.subtitle.troll_roar": "食人妖：怒吼",
-  "iceandfire.sound.subtitle.troll_hurt": "食人妖：受伤",
-  "iceandfire.sound.subtitle.troll_die": "食人妖：死亡",
+
+
+
+
   "iceandfire.sound.subtitle.naga_attack": "娜迦：攻击",
   "iceandfire.sound.subtitle.naga_idle": "娜迦：呻吟",
   "iceandfire.sound.subtitle.naga_hurt": "娜迦：受伤",

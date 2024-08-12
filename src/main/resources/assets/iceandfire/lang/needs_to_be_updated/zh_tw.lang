@@ -114,33 +114,33 @@ item.iceandfire.rotten_egg.name=腐敗之卵
 item.iceandfire.stymphalian_bird_feather.name=金屬恐鳥羽毛
 item.iceandfire.stymphalian_arrow.name=金屬箭羽
 item.iceandfire.stymphalian_arrow.desc=金屬箭羽使箭頭像鳥一樣翱翔。
-item.iceandfire.troll_weapon.axe.name=巨魔的斧頭
-item.iceandfire.troll_weapon.column.name=巨魔的石柱
-item.iceandfire.troll_weapon.column_forest.name=巨魔的苔蘚專欄
-item.iceandfire.troll_weapon.column_frost.name=巨魔的磨砂門
-item.iceandfire.troll_weapon.hammer.name=巨魔的錘子
-item.iceandfire.troll_weapon.trunk.name=巨魔的樹幹
-item.iceandfire.troll_weapon.trunk_frost.name=巨魔的磨砂樹幹
-item.iceandfire.troll_tusk.name=巨魔象牙
-item.iceandfire.troll_leather_forest.name=森林巨魔皮革
-item.iceandfire.troll_leather_frost.name=冰霜巨魔皮革
-item.iceandfire.troll_leather_mountain.name=山地巨魔皮革
-item.iceandfire.forest_troll_leather_helmet.name=森林巨魔皮革頭盔
-item.iceandfire.forest_troll_leather_chestplate.name=森林巨魔皮革胸甲
-item.iceandfire.forest_troll_leather_leggings.name=森林巨魔皮革護腿
-item.iceandfire.forest_troll_leather_boots.name=森林巨魔皮靴
-item.iceandfire.frost_troll_leather_helmet.name=冰霜巨魔皮革頭盔
-item.iceandfire.frost_troll_leather_chestplate.name=冰霜巨魔皮革胸甲
-item.iceandfire.frost_troll_leather_leggings.name=冰霜巨魔皮革護腿
-item.iceandfire.frost_troll_leather_boots.name=冰霜巨魔皮靴
-item.iceandfire.mountain_troll_leather_helmet.name=山地巨魔皮革頭盔
-item.iceandfire.mountain_troll_leather_chestplate.name=山地巨魔胸甲
-item.iceandfire.mountain_troll_leather_leggings.name=山地巨魔皮革護腿
-item.iceandfire.mountain_troll_leather_boots.name=山地巨魔皮靴
-item.iceandfire.troll_leather_armor_helmet.desc=-10 %%彈射傷害
-item.iceandfire.troll_leather_armor_chestplate.desc=-30 %%彈射傷害
-item.iceandfire.troll_leather_armor_leggings.desc=-20 %%彈射傷害
-item.iceandfire.troll_leather_armor_boots.desc=-10 %%彈射傷害
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 item.banner.firedragon.white=白色龍炎彈
 item.banner.firedragon.orange=橙色龍炎彈
@@ -206,7 +206,7 @@ entity.if_cockatriceegg.name=雞蛇蛋
 entity.stymphalianbird.name=金屬恐鳥
 entity.stymphalianfeather.name=金屬恐鳥羽毛
 entity.stymphalianarrow.name=金屬箭
-entity.if_troll.name=巨魔
+
 
 dragon.red=赤紅
 dragon.green=翡綠
@@ -259,7 +259,7 @@ bestiary.siren=塞壬
 bestiary.hippocampus=海馬
 bestiary.cockatrice=雞蛇
 bestiary.stymphalianbird=金屬恐鳥
-bestiary.troll=巨魔
+
 
 lectern.nopages=無法新增新的資訊.
 silvertools.hurt=+2 對亡靈生物的傷害

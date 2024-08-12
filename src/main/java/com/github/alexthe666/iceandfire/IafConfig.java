@@ -72,11 +72,6 @@ public class IafConfig {
     public static boolean stymphalianBirdsDataTagDrops = true;
     public static boolean stympahlianBirdAttackAnimals = false;
     public static int stymphalianBirdSpawnChance = 80;
-    public static boolean spawnTrolls = true;
-    public static int trollSpawnRate = 60;
-    public static boolean trollsDropWeapon = true;
-    public static double trollMaxHealth = 50;
-    public static double trollAttackStrength = 10;
     public static boolean villagersFearDragons = true;
     public static boolean animalsFearDragons = true;
     public static boolean spawnAmphitheres = true;
@@ -204,11 +199,6 @@ public class IafConfig {
             stymphalianBirdsDataTagDrops = ConfigHolder.SERVER.stymphalianBirdsDataTagDrops.get();
             stympahlianBirdAttackAnimals = ConfigHolder.SERVER.stympahlianBirdAttackAnimals.get();
             stymphalianBirdSpawnChance = ConfigHolder.SERVER.stymphalianBirdSpawnChance.get();
-            spawnTrolls = ConfigHolder.SERVER.spawnTrolls.get();
-            trollSpawnRate = ConfigHolder.SERVER.trollSpawnRate.get();
-            trollsDropWeapon = ConfigHolder.SERVER.trollsDropWeapon.get();
-            trollMaxHealth = ConfigHolder.SERVER.trollMaxHealth.get();
-            trollAttackStrength = ConfigHolder.SERVER.trollAttackStrength.get();
             villagersFearDragons = ConfigHolder.SERVER.villagersFearDragons.get();
             animalsFearDragons = ConfigHolder.SERVER.animalsFearDragons.get();
             spawnAmphitheres = ConfigHolder.SERVER.spawnAmphitheres.get();

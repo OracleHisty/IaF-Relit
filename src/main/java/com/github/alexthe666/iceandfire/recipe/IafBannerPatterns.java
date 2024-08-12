@@ -23,7 +23,6 @@ public class IafBannerPatterns {
     public static final RegistryObject<BannerPattern> PATTERN_HIPPOCAMPUS = BANNERS.register("hippocampus", () -> new BannerPattern("iaf_hippocampus"));
     public static final RegistryObject<BannerPattern> PATTERN_MERMAID = BANNERS.register("mermaid", () -> new BannerPattern("iaf_mermaid"));
     public static final RegistryObject<BannerPattern> PATTERN_SEA_SERPENT = BANNERS.register("sea_serpent", () -> new BannerPattern("iaf_sea_serpent"));
-    public static final RegistryObject<BannerPattern> PATTERN_TROLL = BANNERS.register("troll", () -> new BannerPattern("iaf_troll"));
     public static final RegistryObject<BannerPattern> PATTERN_WEEZER = BANNERS.register("weezer", () -> new BannerPattern("iaf_weezer"));
     public static final RegistryObject<BannerPattern> PATTERN_DREAD = BANNERS.register("dread", () -> new BannerPattern("iaf_dread"));
 

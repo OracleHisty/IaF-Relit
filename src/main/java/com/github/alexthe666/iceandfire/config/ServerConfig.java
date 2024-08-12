@@ -69,11 +69,6 @@ public class ServerConfig {
     public final ForgeConfigSpec.BooleanValue stymphalianBirdsDataTagDrops;
     public final ForgeConfigSpec.BooleanValue stympahlianBirdAttackAnimals;
     public final ForgeConfigSpec.IntValue stymphalianBirdSpawnChance;
-    public final ForgeConfigSpec.BooleanValue spawnTrolls;
-    public final ForgeConfigSpec.IntValue trollSpawnRate;
-    public final ForgeConfigSpec.BooleanValue trollsDropWeapon;
-    public final ForgeConfigSpec.DoubleValue trollMaxHealth;
-    public final ForgeConfigSpec.DoubleValue trollAttackStrength;
     public final ForgeConfigSpec.BooleanValue villagersFearDragons;
     public final ForgeConfigSpec.BooleanValue animalsFearDragons;
     public final ForgeConfigSpec.BooleanValue spawnAmphitheres;
@@ -226,13 +221,6 @@ public class ServerConfig {
         this.stymphalianBirdsDataTagDrops = buildBoolean(builder, "Stymphalian Birds drop ore dict items", "all", true, "True if stymphalian birds can drop items registered in the ore dictionary to ingotCopper, ingotBronze, nuggetCopper, nuggetBronze.");
         this.stympahlianBirdAttackAnimals = buildBoolean(builder, "Stymphalian Birds Target Animals", "all", false, "True if stymphalian birds are allowed to target and attack animals");
         this.stymphalianBirdSpawnChance = buildInt(builder, "Spawn Stymhphalian Bird Chance", "all", 100, 1, 10000, "1 out of this number chance per chunk for generation");
-        builder.pop();
-        builder.push("Trolls");
-        this.spawnTrolls = buildBoolean(builder, "Spawn Trolls", "all", true, "True if trolls are allowed to spawn");
-        this.trollsDropWeapon = buildBoolean(builder, "Trolls Drop Weapon", "all", true, "True if trolls are allowed to drop their weapon on death.");
-        this.trollSpawnRate = buildInt(builder, "Troll Spawn Weight", "all", 40, 1, 10000, "Troll spawn weight. Lower = lower chance to spawn");
-        this.trollMaxHealth = buildDouble(builder, "Troll Max Health", "all", 50, 1, 10000, "Maximum troll health");
-        this.trollAttackStrength = buildDouble(builder, "Troll Attack Strength", "all", 10, 1, 10000, "Troll attack strength");
         builder.pop();
         builder.push("Amphitheres");
         this.spawnAmphitheres = buildBoolean(builder, "Spawn Amphitheres", "all", true, "True if amphitheres are allowed to spawn");

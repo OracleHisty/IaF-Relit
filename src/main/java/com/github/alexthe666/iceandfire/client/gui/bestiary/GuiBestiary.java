@@ -8,7 +8,6 @@ import com.github.alexthe666.iceandfire.entity.DragonType;
 import com.github.alexthe666.iceandfire.enums.EnumBestiaryPages;
 import com.github.alexthe666.iceandfire.enums.EnumDragonArmor;
 import com.github.alexthe666.iceandfire.enums.EnumSeaSerpent;
-import com.github.alexthe666.iceandfire.enums.EnumTroll;
 import com.github.alexthe666.iceandfire.item.DragonItems;
 import com.github.alexthe666.iceandfire.item.IafItemRegistry;
 import com.github.alexthe666.iceandfire.misc.IafSoundRegistry;
@@ -573,32 +572,6 @@ public class GuiBestiary extends Screen {
                     drawItemStack(ms, new ItemStack(IafItemRegistry.STYMPHALIAN_BIRD_FEATHER.get()), 40, 49, 1.35F);
                     drawItemStack(ms, new ItemStack(IafItemRegistry.STYMPHALIAN_ARROW.get()), 60, 18, 2F);
 
-                }
-                break;
-            case TROLL:
-                if (bookPages == 0) {
-                    ms.pose().pushPose();
-                    ms.pose().scale(1.5F, 1.5F, 1F);
-                    drawImage(ms, DRAWINGS_1, 15, 60, 156, 211, 25, 58, 512F);
-                    drawImage(ms, DRAWINGS_1, 50, 55, 181, 211, 25, 58, 512F);
-                    drawImage(ms, DRAWINGS_1, 85, 60, 206, 211, 25, 58, 512F);
-                    drawImage(ms, DRAWINGS_1, 155, 22, 114, 145, 24, 66, 512F);
-                    drawImage(ms, DRAWINGS_1, 190, 19, 188, 142, 47, 69, 512F);
-                    ms.pose().popPose();
-                }
-                if (bookPages == 1) {
-                    int i = (Minecraft.getInstance().player.tickCount % (EnumTroll.Weapon.values().length * 20)) / 20;
-                    drawItemStack(ms, new ItemStack(EnumTroll.Weapon.values()[i].item.get()), 30, 7, 2.5F);
-                    int j = (Minecraft.getInstance().player.tickCount % (EnumTroll.values().length * 20)) / 20;
-                    drawItemStack(ms, new ItemStack(EnumTroll.values()[j].leather.get()), 100, 30, 2.5F);
-                    drawItemStack(ms, new ItemStack(IafItemRegistry.TROLL_TUSK.get()), 120, 30, 2.5F);
-                }
-                if (bookPages == 2) {
-                    int j = (Minecraft.getInstance().player.tickCount % (EnumTroll.values().length * 20)) / 20;
-                    drawItemStack(ms, new ItemStack(EnumTroll.values()[j].helmet.get()), 27, 15, 1.5F);
-                    drawItemStack(ms, new ItemStack(EnumTroll.values()[j].chestplate.get()), 47, 15, 1.5F);
-                    drawItemStack(ms, new ItemStack(EnumTroll.values()[j].leggings.get()), 67, 15, 1.5F);
-                    drawItemStack(ms, new ItemStack(EnumTroll.values()[j].boots.get()), 87, 15, 1.5F);
                 }
                 break;
             case AMPHITHERE:

@@ -25,7 +25,7 @@ import javax.annotation.Nullable;
 import java.util.List;
 import java.util.function.Consumer;
 
-public class ItemScaleArmor extends ArmorItem implements IProtectAgainstDragonItem {
+public class ItemScaleArmor extends DragonArmor {
 
     public EnumDragonArmor armor_type;
     public EnumDragonEgg eggType;

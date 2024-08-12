@@ -243,40 +243,12 @@ public class ServerEvents {
 
     @SubscribeEvent
     public void onEntityDamage(LivingHurtEvent event) {
-        if (event.getSource().is(DamageTypeTags.IS_PROJECTILE)) {
-            float multi = 1;
-            if (event.getEntity().getItemBySlot(EquipmentSlot.HEAD).getItem() instanceof ItemTrollArmor) {
-                multi -= 0.1f;
-            }
-            if (event.getEntity().getItemBySlot(EquipmentSlot.CHEST).getItem() instanceof ItemTrollArmor) {
-                multi -= 0.3f;
-            }
-            if (event.getEntity().getItemBySlot(EquipmentSlot.LEGS).getItem() instanceof ItemTrollArmor) {
-                multi -= 0.2f;
-            }
-            if (event.getEntity().getItemBySlot(EquipmentSlot.FEET).getItem() instanceof ItemTrollArmor) {
-                multi -= 0.1f;
-            }
-            event.setAmount(event.getAmount() * multi);
-        }
         if (event.getSource().is(IafDamageRegistry.DRAGON_FIRE_TYPE) || event.getSource().is(IafDamageRegistry.DRAGON_ICE_TYPE) || event.getSource().is(IafDamageRegistry.DRAGON_LIGHTNING_TYPE)) {
             float multi = 1;
-            if (event.getEntity().getItemBySlot(EquipmentSlot.HEAD).getItem() instanceof ItemScaleArmor ||
-                    event.getEntity().getItemBySlot(EquipmentSlot.HEAD).getItem() instanceof ItemDragonsteelArmor) {
-                multi -= 0.1f;
-            }
-            if (event.getEntity().getItemBySlot(EquipmentSlot.CHEST).getItem() instanceof ItemScaleArmor ||
-                    event.getEntity().getItemBySlot(EquipmentSlot.CHEST).getItem() instanceof ItemDragonsteelArmor) {
-                multi -= 0.3f;
-            }
-            if (event.getEntity().getItemBySlot(EquipmentSlot.LEGS).getItem() instanceof ItemScaleArmor ||
-                    event.getEntity().getItemBySlot(EquipmentSlot.LEGS).getItem() instanceof ItemDragonsteelArmor) {
-                multi -= 0.2f;
-            }
-            if (event.getEntity().getItemBySlot(EquipmentSlot.FEET).getItem() instanceof ItemScaleArmor ||
-                    event.getEntity().getItemBySlot(EquipmentSlot.FEET).getItem() instanceof ItemDragonsteelArmor) {
-                multi -= 0.1f;
-            }
+            if (event.getEntity().getItemBySlot(EquipmentSlot.HEAD).getItem() instanceof DragonArmor) multi -= 0.1f;
+            if (event.getEntity().getItemBySlot(EquipmentSlot.CHEST).getItem() instanceof DragonArmor) multi -= 0.3f;
+            if (event.getEntity().getItemBySlot(EquipmentSlot.LEGS).getItem() instanceof DragonArmor) multi -= 0.2f;
+            if (event.getEntity().getItemBySlot(EquipmentSlot.FEET).getItem() instanceof DragonArmor) multi -= 0.1f;
             event.setAmount(event.getAmount() * multi);
         }
     }

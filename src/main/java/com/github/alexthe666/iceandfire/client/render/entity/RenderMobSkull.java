@@ -27,7 +27,6 @@ public class RenderMobSkull extends EntityRenderer<EntityMobSkull> {
     private final ModelCyclops cyclopsModel;
     private final ModelCockatrice cockatriceModel;
     private final ModelStymphalianBird stymphalianBirdModel;
-    private final ModelTroll trollModel;
     private final ModelAmphithere amphithereModel;
     private final ModelHydraHead hydraModel;
     private final TabulaModel seaSerpentModel;
@@ -37,7 +36,6 @@ public class RenderMobSkull extends EntityRenderer<EntityMobSkull> {
         this.cyclopsModel = new ModelCyclops();
         this.cockatriceModel = new ModelCockatrice();
         this.stymphalianBirdModel = new ModelStymphalianBird();
-        this.trollModel = new ModelTroll();
         this.amphithereModel = new ModelAmphithere();
         this.seaSerpentModel = (TabulaModel) seaSerpentModel;
         this.hydraModel = new ModelHydraHead(0);
@@ -90,16 +88,6 @@ public class RenderMobSkull extends EntityRenderer<EntityMobSkull> {
                 stymphalianBirdModel.resetToDefaultPose();
                 setRotationAngles(stymphalianBirdModel.HeadBase, onWall ? (float) Math.toRadians(50F) : 0F, 0, 0);
                 stymphalianBirdModel.HeadBase.render(matrixStackIn, ivertexbuilder, packedLightIn, OverlayTexture.NO_OVERLAY, 1.0F, 1.0F, 1.0F, 1.0F);
-
-                break;
-            case TROLL:
-                matrixStackIn.translate(0, 1F, -0.35F);
-                if (onWall) {
-                    matrixStackIn.translate(0, 0F, 0.35F);
-                }
-                trollModel.resetToDefaultPose();
-                setRotationAngles(trollModel.head, onWall ? (float) Math.toRadians(50F) : (float) Math.toRadians(-20), 0, 0);
-                trollModel.head.render(matrixStackIn, ivertexbuilder, packedLightIn, OverlayTexture.NO_OVERLAY, 1.0F, 1.0F, 1.0F, 1.0F);
 
                 break;
             case AMPHITHERE:

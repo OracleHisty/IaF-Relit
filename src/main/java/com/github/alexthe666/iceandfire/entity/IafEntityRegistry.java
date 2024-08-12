@@ -52,7 +52,6 @@ public class IafEntityRegistry {
     public static final RegistryObject<EntityType<EntityStymphalianBird>> STYMPHALIAN_BIRD = registerEntity(EntityType.Builder.of(EntityStymphalianBird::new, MobCategory.CREATURE).sized(1.3F, 1.2F).setTrackingRange(128), "stymphalian_bird");
     public static final RegistryObject<EntityType<EntityStymphalianFeather>> STYMPHALIAN_FEATHER = registerEntity(EntityType.Builder.<EntityStymphalianFeather>of(EntityStymphalianFeather::new, MobCategory.MISC).sized(0.5F, 0.5F).setCustomClientFactory(EntityStymphalianFeather::new), "stymphalian_feather");
     public static final RegistryObject<EntityType<EntityStymphalianArrow>> STYMPHALIAN_ARROW = registerEntity(EntityType.Builder.<EntityStymphalianArrow>of(EntityStymphalianArrow::new, MobCategory.MISC).sized(0.5F, 0.5F).setCustomClientFactory(EntityStymphalianArrow::new), "stymphalian_arrow");
-    public static final RegistryObject<EntityType<EntityTroll>> TROLL = registerEntity(EntityType.Builder.of(EntityTroll::new, MobCategory.MONSTER).sized(1.2F, 3.5F), "troll");
     public static final RegistryObject<EntityType<EntityAmphithere>> AMPHITHERE = registerEntity(EntityType.Builder.of(EntityAmphithere::new, MobCategory.CREATURE).sized(2.5F, 1.25F).setTrackingRange(128).clientTrackingRange(8), "amphithere");
     public static final RegistryObject<EntityType<EntityAmphithereArrow>> AMPHITHERE_ARROW = registerEntity(EntityType.Builder.<EntityAmphithereArrow>of(EntityAmphithereArrow::new, MobCategory.MISC).sized(0.5F, 0.5F).setCustomClientFactory(EntityAmphithereArrow::new), "amphithere_arrow");
     public static final RegistryObject<EntityType<EntitySeaSerpent>> SEA_SERPENT = registerEntity(EntityType.Builder.of(EntitySeaSerpent::new, MobCategory.CREATURE).sized(0.5F, 0.5F).setTrackingRange(256).clientTrackingRange(8), "sea_serpent");
@@ -95,7 +94,6 @@ public class IafEntityRegistry {
         creationEvent.put(HIPPOCAMPUS.get(), EntityHippocampus.bakeAttributes().build());
         creationEvent.put(COCKATRICE.get(), EntityCockatrice.bakeAttributes().build());
         creationEvent.put(STYMPHALIAN_BIRD.get(), EntityStymphalianBird.bakeAttributes().build());
-        creationEvent.put(TROLL.get(), EntityTroll.bakeAttributes().build());
         creationEvent.put(AMPHITHERE.get(), EntityAmphithere.bakeAttributes().build());
         creationEvent.put(SEA_SERPENT.get(), EntitySeaSerpent.bakeAttributes().build());
         creationEvent.put(MOB_SKULL.get(), EntityMobSkull.bakeAttributes().build());
@@ -112,7 +110,6 @@ public class IafEntityRegistry {
 
     @SubscribeEvent
     public static void commonSetup(final FMLCommonSetupEvent event) {
-        SpawnPlacements.register(TROLL.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, EntityTroll::canTrollSpawnOn);
         SpawnPlacements.register(DREAD_LICH.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, EntityDreadLich::canLichSpawnOn);
         SpawnPlacements.register(COCKATRICE.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, EntityCockatrice::checkMobSpawnRules);
         SpawnPlacements.register(AMPHITHERE.get(), SpawnPlacements.Type.NO_RESTRICTIONS, Heightmap.Types.MOTION_BLOCKING, EntityAmphithere::canAmphithereSpawnOn);
@@ -124,9 +121,6 @@ public class IafEntityRegistry {
     	LOADED_ENTITIES.put("DREAD_LICH", false);
     	LOADED_ENTITIES.put("COCKATRICE", false);
     	LOADED_ENTITIES.put("AMPHITHERE", false);
-    	LOADED_ENTITIES.put("TROLL_F", false);
-    	LOADED_ENTITIES.put("TROLL_S", false);
-    	LOADED_ENTITIES.put("TROLL_M", false);
     }
     public static void addSpawners(Holder<Biome> biome, ModifiableBiomeInfo.BiomeInfo.Builder builder) {
         if (IafConfig.spawnLiches && BiomeConfig.test(BiomeConfig.mausoleumBiomes, biome)) {
@@ -141,16 +135,5 @@ public class IafEntityRegistry {
             builder.getMobSpawnSettings().getSpawner(MobCategory.CREATURE).add(new MobSpawnSettings.SpawnerData(IafEntityRegistry.AMPHITHERE.get(), IafConfig.amphithereSpawnRate, 1, 3));
             LOADED_ENTITIES.put("AMPHITHERE", true);
         }
-        if (IafConfig.spawnTrolls && (
-    		BiomeConfig.test(BiomeConfig.forestTrollBiomes, biome) ||
-    		BiomeConfig.test(BiomeConfig.snowyTrollBiomes, biome) ||
-    		BiomeConfig.test(BiomeConfig.mountainTrollBiomes, biome)
-		)) {
-            builder.getMobSpawnSettings().getSpawner(MobCategory.MONSTER).add(new MobSpawnSettings.SpawnerData(IafEntityRegistry.TROLL.get(), IafConfig.trollSpawnRate, 1, 3));
-    		if (BiomeConfig.test(BiomeConfig.forestTrollBiomes, biome)) LOADED_ENTITIES.put("TROLL_F", true);
-    		if (BiomeConfig.test(BiomeConfig.snowyTrollBiomes, biome)) LOADED_ENTITIES.put("TROLL_S", true);
-    		if (BiomeConfig.test(BiomeConfig.mountainTrollBiomes, biome)) LOADED_ENTITIES.put("TROLL_M", true);
-        }
-
     }
 }

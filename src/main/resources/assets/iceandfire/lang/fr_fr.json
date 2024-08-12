@@ -224,33 +224,33 @@
   "item.iceandfire.stymphalian_bird_feather": "Plume d'Oiseau du Lac Stymphale",
   "item.iceandfire.stymphalian_arrow": "Flèche d'Oiseau du Lac Stymphale",
   "item.iceandfire.stymphalian_arrow.desc": "L'étirement métallique permet à la flèche de s'élever comme un oiseau.",
-  "item.iceandfire.troll_weapon_axe": "Hache du Troll",
-  "item.iceandfire.troll_weapon_column": "Colonne en Roche du Troll",
-  "item.iceandfire.troll_weapon_column_forest": "Colonne Moussue du Troll",
-  "item.iceandfire.troll_weapon_column_frost": "Colonne Gelée du Troll",
-  "item.iceandfire.troll_weapon_hammer": "Marteau du Troll",
-  "item.iceandfire.troll_weapon_trunk": "Tronc d'Arbre du Troll",
-  "item.iceandfire.troll_weapon_trunk_frost": "Tronc d'Arbre Gelé du Troll",
-  "item.iceandfire.troll_tusk": "Défense du Troll",
-  "item.iceandfire.troll_leather_forest": "Cuir du Troll de la Forêt",
-  "item.iceandfire.troll_leather_frost": "Cuir du Troll du Froid",
-  "item.iceandfire.troll_leather_mountain": "Cuir du Troll de la Montagne",
-  "item.iceandfire.forest_troll_leather_helmet": "Casque en Cuir du Troll de la Forêt",
-  "item.iceandfire.forest_troll_leather_chestplate": "Plastron en Cuir du Troll de la Forêt",
-  "item.iceandfire.forest_troll_leather_leggings": "Jambière en Cuir du Troll de la Forêt",
-  "item.iceandfire.forest_troll_leather_boots": "Bottes en Cuir du Troll de la Forêt",
-  "item.iceandfire.frost_troll_leather_helmet": "Casque en Cuir du Troll du Froid",
-  "item.iceandfire.frost_troll_leather_chestplate": "Plastron en Cuir du Troll du Froid",
-  "item.iceandfire.frost_troll_leather_leggings": "Jambière en Cuir du Troll du Froid",
-  "item.iceandfire.frost_troll_leather_boots": "Bottes en Cuir du Troll du Froid",
-  "item.iceandfire.mountain_troll_leather_helmet": "Casque en Cuir du Troll de la Montagne",
-  "item.iceandfire.mountain_troll_leather_chestplate": "Plastron en Cuir du Troll de la Montagne",
-  "item.iceandfire.mountain_troll_leather_leggings": "Jambière en Cuir du Troll de la Montagne",
-  "item.iceandfire.mountain_troll_leather_boots": "Bottes en Cuir du Troll de la Montagne",
-  "item.iceandfire.troll_leather_armor_helmet.desc": "-10%% de Dégâts de Projectile",
-  "item.iceandfire.troll_leather_armor_chestplate.desc": "-30%% Dégâts de Projectile",
-  "item.iceandfire.troll_leather_armor_leggings.desc": "-20%% Dégâts de Projectile",
-  "item.iceandfire.troll_leather_armor_boots.desc": "-10%% Dégâts de Projectile",
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   "item.iceandfire.sickly_dragon_meal": "Repas Maladif du Dragon",
   "item.iceandfire.sickly_dragon_meal.desc_0": "Retarde la Croissance du Dragon",
   "item.iceandfire.amphithere_feather": "Plume d'Amphiptère",
@@ -356,7 +356,7 @@
   "item.iceandfire.cyclops_skull": "Crâne de Cyclope",
   "item.iceandfire.cockatrice_skull": "Crâne de Basilic",
   "item.iceandfire.stymphalian_skull": "Crâne d'Oiseau Stymphalien",
-  "item.iceandfire.troll_skull": "Crâne de Troll",
+
   "item.iceandfire.amphithere_skull": "Crâne d'Amphithère",
   "item.iceandfire.seaserpent_skull": "Crâne de Serpent de Mer",
   "item.iceandfire.hydra_skull": "Crâne d'Hydra",
@@ -403,7 +403,7 @@
   "item.iceandfire.spawn_egg_death_worm": "Oeuf d'Apparition de Ver de la Mort",
   "item.iceandfire.spawn_egg_cockatrice": "Oeuf d'Apparition de Basilic",
   "item.iceandfire.spawn_egg_stymphalian_bird": "Oeuf d'Apparition d'Oiseaux Stymphalien",
-  "item.iceandfire.spawn_egg_troll": "Oeuf d'Apparition de Troll",
+
   "item.iceandfire.spawn_egg_amphithere": "Oeuf d'Apparition d'Amphithère",
   "item.iceandfire.spawn_egg_dread_thrall": "Oeuf d'Apparition de Dread Thrall",
   "item.iceandfire.spawn_egg_dread_ghoul": "Oeuf d'Apparition de Dread Ghoul",
@@ -446,8 +446,8 @@
   "item.iceandfire.banner_pattern_sea_serpent.desc": "Serpent de Mer",
   "item.iceandfire.banner_pattern_weezer": "Motif de Bannière",
   "item.iceandfire.banner_pattern_weezer.desc": "Weezer",
-  "item.iceandfire.banner_pattern_troll": "Motif de Bannière",
-  "item.iceandfire.banner_pattern_troll.desc": "Tête de Troll",
+
+
   "item.iceandfire.banner_pattern_dread": "Motif de Bannière",
   "item.iceandfire.banner_pattern_dread.desc": "Dread",
 
@@ -482,7 +482,7 @@
   "entity.iceandfire.stymphalian_bird": "Oiseau du Lac Stymphale",
   "entity.iceandfire.stymphalian_feather": "Plume d'Oiseau du Lac Stymphale",
   "entity.iceandfire.stymphalian_arrow": "Flèche d'Oiseau du Lac Stymphale",
-  "entity.iceandfire.troll": "Troll",
+
   "entity.iceandfire.amphithere": "Amphiptère",
   "entity.iceandfire.sea_serpent": "Serpent de Mer",
   "entity.iceandfire.sea_serpent_bubbles": "Bulle de Serpent de Mer",
@@ -583,7 +583,7 @@
   "bestiary.deathworm": "Ver de la Mort",
   "bestiary.cockatrice": "Basilic",
   "bestiary.stymphalianbird": "Oiseaux Stymphaliens",
-  "bestiary.troll": "Trolls",
+
   "bestiary.amphithere": "Amphithères",
   "bestiary.seaserpent": "Serpent de Mer",
   "bestiary.dragonforge": "Forge de Dragon",
@@ -710,8 +710,8 @@
   "advancements.iceandfire.kill_stymphalian_bird.description": "Tuer un Oiseau Stymphalien",
   "advancements.iceandfire.stymphalian_arrow.title": "Voler vers l'Avant",
   "advancements.iceandfire.stymphalian_arrow.description": "Fabriquez une flèche en plumes d'Oiseau Stymhalien qui vole plus loin",
-  "advancements.iceandfire.kill_troll.title": "Ils Ont un Troll des Cavernes !",
-  "advancements.iceandfire.kill_troll.description": "Tuez un Troll",
+
+
   "advancements.iceandfire.tame_amphithere.title": "Voltigeurs de la Jungle",
   "advancements.iceandfire.tame_amphithere.description": "Apprivoisez un amphithère en l'abattant et en le chevauchant",
   "advancements.iceandfire.kill_sea_serpent.title": "Les Monstres de la Mer",
@@ -738,7 +738,7 @@
   "item.iceandfire.cyclops_skull.jei_desc": "Peut être placé sur le sol ou sur les murs comme un trophée.",
   "item.iceandfire.cockatrice_skull.jei_desc": "Peut être placé sur le sol ou sur les murs comme un trophée.",
   "item.iceandfire.stymphalian_skull.jei_desc": "Peut être placé sur le sol ou sur les murs comme un trophée.",
-  "item.iceandfire.troll_skull.jei_desc": "Peut être placé sur le sol ou sur les murs comme un trophée.",
+
   "item.iceandfire.amphithere_skull.jei_desc": "Peut être placé sur le sol ou sur les murs comme un trophée.",
   "item.iceandfire.seaserpent_skull.jei_desc": "Peut être placé sur le sol ou sur les murs comme un trophée.",
   "item.iceandfire.hydra_skull.jei_desc": "Peut être placé sur le sol ou sur les murs comme un trophée.",
@@ -952,22 +952,22 @@
   "block.minecraft.banner.mermaid.red": "Mermaid Rouge",
   "block.minecraft.banner.mermaid.black": "Mermaid Noir",
 
-  "block.minecraft.banner.troll.white": "Troll Blanc",
-  "block.minecraft.banner.troll.orange": "Troll Orange",
-  "block.minecraft.banner.troll.magenta": "Troll Magenta",
-  "block.minecraft.banner.troll.light_blue": "Troll Bleu Clair",
-  "block.minecraft.banner.troll.yellow": "Troll Jaune",
-  "block.minecraft.banner.troll.lime": "Troll Lime",
-  "block.minecraft.banner.troll.pink": "Troll Rose",
-  "block.minecraft.banner.troll.gray": "Troll Gris",
-  "block.minecraft.banner.troll.silver": "Troll Argenté",
-  "block.minecraft.banner.troll.cyan": "Troll Cyan",
-  "block.minecraft.banner.troll.purple": "Troll Violet",
-  "block.minecraft.banner.troll.blue": "Troll Bleu",
-  "block.minecraft.banner.troll.brown": "Troll Marron",
-  "block.minecraft.banner.troll.green": "Troll Vert",
-  "block.minecraft.banner.troll.red": "Troll Rouge",
-  "block.minecraft.banner.troll.black": "Troll Noir",
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   "block.minecraft.banner.eye.white": "Oeil Blanc",
   "block.minecraft.banner.eye.orange": "Oeil Orange",
@@ -1123,10 +1123,10 @@
   "iceandfire.sound.subtitle.cockatrice_hurt": "Cockatrice hurts",
   "iceandfire.sound.subtitle.cockatrice_idle": "Cockatrice squawks",
   "iceandfire.sound.subtitle.cockatrice_die": "Cockatrice dies",
-  "iceandfire.sound.subtitle.troll_idle": "Troll growls",
-  "iceandfire.sound.subtitle.troll_roar": "Troll roars",
-  "iceandfire.sound.subtitle.troll_hurt": "Troll hurts",
-  "iceandfire.sound.subtitle.troll_die": "Troll dies",
+
+
+
+
   "iceandfire.sound.subtitle.naga_attack": "Naga attacks",
   "iceandfire.sound.subtitle.naga_idle": "Naga groans",
   "iceandfire.sound.subtitle.naga_hurt": "Naga hurts",

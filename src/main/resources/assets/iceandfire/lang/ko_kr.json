@@ -224,33 +224,33 @@
   "item.iceandfire.stymphalian_bird_feather": "스팀팔로스 청동새의 깃털",
   "item.iceandfire.stymphalian_arrow": "스팀팔로스 청동새의 화살",
   "item.iceandfire.stymphalian_arrow.desc": "화살이 새처럼 하늘로 솟구치게 만들어준다.",
-  "item.iceandfire.troll_weapon_axe": "트롤의 도끼",
-  "item.iceandfire.troll_weapon_column": "트롤의 돌기둥",
-  "item.iceandfire.troll_weapon_column_forest": "트롤의 이끼 낀 기둥",
-  "item.iceandfire.troll_weapon_column_frost": "트롤의 얼어붙은 기둥",
-  "item.iceandfire.troll_weapon_hammer": "트롤의 망치",
-  "item.iceandfire.troll_weapon_trunk": "트롤의 통나무",
-  "item.iceandfire.troll_weapon_trunk_frost": "트롤의 눈덮힌 통나무",
-  "item.iceandfire.troll_tusk": "트롤의 어금니",
-  "item.iceandfire.troll_leather_forest": "숲 트롤의 가죽",
-  "item.iceandfire.troll_leather_frost": "프로스트 트롤의 가죽",
-  "item.iceandfire.troll_leather_mountain": "산 트롤의 가죽",
-  "item.iceandfire.forest_troll_leather_helmet": "숲 트롤 가죽 모자",
-  "item.iceandfire.forest_troll_leather_chestplate": "숲 트롤 가죽 조끼",
-  "item.iceandfire.forest_troll_leather_leggings": "숲 트롤 가죽 바지",
-  "item.iceandfire.forest_troll_leather_boots": "숲 트롤 가죽 신발",
-  "item.iceandfire.frost_troll_leather_helmet": "프로스트 트롤 가죽 모자",
-  "item.iceandfire.frost_troll_leather_chestplate": "프로스트 트롤 가죽 조끼",
-  "item.iceandfire.frost_troll_leather_leggings": "프로스트 트롤 가죽 바지",
-  "item.iceandfire.frost_troll_leather_boots": "프로스트 트롤 가죽 신발",
-  "item.iceandfire.mountain_troll_leather_helmet": "산 트롤 가죽 모자",
-  "item.iceandfire.mountain_troll_leather_chestplate": "산 트롤 가죽 조끼",
-  "item.iceandfire.mountain_troll_leather_leggings": "산 트롤 가죽 바지",
-  "item.iceandfire.mountain_troll_leather_boots": "산 트롤 가죽 신발",
-  "item.iceandfire.troll_leather_armor_helmet.desc": "발사체로 인한 데미지 -10%%",
-  "item.iceandfire.troll_leather_armor_chestplate.desc": "발사체로 인한 데미지 -30%%",
-  "item.iceandfire.troll_leather_armor_leggings.desc": "발사체로 인한 데미지 -20%% ",
-  "item.iceandfire.troll_leather_armor_boots.desc": "발사체로 인한 데미지 -10%% ",
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   "item.iceandfire.sickly_dragon_meal": "병든 드래곤 먹이",
   "item.iceandfire.sickly_dragon_meal.desc_0": "드래곤의 성장을 방해합니다.",
   "item.iceandfire.amphithere_feather": "엠피데어의 깃털",
@@ -356,7 +356,7 @@
   "item.iceandfire.cyclops_skull": "사이클롭스의 두개골",
   "item.iceandfire.cockatrice_skull": "코카트리스의 두개골",
   "item.iceandfire.stymphalian_skull": "스팀팔로스의 새의 두개골",
-  "item.iceandfire.troll_skull": "트롤의 두개골",
+
   "item.iceandfire.amphithere_skull": "엠피데어의 두개골",
   "item.iceandfire.seaserpent_skull": "씨 서펀트의 두개골",
   "item.iceandfire.hydra_skull": "히드라의 두개골",
@@ -403,7 +403,7 @@
   "item.iceandfire.spawn_egg_death_worm": "스폰 데스웜",
   "item.iceandfire.spawn_egg_cockatrice": "스폰 코카트리스",
   "item.iceandfire.spawn_egg_stymphalian_bird": "스폰 스팀팔로스의 새",
-  "item.iceandfire.spawn_egg_troll": "스폰 트롤",
+
   "item.iceandfire.spawn_egg_amphithere": "스폰 엠피데어",
   "item.iceandfire.spawn_egg_dread_thrall": "스폰 드레드 노예",
   "item.iceandfire.spawn_egg_dread_ghoul": "스폰 드레드 구울",
@@ -446,8 +446,8 @@
   "item.iceandfire.banner_pattern_sea_serpent.desc": "씨 서펀트",
   "item.iceandfire.banner_pattern_weezer": "배너 패턴",
   "item.iceandfire.banner_pattern_weezer.desc": "위져",
-  "item.iceandfire.banner_pattern_troll": "배너 패턴",
-  "item.iceandfire.banner_pattern_troll.desc": "트롤의 두개골",
+
+
   "item.iceandfire.banner_pattern_dread": "배너 패턴",
   "item.iceandfire.banner_pattern_dread.desc": "드레드",
 
@@ -482,7 +482,7 @@
   "entity.iceandfire.stymphalian_bird": "Stymphalian Bird",
   "entity.iceandfire.stymphalian_feather": "스팀팔로스의 새의 깃털묶음",
   "entity.iceandfire.stymphalian_arrow": "스팀팔로스의 새 화살",
-  "entity.iceandfire.troll": "트롤",
+
   "entity.iceandfire.amphithere": "엠피데어",
   "entity.iceandfire.sea_serpent": "씨 서펀트",
   "entity.iceandfire.sea_serpent_bubbles": "씨 서펀트의 버블",
@@ -583,7 +583,7 @@
   "bestiary.deathworm": "데스웜",
   "bestiary.cockatrice": "코카트리스",
   "bestiary.stymphalianbird": "스팀팔로스의 새",
-  "bestiary.troll": "트롤",
+
   "bestiary.amphithere": "엠피데어",
   "bestiary.seaserpent": "씨 서펀트",
   "bestiary.dragonforge": "드래곤 용광로",
@@ -710,8 +710,8 @@
   "advancements.iceandfire.kill_stymphalian_bird.description": "스팀팔로스의 새를 죽이십시오.",
   "advancements.iceandfire.stymphalian_arrow.title": "앞으로 날아라",
   "advancements.iceandfire.stymphalian_arrow.description": "화살보다 더 멀리 날아가는 스팀페일리언의 새의 깃털로 화살을 만드십시오.",
-  "advancements.iceandfire.kill_troll.title": "그들은 동굴트롤을 잡았다.",
-  "advancements.iceandfire.kill_troll.description": "트롤을 죽이십시오.",
+
+
   "advancements.iceandfire.tame_amphithere.title": "정글의 공중 곡예사",
   "advancements.iceandfire.tame_amphithere.description": "엠피데어를 화살로 격추시키고 길들이십시오.",
   "advancements.iceandfire.kill_sea_serpent.title": "괴물의 바다",
@@ -738,7 +738,7 @@
   "item.iceandfire.cyclops_skull.jei_desc": "트로피로서 땅이나 벽에 놓을 수 있습니다.",
   "item.iceandfire.cockatrice_skull.jei_desc": "트로피로서 땅이나 벽에 놓을 수 있습니다.",
   "item.iceandfire.stymphalian_skull.jei_desc": "트로피로서 땅이나 벽에 놓을 수 있습니다.",
-  "item.iceandfire.troll_skull.jei_desc": "트로피로서 땅이나 벽에 놓을 수 있습니다.",
+
   "item.iceandfire.amphithere_skull.jei_desc": "트로피로서 땅이나 벽에 놓을 수 있습니다.",
   "item.iceandfire.seaserpent_skull.jei_desc": "트로피로서 땅이나 벽에 놓을 수 있습니다.",
   "item.iceandfire.hydra_skull.jei_desc": "트로피로서 땅이나 벽에 놓을 수 있습니다.",
@@ -952,22 +952,22 @@
   "block.minecraft.banner.mermaid.red": "빨간색 인어",
   "block.minecraft.banner.mermaid.black": "검은색 인어",
 
-  "block.minecraft.banner.troll.white": "하얀색 트롤",
-  "block.minecraft.banner.troll.orange": "주황색 트롤",
-  "block.minecraft.banner.troll.magenta": "자홍색 트롤",
-  "block.minecraft.banner.troll.light_blue": "하늘색 트롤",
-  "block.minecraft.banner.troll.yellow": "노란색 트롤",
-  "block.minecraft.banner.troll.lime": "연두색 트롤",
-  "block.minecraft.banner.troll.pink": "핑크색 트롤",
-  "block.minecraft.banner.troll.gray": "회색 트롤",
-  "block.minecraft.banner.troll.silver": "은색 트롤",
-  "block.minecraft.banner.troll.cyan": "청록색 트롤",
-  "block.minecraft.banner.troll.purple": "보라색 트롤",
-  "block.minecraft.banner.troll.blue": "파란색 트롤",
-  "block.minecraft.banner.troll.brown": "갈색 트롤",
-  "block.minecraft.banner.troll.green": "초록색 트롤",
-  "block.minecraft.banner.troll.red": "빨간색 트롤",
-  "block.minecraft.banner.troll.black": "검은색 트롤",
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   "block.minecraft.banner.eye.white": "하얀색 눈",
   "block.minecraft.banner.eye.orange": "주황색 눈",
@@ -1123,10 +1123,10 @@
   "iceandfire.sound.subtitle.cockatrice_hurt": "코카트리스가 상처를 입음",
   "iceandfire.sound.subtitle.cockatrice_idle": "코카트리스가 꽥꽥거림",
   "iceandfire.sound.subtitle.cockatrice_die": "코카트리스가 죽음",
-  "iceandfire.sound.subtitle.troll_idle": "트롤이 으르렁거림",
-  "iceandfire.sound.subtitle.troll_roar": "트롤이 포효함",
-  "iceandfire.sound.subtitle.troll_hurt": "트롤이 상처를 입음",
-  "iceandfire.sound.subtitle.troll_die": "트롤이 죽음",
+
+
+
+
   "iceandfire.sound.subtitle.naga_attack": "나가가 공격함",
   "iceandfire.sound.subtitle.naga_idle": "나가가 신음을 냄",
   "iceandfire.sound.subtitle.naga_hurt": "나가가 상처를 입음",

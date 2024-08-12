@@ -224,33 +224,33 @@
   "item.iceandfire.stymphalian_bird_feather": "Pióro Ptaka Stimfalijskiego",
   "item.iceandfire.stymphalian_arrow": "Strzała Stimfalijska",
   "item.iceandfire.stymphalian_arrow.desc": "Metalowa lotka pozwala strzale wzbić się w powietrze jak ptak..",
-  "item.iceandfire.troll_weapon_axe": "Topór Trola",
-  "item.iceandfire.troll_weapon_column": "Kamienna Kolumna Trola",
-  "item.iceandfire.troll_weapon_column_forest": "Zamszona Kolumna Trola",
-  "item.iceandfire.troll_weapon_column_frost": "Zmrożona Kolumna Trola",
-  "item.iceandfire.troll_weapon_hammer": "Młot Trola",
-  "item.iceandfire.troll_weapon_trunk": "Pień Trola",
-  "item.iceandfire.troll_weapon_trunk_frost": "Zmrożony Pień Trola",
-  "item.iceandfire.troll_tusk": "Kieł Trola",
-  "item.iceandfire.troll_leather_forest": "Skóra Leśnego Trola",
-  "item.iceandfire.troll_leather_frost": "Skóra Lodowego Trola",
-  "item.iceandfire.troll_leather_mountain": "Skóra Górskiego Trola",
-  "item.iceandfire.forest_troll_leather_helmet": "Hełm ze Skóry Leśnego Trola",
-  "item.iceandfire.forest_troll_leather_chestplate": "Napierśnik ze Skóry Leśnego Trola",
-  "item.iceandfire.forest_troll_leather_leggings": "Nogawice ze Skóry Leśnego Trola",
-  "item.iceandfire.forest_troll_leather_boots": "Buty ze Skóry Leśnego Trola",
-  "item.iceandfire.frost_troll_leather_helmet": "Hełm ze Skóry Lodowego Trola",
-  "item.iceandfire.frost_troll_leather_chestplate": "Napierśnik ze Skóry Lodowego Trola",
-  "item.iceandfire.frost_troll_leather_leggings": "Nogawice ze Skóry Lodowego Trola",
-  "item.iceandfire.frost_troll_leather_boots": "Buty ze Skóry Lodowego Trola",
-  "item.iceandfire.mountain_troll_leather_helmet": "Hełm ze Skóry Górskiego Trola",
-  "item.iceandfire.mountain_troll_leather_chestplate": "Napierśnik ze Skóry Górskiego Trola",
-  "item.iceandfire.mountain_troll_leather_leggings": "Nogawice ze Skóry Górskiego Trola",
-  "item.iceandfire.mountain_troll_leather_boots": "Buty ze Skóry Górskiego Trola",
-  "item.iceandfire.troll_leather_armor_helmet.desc": "-10%% Obrażeń od Pocisków",
-  "item.iceandfire.troll_leather_armor_chestplate.desc": "-30%% Obrażeń od Pocisków",
-  "item.iceandfire.troll_leather_armor_leggings.desc": "-20%% Obrażeń od Pocisków",
-  "item.iceandfire.troll_leather_armor_boots.desc": "-10%% Obrażeń od Pocisków",
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   "item.iceandfire.sickly_dragon_meal": "Zepsuty Smoczy Posiłek",
   "item.iceandfire.sickly_dragon_meal.desc_0": "Zahamowuje Wzrost Smoka",
   "item.iceandfire.amphithere_feather": "Pióro Amfitery",
@@ -356,7 +356,7 @@
   "item.iceandfire.cyclops_skull": "Czaszka Cyklopa",
   "item.iceandfire.cockatrice_skull": "Czaszka Kuroliszka",
   "item.iceandfire.stymphalian_skull": "Czaszka Stimfalijskiego Ptaka",
-  "item.iceandfire.troll_skull": "Czaszka Trola",
+
   "item.iceandfire.amphithere_skull": "Czaszka Amfitery",
   "item.iceandfire.seaserpent_skull": "Czaszka Węża Morskiego",
   "item.iceandfire.hydra_skull": "Czaszka Hydry",
@@ -403,7 +403,7 @@
   "item.iceandfire.spawn_egg_death_worm": "Pryzwij Czerwia Śmierci",
   "item.iceandfire.spawn_egg_cockatrice": "Pryzwij Kuroliszka",
   "item.iceandfire.spawn_egg_stymphalian_bird": "Pryzwij Ptaka Stimfalijskiego",
-  "item.iceandfire.spawn_egg_troll": "Pryzwij Trola",
+
   "item.iceandfire.spawn_egg_amphithere": "Pryzwij Amfiterę",
   "item.iceandfire.spawn_egg_dread_thrall": "Pryzwij Thrala Grozy",
   "item.iceandfire.spawn_egg_dread_ghoul": "Pryzwij Ghula Grozy",
@@ -446,8 +446,8 @@
   "item.iceandfire.banner_pattern_sea_serpent.desc": "Wąż Morski",
   "item.iceandfire.banner_pattern_weezer": "Wzór Sztandaru",
   "item.iceandfire.banner_pattern_weezer.desc": "Weezer",
-  "item.iceandfire.banner_pattern_troll": "Wzór Sztandaru",
-  "item.iceandfire.banner_pattern_troll.desc": "Głowa Trola",
+
+
   "item.iceandfire.banner_pattern_dread": "Wzór Sztandaru",
   "item.iceandfire.banner_pattern_dread.desc": "Groza",
 
@@ -482,7 +482,7 @@
   "entity.iceandfire.stymphalian_bird": "Ptak Stimfalijski",
   "entity.iceandfire.stymphalian_feather": "Piór Ptaka Stimfalijskiego",
   "entity.iceandfire.stymphalian_arrow": "Stimfalijska Strzała",
-  "entity.iceandfire.troll": "Trol",
+
   "entity.iceandfire.amphithere": "Amfitera",
   "entity.iceandfire.sea_serpent": "Wąż Morski",
   "entity.iceandfire.sea_serpent_bubbles": "Bąbelki Węża Morskiego",
@@ -583,7 +583,7 @@
   "bestiary.deathworm": "Czerwie Śmierci",
   "bestiary.cockatrice": "Kuroliszki",
   "bestiary.stymphalianbird": "Ptaki Stimfalijskie",
-  "bestiary.troll": "Trole",
+
   "bestiary.amphithere": "Amfitery",
   "bestiary.seaserpent": "Węże Morskie",
   "bestiary.dragonforge": "Smocza Kuźnia",
@@ -710,8 +710,8 @@
   "advancements.iceandfire.kill_stymphalian_bird.description": "Zgładź ptaka stimfalijskiego",
   "advancements.iceandfire.stymphalian_arrow.title": "Flying Forwards",
   "advancements.iceandfire.stymphalian_arrow.description": "Wytwórz strzałę z piór ptaka stimfalijskiego, która leci dalej.",
-  "advancements.iceandfire.kill_troll.title": "Mają Trola Jaskiniowego!",
-  "advancements.iceandfire.kill_troll.description": "Zgładź trola",
+
+
   "advancements.iceandfire.tame_amphithere.title": "Tropikalne Lotki",
   "advancements.iceandfire.tame_amphithere.description": "Oswój amfiterę poprzez zestrzelenie i ujeżdżanie jej",
   "advancements.iceandfire.kill_sea_serpent.title": "Morze? To nie problem.",
@@ -738,7 +738,7 @@
   "item.iceandfire.cyclops_skull.jei_desc": "Może być umieszczony na ziemi lub na ścianie jako trofeum.",
   "item.iceandfire.cockatrice_skull.jei_desc": "Może być umieszczony na ziemi lub na ścianie jako trofeum.",
   "item.iceandfire.stymphalian_skull.jei_desc": "Może być umieszczony na ziemi lub na ścianie jako trofeum.",
-  "item.iceandfire.troll_skull.jei_desc": "Może być umieszczony na ziemi lub na ścianie jako trofeum.",
+
   "item.iceandfire.amphithere_skull.jei_desc": "Może być umieszczony na ziemi lub na ścianie jako trofeum.",
   "item.iceandfire.seaserpent_skull.jei_desc": "Może być umieszczony na ziemi lub na ścianie jako trofeum.",
   "item.iceandfire.hydra_skull.jei_desc": "Może być umieszczony na ziemi lub na ścianie jako trofeum.",
@@ -952,22 +952,22 @@
   "block.minecraft.banner.mermaid.red": "Czerwona Syrena",
   "block.minecraft.banner.mermaid.black": "Czarna Syrena",
 
-  "block.minecraft.banner.troll.white": "Biały Trol",
-  "block.minecraft.banner.troll.orange": "Pomarańczowy Trol",
-  "block.minecraft.banner.troll.magenta": "karmazynowy Trol",
-  "block.minecraft.banner.troll.light_blue": "Jasnoniebieski Trol",
-  "block.minecraft.banner.troll.yellow": "Żółty Trol",
-  "block.minecraft.banner.troll.lime": "Jasnozielony Trol",
-  "block.minecraft.banner.troll.pink": "Różowy Trol",
-  "block.minecraft.banner.troll.gray": "Szary Trol",
-  "block.minecraft.banner.troll.silver": "Srebrny Trol",
-  "block.minecraft.banner.troll.cyan": "Jasnozielony Trol",
-  "block.minecraft.banner.troll.purple": "Fioletowy Trol",
-  "block.minecraft.banner.troll.blue": "Niebieski Trol",
-  "block.minecraft.banner.troll.brown": "Brązowy Trol",
-  "block.minecraft.banner.troll.green": "Zielony Trol",
-  "block.minecraft.banner.troll.red": "Czerwony Trol",
-  "block.minecraft.banner.troll.black": "Czarny Trol",
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   "block.minecraft.banner.eye.white": "Białe Oko",
   "block.minecraft.banner.eye.orange": "Pomarańczowe Oko",
@@ -1123,10 +1123,10 @@
   "iceandfire.sound.subtitle.cockatrice_hurt": "Kuroliszek cierpi",
   "iceandfire.sound.subtitle.cockatrice_idle": "Kuroliszek piszczy",
   "iceandfire.sound.subtitle.cockatrice_die": "Kuroliszek umiera",
-  "iceandfire.sound.subtitle.troll_idle": "Trol warczy",
-  "iceandfire.sound.subtitle.troll_roar": "Trol ryczy",
-  "iceandfire.sound.subtitle.troll_hurt": "Trol cierpi",
-  "iceandfire.sound.subtitle.troll_die": "Trol umiera",
+
+
+
+
   "iceandfire.sound.subtitle.naga_attack": "Naga atakuje",
   "iceandfire.sound.subtitle.naga_idle": "Naga stęka",
   "iceandfire.sound.subtitle.naga_hurt": "Naga cierpi",

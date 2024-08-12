@@ -30,7 +30,6 @@ public enum EnumBestiaryPages {
     HIPPOCAMPUS(2),
     COCKATRICE(2),
     STYMPHALIANBIRD(1),
-    TROLL(2),
     AMPHITHERE(2),
     SEASERPENT(2),
     HYDRA(2),

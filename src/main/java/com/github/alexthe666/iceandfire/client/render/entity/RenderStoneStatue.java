@@ -9,7 +9,6 @@ import com.github.alexthe666.iceandfire.client.render.IafRenderType;
 import com.github.alexthe666.iceandfire.client.render.entity.layer.LayerHydraHead;
 import com.github.alexthe666.iceandfire.entity.EntityHydra;
 import com.github.alexthe666.iceandfire.entity.EntityStoneStatue;
-import com.github.alexthe666.iceandfire.entity.EntityTroll;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import com.mojang.math.Axis;
@@ -90,9 +89,6 @@ public class RenderStoneStatue extends EntityRenderer<EntityStoneStatue> {
             fakeEntity = this.hollowEntityMap.get(entityIn.getTrappedEntityTypeString());
         }
         RenderType tex = IafRenderType.getStoneMobRenderType(200, 200);
-        if (fakeEntity instanceof EntityTroll) {
-            tex = RenderType.entityCutout(((EntityTroll) fakeEntity).getTrollType().TEXTURE_STONE);
-        }
 
         VertexConsumer ivertexbuilder = bufferIn.getBuffer(tex);
 

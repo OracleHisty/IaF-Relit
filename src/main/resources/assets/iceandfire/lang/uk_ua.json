@@ -223,33 +223,33 @@
   "item.iceandfire.stymphalian_bird_feather": "Перо стімфалійського птаха",
   "item.iceandfire.stymphalian_arrow": "Стімфалійська стріла",
   "item.iceandfire.stymphalian_arrow.desc": "Металеве вкраплення дозволяє стрілі парити, як птах.",
-  "item.iceandfire.troll_weapon_axe": "Сокира троля",
-  "item.iceandfire.troll_weapon_column": "Кам'яна колода троля",
-  "item.iceandfire.troll_weapon_column_forest": "Моховита колода троля",
-  "item.iceandfire.troll_weapon_column_frost": "Крижана колода троля",
-  "item.iceandfire.troll_weapon_hammer": "Молот троля",
-  "item.iceandfire.troll_weapon_trunk": "Стовбур дерева троля",
-  "item.iceandfire.troll_weapon_trunk_frost": "Стовбур крижаного дерева троля",
-  "item.iceandfire.troll_tusk": "Ікло троля",
-  "item.iceandfire.troll_leather_forest": "Шкіра лісового троля",
-  "item.iceandfire.troll_leather_frost": "Шкіра крижаного троля",
-  "item.iceandfire.troll_leather_mountain": "Шкіра гірського троля",
-  "item.iceandfire.forest_troll_leather_helmet": "Шолом лісного троля",
-  "item.iceandfire.forest_troll_leather_chestplate": "Нагрудник лісного троля",
-  "item.iceandfire.forest_troll_leather_leggings": "Наголінники лісного троля",
-  "item.iceandfire.forest_troll_leather_boots": "Чоботи лісного троля",
-  "item.iceandfire.frost_troll_leather_helmet": "Шолом крижаного троля",
-  "item.iceandfire.frost_troll_leather_chestplate": "Нагрудник крижаного троля",
-  "item.iceandfire.frost_troll_leather_leggings": "Наголінники крижаного троля",
-  "item.iceandfire.frost_troll_leather_boots": "Чоботи крижаного троля",
-  "item.iceandfire.mountain_troll_leather_helmet": "Шолом гірського троля",
-  "item.iceandfire.mountain_troll_leather_chestplate": "Нагрудник гірського троля",
-  "item.iceandfire.mountain_troll_leather_leggings": "Наголінники гірського троля",
-  "item.iceandfire.mountain_troll_leather_boots": "Чоботи гірського троля",
-  "item.iceandfire.troll_leather_armor_helmet.desc": "-10%% Шкоди від снарядів",
-  "item.iceandfire.troll_leather_armor_chestplate.desc": "-30%% Шкоди від снарядів",
-  "item.iceandfire.troll_leather_armor_leggings.desc": "-20%% Шкоди від снарядів",
-  "item.iceandfire.troll_leather_armor_boots.desc": "-10%% Шкоди від снарядів",
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   "item.iceandfire.sickly_dragon_meal": "Зіпсована драконяча їжа",
   "item.iceandfire.sickly_dragon_meal.desc_0": "Зупиняє ріст дракона",
   "item.iceandfire.amphithere_feather": "Перо амфіптера",
@@ -355,7 +355,7 @@
   "item.iceandfire.cyclops_skull": "Череп циклопа",
   "item.iceandfire.cockatrice_skull": "Череп кокатріса",
   "item.iceandfire.stymphalian_skull": "Череп стімфалійського птаха",
-  "item.iceandfire.troll_skull": "Череп троля",
+
   "item.iceandfire.amphithere_skull": "Череп амфіптера",
   "item.iceandfire.seaserpent_skull": "Череп левіафана",
   "item.iceandfire.hydra_skull": "Череп гідри",
@@ -402,7 +402,7 @@
   "item.iceandfire.spawn_egg_death_worm": "Яйце виклику хробака смерті",
   "item.iceandfire.spawn_egg_cockatrice": "Яйце виклику кокатріса",
   "item.iceandfire.spawn_egg_stymphalian_bird": "Яйце виклику стімфалійського птаха",
-  "item.iceandfire.spawn_egg_troll": "Яйце виклику троля",
+
   "item.iceandfire.spawn_egg_amphithere": "Яйце виклику амфіптера",
   "item.iceandfire.spawn_egg_dread_thrall": "Яйце виклику раба жаху",
   "item.iceandfire.spawn_egg_dread_ghoul": "Яйце виклику гуля жаху",
@@ -445,8 +445,8 @@
   "item.iceandfire.banner_pattern_sea_serpent.desc": "Левіафан",
   "item.iceandfire.banner_pattern_weezer": "Шаблон стяга",
   "item.iceandfire.banner_pattern_weezer.desc": "Weezer",
-  "item.iceandfire.banner_pattern_troll": "Шаблон стяга",
-  "item.iceandfire.banner_pattern_troll.desc": "Голова троля",
+
+
   "item.iceandfire.banner_pattern_dread": "Шаблон стяга",
   "item.iceandfire.banner_pattern_dread.desc": "Жах",
   "entity.iceandfire.dragon_multipart": "Частина дракону",
@@ -480,7 +480,7 @@
   "entity.iceandfire.stymphalian_bird": "Стімфалійський птах",
   "entity.iceandfire.stymphalian_feather": "Перо стімфалійського птаха",
   "entity.iceandfire.stymphalian_arrow": "Стімфалійська стріла",
-  "entity.iceandfire.troll": "Троль",
+
   "entity.iceandfire.amphithere": "Амфіптера",
   "entity.iceandfire.sea_serpent": "Левіафан",
   "entity.iceandfire.sea_serpent_bubbles": "Бульбашки левіафана",
@@ -580,7 +580,7 @@
   "bestiary.deathworm": "Хробаки смерті",
   "bestiary.cockatrice": "Кокатріси",
   "bestiary.stymphalianbird": "Стімфалійські птахи",
-  "bestiary.troll": "Тролі",
+
   "bestiary.amphithere": "Амфіптери",
   "bestiary.seaserpent": "Левіафани",
   "bestiary.dragonforge": "Драконяча кузня",
@@ -703,8 +703,8 @@
   "advancements.iceandfire.kill_stymphalian_bird.description": "Вбийте стімфалійського птаха",
   "advancements.iceandfire.stymphalian_arrow.title": "Тільки вперед",
   "advancements.iceandfire.stymphalian_arrow.description": "Створіть стрілу з пера стімфалійського птаха, яка довше летить",
-  "advancements.iceandfire.kill_troll.title": "Трооооль у підвалі!",
-  "advancements.iceandfire.kill_troll.description": "Вбийте троля",
+
+
   "advancements.iceandfire.tame_amphithere.title": "Тропічні літуни",
   "advancements.iceandfire.tame_amphithere.description": "Приборкайте амфіптера, підбивши та осідлавши його",
   "advancements.iceandfire.kill_sea_serpent.title": "Море чудовиськ",
@@ -731,7 +731,7 @@
   "item.iceandfire.cyclops_skull.jei_desc": "Можна розмістити на стіні або на підлозі як трофей.",
   "item.iceandfire.cockatrice_skull.jei_desc": "Можна розмістити на стіні або на підлозі як трофей.",
   "item.iceandfire.stymphalian_skull.jei_desc": "Можна розмістити на стіні або на підлозі як трофей.",
-  "item.iceandfire.troll_skull.jei_desc": "Можна розмістити на стіні або на підлозі як трофей.",
+
   "item.iceandfire.amphithere_skull.jei_desc": "Можна розмістити на стіні або на підлозі як трофей.",
   "item.iceandfire.seaserpent_skull.jei_desc": "Можна розмістити на стіні або на підлозі як трофей.",
   "item.iceandfire.hydra_skull.jei_desc": "Можна розмістити на стіні або на підлозі як трофей.",
@@ -934,22 +934,22 @@
   "block.minecraft.banner.mermaid.green": "Зелена русалка",
   "block.minecraft.banner.mermaid.red": "Червона русалка",
   "block.minecraft.banner.mermaid.black": "Чорна русалка",
-  "block.minecraft.banner.troll.white": "Білий троль",
-  "block.minecraft.banner.troll.orange": "Помаранчевий троль",
-  "block.minecraft.banner.troll.magenta": "Пурпуровий троль",
-  "block.minecraft.banner.troll.light_blue": "Світло-синій троль",
-  "block.minecraft.banner.troll.yellow": "Жовтий троль",
-  "block.minecraft.banner.troll.lime": "Лаймовий троль",
-  "block.minecraft.banner.troll.pink": "Рожевий троль",
-  "block.minecraft.banner.troll.gray": "Сірий троль",
-  "block.minecraft.banner.troll.silver": "Срібний троль",
-  "block.minecraft.banner.troll.cyan": "Бірюзовий троль",
-  "block.minecraft.banner.troll.purple": "Фіолетовий троль",
-  "block.minecraft.banner.troll.blue": "Синій троль",
-  "block.minecraft.banner.troll.brown": "Коричневий троль",
-  "block.minecraft.banner.troll.green": "Зелений троль",
-  "block.minecraft.banner.troll.red": "Червоний троль",
-  "block.minecraft.banner.troll.black": "Чорний троль",
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   "block.minecraft.banner.eye.white": "Біле око",
   "block.minecraft.banner.eye.orange": "Помаранчеве око",
   "block.minecraft.banner.eye.magenta": "Пурпурове око",
@@ -1097,10 +1097,10 @@
   "iceandfire.sound.subtitle.cockatrice_hurt": "Кокатріса поранено",
   "iceandfire.sound.subtitle.cockatrice_idle": "Кокатріс пищить",
   "iceandfire.sound.subtitle.cockatrice_die": "Кокатріс гине",
-  "iceandfire.sound.subtitle.troll_idle": "Троль гарчить",
-  "iceandfire.sound.subtitle.troll_roar": "Троль реве",
-  "iceandfire.sound.subtitle.troll_hurt": "Троля поранено",
-  "iceandfire.sound.subtitle.troll_die": "Троль гине",
+
+
+
+
   "iceandfire.sound.subtitle.naga_attack": "Наги атакує",
   "iceandfire.sound.subtitle.naga_idle": "Наги стогне",
   "iceandfire.sound.subtitle.naga_hurt": "Наги поранено",

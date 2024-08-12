@@ -105,11 +105,6 @@
           "type": "item",
           "name": "iceandfire:shiny_scales",
           "weight": 2
-        },
-        {
-          "type": "item",
-          "name": "iceandfire:troll_tusk",
-          "weight": 2
         }
       ]
     }

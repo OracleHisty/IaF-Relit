@@ -7,7 +7,6 @@ import com.github.alexthe666.iceandfire.datagen.tags.IafItemTags;
 import com.github.alexthe666.iceandfire.entity.DragonType;
 import com.github.alexthe666.iceandfire.enums.EnumDragonArmor;
 import com.github.alexthe666.iceandfire.enums.EnumSeaSerpent;
-import com.github.alexthe666.iceandfire.enums.EnumTroll;
 import com.github.alexthe666.iceandfire.item.DragonItems;
 import com.github.alexthe666.iceandfire.item.IafItemRegistry;
 import com.github.alexthe666.iceandfire.item.ItemDragonArmor;
@@ -414,22 +413,6 @@ public class IafRecipes extends RecipeProvider {
                 .define('B', ItemTags.PLANKS)
                 .unlockedBy("has_item", has(ItemTags.PLANKS))
                 .save(consumer);
-
-        for (EnumTroll type : EnumTroll.values()) {
-            armorSet(consumer, type.leather.get(),
-                    type.chestplate.get(),
-                    type.leggings.get(),
-                    type.boots.get()
-            );
-
-            ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, type.helmet.get())
-                    .pattern("TTT")
-                    .pattern("U U")
-                    .define('T', type.leather.get())
-                    .define('U', IafItemRegistry.TROLL_TUSK.get())
-                    .unlockedBy("has_item", has(IafItemRegistry.TROLL_TUSK.get()))
-                    .save(consumer);
-        }
 
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, IafBlockRegistry.GHOST_CHEST.get())
                 .pattern(" E ")

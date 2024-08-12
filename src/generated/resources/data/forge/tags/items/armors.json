@@ -101,18 +101,6 @@
     "iceandfire:tide_teal_helmet",
     "iceandfire:tide_teal_chestplate",
     "iceandfire:tide_teal_leggings",
-    "iceandfire:tide_teal_boots",
-    "iceandfire:forest_troll_leather_helmet",
-    "iceandfire:forest_troll_leather_chestplate",
-    "iceandfire:forest_troll_leather_leggings",
-    "iceandfire:forest_troll_leather_boots",
-    "iceandfire:frost_troll_leather_helmet",
-    "iceandfire:frost_troll_leather_chestplate",
-    "iceandfire:frost_troll_leather_leggings",
-    "iceandfire:frost_troll_leather_boots",
-    "iceandfire:mountain_troll_leather_helmet",
-    "iceandfire:mountain_troll_leather_chestplate",
-    "iceandfire:mountain_troll_leather_leggings",
-    "iceandfire:mountain_troll_leather_boots"
+    "iceandfire:tide_teal_boots"
   ]
 }

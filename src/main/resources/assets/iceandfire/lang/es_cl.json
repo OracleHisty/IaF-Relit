@@ -227,33 +227,33 @@
   "item.iceandfire.stymphalian_bird_feather": "Pluma de ave del Estínfalo",
   "item.iceandfire.stymphalian_arrow": "Flecha del Estínfalo",
   "item.iceandfire.stymphalian_arrow.desc": "El emplumado metálico permite que la flecha se eleve como un pájaro.",
-  "item.iceandfire.troll_weapon_axe": "Hacha de trol",
-  "item.iceandfire.troll_weapon_column": "Columna de piedra de trol",
-  "item.iceandfire.troll_weapon_column_forest": "Columna musgosa de trol",
-  "item.iceandfire.troll_weapon_column_frost": "Columna congelada de trol",
-  "item.iceandfire.troll_weapon_hammer": "Martillo de trol",
-  "item.iceandfire.troll_weapon_trunk": "Tronco de árbol de trol",
-  "item.iceandfire.troll_weapon_trunk_frost": "Tronco de árbol congelado de trol",
-  "item.iceandfire.troll_tusk": "Colmillo de trol",
-  "item.iceandfire.troll_leather_forest": "Cuero de trol del bosque",
-  "item.iceandfire.troll_leather_frost": "Cuero de trol de hielo",
-  "item.iceandfire.troll_leather_mountain": "Cuero de trol de montaña",
-  "item.iceandfire.forest_troll_leather_helmet": "Yelmo de cuero de trol del bosque",
-  "item.iceandfire.forest_troll_leather_chestplate": "Pechera de cuero de trol del bosque",
-  "item.iceandfire.forest_troll_leather_leggings": "Grebas de cuero de trol del bosque",
-  "item.iceandfire.forest_troll_leather_boots": "Botas de cuero de trol del bosque",
-  "item.iceandfire.frost_troll_leather_helmet": "Yelmo de cuero de trol de hielo",
-  "item.iceandfire.frost_troll_leather_chestplate": "Pechera de cuero de trol de hielo",
-  "item.iceandfire.frost_troll_leather_leggings": "Grebas de cuero de trol de hielo",
-  "item.iceandfire.frost_troll_leather_boots": "Botas de cuero de trol de hielo",
-  "item.iceandfire.mountain_troll_leather_helmet": "Yelmo de cuero de trol de montaña",
-  "item.iceandfire.mountain_troll_leather_chestplate": "Pechera de cuero de trol de montaña",
-  "item.iceandfire.mountain_troll_leather_leggings": "Grebas de cuero de trol de montaña",
-  "item.iceandfire.mountain_troll_leather_boots": "Botas de cuero de trol de montaña",
-  "item.iceandfire.troll_leather_armor_helmet.desc": "-10%% de daño recibido de proyectiles",
-  "item.iceandfire.troll_leather_armor_chestplate.desc": "-30%% de daño recibido de proyectiles",
-  "item.iceandfire.troll_leather_armor_leggings.desc": "-20%% de daño recibido de proyectiles",
-  "item.iceandfire.troll_leather_armor_boots.desc": "-10%% de daño recibido de proyectiles",
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   "item.iceandfire.sickly_dragon_meal": "Comida de dragón nauseabunda",
   "item.iceandfire.sickly_dragon_meal.desc_0": "Interrumpe el crecimiento del dragón",
   "item.iceandfire.amphithere_feather": "Pluma de anfíptero",
@@ -359,7 +359,7 @@
   "item.iceandfire.cyclops_skull": "Cráneo de cíclope",
   "item.iceandfire.cockatrice_skull": "Cráneo de cocatriz",
   "item.iceandfire.stymphalian_skull": "Cráneo de ave del Estínfalo",
-  "item.iceandfire.troll_skull": "Cráneo de trol",
+
   "item.iceandfire.amphithere_skull": "Cráneo de anfíptero",
   "item.iceandfire.seaserpent_skull": "Cráneo de serpiente marina",
   "item.iceandfire.hydra_skull": "Cráneo de hidra",
@@ -406,7 +406,7 @@
   "item.iceandfire.spawn_egg_death_worm": "Generar gusano de la muerte",
   "item.iceandfire.spawn_egg_cockatrice": "Generar cocatriz",
   "item.iceandfire.spawn_egg_stymphalian_bird": "Generar ave del Estínfalo",
-  "item.iceandfire.spawn_egg_troll": "Generar trol",
+
   "item.iceandfire.spawn_egg_amphithere": "Generar anfíptero",
   "item.iceandfire.spawn_egg_dread_thrall": "Generar esclavo aterrador",
   "item.iceandfire.spawn_egg_dread_ghoul": "Generar necrófago aterrador",
@@ -449,8 +449,8 @@
   "item.iceandfire.banner_pattern_sea_serpent.desc": "Serpiente marina",
   "item.iceandfire.banner_pattern_weezer": "Diseño de estandarte",
   "item.iceandfire.banner_pattern_weezer.desc": "Weezer",
-  "item.iceandfire.banner_pattern_troll": "Diseño de estandarte",
-  "item.iceandfire.banner_pattern_troll.desc": "Cabeza de trol",
+
+
   "item.iceandfire.banner_pattern_dread": "Diseño de estandarte",
   "item.iceandfire.banner_pattern_dread.desc": "Terror",
 
@@ -486,7 +486,7 @@
   "entity.iceandfire.stymphalian_bird": "Ave del Estínfalo",
   "entity.iceandfire.stymphalian_feather": "Pluma de ave del Estínfalo",
   "entity.iceandfire.stymphalian_arrow": "Flecha del Estínfalo",
-  "entity.iceandfire.troll": "Trol",
+
   "entity.iceandfire.amphithere": "Anfíptero",
   "entity.iceandfire.amphithere_arrow": "Flecha de anfíptero",
   "entity.iceandfire.sea_serpent": "Serpiente marina",
@@ -588,7 +588,7 @@
   "bestiary.deathworm": "Gusanos de la muerte",
   "bestiary.cockatrice": "Cocatrices",
   "bestiary.stymphalianbird": "Aves del Estínfalo",
-  "bestiary.troll": "Trols",
+
   "bestiary.amphithere": "Anfípteros",
   "bestiary.seaserpent": "Serpientes marinas",
   "bestiary.dragonforge": "Forja de dragón",
@@ -715,8 +715,8 @@
   "advancements.iceandfire.kill_stymphalian_bird.description": "Mata un ave del Estínfalo.",
   "advancements.iceandfire.stymphalian_arrow.title": "Volando hacia adelante",
   "advancements.iceandfire.stymphalian_arrow.description": "Crea una flecha con las plumas de un ave del Estínfalo. ¡Vuelan mucho más lejos!",
-  "advancements.iceandfire.kill_troll.title": "¡Tienen un trol de las cavernas!",
-  "advancements.iceandfire.kill_troll.description": "Mata un trol.",
+
+
   "advancements.iceandfire.tame_amphithere.title": "Aviadores de la selva",
   "advancements.iceandfire.tame_amphithere.description": "Domestica un anfíptero, disparándole para derribarlo y luego montarlo.",
   "advancements.iceandfire.kill_sea_serpent.title": "El mar de los monstruos",
@@ -743,7 +743,7 @@
   "item.iceandfire.cyclops_skull.jei_desc": "Puede ser colocada en el suelo o en los muros como un trofeo.",
   "item.iceandfire.cockatrice_skull.jei_desc": "Puede ser colocada en el suelo o en los muros como un trofeo.",
   "item.iceandfire.stymphalian_skull.jei_desc": "Puede ser colocada en el suelo o en los muros como un trofeo.",
-  "item.iceandfire.troll_skull.jei_desc": "Puede ser colocada en el suelo o en los muros como un trofeo.",
+
   "item.iceandfire.amphithere_skull.jei_desc": "Puede ser colocada en el suelo o en los muros como un trofeo.",
   "item.iceandfire.seaserpent_skull.jei_desc": "Puede ser colocada en el suelo o en los muros como un trofeo.",
   "item.iceandfire.hydra_skull.jei_desc": "Puede ser colocada en el suelo o en los muros como un trofeo.",
@@ -957,22 +957,22 @@
   "block.minecraft.banner.mermaid.red": "Sirena roja",
   "block.minecraft.banner.mermaid.black": "Sirena negra",
 
-  "block.minecraft.banner.troll.white": "Trol blanco",
-  "block.minecraft.banner.troll.orange": "Trol naranja",
-  "block.minecraft.banner.troll.magenta": "Trol magenta",
-  "block.minecraft.banner.troll.light_blue": "Trol azul claro",
-  "block.minecraft.banner.troll.yellow": "Trol amarillo",
-  "block.minecraft.banner.troll.lime": "Trol verde lima",
-  "block.minecraft.banner.troll.pink": "Trol rosa",
-  "block.minecraft.banner.troll.gray": "Trol gris",
-  "block.minecraft.banner.troll.silver": "Trol plateado",
-  "block.minecraft.banner.troll.cyan": "Trol cian",
-  "block.minecraft.banner.troll.purple": "Trol morado",
-  "block.minecraft.banner.troll.blue": "Trol azul",
-  "block.minecraft.banner.troll.brown": "Trol café",
-  "block.minecraft.banner.troll.green": "Trol verde",
-  "block.minecraft.banner.troll.red": "Trol rojo",
-  "block.minecraft.banner.troll.black": "Trol negro",
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   "block.minecraft.banner.eye.white": "Ojo blanco",
   "block.minecraft.banner.eye.orange": "Ojo naranja",
@@ -1128,10 +1128,10 @@
   "iceandfire.sound.subtitle.cockatrice_hurt": "Cocatriz herida",
   "iceandfire.sound.subtitle.cockatrice_idle": "Cocatriz grazna",
   "iceandfire.sound.subtitle.cockatrice_die": "Cocatriz muere",
-  "iceandfire.sound.subtitle.troll_idle": "Trol gruñe",
-  "iceandfire.sound.subtitle.troll_roar": "Trol ruge",
-  "iceandfire.sound.subtitle.troll_hurt": "Trol herido",
-  "iceandfire.sound.subtitle.troll_die": "Trol muere",
+
+
+
+
   "iceandfire.sound.subtitle.naga_attack": "Naga ataca",
   "iceandfire.sound.subtitle.naga_idle": "Naga gime",
   "iceandfire.sound.subtitle.naga_hurt": "Naga herida",

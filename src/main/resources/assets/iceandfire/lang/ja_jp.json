@@ -224,33 +224,33 @@
   "item.iceandfire.stymphalian_bird_feather": "ステュムパリデスの鳥の羽",
   "item.iceandfire.stymphalian_arrow": "ステュムパリデスの矢",
   "item.iceandfire.stymphalian_arrow.desc": "その矢羽は鳥のように矢を飛ばす。",
-  "item.iceandfire.troll_weapon_axe": "トロールの斧",
-  "item.iceandfire.troll_weapon_column": "トロールの石柱",
-  "item.iceandfire.troll_weapon_column_forest": "トロールの苔むした石柱",
-  "item.iceandfire.troll_weapon_column_frost": "トロールの凍った石柱",
-  "item.iceandfire.troll_weapon_hammer": "トロールのハンマー",
-  "item.iceandfire.troll_weapon_trunk": "トロールの丸太",
-  "item.iceandfire.troll_weapon_trunk_frost": "トロールの凍った丸太",
-  "item.iceandfire.troll_tusk": "トロールの牙",
-  "item.iceandfire.troll_leather_forest": "森林トロールの革",
-  "item.iceandfire.troll_leather_frost": "寒冷トロールの革",
-  "item.iceandfire.troll_leather_mountain": "山岳トロールの革",
-  "item.iceandfire.forest_troll_leather_helmet": "森林トロールのヘルメット",
-  "item.iceandfire.forest_troll_leather_chestplate": "森林トロールのチェストプレート",
-  "item.iceandfire.forest_troll_leather_leggings": "森林トロールのレギンス",
-  "item.iceandfire.forest_troll_leather_boots": "森林トロールのブーツ",
-  "item.iceandfire.frost_troll_leather_helmet": "寒冷トロールのヘルメット",
-  "item.iceandfire.frost_troll_leather_chestplate": "寒冷トロールのチェストプレート",
-  "item.iceandfire.frost_troll_leather_leggings": "寒冷トロールのレギンス",
-  "item.iceandfire.frost_troll_leather_boots": "寒冷トロールのブーツ",
-  "item.iceandfire.mountain_troll_leather_helmet": "山岳トロールのヘルメット",
-  "item.iceandfire.mountain_troll_leather_chestplate": "山岳トロールのチェストプレート",
-  "item.iceandfire.mountain_troll_leather_leggings": "山岳トロールのレギンス",
-  "item.iceandfire.mountain_troll_leather_boots": "山岳トロールのブーツ",
-  "item.iceandfire.troll_leather_armor_helmet.desc": "-10%% 遠距離ダメージ",
-  "item.iceandfire.troll_leather_armor_chestplate.desc": "-30%% 遠距離ダメージ",
-  "item.iceandfire.troll_leather_armor_leggings.desc": "-20%% 遠距離ダメージ",
-  "item.iceandfire.troll_leather_armor_boots.desc": "-10%% 遠距離ダメージ",
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   "item.iceandfire.sickly_dragon_meal": "ドラゴンの毒餌",
   "item.iceandfire.sickly_dragon_meal.desc_0": "ドラゴンの成長を止める",
   "item.iceandfire.amphithere_feather": "アンピプテラの羽",
@@ -356,7 +356,7 @@
   "item.iceandfire.cyclops_skull": "サイクロプスの頭蓋骨",
   "item.iceandfire.cockatrice_skull": "コカトリスの頭蓋骨",
   "item.iceandfire.stymphalian_skull": "ステュムパリデスの鳥の頭蓋骨",
-  "item.iceandfire.troll_skull": "トロールの頭蓋骨",
+
   "item.iceandfire.amphithere_skull": "アンピプテラの頭蓋骨",
   "item.iceandfire.seaserpent_skull": "シーサーペントの頭蓋骨",
   "item.iceandfire.hydra_skull": "ヒドラの頭蓋骨",
@@ -403,7 +403,7 @@
   "item.iceandfire.spawn_egg_death_worm": "デスワームのスポーンエッグ",
   "item.iceandfire.spawn_egg_cockatrice": "コカトリスのスポーンエッグ",
   "item.iceandfire.spawn_egg_stymphalian_bird": "ステュムパリデスの鳥のスポーンエッグ",
-  "item.iceandfire.spawn_egg_troll": "トロールのスポーンエッグ",
+
   "item.iceandfire.spawn_egg_amphithere": "アンピプテラのスポーンエッグ",
   "item.iceandfire.spawn_egg_dread_thrall": "ドレッドスレールのスポーンエッグ",
   "item.iceandfire.spawn_egg_dread_ghoul": "ドレッドグールのスポーンエッグ",
@@ -446,8 +446,8 @@
   "item.iceandfire.banner_pattern_sea_serpent.desc": "シーサーペント",
   "item.iceandfire.banner_pattern_weezer": "旗の模様",
   "item.iceandfire.banner_pattern_weezer.desc": "Weezer",
-  "item.iceandfire.banner_pattern_troll": "旗の模様",
-  "item.iceandfire.banner_pattern_troll.desc": "トロールの頭",
+
+
   "item.iceandfire.banner_pattern_dread": "旗の模様",
   "item.iceandfire.banner_pattern_dread.desc": "恐怖軍",
 
@@ -482,7 +482,7 @@
   "entity.iceandfire.stymphalian_bird": "ステュムパリデスの鳥",
   "entity.iceandfire.stymphalian_feather": "ステュムパリデスの鳥の羽",
   "entity.iceandfire.stymphalian_arrow": "ステュムパリデスの矢",
-  "entity.iceandfire.troll": "トロール",
+
   "entity.iceandfire.amphithere": "アンピプテラ",
   "entity.iceandfire.sea_serpent": "シーサーペント",
   "entity.iceandfire.sea_serpent_bubbles": "シーサーペントの泡",
@@ -583,7 +583,7 @@
   "bestiary.deathworm": "デスワーム",
   "bestiary.cockatrice": "コカトリス",
   "bestiary.stymphalianbird": "ステュムパリデスの鳥",
-  "bestiary.troll": "トロール",
+
   "bestiary.amphithere": "アンピプテラ",
   "bestiary.seaserpent": "シーサーペント",
   "bestiary.dragonforge": "ドラゴンフォージ",
@@ -710,8 +710,8 @@
   "advancements.iceandfire.kill_stymphalian_bird.description": "ステュムパリデスの鳥を倒す",
   "advancements.iceandfire.stymphalian_arrow.title": "前進する矢",
   "advancements.iceandfire.stymphalian_arrow.description": "ステュムパリデスの鳥の羽からより速く飛ぶ矢をクラフトする",
-  "advancements.iceandfire.kill_troll.title": "トロールが　あらわれた！",
-  "advancements.iceandfire.kill_troll.description": "トロールを倒す",
+
+
   "advancements.iceandfire.tame_amphithere.title": "ジャングルを飛ぶもの",
   "advancements.iceandfire.tame_amphithere.description": "アンピプテラを撃ち落とし、乗り続けて飼い慣らす",
   "advancements.iceandfire.kill_sea_serpent.title": "魔の海",
@@ -738,7 +738,7 @@
   "item.iceandfire.cyclops_skull.jei_desc": "地面か壁にトロフィーとして飾る事ができます。",
   "item.iceandfire.cockatrice_skull.jei_desc": "地面か壁にトロフィーとして飾る事ができます。",
   "item.iceandfire.stymphalian_skull.jei_desc": "地面か壁にトロフィーとして飾る事ができます。",
-  "item.iceandfire.troll_skull.jei_desc": "地面か壁にトロフィーとして飾る事ができます。",
+
   "item.iceandfire.amphithere_skull.jei_desc": "地面か壁にトロフィーとして飾る事ができます。",
   "item.iceandfire.seaserpent_skull.jei_desc": "地面か壁にトロフィーとして飾る事ができます。",
   "item.iceandfire.hydra_skull.jei_desc": "地面か壁にトロフィーとして飾る事ができます。",
@@ -952,22 +952,22 @@
   "block.minecraft.banner.mermaid.red": "Red Mermaid",
   "block.minecraft.banner.mermaid.black": "Black Mermaid",
 
-  "block.minecraft.banner.troll.white": "White Troll",
-  "block.minecraft.banner.troll.orange": "Orange Troll",
-  "block.minecraft.banner.troll.magenta": "Magenta Troll",
-  "block.minecraft.banner.troll.light_blue": "Light Blue Troll",
-  "block.minecraft.banner.troll.yellow": "Yellow Troll",
-  "block.minecraft.banner.troll.lime": "Lime Troll",
-  "block.minecraft.banner.troll.pink": "Pink Troll",
-  "block.minecraft.banner.troll.gray": "Gray Troll",
-  "block.minecraft.banner.troll.silver": "Silver Troll",
-  "block.minecraft.banner.troll.cyan": "Cyan Troll",
-  "block.minecraft.banner.troll.purple": "Purple Troll",
-  "block.minecraft.banner.troll.blue": "Blue Troll",
-  "block.minecraft.banner.troll.brown": "Brown Troll",
-  "block.minecraft.banner.troll.green": "Green Troll",
-  "block.minecraft.banner.troll.red": "Red Troll",
-  "block.minecraft.banner.troll.black": "Black Troll",
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   "block.minecraft.banner.eye.white": "White Eye",
   "block.minecraft.banner.eye.orange": "Orange Eye",
@@ -1123,10 +1123,10 @@
   "iceandfire.sound.subtitle.cockatrice_hurt": "Cockatrice hurts",
   "iceandfire.sound.subtitle.cockatrice_idle": "Cockatrice squawks",
   "iceandfire.sound.subtitle.cockatrice_die": "Cockatrice dies",
-  "iceandfire.sound.subtitle.troll_idle": "Troll growls",
-  "iceandfire.sound.subtitle.troll_roar": "Troll roars",
-  "iceandfire.sound.subtitle.troll_hurt": "Troll hurts",
-  "iceandfire.sound.subtitle.troll_die": "Troll dies",
+
+
+
+
   "iceandfire.sound.subtitle.naga_attack": "Naga attacks",
   "iceandfire.sound.subtitle.naga_idle": "Naga groans",
   "iceandfire.sound.subtitle.naga_hurt": "Naga hurts",

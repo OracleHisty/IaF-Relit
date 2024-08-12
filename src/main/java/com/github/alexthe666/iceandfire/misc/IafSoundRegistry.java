@@ -132,14 +132,6 @@ public final class IafSoundRegistry {
 
     public static final SoundEvent SIREN_SONG = createSoundEvent("siren_song");
 
-    public static final SoundEvent TROLL_DIE = createSoundEvent("troll_die");
-
-    public static final SoundEvent TROLL_IDLE = createSoundEvent("troll_idle");
-
-    public static final SoundEvent TROLL_HURT = createSoundEvent("troll_hurt");
-
-    public static final SoundEvent TROLL_ROAR = createSoundEvent("troll_roar");
-
     public static final SoundEvent COCKATRICE_DIE = createSoundEvent("cockatrice_die");
 
     public static final SoundEvent COCKATRICE_IDLE = createSoundEvent("cockatrice_idle");

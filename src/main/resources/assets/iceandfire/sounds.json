@@ -666,54 +666,6 @@
     ],
     "subtitle": "iceandfire.sound.subtitle.cockatrice_die"
   },
-  "troll_idle": {
-    "category": "hostile",
-    "sounds": [
-      {
-        "name": "iceandfire:mobs/troll/idle_0",
-        "volume": 0.4
-      },
-      {
-        "name": "iceandfire:mobs/troll/idle_1",
-        "volume": 0.4
-      }
-    ],
-    "subtitle": "iceandfire.sound.subtitle.troll_idle"
-  },
-  "troll_roar": {
-    "category": "hostile",
-    "sounds": [
-      {
-        "name": "iceandfire:mobs/troll/roar",
-        "volume": 0.4
-      }
-    ],
-    "subtitle": "iceandfire.sound.subtitle.troll_roar"
-  },
-  "troll_hurt": {
-    "category": "hostile",
-    "sounds": [
-      {
-        "name": "iceandfire:mobs/troll/hurt_0",
-        "volume": 0.4
-      },
-      {
-        "name": "iceandfire:mobs/troll/hurt_1",
-        "volume": 0.4
-      }
-    ],
-    "subtitle": "iceandfire.sound.subtitle.troll_hurt"
-  },
-  "troll_die": {
-    "category": "hostile",
-    "sounds": [
-      {
-        "name": "iceandfire:mobs/troll/die",
-        "volume": 0.4
-      }
-    ],
-    "subtitle": "iceandfire.sound.subtitle.troll_die"
-  },
   "naga_attack": {
     "category": "hostile",
     "sounds": [
