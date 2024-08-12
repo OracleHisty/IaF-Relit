@@ -37,12 +37,11 @@ public class IafBiomeModifierSerializers {
                 IafPlacedFeatures.PLACED_FIRE_DRAGON_CAVE,
                 IafPlacedFeatures.PLACED_ICE_DRAGON_CAVE,
                 IafPlacedFeatures.PLACED_LIGHTNING_DRAGON_CAVE,
-                IafPlacedFeatures.PLACED_SIREN_ISLAND,armor
+                IafPlacedFeatures.PLACED_SIREN_ISLAND,
                 IafPlacedFeatures.PLACED_SPAWN_DRAGON_SKELETON_L,
                 IafPlacedFeatures.PLACED_SPAWN_DRAGON_SKELETON_F,
                 IafPlacedFeatures.PLACED_SPAWN_DRAGON_SKELETON_I,
                 IafPlacedFeatures.PLACED_SPAWN_HIPPOCAMPUS,
-                IafPlacedFeatures.PLACED_SPAWN_SEA_SERPENT,
                 IafPlacedFeatures.PLACED_SPAWN_STYMPHALIAN_BIRD,
                 IafPlacedFeatures.PLACED_SILVER_ORE,
                 IafPlacedFeatures.PLACED_SAPPHIRE_ORE,

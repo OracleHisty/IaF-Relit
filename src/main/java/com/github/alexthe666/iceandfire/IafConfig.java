@@ -69,10 +69,6 @@ public class IafConfig {
     public static double amphithereFlightSpeed = 1.75F;
     public static double amphithereMaxHealth = 50D;
     public static double amphithereAttackStrength = 7D;
-    public static int seaSerpentSpawnChance = 250;
-    public static boolean seaSerpentGriefing = true;
-    public static double seaSerpentBaseHealth = 20D;
-    public static double seaSerpentAttackStrength = 4D;
     public static double dragonsteelBaseDamage = 25F;
     public static int dragonsteelBaseArmor = 12;
     public static float dragonsteelBaseArmorToughness = 6;
@@ -173,10 +169,6 @@ public class IafConfig {
             amphithereFlightSpeed = ConfigHolder.SERVER.amphithereFlightSpeed.get();
             amphithereMaxHealth = ConfigHolder.SERVER.amphithereMaxHealth.get();
             amphithereAttackStrength = ConfigHolder.SERVER.amphithereAttackStrength.get();
-            seaSerpentSpawnChance = ConfigHolder.SERVER.seaSerpentSpawnChance.get();
-            seaSerpentGriefing = ConfigHolder.SERVER.seaSerpentGriefing.get();
-            seaSerpentBaseHealth = ConfigHolder.SERVER.seaSerpentBaseHealth.get();
-            seaSerpentAttackStrength = ConfigHolder.SERVER.seaSerpentAttackStrength.get();
             dragonsteelBaseDamage = ConfigHolder.SERVER.dragonsteelBaseDamage.get();
             dragonsteelBaseArmor = ConfigHolder.SERVER.dragonsteelBaseArmor.get();
             dragonsteelBaseArmorToughness = ConfigHolder.SERVER.dragonsteelBaseArmorToughness.get().floatValue();

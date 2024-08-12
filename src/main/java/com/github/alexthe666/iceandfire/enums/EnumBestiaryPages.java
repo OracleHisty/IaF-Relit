@@ -28,7 +28,6 @@ public enum EnumBestiaryPages {
     COCKATRICE(2),
     STYMPHALIANBIRD(1),
     AMPHITHERE(2),
-    SEASERPENT(2),
     LIGHTNINGDRAGON(5),
     LIGHTNINGDRAGONEGG(1);
 

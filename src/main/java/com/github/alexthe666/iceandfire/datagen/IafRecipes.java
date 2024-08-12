@@ -6,7 +6,6 @@ import com.github.alexthe666.iceandfire.block.IafBlockRegistry;
 import com.github.alexthe666.iceandfire.datagen.tags.IafItemTags;
 import com.github.alexthe666.iceandfire.entity.DragonType;
 import com.github.alexthe666.iceandfire.enums.EnumDragonArmor;
-import com.github.alexthe666.iceandfire.enums.EnumSeaSerpent;
 import com.github.alexthe666.iceandfire.item.DragonItems;
 import com.github.alexthe666.iceandfire.item.IafItemRegistry;
 import com.github.alexthe666.iceandfire.item.ItemDragonArmor;
@@ -263,17 +262,6 @@ public class IafRecipes extends RecipeProvider {
             );
         }
 
-        for (EnumSeaSerpent type : EnumSeaSerpent.values()) {
-            armorSet(consumer, type.scale.get(),
-                    type.helmet.get(),
-                    type.chestplate.get(),
-                    type.leggings.get(),
-                    type.boots.get()
-            );
-
-            compact(consumer, type.scale.get(), type.scaleBlock.get());
-        }
-
         compact(consumer, IafItemRegistry.DRAGONSTEEL_FIRE_INGOT.get(), IafBlockRegistry.DRAGONSTEEL_FIRE_BLOCK.get());
 
         toolSet(consumer, IafItemRegistry.DRAGONSTEEL_FIRE_INGOT.get(), IafItemTags.BONES_WITHER,
@@ -359,16 +347,6 @@ public class IafRecipes extends RecipeProvider {
                 IafItemRegistry.DRAGONARMOR_GOLD_3.get()
         );
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, IafItemRegistry.SEA_SERPENT_ARROW.get(), 4)
-                .pattern("X")
-                .pattern("#")
-                .pattern("Y")
-                .define('#', Tags.Items.RODS_WOODEN)
-                .define('X', IafItemRegistry.SERPENT_FANG.get())
-                .define('Y', IafItemTags.SCALES_SEA_SERPENT)
-                .unlockedBy("has_item", has(IafItemRegistry.SERPENT_FANG.get()))
-                .save(consumer);
-
         SimpleCookingRecipeBuilder.smelting(Ingredient.of(IafItemRegistry.RAW_SILVER.get()), RecipeCategory.TOOLS, IafItemRegistry.SILVER_INGOT.get(), 0.7f, 200)
                 .group("raw_silver")
                 .unlockedBy(getHasName(IafItemRegistry.RAW_SILVER.get()), has(IafItemRegistry.RAW_SILVER.get())).save(consumer, location(getItemName(IafItemRegistry.SILVER_INGOT.get())) + "_from_smelting_" + getItemName(IafItemRegistry.RAW_SILVER.get()));
@@ -395,17 +373,6 @@ public class IafRecipes extends RecipeProvider {
         );
 
         compact(consumer, IafItemRegistry.SAPPHIRE_GEM.get(), IafBlockRegistry.SAPPHIRE_BLOCK.get());
-
-        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, IafItemRegistry.TIDE_TRIDENT.get())
-                .pattern("TTT")
-                .pattern("SDS")
-                .pattern(" B ")
-                .define('D', Tags.Items.GEMS_DIAMOND)
-                .define('S', IafItemTags.SCALES_SEA_SERPENT)
-                .define('T', IafItemRegistry.SERPENT_FANG.get())
-                .define('B', IafItemRegistry.DRAGON_BONE.get())
-                .unlockedBy("has_item", has(IafItemRegistry.SERPENT_FANG.get()))
-                .save(consumer);
     }
 
     private void createShapeless(@NotNull final Consumer<FinishedRecipe> consumer) {

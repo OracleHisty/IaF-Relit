@@ -137,28 +137,6 @@ public final class IafSoundRegistry {
 
     public static final SoundEvent AMPHITHERE_GUST = createSoundEvent("amphithere_gust");
 
-    public static final SoundEvent SEA_SERPENT_DIE = createSoundEvent("sea_serpent_die");
-
-    public static final SoundEvent SEA_SERPENT_IDLE = createSoundEvent("sea_serpent_idle");
-
-    public static final SoundEvent SEA_SERPENT_HURT = createSoundEvent("sea_serpent_hurt");
-
-    public static final SoundEvent SEA_SERPENT_BITE = createSoundEvent("sea_serpent_bite");
-
-    public static final SoundEvent SEA_SERPENT_ROAR = createSoundEvent("sea_serpent_roar");
-
-    public static final SoundEvent SEA_SERPENT_BREATH = createSoundEvent("sea_serpent_breath");
-
-    public static final SoundEvent SEA_SERPENT_SPLASH = createSoundEvent("sea_serpent_splash");
-
-
-
-
-
-
-
-
-
     public static final SoundEvent LIGHTNINGDRAGON_CHILD_IDLE = createSoundEvent("lightningdragon_child_idle");
 
     public static final SoundEvent LIGHTNINGDRAGON_CHILD_HURT = createSoundEvent("lightningdragon_child_hurt");

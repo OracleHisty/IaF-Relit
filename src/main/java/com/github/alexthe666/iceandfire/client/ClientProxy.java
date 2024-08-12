@@ -84,7 +84,6 @@ public class ClientProxy extends CommonProxy {
             case Blood -> new ParticleBlood(world, x, y, z);
             case Siren_Appearance -> new ParticleSirenAppearance(world, x, y, z, (int) motX);
             case Siren_Music -> new ParticleSirenMusic(world, x, y, z, motX, motY, motZ, 1);
-            case Serpent_Bubble -> new ParticleSerpentBubble(world, x, y, z, motX, motY, motZ, 1);
             default -> null;
         };
         if (particle != null) {

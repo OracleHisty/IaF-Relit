@@ -10,8 +10,7 @@ import java.util.Locale;
 public enum EnumSkullType {
     COCKATRICE,
     STYMPHALIAN,
-    AMPHITHERE,
-    SEASERPENT;
+    AMPHITHERE;
 
     public String itemResourceName;
     public RegistryObject<Item> skull_item;

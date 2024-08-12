@@ -6,6 +6,5 @@ public enum EnumParticles {
     Blood,
     Siren_Appearance,
     Siren_Music,
-    Serpent_Bubble,
     Snowflake
 }

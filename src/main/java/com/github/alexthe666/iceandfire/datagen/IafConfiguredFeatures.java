@@ -35,7 +35,6 @@ public final class IafConfiguredFeatures {
     public static final ResourceKey<ConfiguredFeature<?, ?>> SPAWN_DRAGON_SKELETON_F = registerKey("spawn_dragon_skeleton_fire");
     public static final ResourceKey<ConfiguredFeature<?, ?>> SPAWN_DRAGON_SKELETON_I = registerKey("spawn_dragon_skeleton_ice");
     public static final ResourceKey<ConfiguredFeature<?, ?>> SPAWN_HIPPOCAMPUS = registerKey("spawn_hippocampus");
-    public static final ResourceKey<ConfiguredFeature<?, ?>> SPAWN_SEA_SERPENT = registerKey("spawn_sea_serpent");
     public static final ResourceKey<ConfiguredFeature<?, ?>> SPAWN_STYMPHALIAN_BIRD = registerKey("spawn_stymphalian_bird");
     public static final ResourceKey<ConfiguredFeature<?, ?>> SILVER_ORE = registerKey("silver_ore");
     public static final ResourceKey<ConfiguredFeature<?, ?>> SAPPHIRE_ORE = registerKey("sapphire_ore");
@@ -63,7 +62,6 @@ public final class IafConfiguredFeatures {
         context.register(SPAWN_DRAGON_SKELETON_F, new ConfiguredFeature<>(IafWorldRegistry.SPAWN_DRAGON_SKELETON_F.get(), FeatureConfiguration.NONE));
         context.register(SPAWN_DRAGON_SKELETON_I, new ConfiguredFeature<>(IafWorldRegistry.SPAWN_DRAGON_SKELETON_I.get(), FeatureConfiguration.NONE));
         context.register(SPAWN_HIPPOCAMPUS, new ConfiguredFeature<>(IafWorldRegistry.SPAWN_HIPPOCAMPUS.get(), FeatureConfiguration.NONE));
-        context.register(SPAWN_SEA_SERPENT, new ConfiguredFeature<>(IafWorldRegistry.SPAWN_SEA_SERPENT.get(), FeatureConfiguration.NONE));
         context.register(SPAWN_STYMPHALIAN_BIRD, new ConfiguredFeature<>(IafWorldRegistry.SPAWN_STYMPHALIAN_BIRD.get(), FeatureConfiguration.NONE));
 
         RuleTest stoneOreRule = new TagMatchTest(BlockTags.STONE_ORE_REPLACEABLES);

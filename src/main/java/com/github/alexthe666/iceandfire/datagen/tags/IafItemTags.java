@@ -6,7 +6,6 @@ import com.github.alexthe666.iceandfire.entity.DragonType;
 import com.github.alexthe666.iceandfire.item.DragonItems;
 import com.github.alexthe666.iceandfire.item.IafItemRegistry;
 import com.github.alexthe666.iceandfire.item.ItemMobSkull;
-import com.github.alexthe666.iceandfire.item.ItemSeaSerpentScales;
 import net.minecraft.Util;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.Registries;
@@ -44,7 +43,6 @@ public class IafItemTags extends ItemTagsProvider {
     public static Map<DragonType, TagKey<Item>> SCALES_DRAGON = Util.make(new HashMap<>(), dragonTypeTagKeyHashMap -> {
         for(var type : DragonType.values()) createKey("scales/dragon/%s".formatted(type.getSerializedName()));
     });
-    public static TagKey<Item> SCALES_SEA_SERPENT = createKey("scales/sea_serpent");
     public static TagKey<Item> DRAGON_FOOD_MEAT = createKey("dragon_food_meat");
 
     // Forge (+ Recipes)
@@ -224,9 +222,7 @@ public class IafItemTags extends ItemTagsProvider {
         IafItemRegistry.ITEMS.getEntries().forEach(registryObject -> {
             Item item = registryObject.get();
 
-            if (item instanceof ItemSeaSerpentScales) {
-                tag(SCALES_SEA_SERPENT).add(item);
-            } else if (item instanceof ArrowItem) {
+            if (item instanceof ArrowItem) {
                 tag(ItemTags.ARROWS).add(item);
             } else if (item instanceof SwordItem) {
                 tag(ItemTags.SWORDS).add(item);

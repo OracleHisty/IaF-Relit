@@ -66,10 +66,6 @@ public class ServerConfig {
     public final ForgeConfigSpec.DoubleValue amphithereFlightSpeed;
     public final ForgeConfigSpec.DoubleValue amphithereMaxHealth;
     public final ForgeConfigSpec.DoubleValue amphithereAttackStrength;
-    public final ForgeConfigSpec.IntValue seaSerpentSpawnChance;
-    public final ForgeConfigSpec.BooleanValue seaSerpentGriefing;
-    public final ForgeConfigSpec.DoubleValue seaSerpentBaseHealth;
-    public final ForgeConfigSpec.DoubleValue seaSerpentAttackStrength;
     public final ForgeConfigSpec.DoubleValue dragonsteelBaseDamage;
     public final ForgeConfigSpec.IntValue dragonsteelBaseArmor;
     public final ForgeConfigSpec.DoubleValue dragonsteelBaseArmorToughness;
@@ -192,12 +188,6 @@ public class ServerConfig {
         this.amphithereFlightSpeed = buildDouble(builder, "Amphithere Flight Speed", "all", 1.75F, 0.0F, 3.0F, "How fast amphitheres fly.");
         this.amphithereMaxHealth = buildDouble(builder, "Amphithere Max Health", "all", 50, 1, 10000, "Maximum amphithere health");
         this.amphithereAttackStrength = buildDouble(builder, "Amphithere Attack Strength", "all", 7, 1, 10000, "Amphithere attack strength");
-        builder.pop();
-        builder.push("SeaSerpents");
-        this.seaSerpentSpawnChance = buildInt(builder, "Spawn Sea Serpent Chance", "all", 250, 1, 10000, "1 out of this number chance per chunk for generation");
-        this.seaSerpentGriefing = buildBoolean(builder, "Sea Serpent Griefing", "all", true, "Whether or not sea serpents can break weak blocks in their way");
-        this.seaSerpentBaseHealth = buildDouble(builder, "Sea Serpent Base Health", "all", 20, 1, 10000, "Default sea serpent health, this is scaled to the sea serpent's particular size");
-        this.seaSerpentAttackStrength = buildDouble(builder, "Sea Serpent Base Attack Strength", "all", 4, 1, 10000, "Default sea serpent attack strength, this is scaled to the sea serpent's particular size");
         builder.pop();
         builder.push("Hippocampus");
         this.hippocampusSpawnChance = buildInt(builder, "Spawn Hippocampus Chance", "all", 40, 1, 10000, "1 out of this number chance per chunk for generation");

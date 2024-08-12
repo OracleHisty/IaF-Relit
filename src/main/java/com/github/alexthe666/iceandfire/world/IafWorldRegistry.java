@@ -50,7 +50,6 @@ public class IafWorldRegistry {
     public static final RegistryObject<Feature<NoneFeatureConfiguration>> SPAWN_DRAGON_SKELETON_I = register("spawn_dragon_skeleton_ice",
             () -> new SpawnDragonSkeleton(IafEntityRegistry.ICE_DRAGON.get(), NoneFeatureConfiguration.CODEC));
     public static final RegistryObject<Feature<NoneFeatureConfiguration>> SPAWN_HIPPOCAMPUS = register("spawn_hippocampus", () -> new SpawnHippocampus(NoneFeatureConfiguration.CODEC));
-    public static final RegistryObject<Feature<NoneFeatureConfiguration>> SPAWN_SEA_SERPENT = register("spawn_sea_serpent", () -> new SpawnSeaSerpent(NoneFeatureConfiguration.CODEC));
     public static final RegistryObject<Feature<NoneFeatureConfiguration>> SPAWN_STYMPHALIAN_BIRD = register("spawn_stymphalian_bird", () -> new SpawnStymphalianBird(NoneFeatureConfiguration.CODEC));
 
 
@@ -93,7 +92,6 @@ public class IafWorldRegistry {
         LOADED_FEATURES.put("iceandfire:spawn_dragon_skeleton_fire", false);
         LOADED_FEATURES.put("iceandfire:spawn_dragon_skeleton_ice", false);
         LOADED_FEATURES.put("iceandfire:spawn_hippocampus", false);
-        LOADED_FEATURES.put("iceandfire:spawn_sea_serpent", false);
         LOADED_FEATURES.put("iceandfire:spawn_stymphalian_bird", false);
     }
 
@@ -158,9 +156,7 @@ public class IafWorldRegistry {
         if (safelyTestBiome(BiomeConfig.hippocampusBiomes, biome)) {
             addFeatureToBiome(IafPlacedFeatures.PLACED_SPAWN_HIPPOCAMPUS, features, builder);
         }
-        if (safelyTestBiome(BiomeConfig.seaSerpentBiomes, biome)) {
-            addFeatureToBiome(IafPlacedFeatures.PLACED_SPAWN_SEA_SERPENT, features, builder);
-        }
+
         if (safelyTestBiome(BiomeConfig.stymphalianBiomes, biome)) {
             addFeatureToBiome(IafPlacedFeatures.PLACED_SPAWN_STYMPHALIAN_BIRD, features, builder);
         }

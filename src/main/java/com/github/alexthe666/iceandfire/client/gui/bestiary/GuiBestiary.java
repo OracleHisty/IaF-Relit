@@ -7,7 +7,6 @@ import com.github.alexthe666.iceandfire.client.StatCollector;
 import com.github.alexthe666.iceandfire.entity.DragonType;
 import com.github.alexthe666.iceandfire.enums.EnumBestiaryPages;
 import com.github.alexthe666.iceandfire.enums.EnumDragonArmor;
-import com.github.alexthe666.iceandfire.enums.EnumSeaSerpent;
 import com.github.alexthe666.iceandfire.item.DragonItems;
 import com.github.alexthe666.iceandfire.item.IafItemRegistry;
 import com.github.alexthe666.iceandfire.misc.IafSoundRegistry;
@@ -450,41 +449,6 @@ public class GuiBestiary extends Screen {
                     drawItemStack(ms, new ItemStack(Items.STICK), 36, 89, 1.5F);
                     drawItemStack(ms, new ItemStack(IafItemRegistry.AMPHITHERE_FEATHER.get()), 36, 106, 1.5F);
                     drawItemStack(ms, new ItemStack(IafItemRegistry.AMPHITHERE_ARROW.get()), 60, 65, 2F);
-                }
-                break;
-            case SEASERPENT:
-                if (bookPages == 0) {
-                    ms.pose().pushPose();
-                    ms.pose().scale(0.75F, 0.75F, 0.75F);
-                    drawImage(ms, DRAWINGS_1, 290, 5, 422, 0, 90, 64, 512F);
-                    drawImage(ms, DRAWINGS_1, 380, 5, 422, 64, 90, 64, 512F);
-                    drawImage(ms, DRAWINGS_1, 290, 70, 422, 128, 90, 64, 512F);
-                    drawImage(ms, DRAWINGS_1, 380, 70, 422, 192, 90, 64, 512F);
-                    drawImage(ms, DRAWINGS_1, 290, 140, 422, 256, 90, 64, 512F);
-                    drawImage(ms, DRAWINGS_1, 380, 140, 422, 320, 90, 64, 512F);
-                    drawImage(ms, DRAWINGS_1, 345, 210, 422, 384, 90, 64, 512F);
-                    ms.pose().popPose();
-                }
-                if (bookPages == 1) {
-                    drawImage(ms, DRAWINGS_1, 60, 90, 337, 0, 70, 83, 512F);
-                    int j = (Minecraft.getInstance().player.tickCount % (EnumSeaSerpent.values().length * 20)) / 20;
-                    drawItemStack(ms, new ItemStack(EnumSeaSerpent.values()[j].scale.get()), 130, 40, 2.5F);
-                    drawItemStack(ms, new ItemStack(IafItemRegistry.SERPENT_FANG.get()), 90, 40, 2.5F);
-                }
-                if (bookPages == 2) {
-                    ms.pose().pushPose();
-                    ms.pose().scale(1.5F, 1.5F, 1F);
-                    drawImage(ms, DRAWINGS_0, 19, 31, 389, 1, 50, 50, 512F);
-                    ms.pose().popPose();
-                    int j = (Minecraft.getInstance().player.tickCount % (EnumSeaSerpent.values().length * 20)) / 20;
-                    drawItemStack(ms, new ItemStack(IafItemRegistry.SERPENT_FANG.get()), 36, 32, 1.5F);
-                    drawItemStack(ms, new ItemStack(Items.STICK), 36, 48, 1.5F);
-                    drawItemStack(ms, new ItemStack(EnumSeaSerpent.values()[j].scale.get()), 36, 66, 1.5F);
-                    drawItemStack(ms, new ItemStack(EnumSeaSerpent.values()[j].helmet.get()), 34, 125, 1.5F);
-                    drawItemStack(ms, new ItemStack(EnumSeaSerpent.values()[j].chestplate.get()), 50, 125, 1.5F);
-                    drawItemStack(ms, new ItemStack(EnumSeaSerpent.values()[j].leggings.get()), 66, 125, 1.5F);
-                    drawItemStack(ms, new ItemStack(EnumSeaSerpent.values()[j].boots.get()), 82, 125, 1.5F);
-                    drawItemStack(ms, new ItemStack(IafItemRegistry.SEA_SERPENT_ARROW.get()), 60, 33, 2F);
                 }
                 break;
             default:
