@@ -139,6 +139,7 @@ dependencies {
     annotationProcessor "org.spongepowered:mixin:0.8.5:processor"
     // at runtime, use the full JEI jar
     implementation fg.deobf("mezz.jei:jei-${mc_version}-forge:${jei_version}")
+    implementation fg.deobf("curse.maven:multihitboxlib-899090:4696005")
     //compileOnly fg.deobf("mezz.jei:jei-1.20.1-common-api:15.2.0.25")
     //compileOnly fg.deobf("mezz.jei:jei-1.20.1-forge-api:15.2.0.25")
     //runtimeOnly fg.deobf("mezz.jei:jei-1.20.1-forge-15.2.0.25")

@@ -155,34 +155,6 @@ public class DragonUtils {
         return (LivingEntity) pointedEntity;
     }
 
-    public static BlockPos getBlockInViewHippogryph(EntityHippogryph hippo, float yawAddition) {
-        float radius = 0.75F * (0.7F * 8) * -3 - hippo.getRandom().nextInt(48);
-        float neg = hippo.getRandom().nextBoolean() ? 1 : -1;
-        float angle = (0.01745329251F * (hippo.yBodyRot + yawAddition)) + 3.15F + (hippo.getRandom().nextFloat() * neg);
-        double extraX = radius * Mth.sin((float) (Math.PI + angle));
-        double extraZ = radius * Mth.cos(angle);
-        if (hippo.hasHomePosition && hippo.homePos != null) {
-            BlockPos dragonPos = hippo.blockPosition();
-            BlockPos ground = hippo.level().getHeightmapPos(Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, dragonPos);
-            int distFromGround = (int) hippo.getY() - ground.getY();
-            for (int i = 0; i < 10; i++) {
-                BlockPos pos = BlockPos.containing(hippo.homePos.getX() + hippo.getRandom().nextInt(IafConfig.dragonWanderFromHomeDistance) - IafConfig.dragonWanderFromHomeDistance, (distFromGround > 16 ? (int) Math.min(IafConfig.maxDragonFlight, hippo.getY() + hippo.getRandom().nextInt(16) - 8) : (int) hippo.getY() + hippo.getRandom().nextInt(16) + 1), (hippo.homePos.getZ() + hippo.getRandom().nextInt(IafConfig.dragonWanderFromHomeDistance * 2) - IafConfig.dragonWanderFromHomeDistance));
-                if (hippo.getDistanceSquared(Vec3.atCenterOf(pos)) > 6 && !hippo.isTargetBlocked(Vec3.atCenterOf(pos))) {
-                    return pos;
-                }
-            }
-        }
-        BlockPos radialPos = BlockPos.containing(hippo.getX() + extraX, 0, hippo.getZ() + extraZ);
-        BlockPos ground = hippo.level().getHeightmapPos(Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, radialPos);
-        int distFromGround = (int) hippo.getY() - ground.getY();
-        BlockPos newPos = radialPos.above(distFromGround > 16 ? (int) Math.min(IafConfig.maxDragonFlight, hippo.getY() + hippo.getRandom().nextInt(16) - 8) : (int) hippo.getY() + hippo.getRandom().nextInt(16) + 1);
-        BlockPos pos = hippo.doesWantToLand() ? ground : newPos;
-        if (!hippo.isTargetBlocked(Vec3.atCenterOf(newPos)) && hippo.getDistanceSquared(Vec3.atCenterOf(newPos)) > 6) {
-            return newPos;
-        }
-        return null;
-    }
-
     public static BlockPos getBlockInViewStymphalian(EntityStymphalianBird bird) {
         float radius = 0.75F * (0.7F * 6) * -3 - bird.getRandom().nextInt(24);
         float neg = bird.getRandom().nextBoolean() ? 1 : -1;

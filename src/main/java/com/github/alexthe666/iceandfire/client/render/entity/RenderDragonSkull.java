@@ -43,25 +43,25 @@ public class RenderDragonSkull extends EntityRenderer<EntityDragonSkull> {
     }
 
     @Override
-    public void render(EntityDragonSkull entity, float entityYaw, float partialTicks, @NotNull PoseStack matrixStackIn, @NotNull MultiBufferSource bufferIn, int packedLightIn) {
+    public void render(EntityDragonSkull entity, float entityYaw, float partialTicks, @NotNull PoseStack poseStack, @NotNull MultiBufferSource bufferIn, int packedLightIn) {
         TabulaModel model = switch (entity.getDragonType()) {
             case LIGHTNING -> lightningDragonModel;
             case ICE -> iceDragonModel;
             case FIRE -> fireDragonModel;
         };
         VertexConsumer ivertexbuilder = bufferIn.getBuffer(RenderType.entityTranslucent(getTextureLocation(entity)));
-        matrixStackIn.pushPose();
-        matrixStackIn.mulPose(Axis.XP.rotationDegrees(-180.0F));
-        matrixStackIn.mulPose(Axis.YN.rotationDegrees(-180.0F - entity.getYaw()));
+        poseStack.pushPose();
+        poseStack.mulPose(Axis.XP.rotationDegrees(-180.0F));
+        poseStack.mulPose(Axis.YN.rotationDegrees(-180.0F - entity.getYaw()));
         float f = 0.0625F;
-        matrixStackIn.scale(1.0F, 1.0F, 1.0F);
+        poseStack.scale(1.0F, 1.0F, 1.0F);
         float size = getRenderSize(entity) / 3;
-        matrixStackIn.scale(size, size, size);
-        matrixStackIn.translate(0, entity.isOnWall() ? -0.24F : -0.12F, entity.isOnWall() ? 0.4F : 0.5F);
+        poseStack.scale(size, size, size);
+        poseStack.translate(0, entity.isOnWall() ? -0.24F : -0.12F, entity.isOnWall() ? 0.4F : 0.5F);
         model.resetToDefaultPose();
         setRotationAngles(model.getCube("Head"), entity.isOnWall() ? (float) Math.toRadians(50F) : 0F, 0, 0);
-        model.getCube("Head").render(matrixStackIn, ivertexbuilder, packedLightIn, OverlayTexture.NO_OVERLAY, 1.0F, 1.0F, 1.0F, 1.0F);
-        matrixStackIn.popPose();
+        model.getCube("Head").render(poseStack, ivertexbuilder, packedLightIn, OverlayTexture.NO_OVERLAY, 1.0F, 1.0F, 1.0F, 1.0F);
+        poseStack.popPose();
     }
 
     @Override

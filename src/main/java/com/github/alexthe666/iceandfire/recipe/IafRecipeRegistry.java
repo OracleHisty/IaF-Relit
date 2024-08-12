@@ -95,16 +95,6 @@ public class IafRecipeRegistry {
                     return entityarrow;
                 }
             });
-            DispenserBlock.registerBehavior(IafItemRegistry.HIPPOGRYPH_EGG.get(), new AbstractProjectileDispenseBehavior() {
-                /**
-                 * Return the projectile entity spawned by this dispense behavior.
-                 */
-                @Override
-                protected @NotNull Projectile getProjectile(@NotNull Level worldIn, @NotNull Position position, @NotNull ItemStack stackIn) {
-                    return new EntityHippogryphEgg(IafEntityRegistry.HIPPOGRYPH_EGG.get(), worldIn, position.x(),
-                        position.y(), position.z(), stackIn);
-                }
-            });
             DispenserBlock.registerBehavior(IafItemRegistry.ROTTEN_EGG.get(), new AbstractProjectileDispenseBehavior() {
                 /**
                  * Return the projectile entity spawned by this dispense behavior.

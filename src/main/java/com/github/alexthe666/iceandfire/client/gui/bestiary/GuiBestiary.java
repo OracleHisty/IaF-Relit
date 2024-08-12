@@ -335,39 +335,6 @@ public class GuiBestiary extends Screen {
                     ms.pose().popPose();
                 }
                 break;
-            case HIPPOGRYPH:
-                if (bookPages == 0) {
-                    ms.pose().pushPose();
-                    ms.pose().scale(0.8F, 0.8F, 1F);
-                    drawImage(ms, DRAWINGS_0, 29, 150, 303, 151, 61, 36, 512F);
-                    drawImage(ms, DRAWINGS_0, 91, 150, 364, 151, 61, 36, 512F);
-                    drawImage(ms, DRAWINGS_0, 151, 150, 425, 151, 61, 36, 512F);
-                    drawImage(ms, DRAWINGS_0, 29, 190, 303, 187, 61, 36, 512F);
-                    drawImage(ms, DRAWINGS_0, 91, 190, 364, 187, 61, 36, 512F);
-                    drawImage(ms, DRAWINGS_0, 151, 190, 425, 187, 61, 36, 512F);
-                    drawImage(ms, DRAWINGS_0, 90, 230, 425, 223, 61, 35, 512F);
-                    ms.pose().popPose();
-
-                    // TODO :: Loop through tag (IafItemTags.TAME_HIPPOGRYPH)
-                    drawItemStack(ms, new ItemStack(Items.RABBIT_FOOT), 70, 20, 3.75F);
-                }
-
-                if (bookPages == 1) {
-                    drawItemStack(ms, new ItemStack(Items.STICK), 16, 24, 3.75F);
-
-                    ms.pose().pushPose();
-                    ms.pose().scale(1.5F, 1.5F, 1F);
-                    drawImage(ms, DRAWINGS_0, 144, 10, 389, 1, 50, 50, 512F);
-                    ms.pose().popPose();
-                    drawItemStack(ms, new ItemStack(Items.FEATHER), 160, 31, 1.35F);
-                    int drawType = Minecraft.getInstance().player.tickCount % 60 > 40 ? 2 : Minecraft.getInstance().player.tickCount % 60 > 20 ? 1 : 0;
-                    drawItemStack(ms, new ItemStack(drawType == 0 ? Items.IRON_HORSE_ARMOR : drawType == 1 ? Items.GOLDEN_HORSE_ARMOR : Items.DIAMOND_HORSE_ARMOR), 180, 31, 1.35F);
-                    drawItemStack(ms, new ItemStack(Items.FEATHER), 199, 31, 1.35F);
-                    drawItemStack(ms, new ItemStack(drawType == 0 ? IafItemRegistry.IRON_HIPPOGRYPH_ARMOR.get() : drawType == 1 ? IafItemRegistry.GOLD_HIPPOGRYPH_ARMOR.get() : IafItemRegistry.DIAMOND_HIPPOGRYPH_ARMOR.get()), 151, 18, 2F);
-                    // TODO :: Loop through tag (IafItemTags.BREED_HIPPOGRYPH)
-                    drawItemStack(ms, new ItemStack(Items.RABBIT_STEW), 70, 23, 3.75F);
-                }
-                break;
             case GORGON:
                 if (bookPages == 0) {
 

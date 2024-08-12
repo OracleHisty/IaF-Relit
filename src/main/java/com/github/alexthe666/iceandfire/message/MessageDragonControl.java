@@ -81,10 +81,6 @@ public class MessageDragonControl {
                             if (dragon.isOwnedBy(player)) {
                                 dragon.setControlState(message.controlState);
                             }
-                        } else if (entity instanceof EntityHippogryph hippogryph) {
-                            if (hippogryph.isOwnedBy(player)) {
-                                hippogryph.setControlState(message.controlState);
-                            }
                         } else if (entity instanceof EntityHippocampus hippo) {
                             if (hippo.isOwnedBy(player)) {
                                 hippo.setControlState(message.controlState);

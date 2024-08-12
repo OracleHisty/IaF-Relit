@@ -152,27 +152,6 @@ public class IafRecipes extends RecipeProvider {
                 IafItemRegistry.DRAGONARMOR_DIAMOND_3.get()
         );
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT,IafItemRegistry.IRON_HIPPOGRYPH_ARMOR.get())
-                .pattern("FDF")
-                .define('F', Tags.Items.FEATHERS)
-                .define('D', Items.IRON_HORSE_ARMOR)
-                .unlockedBy("has_item", has(Items.IRON_HORSE_ARMOR))
-                .save(consumer);
-
-        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT,IafItemRegistry.GOLD_HIPPOGRYPH_ARMOR.get())
-                .pattern("FDF")
-                .define('F', Tags.Items.FEATHERS)
-                .define('D', Items.GOLDEN_HORSE_ARMOR)
-                .unlockedBy("has_item", has(Items.GOLDEN_HORSE_ARMOR))
-                .save(consumer);
-
-        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT,IafItemRegistry.DIAMOND_HIPPOGRYPH_ARMOR.get())
-                .pattern("FDF")
-                .define('F', Tags.Items.FEATHERS)
-                .define('D', Items.DIAMOND_HORSE_ARMOR)
-                .unlockedBy("has_item", has(Items.DIAMOND_HORSE_ARMOR))
-                .save(consumer);
-
         nineBlockStorageRecipes(consumer, RecipeCategory.MISC, IafItemRegistry.DRAGON_BONE.get(), RecipeCategory.BUILDING_BLOCKS, IafBlockRegistry.DRAGON_BONE_BLOCK.get()
                 , locationString("dragon_bone_block"), null
                 , locationString("dragonbone"), null);

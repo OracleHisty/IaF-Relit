@@ -35,8 +35,6 @@ public class ServerConfig {
     public final ForgeConfigSpec.IntValue dragonTargetSearchLength;
     public final ForgeConfigSpec.IntValue dragonWanderFromHomeDistance;
     public final ForgeConfigSpec.IntValue dragonHungerTickRate;
-    public final ForgeConfigSpec.BooleanValue spawnHippogryphs;
-    public final ForgeConfigSpec.IntValue hippogryphSpawnRate;
     public final ForgeConfigSpec.BooleanValue generateGorgonTemple;
     public final ForgeConfigSpec.DoubleValue gorgonMaxHealth;
     public final ForgeConfigSpec.IntValue spawnPixiesChance;
@@ -110,7 +108,6 @@ public class ServerConfig {
     public ForgeConfigSpec.IntValue dangerousWorldGenDistanceLimit;
     public ForgeConfigSpec.IntValue dangerousWorldGenSeparationLimit;
     public final ForgeConfigSpec.DoubleValue dragonFlightSpeedMod;
-    public final ForgeConfigSpec.DoubleValue hippogryphFlightSpeedMod;
     public final ForgeConfigSpec.DoubleValue hippocampusSwimSpeedMod;
     public final ForgeConfigSpec.DoubleValue ghostMaxHealth;
     public final ForgeConfigSpec.DoubleValue ghostAttackStrength;
@@ -255,11 +252,6 @@ public class ServerConfig {
         builder.push("Hippocampus");
         this.hippocampusSpawnChance = buildInt(builder, "Spawn Hippocampus Chance", "all", 40, 1, 10000, "1 out of this number chance per chunk for generation");
         this.hippocampusSwimSpeedMod = buildDouble(builder, "Hippocampus Swim Speed Modifier", "all", 1F, 0.0F, 2.0F, "Change this to slow down or speed up hippocampus swimming.");
-        builder.pop();
-        builder.push("Hippogryph");
-        this.spawnHippogryphs = buildBoolean(builder, "Spawn Hippogryphs", "all", true, "True if hippogryphs are allowed to spawn");
-        this.hippogryphSpawnRate = buildInt(builder, "Hippogryph Spawn Weight", "all", 2, 1, 10000, "Hippogryph spawn weight. Lower = lower chance to spawn.");
-        this.hippogryphFlightSpeedMod = buildDouble(builder, "Hippogryph Flight Speed Modifier", "all", 1F, 0.0F, 2.0F, "Change this to slow down or speed up hippogryph flight.");
         builder.pop();
         builder.push("Gorgons");
         this.gorgonMaxHealth = buildDouble(builder, "Gorgon Max Health", "all", 100, 1, 10000, "Maximum gorgon health");

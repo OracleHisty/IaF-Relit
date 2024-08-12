@@ -24,7 +24,6 @@ import java.util.Map;
 public class RenderMobSkull extends EntityRenderer<EntityMobSkull> {
 
     private static final Map<String, ResourceLocation> SKULL_TEXTURE_CACHE = Maps.newHashMap();
-    private final ModelHippogryph hippogryphModel;
     private final ModelCyclops cyclopsModel;
     private final ModelCockatrice cockatriceModel;
     private final ModelStymphalianBird stymphalianBirdModel;
@@ -35,7 +34,6 @@ public class RenderMobSkull extends EntityRenderer<EntityMobSkull> {
 
     public RenderMobSkull(EntityRendererProvider.Context context, AdvancedEntityModel seaSerpentModel) {
         super(context);
-        this.hippogryphModel = new ModelHippogryph();
         this.cyclopsModel = new ModelCyclops();
         this.cockatriceModel = new ModelCockatrice();
         this.stymphalianBirdModel = new ModelStymphalianBird();
@@ -68,13 +66,6 @@ public class RenderMobSkull extends EntityRenderer<EntityMobSkull> {
     private void renderForEnum(EnumSkullType skull, boolean onWall, PoseStack matrixStackIn, MultiBufferSource bufferIn, int packedLightIn) {
         VertexConsumer ivertexbuilder = bufferIn.getBuffer(RenderType.entityTranslucent(getSkullTexture(skull)));
         switch (skull) {
-            case HIPPOGRYPH:
-                matrixStackIn.translate(0, -0.0F, -0.2F);
-                matrixStackIn.scale(1.2F, 1.2F, 1.2F);
-                hippogryphModel.resetToDefaultPose();
-                setRotationAngles(hippogryphModel.Head, onWall ? (float) Math.toRadians(50F) : (float) Math.toRadians(-5), 0, 0);
-                hippogryphModel.Head.render(matrixStackIn, ivertexbuilder, packedLightIn, OverlayTexture.NO_OVERLAY, 1.0F, 1.0F, 1.0F, 1.0F);
-                break;
             case CYCLOPS:
                 matrixStackIn.translate(0, 1.8F, -0.5F);
                 matrixStackIn.scale(2.25F, 2.25F, 2.25F);

@@ -39,8 +39,6 @@ public class IafConfig {
     public static int dragonTargetSearchLength = 128;
     public static int dragonWanderFromHomeDistance = 40;
     public static int dragonHungerTickRate = 3000;
-    public static boolean spawnHippogryphs = true;
-    public static int hippogryphSpawnRate = 2;
     public static boolean generateGorgonTemple = true;
     public static double gorgonMaxHealth = 100D;
     public static int spawnPixiesChance = 60;
@@ -114,7 +112,6 @@ public class IafConfig {
     public static double dangerousWorldGenDistanceLimit = 1000;
     public static double dangerousWorldGenSeparationLimit = 300;
     public static double dragonFlightSpeedMod = 1F;
-    public static double hippogryphFlightSpeedMod = 1F;
     public static double hippocampusSwimSpeedMod = 1F;
     public static boolean generateGraveyards = true;
     public static double ghostMaxHealth = 30;
@@ -174,8 +171,6 @@ public class IafConfig {
             dragonTargetSearchLength = ConfigHolder.SERVER.dragonTargetSearchLength.get();
             dragonWanderFromHomeDistance = ConfigHolder.SERVER.dragonWanderFromHomeDistance.get();
             dragonHungerTickRate = ConfigHolder.SERVER.dragonHungerTickRate.get();
-            spawnHippogryphs = ConfigHolder.SERVER.spawnHippogryphs.get();
-            hippogryphSpawnRate = ConfigHolder.SERVER.hippogryphSpawnRate.get();
             generateGorgonTemple = ConfigHolder.SERVER.generateGorgonTemple.get();
             gorgonMaxHealth = ConfigHolder.SERVER.gorgonMaxHealth.get();
             spawnPixiesChance = ConfigHolder.SERVER.spawnPixiesChance.get();
@@ -247,7 +242,6 @@ public class IafConfig {
             dangerousWorldGenDistanceLimit = ConfigHolder.SERVER.dangerousWorldGenDistanceLimit.get();
             dangerousWorldGenSeparationLimit = ConfigHolder.SERVER.dangerousWorldGenSeparationLimit.get();
             dragonFlightSpeedMod = ConfigHolder.SERVER.dragonFlightSpeedMod.get();
-            hippogryphFlightSpeedMod = ConfigHolder.SERVER.hippogryphFlightSpeedMod.get();
             hippocampusSwimSpeedMod = ConfigHolder.SERVER.hippocampusSwimSpeedMod.get();
             generateGraveyards = ConfigHolder.SERVER.generateGraveyards.get();
             ghostMaxHealth = ConfigHolder.SERVER.ghostMaxHealth.get();
