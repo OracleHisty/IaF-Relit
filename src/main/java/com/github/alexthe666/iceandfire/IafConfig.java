@@ -48,11 +48,9 @@ public class IafConfig {
     public static int dragonsteelBaseDurability = 8000;
     public static int dragonsteelBaseDurabilityEquipment = 8000;
     public static boolean dragonMovedWronglyFix = false;
-    public static boolean weezerTinkers = true;
     public static double dragonBlockBreakingDropChance = 0.1D;
     public static boolean dragonAuto3rdPerson = true;
     public static boolean explosiveDragonBreath = false;
-    public static double weezerTinkersDisarmChance = 0.2F;
     public static boolean chunkLoadSummonCrystal = true;
     public static double dangerousWorldGenDistanceLimit = 1000;
     public static double dangerousWorldGenSeparationLimit = 300;
@@ -121,11 +119,9 @@ public class IafConfig {
             dragonsteelBaseDurability = ConfigHolder.SERVER.dragonsteelBaseDurability.get();
             dragonsteelBaseDurabilityEquipment = ConfigHolder.SERVER.dragonsteelBaseDurabilityEquipment.get();
             dragonMovedWronglyFix = ConfigHolder.SERVER.dragonMovedWronglyFix.get();
-            weezerTinkers = ConfigHolder.SERVER.weezerTinkers.get();
             dragonBlockBreakingDropChance = ConfigHolder.SERVER.dragonBlockBreakingDropChance.get();
 
             explosiveDragonBreath = ConfigHolder.SERVER.explosiveDragonBreath.get();
-            weezerTinkersDisarmChance = ConfigHolder.SERVER.weezerTinkersDisarmChance.get();
             chunkLoadSummonCrystal = ConfigHolder.SERVER.chunkLoadSummonCrystal.get();
             dangerousWorldGenDistanceLimit = ConfigHolder.SERVER.dangerousWorldGenDistanceLimit.get();
             dangerousWorldGenSeparationLimit = ConfigHolder.SERVER.dangerousWorldGenSeparationLimit.get();

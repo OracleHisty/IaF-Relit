@@ -333,15 +333,6 @@ public class ServerEvents {
             LootPool.Builder builder = new LootPool.Builder().name("iaf_silver_ingot").add(item).when(LootItemRandomChanceCondition.randomChance(0.5f)).setRolls(UniformGenerator.between(1, 3)).setBonusRolls(UniformGenerator.between(0, 3));
             event.getTable().addPool(builder.build());
 
-        } else if ((event.getName().equals(WorldGenFireDragonCave.FIRE_DRAGON_CHEST)
-                || event.getName().equals(WorldGenFireDragonCave.FIRE_DRAGON_CHEST_MALE)
-                || event.getName().equals(WorldGenIceDragonCave.ICE_DRAGON_CHEST)
-                || event.getName().equals(WorldGenIceDragonCave.ICE_DRAGON_CHEST_MALE)
-                || event.getName().equals(WorldGenLightningDragonCave.LIGHTNING_DRAGON_CHEST)
-                || event.getName().equals(WorldGenLightningDragonCave.LIGHTNING_DRAGON_CHEST_MALE))) {
-            LootPoolEntryContainer.Builder item = LootItem.lootTableItem(IafItemRegistry.WEEZER_BLUE_ALBUM.get()).setQuality(100).setWeight(1);
-            LootPool.Builder builder = new LootPool.Builder().name("iaf_weezer").add(item).when(LootItemRandomChanceCondition.randomChance(0.01f)).setRolls(UniformGenerator.between(1, 1));
-            event.getTable().addPool(builder.build());
         }
     }
 
