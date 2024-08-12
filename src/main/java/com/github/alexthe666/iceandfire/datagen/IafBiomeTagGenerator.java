@@ -15,7 +15,6 @@ import org.jetbrains.annotations.Nullable;
 import java.util.concurrent.CompletableFuture;
 
 public class IafBiomeTagGenerator extends BiomeTagsProvider {
-    public static final TagKey<Biome> HAS_GORGON_TEMPLE = TagKey.create(ForgeRegistries.BIOMES.getRegistryKey(), new ResourceLocation(IceAndFire.MODID, "has_structure/gorgon_temple"));
     public static final TagKey<Biome> HAS_MAUSOLEUM = TagKey.create(ForgeRegistries.BIOMES.getRegistryKey(), new ResourceLocation(IceAndFire.MODID, "has_structure/mausoleum"));
     public static final TagKey<Biome> HAS_GRAVEYARD = TagKey.create(ForgeRegistries.BIOMES.getRegistryKey(), new ResourceLocation(IceAndFire.MODID, "has_structure/graveyard"));
 
@@ -28,7 +27,6 @@ public class IafBiomeTagGenerator extends BiomeTagsProvider {
     protected void addTags(HolderLookup.Provider pProvider) {
         tag(HAS_GRAVEYARD).addTag(BiomeTags.IS_OVERWORLD);
         tag(HAS_MAUSOLEUM).addTag(BiomeTags.IS_OVERWORLD);
-        tag(HAS_GORGON_TEMPLE).addTag(BiomeTags.IS_OVERWORLD);
     }
 
     @Override
