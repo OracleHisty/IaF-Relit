@@ -1,0 +1,4356 @@
+{
+  "modelName": "Ice_Dragon_Bite_1",
+  "authorName": "TechneToTabulaImporter",
+  "projVersion": 4,
+  "metadata": [],
+  "textureWidth": 256,
+  "textureHeight": 128,
+  "scale": [
+    1.0,
+    1.0,
+    1.0
+  ],
+  "cubeGroups": [],
+  "cubes": [
+    {
+      "name": "BodyUpper",
+      "dimensions": [
+        6,
+        7,
+        7
+      ],
+      "position": [
+        0.0,
+        11.6,
+        -10.0
+      ],
+      "offset": [
+        -3.0,
+        -1.8,
+        0.0
+      ],
+      "rotation": [
+        5.22,
+        -0.0,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "txOffset": [
+        67,
+        47
+      ],
+      "txMirror": false,
+      "mcScale": 0.0,
+      "opacity": 100.0,
+      "hidden": false,
+      "children": [
+        {
+          "name": "BodyLower",
+          "dimensions": [
+            7,
+            6,
+            7
+          ],
+          "position": [
+            0.0,
+            0.0,
+            6.7
+          ],
+          "offset": [
+            -3.5,
+            -1.5,
+            0.0
+          ],
+          "rotation": [
+            -5.22,
+            -0.0,
+            0.0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "txOffset": [
+            93,
+            47
+          ],
+          "txMirror": false,
+          "mcScale": 0.0,
+          "opacity": 100.0,
+          "hidden": false,
+          "children": [
+            {
+              "name": "Tail1",
+              "dimensions": [
+                4,
+                5,
+                6
+              ],
+              "position": [
+                0.0,
+                0.8,
+                5.5
+              ],
+              "offset": [
+                -2.0,
+                -2.0,
+                1.0
+              ],
+              "rotation": [
+                -5.22,
+                -0.0,
+                0.0
+              ],
+              "scale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "txOffset": [
+                75,
+                35
+              ],
+              "txMirror": false,
+              "mcScale": 0.0,
+              "opacity": 100.0,
+              "hidden": false,
+              "children": [
+                {
+                  "name": "Tail2",
+                  "dimensions": [
+                    3,
+                    4,
+                    8
+                  ],
+                  "position": [
+                    0.0,
+                    -0.1,
+                    5.8
+                  ],
+                  "offset": [
+                    -1.51,
+                    -1.6,
+                    0.9
+                  ],
+                  "rotation": [
+                    -7.83,
+                    -0.0,
+                    0.0
+                  ],
+                  "scale": [
+                    1.0,
+                    1.0,
+                    1.0
+                  ],
+                  "txOffset": [
+                    95,
+                    33
+                  ],
+                  "txMirror": false,
+                  "mcScale": 0.0,
+                  "opacity": 100.0,
+                  "hidden": false,
+                  "children": [
+                    {
+                      "name": "Tail3",
+                      "dimensions": [
+                        3,
+                        3,
+                        9
+                      ],
+                      "position": [
+                        0.0,
+                        -0.1,
+                        7.7
+                      ],
+                      "offset": [
+                        -1.5,
+                        -1.3,
+                        0.9
+                      ],
+                      "rotation": [
+                        5.22,
+                        -0.0,
+                        0.0
+                      ],
+                      "scale": [
+                        1.0,
+                        1.0,
+                        1.0
+                      ],
+                      "txOffset": [
+                        72,
+                        21
+                      ],
+                      "txMirror": false,
+                      "mcScale": 0.0,
+                      "opacity": 100.0,
+                      "hidden": false,
+                      "children": [
+                        {
+                          "name": "Tail4",
+                          "dimensions": [
+                            2,
+                            2,
+                            8
+                          ],
+                          "position": [
+                            0.0,
+                            0.0,
+                            8.6
+                          ],
+                          "offset": [
+                            -1.0,
+                            -0.9,
+                            1.0
+                          ],
+                          "rotation": [
+                            0.0,
+                            -0.0,
+                            0.0
+                          ],
+                          "scale": [
+                            1.0,
+                            1.0,
+                            1.0
+                          ],
+                          "txOffset": [
+                            94,
+                            20
+                          ],
+                          "txMirror": false,
+                          "mcScale": 0.0,
+                          "opacity": 100.0,
+                          "hidden": false,
+                          "children": [
+                            {
+                              "name": "spike16",
+                              "dimensions": [
+                                1,
+                                1,
+                                2
+                              ],
+                              "position": [
+                                0.0,
+                                -0.3,
+                                3.8
+                              ],
+                              "offset": [
+                                -0.5,
+                                -0.5,
+                                -0.2
+                              ],
+                              "rotation": [
+                                39.13,
+                                -0.0,
+                                0.0
+                              ],
+                              "scale": [
+                                1.0,
+                                1.0,
+                                1.0
+                              ],
+                              "txOffset": [
+                                34,
+                                34
+                              ],
+                              "txMirror": false,
+                              "mcScale": 0.0,
+                              "opacity": 100.0,
+                              "hidden": false,
+                              "children": [],
+                              "parentIdentifier": ":(~;K#L8m2\u0027C0lG:?-]i",
+                              "identifier": "RY\\)Q.45|B32\u003dY!?4f9\\"
+                            },
+                            {
+                              "name": "spike17",
+                              "dimensions": [
+                                1,
+                                1,
+                                2
+                              ],
+                              "position": [
+                                0.0,
+                                -0.5,
+                                7.3
+                              ],
+                              "offset": [
+                                -0.5,
+                                -0.5,
+                                0.0
+                              ],
+                              "rotation": [
+                                33.91,
+                                -0.0,
+                                0.0
+                              ],
+                              "scale": [
+                                1.0,
+                                1.0,
+                                1.0
+                              ],
+                              "txOffset": [
+                                34,
+                                34
+                              ],
+                              "txMirror": false,
+                              "mcScale": 0.0,
+                              "opacity": 100.0,
+                              "hidden": false,
+                              "children": [],
+                              "parentIdentifier": ":(~;K#L8m2\u0027C0lG:?-]i",
+                              "identifier": "p.$zK:Dp|Ts_4rTMO9sc"
+                            },
+                            {
+                              "name": "Tail5",
+                              "dimensions": [
+                                2,
+                                2,
+                                8
+                              ],
+                              "position": [
+                                0.0,
+                                0.0,
+                                7.6
+                              ],
+                              "offset": [
+                                -0.99,
+                                -0.9,
+                                1.0
+                              ],
+                              "rotation": [
+                                10.43,
+                                -0.0,
+                                0.0
+                              ],
+                              "scale": [
+                                1.0,
+                                1.0,
+                                1.0
+                              ],
+                              "txOffset": [
+                                94,
+                                9
+                              ],
+                              "txMirror": false,
+                              "mcScale": 0.0,
+                              "opacity": 100.0,
+                              "hidden": false,
+                              "children": [
+                                {
+                                  "name": "Club",
+                                  "dimensions": [
+                                    4,
+                                    2,
+                                    8
+                                  ],
+                                  "position": [
+                                    0.0,
+                                    -0.4,
+                                    7.5
+                                  ],
+                                  "offset": [
+                                    -2.0,
+                                    -0.4,
+                                    1.0
+                                  ],
+                                  "rotation": [
+                                    0.0,
+                                    -0.0,
+                                    0.0
+                                  ],
+                                  "scale": [
+                                    1.0,
+                                    1.0,
+                                    1.0
+                                  ],
+                                  "txOffset": [
+                                    42,
+                                    17
+                                  ],
+                                  "txMirror": false,
+                                  "mcScale": 0.0,
+                                  "opacity": 100.0,
+                                  "hidden": false,
+                                  "children": [
+                                    {
+                                      "name": "TailFin2",
+                                      "dimensions": [
+                                        9,
+                                        0,
+                                        12
+                                      ],
+                                      "position": [
+                                        0.0,
+                                        0.0,
+                                        0.0
+                                      ],
+                                      "offset": [
+                                        0.0,
+                                        0.29,
+                                        1.31
+                                      ],
+                                      "rotation": [
+                                        0.0,
+                                        -45.0,
+                                        5.0
+                                      ],
+                                      "scale": [
+                                        1.0,
+                                        1.0,
+                                        1.0
+                                      ],
+                                      "txOffset": [
+                                        70,
+                                        70
+                                      ],
+                                      "txMirror": false,
+                                      "mcScale": 0.0,
+                                      "opacity": 100.0,
+                                      "hidden": false,
+                                      "children": [],
+                                      "parentIdentifier": "bV0y~BY|*:\u003e.`*-IR-]w",
+                                      "identifier": "o\u003c.[_EEnx%FI}V\u003ee`Vv:"
+                                    },
+                                    {
+                                      "name": "TailFin1",
+                                      "dimensions": [
+                                        9,
+                                        0,
+                                        12
+                                      ],
+                                      "position": [
+                                        -0.1,
+                                        0.0,
+                                        0.0
+                                      ],
+                                      "offset": [
+                                        -9.0,
+                                        0.3,
+                                        1.31
+                                      ],
+                                      "rotation": [
+                                        0.0,
+                                        45.0,
+                                        -5.0
+                                      ],
+                                      "scale": [
+                                        1.0,
+                                        1.0,
+                                        1.0
+                                      ],
+                                      "txOffset": [
+                                        70,
+                                        70
+                                      ],
+                                      "txMirror": true,
+                                      "mcScale": 0.0,
+                                      "opacity": 100.0,
+                                      "hidden": false,
+                                      "children": [],
+                                      "parentIdentifier": "bV0y~BY|*:\u003e.`*-IR-]w",
+                                      "identifier": "qT_m/i^6e2WO9-xug~nX"
+                                    },
+                                    {
+                                      "name": "spike20",
+                                      "dimensions": [
+                                        1,
+                                        1,
+                                        3
+                                      ],
+                                      "position": [
+                                        0.0,
+                                        0.0,
+                                        3.0
+                                      ],
+                                      "offset": [
+                                        -0.5,
+                                        -0.5,
+                                        0.0
+                                      ],
+                                      "rotation": [
+                                        20.87,
+                                        -0.0,
+                                        0.0
+                                      ],
+                                      "scale": [
+                                        1.0,
+                                        1.0,
+                                        1.0
+                                      ],
+                                      "txOffset": [
+                                        22,
+                                        34
+                                      ],
+                                      "txMirror": false,
+                                      "mcScale": 0.0,
+                                      "opacity": 100.0,
+                                      "hidden": false,
+                                      "children": [],
+                                      "parentIdentifier": "bV0y~BY|*:\u003e.`*-IR-]w",
+                                      "identifier": "6u}^O@\u00272#44w*)7P]S\u003cX"
+                                    }
+                                  ],
+                                  "parentIdentifier": "A/ubG|/5RCo1q\\O;Z;gN",
+                                  "identifier": "bV0y~BY|*:\u003e.`*-IR-]w"
+                                },
+                                {
+                                  "name": "spike18",
+                                  "dimensions": [
+                                    1,
+                                    1,
+                                    2
+                                  ],
+                                  "position": [
+                                    0.0,
+                                    -0.3,
+                                    3.8
+                                  ],
+                                  "offset": [
+                                    -0.5,
+                                    -0.5,
+                                    -0.2
+                                  ],
+                                  "rotation": [
+                                    39.13,
+                                    -0.0,
+                                    0.0
+                                  ],
+                                  "scale": [
+                                    1.0,
+                                    1.0,
+                                    1.0
+                                  ],
+                                  "txOffset": [
+                                    34,
+                                    34
+                                  ],
+                                  "txMirror": false,
+                                  "mcScale": 0.0,
+                                  "opacity": 100.0,
+                                  "hidden": false,
+                                  "children": [],
+                                  "parentIdentifier": "A/ubG|/5RCo1q\\O;Z;gN",
+                                  "identifier": "xxp|GoJOU6\u0027w*?~|:Bk7"
+                                },
+                                {
+                                  "name": "spike19",
+                                  "dimensions": [
+                                    1,
+                                    1,
+                                    2
+                                  ],
+                                  "position": [
+                                    0.0,
+                                    -0.5,
+                                    7.3
+                                  ],
+                                  "offset": [
+                                    -0.5,
+                                    -0.5,
+                                    0.0
+                                  ],
+                                  "rotation": [
+                                    28.7,
+                                    -0.0,
+                                    0.0
+                                  ],
+                                  "scale": [
+                                    1.0,
+                                    1.0,
+                                    1.0
+                                  ],
+                                  "txOffset": [
+                                    34,
+                                    34
+                                  ],
+                                  "txMirror": false,
+                                  "mcScale": 0.0,
+                                  "opacity": 100.0,
+                                  "hidden": false,
+                                  "children": [],
+                                  "parentIdentifier": "A/ubG|/5RCo1q\\O;Z;gN",
+                                  "identifier": "WZz/!]lf4\u0027rc\u003d8G5g`Y2"
+                                }
+                              ],
+                              "parentIdentifier": ":(~;K#L8m2\u0027C0lG:?-]i",
+                              "identifier": "A/ubG|/5RCo1q\\O;Z;gN"
+                            }
+                          ],
+                          "parentIdentifier": "EueT\\RT\u0027\\{1rs ~w5]^^",
+                          "identifier": ":(~;K#L8m2\u0027C0lG:?-]i"
+                        },
+                        {
+                          "name": "spike13",
+                          "dimensions": [
+                            1,
+                            1,
+                            2
+                          ],
+                          "position": [
+                            0.0,
+                            -0.9,
+                            2.0
+                          ],
+                          "offset": [
+                            -0.5,
+                            -0.5,
+                            0.0
+                          ],
+                          "rotation": [
+                            26.09,
+                            -0.0,
+                            0.0
+                          ],
+                          "scale": [
+                            1.0,
+                            1.0,
+                            1.0
+                          ],
+                          "txOffset": [
+                            34,
+                            34
+                          ],
+                          "txMirror": false,
+                          "mcScale": 0.0,
+                          "opacity": 100.0,
+                          "hidden": false,
+                          "children": [],
+                          "parentIdentifier": "EueT\\RT\u0027\\{1rs ~w5]^^",
+                          "identifier": "-o\u003dzEQV4%W{r:wVSd*FY"
+                        },
+                        {
+                          "name": "spike14",
+                          "dimensions": [
+                            1,
+                            1,
+                            2
+                          ],
+                          "position": [
+                            0.0,
+                            -0.8,
+                            5.5
+                          ],
+                          "offset": [
+                            -0.5,
+                            -0.5,
+                            0.0
+                          ],
+                          "rotation": [
+                            28.7,
+                            -0.0,
+                            0.0
+                          ],
+                          "scale": [
+                            1.0,
+                            1.0,
+                            1.0
+                          ],
+                          "txOffset": [
+                            34,
+                            34
+                          ],
+                          "txMirror": false,
+                          "mcScale": 0.0,
+                          "opacity": 100.0,
+                          "hidden": false,
+                          "children": [],
+                          "parentIdentifier": "EueT\\RT\u0027\\{1rs ~w5]^^",
+                          "identifier": "+B]@pQRV-k8\u003c@eN\\[M#%"
+                        },
+                        {
+                          "name": "spike15",
+                          "dimensions": [
+                            1,
+                            1,
+                            2
+                          ],
+                          "position": [
+                            0.0,
+                            -0.6,
+                            8.9
+                          ],
+                          "offset": [
+                            -0.5,
+                            -0.5,
+                            -0.2
+                          ],
+                          "rotation": [
+                            36.52,
+                            -0.0,
+                            0.0
+                          ],
+                          "scale": [
+                            1.0,
+                            1.0,
+                            1.0
+                          ],
+                          "txOffset": [
+                            34,
+                            34
+                          ],
+                          "txMirror": false,
+                          "mcScale": 0.0,
+                          "opacity": 100.0,
+                          "hidden": false,
+                          "children": [],
+                          "parentIdentifier": "EueT\\RT\u0027\\{1rs ~w5]^^",
+                          "identifier": "? }o\u003e,LLVsor@`^}YNIE"
+                        }
+                      ],
+                      "parentIdentifier": "VgWFnI3$P_4Ez,XTPJyR",
+                      "identifier": "EueT\\RT\u0027\\{1rs ~w5]^^"
+                    },
+                    {
+                      "name": "spike11",
+                      "dimensions": [
+                        1,
+                        1,
+                        2
+                      ],
+                      "position": [
+                        0.0,
+                        -1.2,
+                        2.3
+                      ],
+                      "offset": [
+                        -0.5,
+                        -0.5,
+                        0.0
+                      ],
+                      "rotation": [
+                        28.7,
+                        -0.0,
+                        0.0
+                      ],
+                      "scale": [
+                        1.0,
+                        1.0,
+                        1.0
+                      ],
+                      "txOffset": [
+                        34,
+                        34
+                      ],
+                      "txMirror": false,
+                      "mcScale": 0.0,
+                      "opacity": 100.0,
+                      "hidden": false,
+                      "children": [],
+                      "parentIdentifier": "VgWFnI3$P_4Ez,XTPJyR",
+                      "identifier": "UW\u003cXFM0Ern|S\u003dne+~h*O"
+                    },
+                    {
+                      "name": "spike12",
+                      "dimensions": [
+                        1,
+                        1,
+                        2
+                      ],
+                      "position": [
+                        0.0,
+                        -1.1,
+                        5.8
+                      ],
+                      "offset": [
+                        -0.5,
+                        -0.5,
+                        0.0
+                      ],
+                      "rotation": [
+                        28.7,
+                        -0.0,
+                        0.0
+                      ],
+                      "scale": [
+                        1.0,
+                        1.0,
+                        1.0
+                      ],
+                      "txOffset": [
+                        34,
+                        34
+                      ],
+                      "txMirror": false,
+                      "mcScale": 0.0,
+                      "opacity": 100.0,
+                      "hidden": false,
+                      "children": [],
+                      "parentIdentifier": "VgWFnI3$P_4Ez,XTPJyR",
+                      "identifier": ")/%\u003e\\%zkm_?Bvz\\qL:ix"
+                    }
+                  ],
+                  "parentIdentifier": "PKALCtIq#mf\u0027atBd2d[q",
+                  "identifier": "VgWFnI3$P_4Ez,XTPJyR"
+                },
+                {
+                  "name": "spike10",
+                  "dimensions": [
+                    1,
+                    1,
+                    2
+                  ],
+                  "position": [
+                    0.0,
+                    -1.6,
+                    4.6
+                  ],
+                  "offset": [
+                    -0.5,
+                    -0.5,
+                    0.0
+                  ],
+                  "rotation": [
+                    33.91,
+                    -0.0,
+                    0.0
+                  ],
+                  "scale": [
+                    1.0,
+                    1.0,
+                    1.0
+                  ],
+                  "txOffset": [
+                    34,
+                    34
+                  ],
+                  "txMirror": false,
+                  "mcScale": 0.0,
+                  "opacity": 100.0,
+                  "hidden": false,
+                  "children": [],
+                  "parentIdentifier": "PKALCtIq#mf\u0027atBd2d[q",
+                  "identifier": "k._K]Hpm3}\u003c\u00277\\{9qs@["
+                }
+              ],
+              "parentIdentifier": "7\u0026k,\u0026_\u003d0rhG|n!\"\"4+M*",
+              "identifier": "PKALCtIq#mf\u0027atBd2d[q"
+            },
+            {
+              "name": "spike8",
+              "dimensions": [
+                1,
+                1,
+                3
+              ],
+              "position": [
+                0.0,
+                -0.8,
+                2.8
+              ],
+              "offset": [
+                -0.5,
+                -0.5,
+                0.0
+              ],
+              "rotation": [
+                31.3,
+                -0.0,
+                0.0
+              ],
+              "scale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "txOffset": [
+                22,
+                34
+              ],
+              "txMirror": false,
+              "mcScale": 0.0,
+              "opacity": 100.0,
+              "hidden": false,
+              "children": [],
+              "parentIdentifier": "7\u0026k,\u0026_\u003d0rhG|n!\"\"4+M*",
+              "identifier": "u.vp%.\"Iz({(AYwW/HU9"
+            },
+            {
+              "name": "spike9",
+              "dimensions": [
+                1,
+                1,
+                2
+              ],
+              "position": [
+                0.0,
+                -0.9,
+                6.5
+              ],
+              "offset": [
+                -0.5,
+                -0.5,
+                0.0
+              ],
+              "rotation": [
+                31.3,
+                -0.0,
+                0.0
+              ],
+              "scale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "txOffset": [
+                34,
+                34
+              ],
+              "txMirror": false,
+              "mcScale": 0.0,
+              "opacity": 100.0,
+              "hidden": false,
+              "children": [],
+              "parentIdentifier": "7\u0026k,\u0026_\u003d0rhG|n!\"\"4+M*",
+              "identifier": "6i5jez_)@RFr5|hGVjBs"
+            },
+            {
+              "name": "ThighR",
+              "dimensions": [
+                3,
+                7,
+                4
+              ],
+              "position": [
+                -3.7,
+                1.6,
+                6.0
+              ],
+              "offset": [
+                -1.43,
+                -0.5,
+                -2.0
+              ],
+              "rotation": [
+                -11.0,
+                -0.0,
+                0.0
+              ],
+              "scale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "txOffset": [
+                0,
+                23
+              ],
+              "txMirror": false,
+              "mcScale": 0.0,
+              "opacity": 100.0,
+              "hidden": false,
+              "children": [
+                {
+                  "name": "LegR",
+                  "dimensions": [
+                    2,
+                    7,
+                    2
+                  ],
+                  "position": [
+                    0.0,
+                    4.3,
+                    1.9
+                  ],
+                  "offset": [
+                    -1.0,
+                    -0.5,
+                    0.0
+                  ],
+                  "rotation": [
+                    -19.0,
+                    -0.0,
+                    0.0
+                  ],
+                  "scale": [
+                    1.0,
+                    1.0,
+                    1.0
+                  ],
+                  "txOffset": [
+                    15,
+                    23
+                  ],
+                  "txMirror": false,
+                  "mcScale": 0.0,
+                  "opacity": 100.0,
+                  "hidden": false,
+                  "children": [
+                    {
+                      "name": "ToeR1",
+                      "dimensions": [
+                        1,
+                        2,
+                        4
+                      ],
+                      "position": [
+                        1.0,
+                        6.1,
+                        1.0
+                      ],
+                      "offset": [
+                        -0.5,
+                        -0.8,
+                        -3.1
+                      ],
+                      "rotation": [
+                        25.0,
+                        -10.0,
+                        0.0
+                      ],
+                      "scale": [
+                        1.0,
+                        1.0,
+                        1.0
+                      ],
+                      "txOffset": [
+                        2,
+                        64
+                      ],
+                      "txMirror": false,
+                      "mcScale": 0.0,
+                      "opacity": 100.0,
+                      "hidden": false,
+                      "children": [
+                        {
+                          "name": "ToeR1.1",
+                          "dimensions": [
+                            1,
+                            2,
+                            2
+                          ],
+                          "position": [
+                            0.0,
+                            0.0,
+                            -2.45
+                          ],
+                          "offset": [
+                            -0.5,
+                            -0.8,
+                            -2.5
+                          ],
+                          "rotation": [
+                            10.0,
+                            0.0,
+                            0.0
+                          ],
+                          "scale": [
+                            1.0,
+                            1.0,
+                            1.0
+                          ],
+                          "txOffset": [
+                            3,
+                            73
+                          ],
+                          "txMirror": true,
+                          "mcScale": 0.0,
+                          "opacity": 100.0,
+                          "hidden": false,
+                          "children": [],
+                          "parentIdentifier": "~4:*\u003dldhW`e$oH.7$Z@E",
+                          "identifier": "I+NV[0e7m\u003eBDaJ9wxHhP"
+                        }
+                      ],
+                      "parentIdentifier": "xkkQ!N5p04n6hHQ\u003c{_|M",
+                      "identifier": "~4:*\u003dldhW`e$oH.7$Z@E"
+                    },
+                    {
+                      "name": "ToeR2",
+                      "dimensions": [
+                        1,
+                        2,
+                        4
+                      ],
+                      "position": [
+                        0.0,
+                        5.9,
+                        0.4
+                      ],
+                      "offset": [
+                        -0.5,
+                        -0.8,
+                        -3.1
+                      ],
+                      "rotation": [
+                        30.0,
+                        0.0,
+                        0.0
+                      ],
+                      "scale": [
+                        1.0,
+                        1.0,
+                        1.0
+                      ],
+                      "txOffset": [
+                        2,
+                        64
+                      ],
+                      "txMirror": false,
+                      "mcScale": 0.0,
+                      "opacity": 100.0,
+                      "hidden": false,
+                      "children": [
+                        {
+                          "name": "ToeR2.1",
+                          "dimensions": [
+                            1,
+                            2,
+                            2
+                          ],
+                          "position": [
+                            0.0,
+                            0.0,
+                            -2.45
+                          ],
+                          "offset": [
+                            -0.5,
+                            -0.8,
+                            -2.5
+                          ],
+                          "rotation": [
+                            10.0,
+                            0.0,
+                            0.0
+                          ],
+                          "scale": [
+                            1.0,
+                            1.0,
+                            1.0
+                          ],
+                          "txOffset": [
+                            3,
+                            73
+                          ],
+                          "txMirror": true,
+                          "mcScale": 0.0,
+                          "opacity": 100.0,
+                          "hidden": false,
+                          "children": [],
+                          "parentIdentifier": "ACvg\"T[J\u003d2yJ_z\u003dU0.W@",
+                          "identifier": "\\W%j9:J\u003c3P:%@Ql5_[Nd"
+                        }
+                      ],
+                      "parentIdentifier": "xkkQ!N5p04n6hHQ\u003c{_|M",
+                      "identifier": "ACvg\"T[J\u003d2yJ_z\u003dU0.W@"
+                    },
+                    {
+                      "name": "ToeR3",
+                      "dimensions": [
+                        1,
+                        2,
+                        4
+                      ],
+                      "position": [
+                        -1.0,
+                        6.1,
+                        1.0
+                      ],
+                      "offset": [
+                        -0.5,
+                        -0.8,
+                        -3.1
+                      ],
+                      "rotation": [
+                        25.0,
+                        10.0,
+                        0.0
+                      ],
+                      "scale": [
+                        1.0,
+                        1.0,
+                        1.0
+                      ],
+                      "txOffset": [
+                        2,
+                        64
+                      ],
+                      "txMirror": false,
+                      "mcScale": 0.0,
+                      "opacity": 100.0,
+                      "hidden": false,
+                      "children": [
+                        {
+                          "name": "ToeR3.1",
+                          "dimensions": [
+                            1,
+                            2,
+                            2
+                          ],
+                          "position": [
+                            0.0,
+                            0.0,
+                            -2.45
+                          ],
+                          "offset": [
+                            -0.5,
+                            -0.8,
+                            -2.5
+                          ],
+                          "rotation": [
+                            10.0,
+                            0.0,
+                            0.0
+                          ],
+                          "scale": [
+                            1.0,
+                            1.0,
+                            1.0
+                          ],
+                          "txOffset": [
+                            3,
+                            73
+                          ],
+                          "txMirror": true,
+                          "mcScale": 0.0,
+                          "opacity": 100.0,
+                          "hidden": false,
+                          "children": [],
+                          "parentIdentifier": "8t8u qa5oDV8[%\u003e.}BQl",
+                          "identifier": "kuoU5NSa@OLOsR7q`,rO"
+                        }
+                      ],
+                      "parentIdentifier": "xkkQ!N5p04n6hHQ\u003c{_|M",
+                      "identifier": "8t8u qa5oDV8[%\u003e.}BQl"
+                    }
+                  ],
+                  "parentIdentifier": "\u003d@%YSGQ;]UfddmqG\u0027\u0027.e",
+                  "identifier": "xkkQ!N5p04n6hHQ\u003c{_|M"
+                }
+              ],
+              "parentIdentifier": "7\u0026k,\u0026_\u003d0rhG|n!\"\"4+M*",
+              "identifier": "\u003d@%YSGQ;]UfddmqG\u0027\u0027.e"
+            },
+            {
+              "name": "ThighL",
+              "dimensions": [
+                3,
+                7,
+                4
+              ],
+              "position": [
+                3.7,
+                1.6,
+                6.0
+              ],
+              "offset": [
+                -1.43,
+                -0.5,
+                -2.0
+              ],
+              "rotation": [
+                -11.0,
+                -0.0,
+                0.0
+              ],
+              "scale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "txOffset": [
+                0,
+                23
+              ],
+              "txMirror": true,
+              "mcScale": 0.0,
+              "opacity": 100.0,
+              "hidden": false,
+              "children": [
+                {
+                  "name": "LegL",
+                  "dimensions": [
+                    2,
+                    7,
+                    2
+                  ],
+                  "position": [
+                    0.0,
+                    4.3,
+                    1.9
+                  ],
+                  "offset": [
+                    -1.0,
+                    -0.5,
+                    0.0
+                  ],
+                  "rotation": [
+                    -19.0,
+                    -0.0,
+                    0.0
+                  ],
+                  "scale": [
+                    1.0,
+                    1.0,
+                    1.0
+                  ],
+                  "txOffset": [
+                    15,
+                    23
+                  ],
+                  "txMirror": true,
+                  "mcScale": 0.0,
+                  "opacity": 100.0,
+                  "hidden": false,
+                  "children": [
+                    {
+                      "name": "ToeL3",
+                      "dimensions": [
+                        1,
+                        2,
+                        4
+                      ],
+                      "position": [
+                        1.0,
+                        6.1,
+                        1.0
+                      ],
+                      "offset": [
+                        -0.5,
+                        -0.8,
+                        -3.1
+                      ],
+                      "rotation": [
+                        25.0,
+                        -10.0,
+                        0.0
+                      ],
+                      "scale": [
+                        1.0,
+                        1.0,
+                        1.0
+                      ],
+                      "txOffset": [
+                        2,
+                        64
+                      ],
+                      "txMirror": false,
+                      "mcScale": 0.0,
+                      "opacity": 100.0,
+                      "hidden": false,
+                      "children": [
+                        {
+                          "name": "ToeL3.1",
+                          "dimensions": [
+                            1,
+                            2,
+                            2
+                          ],
+                          "position": [
+                            0.0,
+                            0.0,
+                            -2.45
+                          ],
+                          "offset": [
+                            -0.5,
+                            -0.8,
+                            -2.5
+                          ],
+                          "rotation": [
+                            10.0,
+                            0.0,
+                            0.0
+                          ],
+                          "scale": [
+                            1.0,
+                            1.0,
+                            1.0
+                          ],
+                          "txOffset": [
+                            3,
+                            73
+                          ],
+                          "txMirror": false,
+                          "mcScale": 0.0,
+                          "opacity": 100.0,
+                          "hidden": false,
+                          "children": [],
+                          "parentIdentifier": "n.Dl\u0026X*7igOM@0_\u003cF*8c",
+                          "identifier": "Jh0?`xQ!e9uIMk\u0026snADg"
+                        }
+                      ],
+                      "parentIdentifier": "5AlY\"94bi(1wPBUg1U\u00265",
+                      "identifier": "n.Dl\u0026X*7igOM@0_\u003cF*8c"
+                    },
+                    {
+                      "name": "ToeL2",
+                      "dimensions": [
+                        1,
+                        2,
+                        4
+                      ],
+                      "position": [
+                        0.0,
+                        5.9,
+                        0.4
+                      ],
+                      "offset": [
+                        -0.5,
+                        -0.8,
+                        -3.1
+                      ],
+                      "rotation": [
+                        30.0,
+                        0.0,
+                        0.0
+                      ],
+                      "scale": [
+                        1.0,
+                        1.0,
+                        1.0
+                      ],
+                      "txOffset": [
+                        2,
+                        64
+                      ],
+                      "txMirror": false,
+                      "mcScale": 0.0,
+                      "opacity": 100.0,
+                      "hidden": false,
+                      "children": [
+                        {
+                          "name": "ToeL2.1",
+                          "dimensions": [
+                            1,
+                            2,
+                            2
+                          ],
+                          "position": [
+                            0.0,
+                            0.0,
+                            -2.45
+                          ],
+                          "offset": [
+                            -0.5,
+                            -0.8,
+                            -2.5
+                          ],
+                          "rotation": [
+                            10.0,
+                            0.0,
+                            0.0
+                          ],
+                          "scale": [
+                            1.0,
+                            1.0,
+                            1.0
+                          ],
+                          "txOffset": [
+                            3,
+                            73
+                          ],
+                          "txMirror": false,
+                          "mcScale": 0.0,
+                          "opacity": 100.0,
+                          "hidden": false,
+                          "children": [],
+                          "parentIdentifier": "E7H^d{q95gedyg_ivOCN",
+                          "identifier": "6q%(i(d\u0026j@Su:_-qnAO$"
+                        }
+                      ],
+                      "parentIdentifier": "5AlY\"94bi(1wPBUg1U\u00265",
+                      "identifier": "E7H^d{q95gedyg_ivOCN"
+                    },
+                    {
+                      "name": "ToeL1",
+                      "dimensions": [
+                        1,
+                        2,
+                        4
+                      ],
+                      "position": [
+                        -1.0,
+                        6.1,
+                        1.0
+                      ],
+                      "offset": [
+                        -0.5,
+                        -0.8,
+                        -3.1
+                      ],
+                      "rotation": [
+                        25.0,
+                        10.0,
+                        0.0
+                      ],
+                      "scale": [
+                        1.0,
+                        1.0,
+                        1.0
+                      ],
+                      "txOffset": [
+                        2,
+                        64
+                      ],
+                      "txMirror": false,
+                      "mcScale": 0.0,
+                      "opacity": 100.0,
+                      "hidden": false,
+                      "children": [
+                        {
+                          "name": "ToeL1.1",
+                          "dimensions": [
+                            1,
+                            2,
+                            2
+                          ],
+                          "position": [
+                            0.0,
+                            0.0,
+                            -2.45
+                          ],
+                          "offset": [
+                            -0.5,
+                            -0.8,
+                            -2.5
+                          ],
+                          "rotation": [
+                            10.0,
+                            0.0,
+                            0.0
+                          ],
+                          "scale": [
+                            1.0,
+                            1.0,
+                            1.0
+                          ],
+                          "txOffset": [
+                            3,
+                            73
+                          ],
+                          "txMirror": false,
+                          "mcScale": 0.0,
+                          "opacity": 100.0,
+                          "hidden": false,
+                          "children": [],
+                          "parentIdentifier": "\u003eg\u003cRw]o(W\"%ow\u0026?G`j.K",
+                          "identifier": "PkvzJg_k\u003e-3b}1;Vx]@\u0026"
+                        }
+                      ],
+                      "parentIdentifier": "5AlY\"94bi(1wPBUg1U\u00265",
+                      "identifier": "\u003eg\u003cRw]o(W\"%ow\u0026?G`j.K"
+                    }
+                  ],
+                  "parentIdentifier": "aoM4Y+glL\\/hN]RKLLb~",
+                  "identifier": "5AlY\"94bi(1wPBUg1U\u00265"
+                }
+              ],
+              "parentIdentifier": "7\u0026k,\u0026_\u003d0rhG|n!\"\"4+M*",
+              "identifier": "aoM4Y+glL\\/hN]RKLLb~"
+            }
+          ],
+          "parentIdentifier": "3;?lhgXI\u0027~|*u0YzbRLU",
+          "identifier": "7\u0026k,\u0026_\u003d0rhG|n!\"\"4+M*"
+        },
+        {
+          "name": "Neck1",
+          "dimensions": [
+            5,
+            6,
+            4
+          ],
+          "position": [
+            0.0,
+            0.5,
+            1.8
+          ],
+          "offset": [
+            -2.5,
+            -2.0,
+            -5.0
+          ],
+          "rotation": [
+            -10.0,
+            -9.0,
+            0.0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "txOffset": [
+            55,
+            43
+          ],
+          "txMirror": false,
+          "mcScale": 0.0,
+          "opacity": 100.0,
+          "hidden": false,
+          "children": [
+            {
+              "name": "Neck2",
+              "dimensions": [
+                4,
+                5,
+                7
+              ],
+              "position": [
+                0.0,
+                1.2,
+                -4.7
+              ],
+              "offset": [
+                -2.0,
+                -2.7,
+                -5.1
+              ],
+              "rotation": [
+                -12.65,
+                0.0,
+                0.0
+              ],
+              "scale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "txOffset": [
+                23,
+                39
+              ],
+              "txMirror": false,
+              "mcScale": 0.0,
+              "opacity": 100.0,
+              "hidden": false,
+              "children": [
+                {
+                  "name": "Neck3",
+                  "dimensions": [
+                    3,
+                    4,
+                    8
+                  ],
+                  "position": [
+                    0.0,
+                    -0.8,
+                    -4.4
+                  ],
+                  "offset": [
+                    -1.5,
+                    -1.6,
+                    -7.1
+                  ],
+                  "rotation": [
+                    18.43,
+                    -0.0,
+                    0.0
+                  ],
+                  "scale": [
+                    1.0,
+                    1.0,
+                    1.0
+                  ],
+                  "txOffset": [
+                    24,
+                    63
+                  ],
+                  "txMirror": false,
+                  "mcScale": 0.0,
+                  "opacity": 100.0,
+                  "hidden": false,
+                  "children": [
+                    {
+                      "name": "spike1",
+                      "dimensions": [
+                        1,
+                        1,
+                        2
+                      ],
+                      "position": [
+                        0.0,
+                        -1.4,
+                        -4.4
+                      ],
+                      "offset": [
+                        -0.5,
+                        -0.5,
+                        0.0
+                      ],
+                      "rotation": [
+                        28.7,
+                        -0.0,
+                        0.0
+                      ],
+                      "scale": [
+                        1.0,
+                        1.0,
+                        1.0
+                      ],
+                      "txOffset": [
+                        34,
+                        34
+                      ],
+                      "txMirror": false,
+                      "mcScale": 0.0,
+                      "opacity": 100.0,
+                      "hidden": false,
+                      "children": [],
+                      "parentIdentifier": "\\\u0026tfrJC \u003c\u003e#7gbw|Cg^\\",
+                      "identifier": "[^NdGx\u0026i`,!;sm^fk\u003c2A"
+                    },
+                    {
+                      "name": "Head",
+                      "dimensions": [
+                        5,
+                        4,
+                        4
+                      ],
+                      "position": [
+                        0.0,
+                        0.1,
+                        -5.5
+                      ],
+                      "offset": [
+                        -2.5,
+                        -2.2,
+                        -4.0
+                      ],
+                      "rotation": [
+                        18.0,
+                        7.0,
+                        7.0
+                      ],
+                      "scale": [
+                        1.0,
+                        1.0,
+                        1.0
+                      ],
+                      "txOffset": [
+                        6,
+                        54
+                      ],
+                      "txMirror": false,
+                      "mcScale": 0.0,
+                      "opacity": 100.0,
+                      "hidden": false,
+                      "children": [
+                        {
+                          "name": "HeadFront",
+                          "dimensions": [
+                            4,
+                            3,
+                            6
+                          ],
+                          "position": [
+                            0.0,
+                            -0.63,
+                            -3.3
+                          ],
+                          "offset": [
+                            -2.0,
+                            -1.5,
+                            -5.0
+                          ],
+                          "rotation": [
+                            -11.83,
+                            -0.0,
+                            0.0
+                          ],
+                          "scale": [
+                            1.0,
+                            1.0,
+                            1.0
+                          ],
+                          "txOffset": [
+                            5,
+                            43
+                          ],
+                          "txMirror": false,
+                          "mcScale": 0.0,
+                          "opacity": 100.0,
+                          "hidden": false,
+                          "children": [
+                            {
+                              "name": "Teeth2",
+                              "dimensions": [
+                                2,
+                                1,
+                                5
+                              ],
+                              "position": [
+                                0.4,
+                                -0.7,
+                                0.1
+                              ],
+                              "offset": [
+                                -0.48,
+                                2.0,
+                                -5.02
+                              ],
+                              "rotation": [
+                                0.0,
+                                -0.0,
+                                0.0
+                              ],
+                              "scale": [
+                                1.0,
+                                1.0,
+                                1.0
+                              ],
+                              "txOffset": [
+                                6,
+                                16
+                              ],
+                              "txMirror": true,
+                              "mcScale": 0.0,
+                              "opacity": 100.0,
+                              "hidden": false,
+                              "children": [],
+                              "parentIdentifier": "0nq-B\u003c\u0026Rk!ZQ\u003e;(Ng:2K",
+                              "identifier": "5`HHUK3 *B]wA-v0qzil"
+                            },
+                            {
+                              "name": "Teeth1",
+                              "dimensions": [
+                                2,
+                                1,
+                                5
+                              ],
+                              "position": [
+                                -0.4,
+                                -0.7,
+                                0.1
+                              ],
+                              "offset": [
+                                -1.52,
+                                2.0,
+                                -5.02
+                              ],
+                              "rotation": [
+                                0.0,
+                                -0.0,
+                                0.0
+                              ],
+                              "scale": [
+                                1.0,
+                                1.0,
+                                1.0
+                              ],
+                              "txOffset": [
+                                6,
+                                16
+                              ],
+                              "txMirror": false,
+                              "mcScale": 0.0,
+                              "opacity": 100.0,
+                              "hidden": false,
+                              "children": [],
+                              "parentIdentifier": "0nq-B\u003c\u0026Rk!ZQ\u003e;(Ng:2K",
+                              "identifier": "p\\|X_#($#@fvg4l{}nyY"
+                            },
+                            {
+                              "name": "HornR4",
+                              "dimensions": [
+                                1,
+                                2,
+                                2
+                              ],
+                              "position": [
+                                0.0,
+                                -0.87,
+                                -5.6
+                              ],
+                              "offset": [
+                                -0.5,
+                                0.0,
+                                1.0
+                              ],
+                              "rotation": [
+                                41.74,
+                                0.0,
+                                0.0
+                              ],
+                              "scale": [
+                                1.0,
+                                1.0,
+                                1.0
+                              ],
+                              "txOffset": [
+                                71,
+                                36
+                              ],
+                              "txMirror": false,
+                              "mcScale": 0.0,
+                              "opacity": 100.0,
+                              "hidden": false,
+                              "children": [
+                                {
+                                  "name": "HornR5",
+                                  "dimensions": [
+                                    1,
+                                    1,
+                                    2
+                                  ],
+                                  "position": [
+                                    0.0,
+                                    0.77,
+                                    2.5
+                                  ],
+                                  "offset": [
+                                    -0.5,
+                                    -0.83,
+                                    -0.0
+                                  ],
+                                  "rotation": [
+                                    -18.26,
+                                    0.0,
+                                    0.0
+                                  ],
+                                  "scale": [
+                                    1.0,
+                                    1.0,
+                                    1.0
+                                  ],
+                                  "txOffset": [
+                                    62,
+                                    30
+                                  ],
+                                  "txMirror": true,
+                                  "mcScale": 0.0,
+                                  "opacity": 100.0,
+                                  "hidden": false,
+                                  "children": [],
+                                  "parentIdentifier": "rIfm$Ki\u003e8~\"\u0027TF[iq9X;",
+                                  "identifier": "Ny\u003e?oVJ|hd\u003c\u003c]4B \\VJC"
+                                }
+                              ],
+                              "parentIdentifier": "0nq-B\u003c\u0026Rk!ZQ\u003e;(Ng:2K",
+                              "identifier": "rIfm$Ki\u003e8~\"\u0027TF[iq9X;"
+                            }
+                          ],
+                          "parentIdentifier": ".$6X[UMN0QFss\"]#U\u003ccb",
+                          "identifier": "0nq-B\u003c\u0026Rk!ZQ\u003e;(Ng:2K"
+                        },
+                        {
+                          "name": "Jaw",
+                          "dimensions": [
+                            4,
+                            1,
+                            6
+                          ],
+                          "position": [
+                            0.0,
+                            1.4,
+                            -3.2
+                          ],
+                          "offset": [
+                            -2.0,
+                            -0.4,
+                            -5.5
+                          ],
+                          "rotation": [
+                            31.87,
+                            0.0,
+                            0.0
+                          ],
+                          "scale": [
+                            1.0,
+                            1.0,
+                            1.0
+                          ],
+                          "txOffset": [
+                            33,
+                            55
+                          ],
+                          "txMirror": false,
+                          "mcScale": 0.0,
+                          "opacity": 100.0,
+                          "hidden": false,
+                          "children": [
+                            {
+                              "name": "Teeth3",
+                              "dimensions": [
+                                2,
+                                2,
+                                4
+                              ],
+                              "position": [
+                                -0.6,
+                                0.1,
+                                -0.3
+                              ],
+                              "offset": [
+                                -0.59,
+                                0.1,
+                                -5.3
+                              ],
+                              "rotation": [
+                                3.0,
+                                0.0,
+                                -180.0
+                              ],
+                              "scale": [
+                                1.0,
+                                1.0,
+                                1.0
+                              ],
+                              "txOffset": [
+                                7,
+                                17
+                              ],
+                              "txMirror": true,
+                              "mcScale": 0.0,
+                              "opacity": 100.0,
+                              "hidden": false,
+                              "children": [],
+                              "parentIdentifier": "~]JjWj39F8^ @|i0Xew(",
+                              "identifier": "u]yM8\\u22\u0026y#\u0027B\\/e; h"
+                            },
+                            {
+                              "name": "Teeth4",
+                              "dimensions": [
+                                2,
+                                2,
+                                4
+                              ],
+                              "position": [
+                                0.6,
+                                0.1,
+                                -0.3
+                              ],
+                              "offset": [
+                                -1.41,
+                                0.1,
+                                -5.3
+                              ],
+                              "rotation": [
+                                3.0,
+                                0.0,
+                                -180.0
+                              ],
+                              "scale": [
+                                1.0,
+                                1.0,
+                                1.0
+                              ],
+                              "txOffset": [
+                                7,
+                                17
+                              ],
+                              "txMirror": false,
+                              "mcScale": 0.0,
+                              "opacity": 100.0,
+                              "hidden": false,
+                              "children": [],
+                              "parentIdentifier": "~]JjWj39F8^ @|i0Xew(",
+                              "identifier": "\u0026lt~[\u003eF\u0026M-a\\0`[r%- D"
+                            }
+                          ],
+                          "parentIdentifier": ".$6X[UMN0QFss\"]#U\u003ccb",
+                          "identifier": "~]JjWj39F8^ @|i0Xew("
+                        },
+                        {
+                          "name": "HornR",
+                          "dimensions": [
+                            1,
+                            2,
+                            4
+                          ],
+                          "position": [
+                            -1.8,
+                            -1.6,
+                            -1.6
+                          ],
+                          "offset": [
+                            -0.5,
+                            -0.5,
+                            0.0
+                          ],
+                          "rotation": [
+                            10.0,
+                            -19.0,
+                            -11.0
+                          ],
+                          "scale": [
+                            1.0,
+                            1.0,
+                            1.0
+                          ],
+                          "txOffset": [
+                            59,
+                            34
+                          ],
+                          "txMirror": false,
+                          "mcScale": 0.0,
+                          "opacity": 100.0,
+                          "hidden": false,
+                          "children": [
+                            {
+                              "name": "HornR2",
+                              "dimensions": [
+                                1,
+                                1,
+                                3
+                              ],
+                              "position": [
+                                -0.5,
+                                0.3,
+                                3.3
+                              ],
+                              "offset": [
+                                0.01,
+                                -0.8,
+                                0.0
+                              ],
+                              "rotation": [
+                                -4.0,
+                                0.0,
+                                0.0
+                              ],
+                              "scale": [
+                                1.0,
+                                1.0,
+                                1.0
+                              ],
+                              "txOffset": [
+                                46,
+                                36
+                              ],
+                              "txMirror": false,
+                              "mcScale": 0.0,
+                              "opacity": 100.0,
+                              "hidden": false,
+                              "children": [
+                                {
+                                  "name": "HornR3",
+                                  "dimensions": [
+                                    1,
+                                    1,
+                                    2
+                                  ],
+                                  "position": [
+                                    0.5,
+                                    0.0,
+                                    2.6
+                                  ],
+                                  "offset": [
+                                    -0.51,
+                                    -0.8,
+                                    -0.0
+                                  ],
+                                  "rotation": [
+                                    3.0,
+                                    0.0,
+                                    0.0
+                                  ],
+                                  "scale": [
+                                    1.0,
+                                    1.0,
+                                    1.0
+                                  ],
+                                  "txOffset": [
+                                    55,
+                                    30
+                                  ],
+                                  "txMirror": true,
+                                  "mcScale": 0.0,
+                                  "opacity": 100.0,
+                                  "hidden": false,
+                                  "children": [],
+                                  "parentIdentifier": "//c97NH7\u0026e[waJre3$\\Z",
+                                  "identifier": "X[G+\"bSPtLNc\u0026L%jgX+\u0026"
+                                }
+                              ],
+                              "parentIdentifier": "|S\u003cS$#O53k?NsJ02./Bu",
+                              "identifier": "//c97NH7\u0026e[waJre3$\\Z"
+                            }
+                          ],
+                          "parentIdentifier": ".$6X[UMN0QFss\"]#U\u003ccb",
+                          "identifier": "|S\u003cS$#O53k?NsJ02./Bu"
+                        },
+                        {
+                          "name": "HornL",
+                          "dimensions": [
+                            1,
+                            2,
+                            4
+                          ],
+                          "position": [
+                            1.8,
+                            -1.6,
+                            -1.6
+                          ],
+                          "offset": [
+                            -0.5,
+                            -0.5,
+                            0.0
+                          ],
+                          "rotation": [
+                            10.0,
+                            19.0,
+                            11.0
+                          ],
+                          "scale": [
+                            1.0,
+                            1.0,
+                            1.0
+                          ],
+                          "txOffset": [
+                            59,
+                            34
+                          ],
+                          "txMirror": true,
+                          "mcScale": 0.0,
+                          "opacity": 100.0,
+                          "hidden": false,
+                          "children": [
+                            {
+                              "name": "HornL2",
+                              "dimensions": [
+                                1,
+                                1,
+                                3
+                              ],
+                              "position": [
+                                -0.5,
+                                0.3,
+                                3.3
+                              ],
+                              "offset": [
+                                -0.01,
+                                -0.8,
+                                -0.0
+                              ],
+                              "rotation": [
+                                -4.0,
+                                0.0,
+                                0.0
+                              ],
+                              "scale": [
+                                1.0,
+                                1.0,
+                                1.0
+                              ],
+                              "txOffset": [
+                                46,
+                                36
+                              ],
+                              "txMirror": true,
+                              "mcScale": 0.0,
+                              "opacity": 100.0,
+                              "hidden": false,
+                              "children": [
+                                {
+                                  "name": "HornL3",
+                                  "dimensions": [
+                                    1,
+                                    1,
+                                    2
+                                  ],
+                                  "position": [
+                                    0.5,
+                                    0.0,
+                                    2.6
+                                  ],
+                                  "offset": [
+                                    -0.51,
+                                    -0.8,
+                                    -0.0
+                                  ],
+                                  "rotation": [
+                                    3.0,
+                                    0.0,
+                                    0.0
+                                  ],
+                                  "scale": [
+                                    1.0,
+                                    1.0,
+                                    1.0
+                                  ],
+                                  "txOffset": [
+                                    55,
+                                    30
+                                  ],
+                                  "txMirror": true,
+                                  "mcScale": 0.0,
+                                  "opacity": 100.0,
+                                  "hidden": false,
+                                  "children": [],
+                                  "parentIdentifier": "\u003d\u003cxKxn7$w8^e-i%PFb c",
+                                  "identifier": "\u0026NG\u0026[*4^e\u003e*nCDn%bK#g"
+                                }
+                              ],
+                              "parentIdentifier": ":{\u003e:B %+UBz45\u003dbFH_Yp",
+                              "identifier": "\u003d\u003cxKxn7$w8^e-i%PFb c"
+                            }
+                          ],
+                          "parentIdentifier": ".$6X[UMN0QFss\"]#U\u003ccb",
+                          "identifier": ":{\u003e:B %+UBz45\u003dbFH_Yp"
+                        },
+                        {
+                          "name": "HornR4",
+                          "dimensions": [
+                            1,
+                            1,
+                            4
+                          ],
+                          "position": [
+                            -1.8,
+                            -0.1,
+                            -1.8
+                          ],
+                          "offset": [
+                            -0.5,
+                            0.0,
+                            0.0
+                          ],
+                          "rotation": [
+                            -10.0,
+                            -18.0,
+                            0.0
+                          ],
+                          "scale": [
+                            1.0,
+                            1.0,
+                            1.0
+                          ],
+                          "txOffset": [
+                            36,
+                            28
+                          ],
+                          "txMirror": false,
+                          "mcScale": 0.0,
+                          "opacity": 100.0,
+                          "hidden": false,
+                          "children": [
+                            {
+                              "name": "HornR5",
+                              "dimensions": [
+                                1,
+                                1,
+                                2
+                              ],
+                              "position": [
+                                0.0,
+                                0.8,
+                                3.6
+                              ],
+                              "offset": [
+                                -0.47,
+                                -0.8,
+                                -0.0
+                              ],
+                              "rotation": [
+                                5.0,
+                                0.0,
+                                0.0
+                              ],
+                              "scale": [
+                                1.0,
+                                1.0,
+                                1.0
+                              ],
+                              "txOffset": [
+                                47,
+                                30
+                              ],
+                              "txMirror": true,
+                              "mcScale": 0.0,
+                              "opacity": 100.0,
+                              "hidden": false,
+                              "children": [],
+                              "parentIdentifier": "c~}WJE{i|iK7TqL`4q,!",
+                              "identifier": "R1~{ #W*w9p#ta\"Ure*J"
+                            }
+                          ],
+                          "parentIdentifier": ".$6X[UMN0QFss\"]#U\u003ccb",
+                          "identifier": "c~}WJE{i|iK7TqL`4q,!"
+                        },
+                        {
+                          "name": "HornL4",
+                          "dimensions": [
+                            1,
+                            1,
+                            4
+                          ],
+                          "position": [
+                            1.8,
+                            -0.1,
+                            -1.8
+                          ],
+                          "offset": [
+                            -0.5,
+                            0.0,
+                            0.0
+                          ],
+                          "rotation": [
+                            -10.0,
+                            18.0,
+                            0.0
+                          ],
+                          "scale": [
+                            1.0,
+                            1.0,
+                            1.0
+                          ],
+                          "txOffset": [
+                            36,
+                            28
+                          ],
+                          "txMirror": true,
+                          "mcScale": 0.0,
+                          "opacity": 100.0,
+                          "hidden": false,
+                          "children": [
+                            {
+                              "name": "HornL5",
+                              "dimensions": [
+                                1,
+                                1,
+                                2
+                              ],
+                              "position": [
+                                0.0,
+                                0.8,
+                                3.6
+                              ],
+                              "offset": [
+                                -0.53,
+                                -0.8,
+                                -0.0
+                              ],
+                              "rotation": [
+                                5.0,
+                                0.0,
+                                0.0
+                              ],
+                              "scale": [
+                                1.0,
+                                1.0,
+                                1.0
+                              ],
+                              "txOffset": [
+                                47,
+                                30
+                              ],
+                              "txMirror": true,
+                              "mcScale": 0.0,
+                              "opacity": 100.0,
+                              "hidden": false,
+                              "children": [],
+                              "parentIdentifier": "ec\"C4GuHm;tt\u003d:\u003eI$O\u003e@",
+                              "identifier": "bm9B\u0027pq]et4\u003eRA01Tg{\u003c"
+                            }
+                          ],
+                          "parentIdentifier": ".$6X[UMN0QFss\"]#U\u003ccb",
+                          "identifier": "ec\"C4GuHm;tt\u003d:\u003eI$O\u003e@"
+                        },
+                        {
+                          "name": "HornR4",
+                          "dimensions": [
+                            1,
+                            1,
+                            4
+                          ],
+                          "position": [
+                            -0.8,
+                            -2.1,
+                            -1.8
+                          ],
+                          "offset": [
+                            -0.5,
+                            0.0,
+                            0.0
+                          ],
+                          "rotation": [
+                            20.0,
+                            -18.0,
+                            0.0
+                          ],
+                          "scale": [
+                            1.0,
+                            1.0,
+                            1.0
+                          ],
+                          "txOffset": [
+                            59,
+                            34
+                          ],
+                          "txMirror": false,
+                          "mcScale": 0.0,
+                          "opacity": 100.0,
+                          "hidden": false,
+                          "children": [
+                            {
+                              "name": "HornR5",
+                              "dimensions": [
+                                1,
+                                1,
+                                2
+                              ],
+                              "position": [
+                                0.0,
+                                0.8,
+                                3.6
+                              ],
+                              "offset": [
+                                -0.47,
+                                -0.8,
+                                -0.0
+                              ],
+                              "rotation": [
+                                3.0,
+                                0.0,
+                                0.0
+                              ],
+                              "scale": [
+                                1.0,
+                                1.0,
+                                1.0
+                              ],
+                              "txOffset": [
+                                47,
+                                30
+                              ],
+                              "txMirror": true,
+                              "mcScale": 0.0,
+                              "opacity": 100.0,
+                              "hidden": false,
+                              "children": [],
+                              "parentIdentifier": "{TDH;+ Co^]k`XhGvG;4",
+                              "identifier": "r^h7.7\u003dxx9Y\u003cBPckF34{"
+                            }
+                          ],
+                          "parentIdentifier": ".$6X[UMN0QFss\"]#U\u003ccb",
+                          "identifier": "{TDH;+ Co^]k`XhGvG;4"
+                        },
+                        {
+                          "name": "HornR4",
+                          "dimensions": [
+                            1,
+                            1,
+                            4
+                          ],
+                          "position": [
+                            0.8,
+                            -2.1,
+                            -1.8
+                          ],
+                          "offset": [
+                            -0.5,
+                            0.0,
+                            0.0
+                          ],
+                          "rotation": [
+                            20.0,
+                            18.0,
+                            0.0
+                          ],
+                          "scale": [
+                            1.0,
+                            1.0,
+                            1.0
+                          ],
+                          "txOffset": [
+                            59,
+                            34
+                          ],
+                          "txMirror": false,
+                          "mcScale": 0.0,
+                          "opacity": 100.0,
+                          "hidden": false,
+                          "children": [
+                            {
+                              "name": "HornR5",
+                              "dimensions": [
+                                1,
+                                1,
+                                2
+                              ],
+                              "position": [
+                                0.0,
+                                0.8,
+                                3.6
+                              ],
+                              "offset": [
+                                -0.47,
+                                -0.8,
+                                -0.0
+                              ],
+                              "rotation": [
+                                3.0,
+                                0.0,
+                                0.0
+                              ],
+                              "scale": [
+                                1.0,
+                                1.0,
+                                1.0
+                              ],
+                              "txOffset": [
+                                47,
+                                30
+                              ],
+                              "txMirror": true,
+                              "mcScale": 0.0,
+                              "opacity": 100.0,
+                              "hidden": false,
+                              "children": [],
+                              "parentIdentifier": "*HJ@,wvbS\u003eOHJou_\\KS~",
+                              "identifier": "S;EN_F\\bzCR(L-A`n6b\""
+                            }
+                          ],
+                          "parentIdentifier": ".$6X[UMN0QFss\"]#U\u003ccb",
+                          "identifier": "*HJ@,wvbS\u003eOHJou_\\KS~"
+                        }
+                      ],
+                      "parentIdentifier": "\\\u0026tfrJC \u003c\u003e#7gbw|Cg^\\",
+                      "identifier": ".$6X[UMN0QFss\"]#U\u003ccb"
+                    },
+                    {
+                      "name": "spike2",
+                      "dimensions": [
+                        1,
+                        1,
+                        2
+                      ],
+                      "position": [
+                        0.0,
+                        -1.1,
+                        -1.2
+                      ],
+                      "offset": [
+                        -0.5,
+                        -0.5,
+                        0.0
+                      ],
+                      "rotation": [
+                        33.91,
+                        -0.0,
+                        0.0
+                      ],
+                      "scale": [
+                        1.0,
+                        1.0,
+                        1.0
+                      ],
+                      "txOffset": [
+                        34,
+                        34
+                      ],
+                      "txMirror": false,
+                      "mcScale": 0.0,
+                      "opacity": 100.0,
+                      "hidden": false,
+                      "children": [],
+                      "parentIdentifier": "\\\u0026tfrJC \u003c\u003e#7gbw|Cg^\\",
+                      "identifier": " :\u0026\u0027vtKh w\u0026dQj3\"1Utq"
+                    }
+                  ],
+                  "parentIdentifier": ".[byx0\\YiZ\\]PnuF{+,Y",
+                  "identifier": "\\\u0026tfrJC \u003c\u003e#7gbw|Cg^\\"
+                },
+                {
+                  "name": "spike3",
+                  "dimensions": [
+                    1,
+                    1,
+                    2
+                  ],
+                  "position": [
+                    0.0,
+                    -2.3,
+                    -2.4
+                  ],
+                  "offset": [
+                    -0.5,
+                    -0.5,
+                    0.0
+                  ],
+                  "rotation": [
+                    51.75,
+                    -0.0,
+                    0.0
+                  ],
+                  "scale": [
+                    1.0,
+                    1.0,
+                    1.0
+                  ],
+                  "txOffset": [
+                    34,
+                    34
+                  ],
+                  "txMirror": false,
+                  "mcScale": 0.0,
+                  "opacity": 100.0,
+                  "hidden": false,
+                  "children": [],
+                  "parentIdentifier": ".[byx0\\YiZ\\]PnuF{+,Y",
+                  "identifier": "\u0027fs\u003e8#\\zK0gw,WHNwEpN"
+                }
+              ],
+              "parentIdentifier": "f\u003dilw%n]gYM0\u003d}iWl_Yu",
+              "identifier": ".[byx0\\YiZ\\]PnuF{+,Y"
+            },
+            {
+              "name": "spike4",
+              "dimensions": [
+                1,
+                1,
+                2
+              ],
+              "position": [
+                0.0,
+                -1.6,
+                -4.0
+              ],
+              "offset": [
+                -0.5,
+                -0.5,
+                0.0
+              ],
+              "rotation": [
+                39.13,
+                -0.0,
+                0.0
+              ],
+              "scale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "txOffset": [
+                34,
+                34
+              ],
+              "txMirror": false,
+              "mcScale": 0.0,
+              "opacity": 100.0,
+              "hidden": false,
+              "children": [],
+              "parentIdentifier": "f\u003dilw%n]gYM0\u003d}iWl_Yu",
+              "identifier": "|~\u0027-pRb/oc_FEzYQW_%O"
+            }
+          ],
+          "parentIdentifier": "3;?lhgXI\u0027~|*u0YzbRLU",
+          "identifier": "f\u003dilw%n]gYM0\u003d}iWl_Yu"
+        },
+        {
+          "name": "spike5",
+          "dimensions": [
+            1,
+            1,
+            2
+          ],
+          "position": [
+            0.0,
+            -1.5,
+            1.0
+          ],
+          "offset": [
+            -0.5,
+            -0.5,
+            0.0
+          ],
+          "rotation": [
+            33.91,
+            -0.0,
+            0.0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "txOffset": [
+            34,
+            34
+          ],
+          "txMirror": false,
+          "mcScale": 0.0,
+          "opacity": 100.0,
+          "hidden": false,
+          "children": [],
+          "parentIdentifier": "3;?lhgXI\u0027~|*u0YzbRLU",
+          "identifier": "0_:ozdt^ud-bm\"mcdHV\u003d"
+        },
+        {
+          "name": "spike6",
+          "dimensions": [
+            1,
+            1,
+            3
+          ],
+          "position": [
+            0.0,
+            -1.1,
+            3.5
+          ],
+          "offset": [
+            -0.5,
+            -0.5,
+            0.0
+          ],
+          "rotation": [
+            36.52,
+            0.0,
+            0.0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "txOffset": [
+            22,
+            34
+          ],
+          "txMirror": false,
+          "mcScale": 0.0,
+          "opacity": 100.0,
+          "hidden": false,
+          "children": [],
+          "parentIdentifier": "3;?lhgXI\u0027~|*u0YzbRLU",
+          "identifier": "\"%_f(k2+/dizrT:^xhRC"
+        },
+        {
+          "name": "spike7",
+          "dimensions": [
+            1,
+            1,
+            3
+          ],
+          "position": [
+            0.0,
+            -1.0,
+            6.5
+          ],
+          "offset": [
+            -0.5,
+            -0.5,
+            0.0
+          ],
+          "rotation": [
+            31.3,
+            -0.0,
+            0.0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "txOffset": [
+            22,
+            34
+          ],
+          "txMirror": true,
+          "mcScale": 0.0,
+          "opacity": 100.0,
+          "hidden": false,
+          "children": [],
+          "parentIdentifier": "3;?lhgXI\u0027~|*u0YzbRLU",
+          "identifier": "{\u003c_i^ \"o)4\\K[[VU5n`A"
+        },
+        {
+          "name": "armL1",
+          "dimensions": [
+            2,
+            13,
+            4
+          ],
+          "position": [
+            3.7,
+            -0.7,
+            3.0
+          ],
+          "offset": [
+            -1.0,
+            -1.5,
+            -2.0
+          ],
+          "rotation": [
+            41.0,
+            40.0,
+            -70.0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "txOffset": [
+            170,
+            31
+          ],
+          "txMirror": true,
+          "mcScale": 0.0,
+          "opacity": 100.0,
+          "hidden": false,
+          "children": [
+            {
+              "name": "armL2",
+              "dimensions": [
+                2,
+                21,
+                3
+              ],
+              "position": [
+                -0.1,
+                11.3,
+                -0.1
+              ],
+              "offset": [
+                -1.0,
+                -1.5,
+                -1.4
+              ],
+              "rotation": [
+                -85.0,
+                0.0,
+                32.0
+              ],
+              "scale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "txOffset": [
+                189,
+                27
+              ],
+              "txMirror": true,
+              "mcScale": 0.0,
+              "opacity": 100.0,
+              "hidden": false,
+              "children": [
+                {
+                  "name": "fingerL1.1",
+                  "dimensions": [
+                    1,
+                    18,
+                    2
+                  ],
+                  "position": [
+                    -0.5,
+                    19.3,
+                    -0.1
+                  ],
+                  "offset": [
+                    -0.5,
+                    -0.5,
+                    -1.0
+                  ],
+                  "rotation": [
+                    120.0,
+                    -0.0,
+                    0.0
+                  ],
+                  "scale": [
+                    1.0,
+                    1.0,
+                    1.0
+                  ],
+                  "txOffset": [
+                    145,
+                    23
+                  ],
+                  "txMirror": true,
+                  "mcScale": 0.0,
+                  "opacity": 100.0,
+                  "hidden": false,
+                  "children": [
+                    {
+                      "name": "fingerL1.2",
+                      "dimensions": [
+                        1,
+                        17,
+                        2
+                      ],
+                      "position": [
+                        0.0,
+                        17.4,
+                        0.1
+                      ],
+                      "offset": [
+                        -0.52,
+                        -0.5,
+                        -1.0
+                      ],
+                      "rotation": [
+                        10.0,
+                        -0.0,
+                        0.0
+                      ],
+                      "scale": [
+                        1.0,
+                        1.0,
+                        1.0
+                      ],
+                      "txOffset": [
+                        152,
+                        23
+                      ],
+                      "txMirror": true,
+                      "mcScale": 0.0,
+                      "opacity": 100.0,
+                      "hidden": false,
+                      "children": [],
+                      "parentIdentifier": "% X{O6.J,\u003dxOX6GOxR8N",
+                      "identifier": "\\iO{Xl_n\u003e`II5TLHFPgE"
+                    },
+                    {
+                      "name": "membraneL1",
+                      "dimensions": [
+                        0,
+                        33,
+                        18
+                      ],
+                      "position": [
+                        -0.5,
+                        0.4,
+                        -0.5
+                      ],
+                      "offset": [
+                        0.5,
+                        -1.0,
+                        0.0
+                      ],
+                      "rotation": [
+                        5.22,
+                        0.0,
+                        0.0
+                      ],
+                      "scale": [
+                        1.0,
+                        1.0,
+                        1.0
+                      ],
+                      "txOffset": [
+                        54,
+                        73
+                      ],
+                      "txMirror": true,
+                      "mcScale": 0.0,
+                      "opacity": 100.0,
+                      "hidden": false,
+                      "children": [],
+                      "parentIdentifier": "% X{O6.J,\u003dxOX6GOxR8N",
+                      "identifier": "ML51L{ \u00263m,Q7$pDL|\\O"
+                    }
+                  ],
+                  "parentIdentifier": "{*f xPQwzWV\\xC\u0026tcNzQ",
+                  "identifier": "% X{O6.J,\u003dxOX6GOxR8N"
+                },
+                {
+                  "name": "fingerL2.1",
+                  "dimensions": [
+                    1,
+                    17,
+                    2
+                  ],
+                  "position": [
+                    -0.3,
+                    18.6,
+                    -0.1
+                  ],
+                  "offset": [
+                    -0.5,
+                    -0.5,
+                    -1.0
+                  ],
+                  "rotation": [
+                    130.0,
+                    -0.0,
+                    0.0
+                  ],
+                  "scale": [
+                    1.0,
+                    1.0,
+                    1.0
+                  ],
+                  "txOffset": [
+                    145,
+                    23
+                  ],
+                  "txMirror": true,
+                  "mcScale": 0.0,
+                  "opacity": 100.0,
+                  "hidden": false,
+                  "children": [
+                    {
+                      "name": "fingerL2.2",
+                      "dimensions": [
+                        1,
+                        16,
+                        2
+                      ],
+                      "position": [
+                        0.0,
+                        16.4,
+                        0.1
+                      ],
+                      "offset": [
+                        -0.52,
+                        -0.5,
+                        -1.0
+                      ],
+                      "rotation": [
+                        10.0,
+                        -0.0,
+                        0.0
+                      ],
+                      "scale": [
+                        1.0,
+                        1.0,
+                        1.0
+                      ],
+                      "txOffset": [
+                        160,
+                        23
+                      ],
+                      "txMirror": true,
+                      "mcScale": 0.0,
+                      "opacity": 100.0,
+                      "hidden": false,
+                      "children": [],
+                      "parentIdentifier": "\u002724K`V+%\"n9\\-~I\u0026Jr.:",
+                      "identifier": "H.\u003cwc^.7~rluNSi[s-\u003dH"
+                    },
+                    {
+                      "name": "membraneL2",
+                      "dimensions": [
+                        0,
+                        32,
+                        18
+                      ],
+                      "position": [
+                        -0.5,
+                        0.4,
+                        -0.9
+                      ],
+                      "offset": [
+                        0.5,
+                        -0.5,
+                        0.0
+                      ],
+                      "rotation": [
+                        5.22,
+                        0.0,
+                        0.0
+                      ],
+                      "scale": [
+                        1.0,
+                        1.0,
+                        1.0
+                      ],
+                      "txOffset": [
+                        54,
+                        75
+                      ],
+                      "txMirror": true,
+                      "mcScale": 0.0,
+                      "opacity": 100.0,
+                      "hidden": false,
+                      "children": [],
+                      "parentIdentifier": "\u002724K`V+%\"n9\\-~I\u0026Jr.:",
+                      "identifier": "(K/(R,_\"y53%p:L;yX9~"
+                    }
+                  ],
+                  "parentIdentifier": "{*f xPQwzWV\\xC\u0026tcNzQ",
+                  "identifier": "\u002724K`V+%\"n9\\-~I\u0026Jr.:"
+                },
+                {
+                  "name": "fingerL3.1",
+                  "dimensions": [
+                    1,
+                    16,
+                    2
+                  ],
+                  "position": [
+                    -0.2,
+                    18.3,
+                    -0.1
+                  ],
+                  "offset": [
+                    -0.5,
+                    -0.5,
+                    -1.0
+                  ],
+                  "rotation": [
+                    145.0,
+                    -0.0,
+                    0.0
+                  ],
+                  "scale": [
+                    1.0,
+                    1.0,
+                    1.0
+                  ],
+                  "txOffset": [
+                    145,
+                    23
+                  ],
+                  "txMirror": true,
+                  "mcScale": 0.0,
+                  "opacity": 100.0,
+                  "hidden": false,
+                  "children": [
+                    {
+                      "name": "fingerL3.2",
+                      "dimensions": [
+                        1,
+                        15,
+                        2
+                      ],
+                      "position": [
+                        0.0,
+                        15.4,
+                        0.1
+                      ],
+                      "offset": [
+                        -0.52,
+                        -0.5,
+                        -1.0
+                      ],
+                      "rotation": [
+                        10.0,
+                        -0.0,
+                        0.0
+                      ],
+                      "scale": [
+                        1.0,
+                        1.0,
+                        1.0
+                      ],
+                      "txOffset": [
+                        151,
+                        52
+                      ],
+                      "txMirror": true,
+                      "mcScale": 0.0,
+                      "opacity": 100.0,
+                      "hidden": false,
+                      "children": [],
+                      "parentIdentifier": "\u00271j~\"GzS86\u0027eACPKYbp]",
+                      "identifier": "Lo8\u003emS(sjoU6Ix^p~I|k"
+                    },
+                    {
+                      "name": "membraneL3",
+                      "dimensions": [
+                        0,
+                        30,
+                        18
+                      ],
+                      "position": [
+                        -0.5,
+                        0.2,
+                        -1.1
+                      ],
+                      "offset": [
+                        0.5,
+                        -0.5,
+                        0.0
+                      ],
+                      "rotation": [
+                        -10.0,
+                        0.0,
+                        0.0
+                      ],
+                      "scale": [
+                        1.0,
+                        1.0,
+                        1.0
+                      ],
+                      "txOffset": [
+                        54,
+                        77
+                      ],
+                      "txMirror": true,
+                      "mcScale": 0.0,
+                      "opacity": 100.0,
+                      "hidden": false,
+                      "children": [],
+                      "parentIdentifier": "\u00271j~\"GzS86\u0027eACPKYbp]",
+                      "identifier": "4HYK^*\\(teaV5+b@ry@k"
+                    }
+                  ],
+                  "parentIdentifier": "{*f xPQwzWV\\xC\u0026tcNzQ",
+                  "identifier": "\u00271j~\"GzS86\u0027eACPKYbp]"
+                },
+                {
+                  "name": "fingerL4.1",
+                  "dimensions": [
+                    1,
+                    16,
+                    2
+                  ],
+                  "position": [
+                    -0.1,
+                    18.3,
+                    -0.1
+                  ],
+                  "offset": [
+                    -0.5,
+                    -0.5,
+                    -1.0
+                  ],
+                  "rotation": [
+                    160.0,
+                    -0.0,
+                    0.0
+                  ],
+                  "scale": [
+                    1.0,
+                    1.0,
+                    1.0
+                  ],
+                  "txOffset": [
+                    145,
+                    23
+                  ],
+                  "txMirror": true,
+                  "mcScale": 0.0,
+                  "opacity": 100.0,
+                  "hidden": false,
+                  "children": [
+                    {
+                      "name": "fingerL4.2",
+                      "dimensions": [
+                        1,
+                        15,
+                        2
+                      ],
+                      "position": [
+                        0.0,
+                        15.4,
+                        0.1
+                      ],
+                      "offset": [
+                        -0.52,
+                        -0.5,
+                        -1.0
+                      ],
+                      "rotation": [
+                        10.0,
+                        -0.0,
+                        0.0
+                      ],
+                      "scale": [
+                        1.0,
+                        1.0,
+                        1.0
+                      ],
+                      "txOffset": [
+                        151,
+                        52
+                      ],
+                      "txMirror": true,
+                      "mcScale": 0.0,
+                      "opacity": 100.0,
+                      "hidden": false,
+                      "children": [],
+                      "parentIdentifier": "%FELSC}j%e1%}kl!JmXA",
+                      "identifier": "kQ\\[eJXw}@-@6t$5D8Xz"
+                    },
+                    {
+                      "name": "membraneL4",
+                      "dimensions": [
+                        0,
+                        30,
+                        18
+                      ],
+                      "position": [
+                        -0.5,
+                        0.2,
+                        -1.1
+                      ],
+                      "offset": [
+                        0.5,
+                        -0.5,
+                        0.0
+                      ],
+                      "rotation": [
+                        -18.0,
+                        0.0,
+                        0.0
+                      ],
+                      "scale": [
+                        1.0,
+                        1.0,
+                        1.0
+                      ],
+                      "txOffset": [
+                        54,
+                        77
+                      ],
+                      "txMirror": true,
+                      "mcScale": 0.0,
+                      "opacity": 100.0,
+                      "hidden": false,
+                      "children": [],
+                      "parentIdentifier": "%FELSC}j%e1%}kl!JmXA",
+                      "identifier": "\u0027.WNTP\"mnKt\u003c\u0027: txt]."
+                    }
+                  ],
+                  "parentIdentifier": "{*f xPQwzWV\\xC\u0026tcNzQ",
+                  "identifier": "%FELSC}j%e1%}kl!JmXA"
+                },
+                {
+                  "name": "membraneL5",
+                  "dimensions": [
+                    0,
+                    27,
+                    18
+                  ],
+                  "position": [
+                    -0.5,
+                    17.8,
+                    2.0
+                  ],
+                  "offset": [
+                    0.5,
+                    -0.5,
+                    0.0
+                  ],
+                  "rotation": [
+                    143.48,
+                    0.0,
+                    0.0
+                  ],
+                  "scale": [
+                    1.0,
+                    1.0,
+                    1.0
+                  ],
+                  "txOffset": [
+                    106,
+                    73
+                  ],
+                  "txMirror": true,
+                  "mcScale": 0.0,
+                  "opacity": 100.0,
+                  "hidden": false,
+                  "children": [],
+                  "parentIdentifier": "{*f xPQwzWV\\xC\u0026tcNzQ",
+                  "identifier": "bx,n@?8ihOKi@UW?Qwf "
+                },
+                {
+                  "name": "ClawL",
+                  "dimensions": [
+                    2,
+                    2,
+                    1
+                  ],
+                  "position": [
+                    0.1,
+                    19.0,
+                    -0.1
+                  ],
+                  "offset": [
+                    -0.3,
+                    -0.8,
+                    -0.5
+                  ],
+                  "rotation": [
+                    0.0,
+                    42.0,
+                    50.0
+                  ],
+                  "scale": [
+                    1.0,
+                    1.0,
+                    1.0
+                  ],
+                  "txOffset": [
+                    128,
+                    44
+                  ],
+                  "txMirror": true,
+                  "mcScale": 0.0,
+                  "opacity": 100.0,
+                  "hidden": false,
+                  "children": [
+                    {
+                      "name": "ClawL2",
+                      "dimensions": [
+                        2,
+                        2,
+                        1
+                      ],
+                      "position": [
+                        2.0,
+                        0.0,
+                        0.0
+                      ],
+                      "offset": [
+                        -0.3,
+                        -0.8,
+                        -0.5
+                      ],
+                      "rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                      ],
+                      "scale": [
+                        1.0,
+                        1.0,
+                        1.0
+                      ],
+                      "txOffset": [
+                        128,
+                        52
+                      ],
+                      "txMirror": true,
+                      "mcScale": 0.0,
+                      "opacity": 100.0,
+                      "hidden": false,
+                      "children": [
+                        {
+                          "name": "ClawL3",
+                          "dimensions": [
+                            2,
+                            1,
+                            1
+                          ],
+                          "position": [
+                            0.0,
+                            0.0,
+                            0.0
+                          ],
+                          "offset": [
+                            -0.8,
+                            0.7,
+                            -0.5
+                          ],
+                          "rotation": [
+                            0.0,
+                            0.0,
+                            0.0
+                          ],
+                          "scale": [
+                            1.0,
+                            1.0,
+                            1.0
+                          ],
+                          "txOffset": [
+                            128,
+                            61
+                          ],
+                          "txMirror": true,
+                          "mcScale": 0.0,
+                          "opacity": 100.0,
+                          "hidden": false,
+                          "children": [],
+                          "parentIdentifier": "Q\u0027rFmbmq@zdZ\u003c+5$uKJ4",
+                          "identifier": "0mo9Nk:[\u0026Wk\u003dl!t)7F`V"
+                        }
+                      ],
+                      "parentIdentifier": "NOXn(`o~@E5Q\u00269j#0g(8",
+                      "identifier": "Q\u0027rFmbmq@zdZ\u003c+5$uKJ4"
+                    }
+                  ],
+                  "parentIdentifier": "{*f xPQwzWV\\xC\u0026tcNzQ",
+                  "identifier": "NOXn(`o~@E5Q\u00269j#0g(8"
+                }
+              ],
+              "parentIdentifier": "(yO*Eq4rQ^{5;uL/s?eV",
+              "identifier": "{*f xPQwzWV\\xC\u0026tcNzQ"
+            },
+            {
+              "name": "membraneL6",
+              "dimensions": [
+                0,
+                11,
+                13
+              ],
+              "position": [
+                -0.57,
+                -1.9,
+                2.5
+              ],
+              "offset": [
+                0.5,
+                -8.8,
+                0.8
+              ],
+              "rotation": [
+                -90.0,
+                6.0,
+                2.0
+              ],
+              "scale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "txOffset": [
+                156,
+                82
+              ],
+              "txMirror": true,
+              "mcScale": 0.0,
+              "opacity": 100.0,
+              "hidden": false,
+              "children": [],
+              "parentIdentifier": "(yO*Eq4rQ^{5;uL/s?eV",
+              "identifier": "5\u0027}b)lD5uwhFVgE~SOJB"
+            }
+          ],
+          "parentIdentifier": "3;?lhgXI\u0027~|*u0YzbRLU",
+          "identifier": "(yO*Eq4rQ^{5;uL/s?eV"
+        },
+        {
+          "name": "armR1",
+          "dimensions": [
+            2,
+            13,
+            4
+          ],
+          "position": [
+            -3.7,
+            -0.7,
+            3.0
+          ],
+          "offset": [
+            -1.0,
+            -1.5,
+            -2.0
+          ],
+          "rotation": [
+            41.0,
+            -40.0,
+            70.0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "txOffset": [
+            170,
+            31
+          ],
+          "txMirror": false,
+          "mcScale": 0.0,
+          "opacity": 100.0,
+          "hidden": false,
+          "children": [
+            {
+              "name": "armR2",
+              "dimensions": [
+                2,
+                21,
+                3
+              ],
+              "position": [
+                0.1,
+                11.3,
+                -0.1
+              ],
+              "offset": [
+                -1.0,
+                -1.5,
+                -1.4
+              ],
+              "rotation": [
+                -85.0,
+                0.0,
+                -32.0
+              ],
+              "scale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "txOffset": [
+                189,
+                27
+              ],
+              "txMirror": false,
+              "mcScale": 0.0,
+              "opacity": 100.0,
+              "hidden": false,
+              "children": [
+                {
+                  "name": "fingerR1.1",
+                  "dimensions": [
+                    1,
+                    18,
+                    2
+                  ],
+                  "position": [
+                    0.5,
+                    19.3,
+                    -0.1
+                  ],
+                  "offset": [
+                    -0.5,
+                    -0.5,
+                    -1.0
+                  ],
+                  "rotation": [
+                    120.0,
+                    -0.0,
+                    0.0
+                  ],
+                  "scale": [
+                    1.0,
+                    1.0,
+                    1.0
+                  ],
+                  "txOffset": [
+                    145,
+                    23
+                  ],
+                  "txMirror": false,
+                  "mcScale": 0.0,
+                  "opacity": 100.0,
+                  "hidden": false,
+                  "children": [
+                    {
+                      "name": "fingerR.2",
+                      "dimensions": [
+                        1,
+                        17,
+                        2
+                      ],
+                      "position": [
+                        0.0,
+                        17.4,
+                        0.1
+                      ],
+                      "offset": [
+                        -0.5,
+                        -0.5,
+                        -1.0
+                      ],
+                      "rotation": [
+                        10.0,
+                        -0.0,
+                        0.0
+                      ],
+                      "scale": [
+                        1.0,
+                        1.0,
+                        1.0
+                      ],
+                      "txOffset": [
+                        152,
+                        23
+                      ],
+                      "txMirror": false,
+                      "mcScale": 0.0,
+                      "opacity": 100.0,
+                      "hidden": false,
+                      "children": [],
+                      "parentIdentifier": "/hkYg`br:\"t_gZI!\u0027nf0",
+                      "identifier": "*!-~s{IZ\"oK|9\u003d27\u0026J\u003cv"
+                    },
+                    {
+                      "name": "membraneR1",
+                      "dimensions": [
+                        0,
+                        33,
+                        18
+                      ],
+                      "position": [
+                        0.5,
+                        0.4,
+                        -0.5
+                      ],
+                      "offset": [
+                        -0.5,
+                        -1.0,
+                        0.0
+                      ],
+                      "rotation": [
+                        5.22,
+                        0.0,
+                        0.0
+                      ],
+                      "scale": [
+                        1.0,
+                        1.0,
+                        1.0
+                      ],
+                      "txOffset": [
+                        54,
+                        73
+                      ],
+                      "txMirror": false,
+                      "mcScale": 0.0,
+                      "opacity": 100.0,
+                      "hidden": false,
+                      "children": [],
+                      "parentIdentifier": "/hkYg`br:\"t_gZI!\u0027nf0",
+                      "identifier": "60)ga7it/\u0026 :n@1tv)\\\u0027"
+                    }
+                  ],
+                  "parentIdentifier": "LIRD{A\"c7|g\u0027Z7\"\u0027Y~+H",
+                  "identifier": "/hkYg`br:\"t_gZI!\u0027nf0"
+                },
+                {
+                  "name": "fingerR2.1",
+                  "dimensions": [
+                    1,
+                    17,
+                    2
+                  ],
+                  "position": [
+                    0.3,
+                    18.6,
+                    -0.1
+                  ],
+                  "offset": [
+                    -0.5,
+                    -0.5,
+                    -1.0
+                  ],
+                  "rotation": [
+                    130.0,
+                    -0.0,
+                    0.0
+                  ],
+                  "scale": [
+                    1.0,
+                    1.0,
+                    1.0
+                  ],
+                  "txOffset": [
+                    145,
+                    23
+                  ],
+                  "txMirror": false,
+                  "mcScale": 0.0,
+                  "opacity": 100.0,
+                  "hidden": false,
+                  "children": [
+                    {
+                      "name": "fingerR2.2",
+                      "dimensions": [
+                        1,
+                        16,
+                        2
+                      ],
+                      "position": [
+                        0.0,
+                        16.4,
+                        0.1
+                      ],
+                      "offset": [
+                        -0.48,
+                        -0.5,
+                        -1.0
+                      ],
+                      "rotation": [
+                        10.0,
+                        -0.0,
+                        0.0
+                      ],
+                      "scale": [
+                        1.0,
+                        1.0,
+                        1.0
+                      ],
+                      "txOffset": [
+                        160,
+                        23
+                      ],
+                      "txMirror": false,
+                      "mcScale": 0.0,
+                      "opacity": 100.0,
+                      "hidden": false,
+                      "children": [],
+                      "parentIdentifier": "s\u003dg}9c4:~(dF\u003dd+?{Eu~",
+                      "identifier": "|2wzt)YJTVBPIP~-N|Xb"
+                    },
+                    {
+                      "name": "membraneR2",
+                      "dimensions": [
+                        0,
+                        32,
+                        18
+                      ],
+                      "position": [
+                        0.5,
+                        0.4,
+                        -0.9
+                      ],
+                      "offset": [
+                        -0.5,
+                        -0.5,
+                        0.0
+                      ],
+                      "rotation": [
+                        5.22,
+                        0.0,
+                        0.0
+                      ],
+                      "scale": [
+                        1.0,
+                        1.0,
+                        1.0
+                      ],
+                      "txOffset": [
+                        54,
+                        75
+                      ],
+                      "txMirror": false,
+                      "mcScale": 0.0,
+                      "opacity": 100.0,
+                      "hidden": false,
+                      "children": [],
+                      "parentIdentifier": "s\u003dg}9c4:~(dF\u003dd+?{Eu~",
+                      "identifier": "rzO?\"Y w x\\|}L\"e5ilx"
+                    }
+                  ],
+                  "parentIdentifier": "LIRD{A\"c7|g\u0027Z7\"\u0027Y~+H",
+                  "identifier": "s\u003dg}9c4:~(dF\u003dd+?{Eu~"
+                },
+                {
+                  "name": "fingerR3.1",
+                  "dimensions": [
+                    1,
+                    16,
+                    2
+                  ],
+                  "position": [
+                    0.2,
+                    18.3,
+                    -0.1
+                  ],
+                  "offset": [
+                    -0.5,
+                    -0.5,
+                    -1.0
+                  ],
+                  "rotation": [
+                    145.0,
+                    -0.0,
+                    0.0
+                  ],
+                  "scale": [
+                    1.0,
+                    1.0,
+                    1.0
+                  ],
+                  "txOffset": [
+                    145,
+                    23
+                  ],
+                  "txMirror": false,
+                  "mcScale": 0.0,
+                  "opacity": 100.0,
+                  "hidden": false,
+                  "children": [
+                    {
+                      "name": "fingerR3.2",
+                      "dimensions": [
+                        1,
+                        15,
+                        2
+                      ],
+                      "position": [
+                        0.0,
+                        15.4,
+                        0.1
+                      ],
+                      "offset": [
+                        -0.48,
+                        -0.5,
+                        -1.0
+                      ],
+                      "rotation": [
+                        10.0,
+                        -0.0,
+                        0.0
+                      ],
+                      "scale": [
+                        1.0,
+                        1.0,
+                        1.0
+                      ],
+                      "txOffset": [
+                        151,
+                        52
+                      ],
+                      "txMirror": false,
+                      "mcScale": 0.0,
+                      "opacity": 100.0,
+                      "hidden": false,
+                      "children": [],
+                      "parentIdentifier": "Q3kn:\"()a^o@\u003c)fc$n1~",
+                      "identifier": "T:GMgl_n\")g$:`n!2eu0"
+                    },
+                    {
+                      "name": "membraneR3",
+                      "dimensions": [
+                        0,
+                        30,
+                        18
+                      ],
+                      "position": [
+                        0.5,
+                        0.2,
+                        -1.1
+                      ],
+                      "offset": [
+                        -0.5,
+                        -0.5,
+                        0.0
+                      ],
+                      "rotation": [
+                        -10.0,
+                        0.0,
+                        0.0
+                      ],
+                      "scale": [
+                        1.0,
+                        1.0,
+                        1.0
+                      ],
+                      "txOffset": [
+                        54,
+                        77
+                      ],
+                      "txMirror": false,
+                      "mcScale": 0.0,
+                      "opacity": 100.0,
+                      "hidden": false,
+                      "children": [],
+                      "parentIdentifier": "Q3kn:\"()a^o@\u003c)fc$n1~",
+                      "identifier": " |o_TFOeE^G{glaY\\Q.2"
+                    }
+                  ],
+                  "parentIdentifier": "LIRD{A\"c7|g\u0027Z7\"\u0027Y~+H",
+                  "identifier": "Q3kn:\"()a^o@\u003c)fc$n1~"
+                },
+                {
+                  "name": "fingerR4.1",
+                  "dimensions": [
+                    1,
+                    16,
+                    2
+                  ],
+                  "position": [
+                    0.1,
+                    18.3,
+                    -0.1
+                  ],
+                  "offset": [
+                    -0.5,
+                    -0.5,
+                    -1.0
+                  ],
+                  "rotation": [
+                    160.0,
+                    -0.0,
+                    0.0
+                  ],
+                  "scale": [
+                    1.0,
+                    1.0,
+                    1.0
+                  ],
+                  "txOffset": [
+                    145,
+                    23
+                  ],
+                  "txMirror": false,
+                  "mcScale": 0.0,
+                  "opacity": 100.0,
+                  "hidden": false,
+                  "children": [
+                    {
+                      "name": "fingerR4.2",
+                      "dimensions": [
+                        1,
+                        15,
+                        2
+                      ],
+                      "position": [
+                        0.0,
+                        15.4,
+                        0.1
+                      ],
+                      "offset": [
+                        -0.48,
+                        -0.5,
+                        -1.0
+                      ],
+                      "rotation": [
+                        10.0,
+                        -0.0,
+                        0.0
+                      ],
+                      "scale": [
+                        1.0,
+                        1.0,
+                        1.0
+                      ],
+                      "txOffset": [
+                        151,
+                        52
+                      ],
+                      "txMirror": false,
+                      "mcScale": 0.0,
+                      "opacity": 100.0,
+                      "hidden": false,
+                      "children": [],
+                      "parentIdentifier": "\u003ew;{7aU\u003ePD0cb4Gf_Rm-",
+                      "identifier": "i8yz%p0FxJ\"}\u00270z\u003ciQ:-"
+                    },
+                    {
+                      "name": "membraneR4",
+                      "dimensions": [
+                        0,
+                        30,
+                        18
+                      ],
+                      "position": [
+                        0.5,
+                        0.2,
+                        -1.1
+                      ],
+                      "offset": [
+                        -0.5,
+                        -0.5,
+                        0.0
+                      ],
+                      "rotation": [
+                        -18.0,
+                        0.0,
+                        0.0
+                      ],
+                      "scale": [
+                        1.0,
+                        1.0,
+                        1.0
+                      ],
+                      "txOffset": [
+                        54,
+                        77
+                      ],
+                      "txMirror": false,
+                      "mcScale": 0.0,
+                      "opacity": 100.0,
+                      "hidden": false,
+                      "children": [],
+                      "parentIdentifier": "\u003ew;{7aU\u003ePD0cb4Gf_Rm-",
+                      "identifier": "Ty?f!?MbEP6L~x44jV`N"
+                    }
+                  ],
+                  "parentIdentifier": "LIRD{A\"c7|g\u0027Z7\"\u0027Y~+H",
+                  "identifier": "\u003ew;{7aU\u003ePD0cb4Gf_Rm-"
+                },
+                {
+                  "name": "membraneR5",
+                  "dimensions": [
+                    0,
+                    27,
+                    18
+                  ],
+                  "position": [
+                    0.5,
+                    17.8,
+                    2.0
+                  ],
+                  "offset": [
+                    -0.5,
+                    -0.5,
+                    0.0
+                  ],
+                  "rotation": [
+                    143.48,
+                    0.0,
+                    0.0
+                  ],
+                  "scale": [
+                    1.0,
+                    1.0,
+                    1.0
+                  ],
+                  "txOffset": [
+                    106,
+                    73
+                  ],
+                  "txMirror": false,
+                  "mcScale": 0.0,
+                  "opacity": 100.0,
+                  "hidden": false,
+                  "children": [],
+                  "parentIdentifier": "LIRD{A\"c7|g\u0027Z7\"\u0027Y~+H",
+                  "identifier": "i]Vzi$kwAaBxtawrc_hN"
+                },
+                {
+                  "name": "ClawR",
+                  "dimensions": [
+                    2,
+                    2,
+                    1
+                  ],
+                  "position": [
+                    -0.1,
+                    19.0,
+                    -0.1
+                  ],
+                  "offset": [
+                    -0.3,
+                    -0.8,
+                    -0.5
+                  ],
+                  "rotation": [
+                    180.0,
+                    42.0,
+                    130.0
+                  ],
+                  "scale": [
+                    1.0,
+                    1.0,
+                    1.0
+                  ],
+                  "txOffset": [
+                    128,
+                    44
+                  ],
+                  "txMirror": true,
+                  "mcScale": 0.0,
+                  "opacity": 100.0,
+                  "hidden": false,
+                  "children": [
+                    {
+                      "name": "ClawR2",
+                      "dimensions": [
+                        2,
+                        2,
+                        1
+                      ],
+                      "position": [
+                        2.0,
+                        0.0,
+                        0.0
+                      ],
+                      "offset": [
+                        -0.3,
+                        -0.8,
+                        -0.5
+                      ],
+                      "rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                      ],
+                      "scale": [
+                        1.0,
+                        1.0,
+                        1.0
+                      ],
+                      "txOffset": [
+                        128,
+                        52
+                      ],
+                      "txMirror": true,
+                      "mcScale": 0.0,
+                      "opacity": 100.0,
+                      "hidden": false,
+                      "children": [
+                        {
+                          "name": "ClawR3",
+                          "dimensions": [
+                            2,
+                            1,
+                            1
+                          ],
+                          "position": [
+                            0.0,
+                            0.0,
+                            0.0
+                          ],
+                          "offset": [
+                            -0.8,
+                            0.7,
+                            -0.5
+                          ],
+                          "rotation": [
+                            0.0,
+                            0.0,
+                            0.0
+                          ],
+                          "scale": [
+                            1.0,
+                            1.0,
+                            1.0
+                          ],
+                          "txOffset": [
+                            128,
+                            61
+                          ],
+                          "txMirror": true,
+                          "mcScale": 0.0,
+                          "opacity": 100.0,
+                          "hidden": false,
+                          "children": [],
+                          "parentIdentifier": "FavFUyy7Fx5L\u0027%Tu02Fh",
+                          "identifier": "iBEti,A(}mv3\\|Wf{Y4K"
+                        }
+                      ],
+                      "parentIdentifier": "Fq0iZ {.-Zg6ved\u003di1tL",
+                      "identifier": "FavFUyy7Fx5L\u0027%Tu02Fh"
+                    }
+                  ],
+                  "parentIdentifier": "LIRD{A\"c7|g\u0027Z7\"\u0027Y~+H",
+                  "identifier": "Fq0iZ {.-Zg6ved\u003di1tL"
+                }
+              ],
+              "parentIdentifier": "79\u0027GqB\u003d^L_L$)NX`v_`$",
+              "identifier": "LIRD{A\"c7|g\u0027Z7\"\u0027Y~+H"
+            },
+            {
+              "name": "membraneR6",
+              "dimensions": [
+                0,
+                11,
+                13
+              ],
+              "position": [
+                0.57,
+                -1.9,
+                2.5
+              ],
+              "offset": [
+                -0.5,
+                -8.8,
+                0.8
+              ],
+              "rotation": [
+                -90.0,
+                6.0,
+                -2.0
+              ],
+              "scale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "txOffset": [
+                156,
+                82
+              ],
+              "txMirror": false,
+              "mcScale": 0.0,
+              "opacity": 100.0,
+              "hidden": false,
+              "children": [],
+              "parentIdentifier": "79\u0027GqB\u003d^L_L$)NX`v_`$",
+              "identifier": "OVr,T0a~@tPllYRcj[J]"
+            }
+          ],
+          "parentIdentifier": "3;?lhgXI\u0027~|*u0YzbRLU",
+          "identifier": "79\u0027GqB\u003d^L_L$)NX`v_`$"
+        }
+      ],
+      "identifier": "3;?lhgXI\u0027~|*u0YzbRLU"
+    }
+  ],
+  "anims": [],
+  "cubeCount": 616
+}

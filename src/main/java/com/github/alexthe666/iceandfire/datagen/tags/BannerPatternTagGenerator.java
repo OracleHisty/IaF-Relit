@@ -28,7 +28,6 @@ public class BannerPatternTagGenerator extends TagsProvider<BannerPattern> {
     public static final TagKey<BannerPattern> FEATHER_BANNER_PATTERN = create("pattern_item/feather");
     public static final TagKey<BannerPattern> GORGON_BANNER_PATTERN = create("pattern_item/gorgon");
     public static final TagKey<BannerPattern> HIPPOCAMPUS_BANNER_PATTERN = create("pattern_item/hippocampus");
-    public static final TagKey<BannerPattern> HIPPOGRYPH_HEAD_BANNER_PATTERN = create("pattern_item/hippogryph_head");
     public static final TagKey<BannerPattern> MERMAID_BANNER_PATTERN = create("pattern_item/mermaid");
     public static final TagKey<BannerPattern> SEA_SERPENT_BANNER_PATTERN = create("pattern_item/sea_serpent");
     public static final TagKey<BannerPattern> TROLL_BANNER_PATTERN = create("pattern_item/troll");

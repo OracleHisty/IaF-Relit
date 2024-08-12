@@ -69,7 +69,6 @@ public class IafItemTags extends ItemTagsProvider {
 
     public static TagKey<Item> BREED_AMPITHERE = createKey("breed_ampithere");
     public static TagKey<Item> BREED_HIPPOCAMPUS = createKey("breed_hippocampus");
-    public static TagKey<Item> BREED_HIPPOGRYPH = createKey("breed_hippogryph");
     public static TagKey<Item> HEAL_AMPITHERE = createKey("heal_ampithere");
     public static TagKey<Item> HEAL_COCKATRICE = createKey("heal_cockatrice");
     public static TagKey<Item> HEAL_HIPPOCAMPUS = createKey("heal_hippocampus");
@@ -77,7 +76,6 @@ public class IafItemTags extends ItemTagsProvider {
     public static TagKey<Item> TAME_PIXIE = createKey("tame_pixie");
     public static TagKey<Item> TEMPT_DRAGON = createKey("tempt_dragon");
     public static TagKey<Item> TEMPT_HIPPOCAMPUS = createKey("tempt_hippocampus");
-    public static TagKey<Item> TEMPT_HIPPOGRYPH = createKey("tempt_hippogryph");
 
     public IafItemTags(PackOutput output, CompletableFuture<HolderLookup.Provider> lookupProvider, CompletableFuture<TagsProvider.TagLookup<Block>> blockTags, ExistingFileHelper helper) {
         super(output, lookupProvider, blockTags, IceAndFire.MODID, helper);
@@ -130,9 +128,6 @@ public class IafItemTags extends ItemTagsProvider {
         tag(Tags.Items.BONES)
                 .add(IafItemRegistry.DRAGON_BONE.get())
                 .add(IafItemRegistry.WITHERBONE.get());
-
-        tag(Tags.Items.EGGS)
-                .add(IafItemRegistry.HIPPOGRYPH_EGG.get());
 
         // Not sure if this should be in the forge namespace or not (or if the recipes should be using tags here)
         tag(STORAGE_BLOCKS_SCALES_DRAGON.get(DragonType.FIRE))
@@ -190,9 +185,6 @@ public class IafItemTags extends ItemTagsProvider {
         tag(BREED_HIPPOCAMPUS)
                 .add(Items.PRISMARINE_CRYSTALS);
 
-        tag(BREED_HIPPOGRYPH)
-                .add(Items.RABBIT_STEW);
-
         tag(HEAL_AMPITHERE)
                 .add(Items.COCOA_BEANS);
 
@@ -215,10 +207,6 @@ public class IafItemTags extends ItemTagsProvider {
         tag(TEMPT_HIPPOCAMPUS)
                 .add(Items.KELP)
                 .add(Items.PRISMARINE_CRYSTALS);
-
-        tag(TEMPT_HIPPOGRYPH)
-                .add(Items.RABBIT)
-                .add(Items.COOKED_RABBIT);
 
         tag(SCALES_DRAGON.get(DragonType.FIRE))
                 .add(IafItemRegistry.DRAGONSCALES_RED.get())

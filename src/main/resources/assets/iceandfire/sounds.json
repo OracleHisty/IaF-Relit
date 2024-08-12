@@ -1107,68 +1107,6 @@
     ],
     "subtitle": "iceandfire.sound.subtitle.gorgon_turn_stone"
   },
-  "hippogryph_idle": {
-    "category": "neutral",
-    "sounds": [
-      {
-        "name": "iceandfire:mobs/hippogryph/idle_0",
-        "volume": 0.6
-      },
-      {
-        "name": "iceandfire:mobs/hippogryph/idle_1",
-        "volume": 0.6
-      },
-      {
-        "name": "iceandfire:mobs/hippogryph/idle_2",
-        "volume": 0.6
-      },
-      {
-        "name": "iceandfire:mobs/hippogryph/idle_3",
-        "volume": 0.6
-      },
-      {
-        "name": "iceandfire:mobs/hippogryph/idle_4",
-        "volume": 0.6
-      },
-      {
-        "name": "iceandfire:mobs/hippogryph/idle_5",
-        "volume": 0.6
-      }
-    ],
-    "subtitle": "iceandfire.sound.subtitle.hippogryph_idle"
-  },
-  "hippogryph_hurt": {
-    "category": "neutral",
-    "sounds": [
-      {
-        "name": "iceandfire:mobs/hippogryph/hurt_0",
-        "volume": 0.6
-      },
-      {
-        "name": "iceandfire:mobs/hippogryph/hurt_1",
-        "volume": 0.6
-      },
-      {
-        "name": "iceandfire:mobs/hippogryph/hurt_2",
-        "volume": 0.6
-      }
-    ],
-    "subtitle": "iceandfire.sound.subtitle.hippogryph_hurt"
-  },
-  "hippogryph_die": {
-    "category": "neutral",
-    "sounds": [
-      {
-        "name": "iceandfire:mobs/hippogryph/die_0",
-        "volume": 0.6
-      },
-      {
-        "name": "iceandfire:mobs/hippogryph/die_1",
-        "volume": 0.6
-      }
-    ],
-    "subtitle": "iceandfire.sound.subtitle.hippogryph_die"
-  },
   "egg_hatch": {
     "category": "neutral",
     "sounds": [

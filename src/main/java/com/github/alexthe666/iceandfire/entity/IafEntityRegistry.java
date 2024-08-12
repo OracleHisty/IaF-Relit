@@ -121,7 +121,6 @@ public class IafEntityRegistry {
     public static HashMap<String, Boolean> LOADED_ENTITIES;
     static {
     	LOADED_ENTITIES = new HashMap<>();
-    	LOADED_ENTITIES.put("HIPPOGRYPH", false);
     	LOADED_ENTITIES.put("DREAD_LICH", false);
     	LOADED_ENTITIES.put("COCKATRICE", false);
     	LOADED_ENTITIES.put("AMPHITHERE", false);

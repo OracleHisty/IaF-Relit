@@ -26,7 +26,6 @@ public class BiomeConfig {
     public static Pair<String, SpawnBiomeData> lightningDragonCaveBiomes = Pair.of("iceandfire:lightning_dragon_cave_biomes", DefaultBiomes.LIGHTNING_CAVE);
 
     public static Pair<String, SpawnBiomeData> cyclopsCaveBiomes = Pair.of("iceandfire:cyclops_cave_biomes", DefaultBiomes.BEACHES);
-    public static Pair<String, SpawnBiomeData> hippogryphBiomes = Pair.of("iceandfire:hippogryph_biomes", DefaultBiomes.HILLS);
     public static Pair<String, SpawnBiomeData> pixieBiomes = Pair.of("iceandfire:pixie_village_biomes", DefaultBiomes.PIXIES);
     public static Pair<String, SpawnBiomeData> hippocampusBiomes = Pair.of("iceandfire:hippocampus_biomes", DefaultBiomes.OCEANS);
     public static Pair<String, SpawnBiomeData> seaSerpentBiomes = Pair.of("iceandfire:sea_serpent_biomes", DefaultBiomes.OCEANS);
