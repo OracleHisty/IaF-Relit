@@ -4,7 +4,5 @@ public enum EnumParticles {
     DragonFire,
     DragonIce,
     Blood,
-    Siren_Appearance,
-    Siren_Music,
     Snowflake
 }

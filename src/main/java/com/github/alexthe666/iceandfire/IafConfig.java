@@ -39,11 +39,6 @@ public class IafConfig {
     public static int dragonTargetSearchLength = 128;
     public static int dragonWanderFromHomeDistance = 40;
     public static int dragonHungerTickRate = 3000;
-    public static double sirenMaxHealth = 50D;
-    public static boolean sirenShader = true;
-    public static int sirenMaxSingTime = 12000;
-    public static int sirenTimeBetweenSongs = 2000;
-    public static int generateSirenChance = 400;
     public static int hippocampusSpawnChance = 40;
     public static int stymphalianBirdTargetSearchLength = 48;
     public static double stymphalianBirdBaseAttack = 6D;
@@ -133,11 +128,6 @@ public class IafConfig {
             dragonTargetSearchLength = ConfigHolder.SERVER.dragonTargetSearchLength.get();
             dragonWanderFromHomeDistance = ConfigHolder.SERVER.dragonWanderFromHomeDistance.get();
             dragonHungerTickRate = ConfigHolder.SERVER.dragonHungerTickRate.get();
-            sirenMaxHealth = ConfigHolder.SERVER.sirenMaxHealth.get();
-            sirenShader = ConfigHolder.SERVER.sirenShader.get();
-            sirenMaxSingTime = ConfigHolder.SERVER.sirenMaxSingTime.get();
-            sirenTimeBetweenSongs = ConfigHolder.SERVER.sirenTimeBetweenSongs.get();
-            generateSirenChance = ConfigHolder.SERVER.generateSirenChance.get();
             hippocampusSpawnChance = ConfigHolder.SERVER.hippocampusSpawnChance.get();
             stymphalianBirdBaseAttack = ConfigHolder.SERVER.stymphalianBirdBaseAttack.get();
             stymphalianBirdTargetSearchLength = ConfigHolder.SERVER.stymphalianBirdTargetSearchLength.get();

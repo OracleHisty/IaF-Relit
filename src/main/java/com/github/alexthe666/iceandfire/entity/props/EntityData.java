@@ -9,18 +9,15 @@ import net.minecraftforge.network.PacketDistributor;
 public class EntityData {
     public FrozenData frozenData = new FrozenData();
     public ChainData chainData = new ChainData();
-    public SirenData sirenData = new SirenData();
     public MiscData miscData = new MiscData();
 
     public void tick(final LivingEntity entity) {
         frozenData.tickFrozen(entity);
         chainData.tickChain(entity);
-        sirenData.tickCharmed(entity);
         miscData.tickMisc(entity);
 
         boolean triggerClientUpdate = frozenData.doesClientNeedUpdate();
         triggerClientUpdate = chainData.doesClientNeedUpdate() || triggerClientUpdate;
-        triggerClientUpdate = sirenData.doesClientNeedUpdate() || triggerClientUpdate;
         triggerClientUpdate = miscData.doesClientNeedUpdate() || triggerClientUpdate;
 
         if (triggerClientUpdate && !entity.level().isClientSide()) {
@@ -36,7 +33,6 @@ public class EntityData {
         CompoundTag tag = new CompoundTag();
         frozenData.serialize(tag);
         chainData.serialize(tag);
-        sirenData.serialize(tag);
         miscData.serialize(tag);
         return tag;
     }
@@ -44,7 +40,6 @@ public class EntityData {
     public void deserialize(final CompoundTag tag) {
         frozenData.deserialize(tag);
         chainData.deserialize(tag);
-        sirenData.deserialize(tag);
         miscData.deserialize(tag);
     }
 }

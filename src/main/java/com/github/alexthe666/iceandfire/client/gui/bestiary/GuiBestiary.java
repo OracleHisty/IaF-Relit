@@ -333,35 +333,6 @@ public class GuiBestiary extends Screen {
                     ms.pose().popPose();
                 }
                 break;
-            case SIREN:
-                if (bookPages == 0) {
-                    ms.pose().pushPose();
-                    ms.pose().scale(1.25F, 1.25F, 1.25F);
-                    drawImage(ms, DRAWINGS_1, 190, 25, 0, 0, 25, 42, 512F);
-                    drawImage(ms, DRAWINGS_1, 220, 15, 25, 0, 25, 42, 512F);
-                    drawImage(ms, DRAWINGS_1, 255, 25, 50, 0, 25, 42, 512F);
-
-                    drawImage(ms, DRAWINGS_1, 190, 135, 0, 42, 26, 28, 512F);
-                    drawImage(ms, DRAWINGS_1, 220, 125, 26, 42, 26, 28, 512F);
-                    drawImage(ms, DRAWINGS_1, 255, 135, 52, 42, 26, 28, 512F);
-                    ms.pose().popPose();
-                }
-                if (bookPages == 1) {
-                    drawItemStack(ms, new ItemStack(IafItemRegistry.EARPLUGS.get()), 18, 40, 3.75F);
-
-
-                    ms.pose().pushPose();
-                    ms.pose().scale(1.5F, 1.5F, 1F);
-                    drawImage(ms, DRAWINGS_0, 160, 0, 389, 1, 50, 50, 512F);
-                    ms.pose().popPose();
-
-
-                    drawItemStack(ms, new ItemStack(Blocks.OAK_BUTTON), 180, 20, 1.35F);
-                    drawItemStack(ms, new ItemStack(Blocks.OAK_BUTTON), 215, 20, 1.35F);
-                    drawItemStack(ms, new ItemStack(IafItemRegistry.EARPLUGS.get()), 170, 10, 2F);
-                    drawItemStack(ms, new ItemStack(IafItemRegistry.SHINY_SCALES.get()), 123, 75, 2.25F);
-                }
-                break;
             case HIPPOCAMPUS:
                 if (bookPages == 0) {
                     ms.pose().pushPose();

@@ -40,8 +40,6 @@ import java.util.Random;
 @Mod.EventBusSubscriber(modid = IceAndFire.MODID, value = Dist.CLIENT)
 public class ClientEvents {
 
-    private static final ResourceLocation SIREN_SHADER = new ResourceLocation("iceandfire:shaders/post/siren.json");
-
     private final Random rand = new Random();
 
     private static boolean shouldCancelRender(LivingEntity living) {
@@ -119,36 +117,6 @@ public class ClientEvents {
                     currentView++;
                 }
                 IceAndFire.PROXY.setDragon3rdPersonView(currentView);
-            }
-
-            if (player.level().isClientSide) {
-                GameRenderer renderer = Minecraft.getInstance().gameRenderer;
-
-                EntityDataProvider.getCapability(player).ifPresent(data -> {
-                    if (IafConfig.sirenShader && data.sirenData.charmedBy == null && renderer.currentEffect() != null) {
-                        if (SIREN_SHADER.toString().equals(renderer.currentEffect().getName()))
-                            renderer.shutdownEffect();
-                    }
-
-                    if (data.sirenData.charmedBy == null) {
-                        return;
-                    }
-
-                    if (IafConfig.sirenShader && !data.sirenData.isCharmed && renderer.currentEffect() != null && SIREN_SHADER.toString().equals(renderer.currentEffect().getName())) {
-                        renderer.shutdownEffect();
-                    }
-
-                if (data.sirenData.isCharmed) {
-                    if (player.level().isClientSide && rand.nextInt(40) == 0) {
-                        IceAndFire.PROXY.spawnParticle(EnumParticles.Siren_Appearance, player.getX(), player.getY(), player.getZ(), data.sirenData.charmedBy.getHairColor(), 0, 0);
-                    }
-
-                        if (IafConfig.sirenShader && renderer.currentEffect() == null) {
-                            renderer.loadEffect(SIREN_SHADER);
-                        }
-
-                    }
-                });
             }
         }
     }

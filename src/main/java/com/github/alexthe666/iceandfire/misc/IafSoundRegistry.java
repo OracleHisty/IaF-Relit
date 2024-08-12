@@ -109,7 +109,6 @@ public final class IafSoundRegistry {
 
     public static final SoundEvent MERMAID_DIE = createSoundEvent("mermaid_die");
 
-    public static final SoundEvent SIREN_SONG = createSoundEvent("siren_song");
 
 
 

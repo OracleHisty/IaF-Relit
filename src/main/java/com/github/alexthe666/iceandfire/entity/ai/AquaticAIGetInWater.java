@@ -1,6 +1,5 @@
 package com.github.alexthe666.iceandfire.entity.ai;
 
-import com.github.alexthe666.iceandfire.entity.EntitySiren;
 import net.minecraft.core.BlockPos;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.entity.Mob;
@@ -35,9 +34,7 @@ public class AquaticAIGetInWater extends Goal {
 
     @Override
     public boolean canUse() {
-        if (creature.isVehicle() || creature instanceof TamableAnimal && ((TamableAnimal) creature).isTame()
-            || creature.isInWater() || isAttackerInWater() || creature instanceof EntitySiren
-            && (((EntitySiren) creature).isSinging() || ((EntitySiren) creature).wantsToSing())) {
+        if (creature.isVehicle() || creature instanceof TamableAnimal && ((TamableAnimal) creature).isTame() || creature.isInWater() || isAttackerInWater()) {
             return false;
         } else {
             Vec3 Vector3d = this.findPossibleShelter();

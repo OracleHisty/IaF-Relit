@@ -23,7 +23,6 @@ public enum EnumBestiaryPages {
     MATERIALS(2),
     ALCHEMY(1),
     DRAGONFORGE(3),
-    SIREN(2),
     HIPPOCAMPUS(2),
     STYMPHALIANBIRD(1),
     AMPHITHERE(2),

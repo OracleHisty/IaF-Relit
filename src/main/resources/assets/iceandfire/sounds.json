@@ -439,16 +439,6 @@
     ],
     "subtitle": "iceandfire.sound.subtitle.mermaid_die"
   },
-  "siren_song": {
-    "category": "hostile",
-    "sounds": [
-      {
-        "name": "iceandfire:effects/siren_song",
-        "volume": 0.2
-      }
-    ],
-    "subtitle": "iceandfire.sound.subtitle.siren_song"
-  },
   "hippocampus_idle": {
     "category": "neutral",
     "sounds": [
