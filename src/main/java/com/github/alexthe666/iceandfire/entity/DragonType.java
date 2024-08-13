@@ -10,6 +10,7 @@ import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvent;
+import net.minecraft.sounds.SoundEvents;
 import net.minecraft.util.RandomSource;
 import net.minecraft.util.StringRepresentable;
 import net.minecraft.world.damagesource.DamageType;
@@ -20,6 +21,7 @@ import net.minecraftforge.registries.RegistryObject;
 import org.jetbrains.annotations.NotNull;
 
 import javax.annotation.Nonnull;
+import java.util.Collections;
 import java.util.Map;
 import java.util.Optional;
 import java.util.function.Supplier;
@@ -28,96 +30,45 @@ import static com.github.alexthe666.iceandfire.entity.DragonType.DragonLifeStage
 import static com.github.alexthe666.iceandfire.entity.DragonType.DragonLifeStages.TriState.TRUE;
 
 public enum DragonType implements StringRepresentable {
-    FIRE("fire", false,
-            Map.of(
-                    DragonLifeStages.CHILD, Map.of(
-                            DragonSoundType.IDLE, IafSoundRegistry.FIREDRAGON_CHILD_IDLE,
-                            DragonSoundType.HURT, IafSoundRegistry.FIREDRAGON_CHILD_HURT,
-                            DragonSoundType.DEATH, IafSoundRegistry.FIREDRAGON_CHILD_DEATH,
-                            DragonSoundType.ROAR, IafSoundRegistry.FIREDRAGON_CHILD_ROAR),
-                    DragonLifeStages.TEEN, Map.of(
-                            DragonSoundType.IDLE, IafSoundRegistry.FIREDRAGON_TEEN_IDLE,
-                            DragonSoundType.HURT, IafSoundRegistry.FIREDRAGON_TEEN_HURT,
-                            DragonSoundType.DEATH, IafSoundRegistry.FIREDRAGON_TEEN_DEATH,
-                            DragonSoundType.ROAR, IafSoundRegistry.FIREDRAGON_TEEN_ROAR),
-                    DragonLifeStages.ADULT, Map.of(
-                            DragonSoundType.IDLE, IafSoundRegistry.FIREDRAGON_ADULT_IDLE,
-                            DragonSoundType.HURT, IafSoundRegistry.FIREDRAGON_ADULT_HURT,
-                            DragonSoundType.DEATH, IafSoundRegistry.FIREDRAGON_ADULT_DEATH,
-                            DragonSoundType.ROAR, IafSoundRegistry.FIREDRAGON_ADULT_ROAR)
-            ),
+    FIRE("fire", false, IafSoundRegistry.FIRE,
             () -> ParticleTypes.FLAME,
             IafItemRegistry.FIRE_STEW,
             IafTagRegistry.FIRE_DRAGON_TARGETS,
             new DragonStats(),
             Map.of(
-                    DragonType.DragonLifeStages.HATCHLING, new ResourceLocation("iceandfire:textures/models/firedragon/skeleton_1.png"),
-                    DragonType.DragonLifeStages.CHILD, new ResourceLocation("iceandfire:textures/models/firedragon/skeleton_2.png"),
-                    DragonType.DragonLifeStages.TEEN, new ResourceLocation("iceandfire:textures/models/firedragon/skeleton_3.png"),
-                    DragonType.DragonLifeStages.ADULT, new ResourceLocation("iceandfire:textures/models/firedragon/skeleton_4.png"),
-                    DragonType.DragonLifeStages.ELDER, new ResourceLocation("iceandfire:textures/models/firedragon/skeleton_5.png")
+                    DragonLifeStages.HATCHLING, new ResourceLocation("iceandfire:textures/models/firedragon/skeleton_1.png"),
+                    DragonLifeStages.CHILD, new ResourceLocation("iceandfire:textures/models/firedragon/skeleton_2.png"),
+                    DragonLifeStages.TEEN, new ResourceLocation("iceandfire:textures/models/firedragon/skeleton_3.png"),
+                    DragonLifeStages.ADULT, new ResourceLocation("iceandfire:textures/models/firedragon/skeleton_4.png"),
+                    DragonLifeStages.ELDER, new ResourceLocation("iceandfire:textures/models/firedragon/skeleton_5.png")
             ),
             Optional.of(IafDamageRegistry.DRAGON_FIRE_TYPE),
             EnumDragonEgg.RED, EnumDragonEgg.GREEN, EnumDragonEgg.BRONZE, EnumDragonEgg.GRAY),
-    ICE("ice", true,
-            Map.of(
-                    DragonLifeStages.CHILD, Map.of(
-                            DragonSoundType.IDLE, IafSoundRegistry.ICEDRAGON_CHILD_IDLE,
-                            DragonSoundType.HURT, IafSoundRegistry.ICEDRAGON_CHILD_HURT,
-                            DragonSoundType.DEATH, IafSoundRegistry.ICEDRAGON_CHILD_DEATH,
-                            DragonSoundType.ROAR, IafSoundRegistry.ICEDRAGON_CHILD_ROAR),
-                    DragonLifeStages.TEEN, Map.of(
-                            DragonSoundType.IDLE, IafSoundRegistry.ICEDRAGON_TEEN_IDLE,
-                            DragonSoundType.HURT, IafSoundRegistry.ICEDRAGON_TEEN_HURT,
-                            DragonSoundType.DEATH, IafSoundRegistry.ICEDRAGON_TEEN_DEATH,
-                            DragonSoundType.ROAR, IafSoundRegistry.ICEDRAGON_TEEN_ROAR),
-                    DragonLifeStages.ADULT, Map.of(
-                            DragonSoundType.IDLE, IafSoundRegistry.ICEDRAGON_ADULT_IDLE,
-                            DragonSoundType.HURT, IafSoundRegistry.ICEDRAGON_ADULT_HURT,
-                            DragonSoundType.DEATH, IafSoundRegistry.ICEDRAGON_ADULT_DEATH,
-                            DragonSoundType.ROAR, IafSoundRegistry.ICEDRAGON_ADULT_ROAR)
-            ),
+    ICE("ice", true, IafSoundRegistry.ICE,
             () -> ParticleTypes.SNOWFLAKE,
             IafItemRegistry.FROST_STEW,
             IafTagRegistry.ICE_DRAGON_TARGETS,
             new DragonStats(),
             Map.of(
-                    DragonType.DragonLifeStages.HATCHLING, new ResourceLocation("iceandfire:textures/models/icedragon/skeleton_1.png"),
-                    DragonType.DragonLifeStages.CHILD, new ResourceLocation("iceandfire:textures/models/icedragon/skeleton_2.png"),
-                    DragonType.DragonLifeStages.TEEN, new ResourceLocation("iceandfire:textures/models/icedragon/skeleton_3.png"),
-                    DragonType.DragonLifeStages.ADULT, new ResourceLocation("iceandfire:textures/models/icedragon/skeleton_4.png"),
-                    DragonType.DragonLifeStages.ELDER, new ResourceLocation("iceandfire:textures/models/icedragon/skeleton_5.png")
+                    DragonLifeStages.HATCHLING, new ResourceLocation("iceandfire:textures/models/icedragon/skeleton_1.png"),
+                    DragonLifeStages.CHILD, new ResourceLocation("iceandfire:textures/models/icedragon/skeleton_2.png"),
+                    DragonLifeStages.TEEN, new ResourceLocation("iceandfire:textures/models/icedragon/skeleton_3.png"),
+                    DragonLifeStages.ADULT, new ResourceLocation("iceandfire:textures/models/icedragon/skeleton_4.png"),
+                    DragonLifeStages.ELDER, new ResourceLocation("iceandfire:textures/models/icedragon/skeleton_5.png")
             ),
             Optional.of(IafDamageRegistry.DRAGON_LIGHTNING_TYPE),
             EnumDragonEgg.BLUE, EnumDragonEgg.WHITE, EnumDragonEgg.SAPPHIRE, EnumDragonEgg.SILVER),
-    LIGHTNING("lightning", false,
-            Map.of(
-                    DragonLifeStages.CHILD, Map.of(
-                            DragonSoundType.IDLE, IafSoundRegistry.LIGHTNINGDRAGON_CHILD_IDLE,
-                            DragonSoundType.HURT, IafSoundRegistry.LIGHTNINGDRAGON_CHILD_HURT,
-                            DragonSoundType.DEATH, IafSoundRegistry.LIGHTNINGDRAGON_CHILD_DEATH,
-                            DragonSoundType.ROAR, IafSoundRegistry.LIGHTNINGDRAGON_CHILD_ROAR),
-                    DragonLifeStages.TEEN, Map.of(
-                            DragonSoundType.IDLE, IafSoundRegistry.LIGHTNINGDRAGON_TEEN_IDLE,
-                            DragonSoundType.HURT, IafSoundRegistry.LIGHTNINGDRAGON_TEEN_HURT,
-                            DragonSoundType.DEATH, IafSoundRegistry.LIGHTNINGDRAGON_TEEN_DEATH,
-                            DragonSoundType.ROAR, IafSoundRegistry.LIGHTNINGDRAGON_TEEN_ROAR),
-                    DragonLifeStages.ADULT, Map.of(
-                            DragonSoundType.IDLE, IafSoundRegistry.LIGHTNINGDRAGON_ADULT_IDLE,
-                            DragonSoundType.HURT, IafSoundRegistry.LIGHTNINGDRAGON_ADULT_HURT,
-                            DragonSoundType.DEATH, IafSoundRegistry.LIGHTNINGDRAGON_ADULT_DEATH,
-                            DragonSoundType.ROAR, IafSoundRegistry.LIGHTNINGDRAGON_ADULT_ROAR)
-            ),
+    LIGHTNING("lightning", false, IafSoundRegistry.LIGHTNING,
             () -> ParticleTypes.RAIN,
             IafItemRegistry.LIGHTNING_STEW,
             IafTagRegistry.LIGHTNING_DRAGON_TARGETS,
             new DragonStats(),
             Map.of(
-                    DragonType.DragonLifeStages.HATCHLING, new ResourceLocation("iceandfire:textures/models/lightningdragon/skeleton_1.png"),
-                    DragonType.DragonLifeStages.CHILD, new ResourceLocation("iceandfire:textures/models/lightningdragon/skeleton_2.png"),
-                    DragonType.DragonLifeStages.TEEN, new ResourceLocation("iceandfire:textures/models/lightningdragon/skeleton_3.png"),
-                    DragonType.DragonLifeStages.ADULT, new ResourceLocation("iceandfire:textures/models/lightningdragon/skeleton_4.png"),
-                    DragonType.DragonLifeStages.ELDER, new ResourceLocation("iceandfire:textures/models/lightningdragon/skeleton_5.png")
+                    DragonLifeStages.HATCHLING, new ResourceLocation("iceandfire:textures/models/lightningdragon/skeleton/skeleton_1.png"),
+                    DragonLifeStages.CHILD, new ResourceLocation("iceandfire:textures/models/lightningdragon/skeleton/skeleton_2.png"),
+                    DragonLifeStages.TEEN, new ResourceLocation("iceandfire:textures/models/lightningdragon/skeleton/skeleton_3.png"),
+                    DragonLifeStages.ADULT, new ResourceLocation("iceandfire:textures/models/lightningdragon/skeleton/skeleton_4.png"),
+                    DragonLifeStages.ELDER, new ResourceLocation("iceandfire:textures/models/lightningdragon/skeleton/skeleton_5.png")
             ),
             Optional.of(IafDamageRegistry.DRAGON_LIGHTNING_TYPE),
             EnumDragonEgg.ELECTRIC, EnumDragonEgg.AMYTHEST, EnumDragonEgg.COPPER, EnumDragonEgg.BLACK);
@@ -133,10 +84,10 @@ public enum DragonType implements StringRepresentable {
     private final EnumDragonEgg[] eggs;
     private final Map<DragonLifeStages, Map<DragonSoundType, SoundEvent>> sounds;
     private final Supplier<Item> breedingFood;
-    private Supplier<ParticleOptions> deathParticle;
-    private ResourceLocation targetTag;
-    private Optional<ResourceKey<DamageType>> damageType;
-    private Map<DragonLifeStages, ResourceLocation> skeletonTextures;
+    private final Supplier<ParticleOptions> deathParticle;
+    private final ResourceLocation targetTag;
+    private final Optional<ResourceKey<DamageType>> damageType;
+    private final Map<DragonLifeStages, ResourceLocation> skeletonTextures;
 
     DragonType(String name, boolean eatsFish,
                Map<DragonLifeStages, Map<DragonSoundType, SoundEvent>> sounds,
@@ -219,7 +170,8 @@ public enum DragonType implements StringRepresentable {
     }
 
     public SoundEvent getSound(DragonLifeStages age, DragonSoundType soundType) {
-        return this.sounds.get(age).get(soundType); //TODO: Generic default draogn sounds whenn switch to data driven occurs
+        var Sound = this.sounds.getOrDefault(age, Collections.emptyMap()).getOrDefault(soundType, null);
+        return Sound != null ? Sound : IafSoundRegistry.GENERIC.getOrDefault(age, Collections.emptyMap()).getOrDefault(soundType, SoundEvents.GOAT_SCREAMING_DEATH);
     }
 
     public ParticleOptions getDeathParticle() {
@@ -295,7 +247,7 @@ public enum DragonType implements StringRepresentable {
         IDLE,
         HURT,
         DEATH,
-        ROAR
+        ROAR;
     }
 
     public record DragonStats(double minimumDamage, double maximumDamage, double minimumHealth, double maximumHealth, double minimumSpeed, double maximumSpeed, double minimumArmor, double maximumArmor) {

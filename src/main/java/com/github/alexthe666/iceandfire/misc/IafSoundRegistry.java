@@ -1,6 +1,7 @@
 package com.github.alexthe666.iceandfire.misc;
 
 import com.github.alexthe666.iceandfire.IceAndFire;
+import com.github.alexthe666.iceandfire.entity.DragonType;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -9,8 +10,11 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.NewRegistryEvent;
 
 import java.lang.reflect.Field;
+import java.util.HashMap;
+import java.util.Map;
 
 import static com.github.alexthe666.iceandfire.IceAndFire.MODID;
+import static com.github.alexthe666.iceandfire.entity.DragonType.*;
 
 @SuppressWarnings("WeakerAccess")
 @Mod.EventBusSubscriber(modid = IceAndFire.MODID, bus = Mod.EventBusSubscriber.Bus.MOD)
@@ -24,59 +28,8 @@ public final class IafSoundRegistry {
 
     public static final SoundEvent ICEDRAGON_BREATH = createSoundEvent("icedragon_breath");
 
-    public static final SoundEvent FIREDRAGON_CHILD_IDLE = createSoundEvent("firedragon_child_idle");
-
-    public static final SoundEvent FIREDRAGON_CHILD_HURT = createSoundEvent("firedragon_child_hurt");
-
-    public static final SoundEvent FIREDRAGON_CHILD_DEATH = createSoundEvent("firedragon_child_death");
-
-    public static final SoundEvent FIREDRAGON_CHILD_ROAR = createSoundEvent("firedragon_child_roar");
-
-    public static final SoundEvent FIREDRAGON_TEEN_ROAR = createSoundEvent("firedragon_teen_roar");
-
-    public static final SoundEvent FIREDRAGON_TEEN_IDLE = createSoundEvent("firedragon_teen_idle");
-
-    public static final SoundEvent FIREDRAGON_TEEN_DEATH = createSoundEvent("firedragon_teen_death");
-
-    public static final SoundEvent FIREDRAGON_TEEN_HURT = createSoundEvent("firedragon_teen_hurt");
-
-    public static final SoundEvent FIREDRAGON_ADULT_ROAR = createSoundEvent("firedragon_adult_roar");
-
-    public static final SoundEvent FIREDRAGON_ADULT_IDLE = createSoundEvent("firedragon_adult_idle");
-
-    public static final SoundEvent FIREDRAGON_ADULT_DEATH = createSoundEvent("firedragon_adult_death");
-
-    public static final SoundEvent FIREDRAGON_ADULT_HURT = createSoundEvent("firedragon_adult_hurt");
-
-    public static final SoundEvent ICEDRAGON_CHILD_IDLE = createSoundEvent("icedragon_child_idle");
-
-    public static final SoundEvent ICEDRAGON_CHILD_HURT = createSoundEvent("icedragon_child_hurt");
-
-    public static final SoundEvent ICEDRAGON_CHILD_DEATH = createSoundEvent("icedragon_child_death");
-
-    public static final SoundEvent ICEDRAGON_CHILD_ROAR = createSoundEvent("icedragon_child_roar");
-
-    public static final SoundEvent ICEDRAGON_TEEN_ROAR = createSoundEvent("icedragon_teen_roar");
-
-    public static final SoundEvent ICEDRAGON_TEEN_IDLE = createSoundEvent("icedragon_teen_idle");
-
-    public static final SoundEvent ICEDRAGON_TEEN_DEATH = createSoundEvent("icedragon_teen_death");
-
-    public static final SoundEvent ICEDRAGON_TEEN_HURT = createSoundEvent("icedragon_teen_hurt");
-
-    public static final SoundEvent ICEDRAGON_ADULT_ROAR = createSoundEvent("icedragon_adult_roar");
-
-    public static final SoundEvent ICEDRAGON_ADULT_IDLE = createSoundEvent("icedragon_adult_idle");
-
-    public static final SoundEvent ICEDRAGON_ADULT_DEATH = createSoundEvent("icedragon_adult_death");
-
-    public static final SoundEvent ICEDRAGON_ADULT_HURT = createSoundEvent("icedragon_adult_hurt");
-
     public static final SoundEvent DRAGONFLUTE = createSoundEvent("dragonflute");
-
-
-
-
+    
 
     public static final SoundEvent GOLD_PILE_STEP = createSoundEvent("gold_pile_step");
 
@@ -84,75 +37,35 @@ public final class IafSoundRegistry {
 
     public static final SoundEvent DRAGON_FLIGHT = createSoundEvent("dragon_flight");
 
+    public static Map<DragonLifeStages, Map<DragonSoundType, SoundEvent>> FIRE = registerDragonSoundGroup("fire");
+    public static Map<DragonLifeStages, Map<DragonSoundType, SoundEvent>> ICE = registerDragonSoundGroup("ice");
+    public static Map<DragonLifeStages, Map<DragonSoundType, SoundEvent>> LIGHTNING = registerDragonSoundGroup("lightning");
+
+    public static Map<DragonLifeStages, Map<DragonSoundType, SoundEvent>> GENERIC = registerDragonSoundGroup("generic");
+
+    public static SoundEvent createDragonSound(String dragonType, DragonLifeStages dragonStage, DragonSoundType soundType) {
+        return createSoundEvent((dragonType + "dragon_" + dragonStage + "_" + soundType).toLowerCase());
+    }
+    public static Map<DragonLifeStages, Map<DragonSoundType, SoundEvent>> registerDragonSoundGroup(String dragonType) {
+        var map = new HashMap<DragonLifeStages, Map<DragonSoundType, SoundEvent>>();
+
+        for (var stage:DragonLifeStages.values()) {
+            var LifeStageMap = map.putIfAbsent(stage, new HashMap<>());
+            for (var soundType:DragonSoundType.values()) {
+                LifeStageMap.putIfAbsent(soundType, createDragonSound(dragonType, stage, soundType));
+            }
+        }
+
+        return map;
+    }
 
 
 
 
-
-
-
-
-    public static final SoundEvent NAGA_IDLE = createSoundEvent("naga_idle");
-
-    public static final SoundEvent NAGA_ATTACK = createSoundEvent("naga_attack");
-
-    public static final SoundEvent NAGA_HURT = createSoundEvent("naga_hurt");
-
-    public static final SoundEvent NAGA_DIE = createSoundEvent("naga_die");
-
-    public static final SoundEvent MERMAID_IDLE = createSoundEvent("mermaid_idle");
-
-    public static final SoundEvent MERMAID_HURT = createSoundEvent("mermaid_hurt");
-
-    public static final SoundEvent MERMAID_DIE = createSoundEvent("mermaid_die");
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    public static final SoundEvent LIGHTNINGDRAGON_CHILD_IDLE = createSoundEvent("lightningdragon_child_idle");
-
-    public static final SoundEvent LIGHTNINGDRAGON_CHILD_HURT = createSoundEvent("lightningdragon_child_hurt");
-
-    public static final SoundEvent LIGHTNINGDRAGON_CHILD_DEATH = createSoundEvent("lightningdragon_child_death");
-
-    public static final SoundEvent LIGHTNINGDRAGON_CHILD_ROAR = createSoundEvent("lightningdragon_child_roar");
-
-    public static final SoundEvent LIGHTNINGDRAGON_TEEN_ROAR = createSoundEvent("lightningdragon_teen_roar");
-
-    public static final SoundEvent LIGHTNINGDRAGON_TEEN_IDLE = createSoundEvent("lightningdragon_teen_idle");
-
-    public static final SoundEvent LIGHTNINGDRAGON_TEEN_DEATH = createSoundEvent("lightningdragon_teen_death");
-
-    public static final SoundEvent LIGHTNINGDRAGON_TEEN_HURT = createSoundEvent("lightningdragon_teen_hurt");
-
-    public static final SoundEvent LIGHTNINGDRAGON_ADULT_ROAR = createSoundEvent("lightningdragon_adult_roar");
-
-    public static final SoundEvent LIGHTNINGDRAGON_ADULT_IDLE = createSoundEvent("lightningdragon_adult_idle");
-
-    public static final SoundEvent LIGHTNINGDRAGON_ADULT_DEATH = createSoundEvent("lightningdragon_adult_death");
-
-    public static final SoundEvent LIGHTNINGDRAGON_ADULT_HURT = createSoundEvent("lightningdragon_adult_hurt");
 
     public static final SoundEvent LIGHTNINGDRAGON_BREATH = createSoundEvent("lightningdragon_breath");
 
     public static final SoundEvent LIGHTNINGDRAGON_BREATH_CRACKLE = createSoundEvent("lightningdragon_breath_crackle");
-
-
-
-
-
-
     private static SoundEvent createSoundEvent(final String soundName) {
         final ResourceLocation soundID = new ResourceLocation(MODID, soundName);
         return SoundEvent.createVariableRangeEvent(soundID);
