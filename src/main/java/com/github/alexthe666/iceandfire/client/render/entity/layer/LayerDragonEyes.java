@@ -47,7 +47,7 @@ public class LayerDragonEyes extends RenderLayer<EntityDragonBase, AdvancedEntit
     @Override
     public void render(@NotNull PoseStack matrixStackIn, @NotNull MultiBufferSource bufferIn, int packedLightIn, EntityDragonBase dragon, float limbSwing, float limbSwingAmount, float partialTicks, float ageInTicks, float netHeadYaw, float headPitch) {
         if (dragon.shouldRenderEyes()) {
-            RenderType eyes = RenderType.eyes(EnumDragonTextures.getEyeTextureFromDragon(dragon));
+            RenderType eyes = RenderType.eyes(dragon.getEggType().getTextures().eyes().get(dragon.getDragonStage()));
             VertexConsumer ivertexbuilder = bufferIn.getBuffer(eyes);
             if (dragon instanceof EntityLightningDragon && lightningHead != null) {
                 copyPositions(lightningHead, (TabulaModel) this.getParentModel());

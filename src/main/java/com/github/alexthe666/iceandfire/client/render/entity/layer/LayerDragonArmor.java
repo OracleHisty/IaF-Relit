@@ -27,7 +27,7 @@ public class LayerDragonArmor extends RenderLayer<EntityDragonBase, AdvancedEnti
     private static final EquipmentSlot[] ARMOR_SLOTS = {EquipmentSlot.HEAD, EquipmentSlot.CHEST, EquipmentSlot.LEGS, EquipmentSlot.FEET};
     private final MobRenderer render;
 
-    public LayerDragonArmor(MobRenderer renderIn, int type) {
+    public LayerDragonArmor(MobRenderer renderIn) {
         super(renderIn);
         this.render = renderIn;
     }

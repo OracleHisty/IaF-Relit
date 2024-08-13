@@ -28,13 +28,13 @@ public class CustomizeToDragon extends LootItemConditionalFunction {
                 return stack;
             } else if (stack.getItem() instanceof ItemDragonScales) {
                 stack.setCount(dragon.getAgeInDays() / 25 + dragon.getRandom().nextInt(1 + (dragon.getAgeInDays() / 5)));
-                return new ItemStack(dragon.getVariantScale(dragon.getVariant()), stack.getCount());
+                return new ItemStack(dragon.getVariantScale(dragon.getEggType()), stack.getCount());
             } else if (stack.getItem() instanceof ItemDragonEgg) {
                 if (dragon.shouldDropLoot()) {
-                    return new ItemStack(dragon.getVariantEgg(dragon.getVariant()), stack.getCount());
+                    return new ItemStack(dragon.getVariantEgg(dragon.getEggType()), stack.getCount());
                 } else {
                     stack.setCount(1 + dragon.getRandom().nextInt(1 + (dragon.getAgeInDays() / 5)));
-                    return new ItemStack(dragon.getVariantScale(dragon.getVariant()), stack.getCount());
+                    return new ItemStack(dragon.getVariantScale(dragon.getEggType()), stack.getCount());
                 }
             } else if (stack.getItem() instanceof ItemDragonFlesh) {
                 return new ItemStack(dragon.getFleshItem(), 1 + dragon.getRandom().nextInt(1 + (dragon.getAgeInDays() / 25)));

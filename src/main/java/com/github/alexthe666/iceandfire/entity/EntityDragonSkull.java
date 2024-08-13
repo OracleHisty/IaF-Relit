@@ -30,9 +30,9 @@ import javax.annotation.Nullable;
 
 public class EntityDragonSkull extends Animal implements IBlacklistedFromStatues, IDeadMob {
 
-    private static final EntityDataAccessor<Integer> DRAGON_TYPE = SynchedEntityData.defineId(EntityDragonSkull.class, EntityDataSerializers.INT);
+    private static final EntityDataAccessor<Integer> DRAGON_TYPE = SynchedEntityData.defineId(EntityDragonSkull.class, EntityDataSerializers.INT); //TODO: Dragon Type DataSerializer
     private static final EntityDataAccessor<Integer> DRAGON_AGE = SynchedEntityData.defineId(EntityDragonSkull.class, EntityDataSerializers.INT);
-    private static final EntityDataAccessor<Integer> DRAGON_STAGE = SynchedEntityData.defineId(EntityDragonSkull.class, EntityDataSerializers.INT);
+    private static final EntityDataAccessor<Integer> DRAGON_STAGE = SynchedEntityData.defineId(EntityDragonSkull.class, EntityDataSerializers.INT); //TODO: Dragon Stage DataSerializer
     private static final EntityDataAccessor<Float> DRAGON_DIRECTION = SynchedEntityData.defineId(EntityDragonSkull.class, EntityDataSerializers.FLOAT);
 
     public final float minSize = 0.3F;
@@ -108,8 +108,8 @@ public class EntityDragonSkull extends Animal implements IBlacklistedFromStatues
         this.getEntityData().set(DRAGON_TYPE, var1.ordinal());
     }
 
-    public int getStage() {
-        return this.getEntityData().get(DRAGON_STAGE);
+    public DragonType.DragonLifeStages getStage() {
+        return DragonType.DragonLifeStages.values()[this.getEntityData().get(DRAGON_STAGE)];
     }
 
     public void setStage(int var1) {
@@ -141,7 +141,7 @@ public class EntityDragonSkull extends Animal implements IBlacklistedFromStatues
         this.remove(RemovalReason.DISCARDED);
         ItemStack stack = new ItemStack(getDragonSkullItem());
         stack.setTag(new CompoundTag());
-        stack.getTag().putInt("Stage", this.getStage());
+        stack.getTag().putInt("Stage", this.getStage().ordinal());
         stack.getTag().putInt("DragonAge", this.getDragonAge());
         if (!this.level().isClientSide)
             this.spawnAtLocation(stack, 0.0F);
@@ -178,7 +178,7 @@ public class EntityDragonSkull extends Animal implements IBlacklistedFromStatues
     @Override
     public void addAdditionalSaveData(CompoundTag compound) {
         compound.putInt("Type", this.getDragonType().ordinal());
-        compound.putInt("Stage", this.getStage());
+        compound.putInt("Stage", this.getStage().ordinal());
         compound.putInt("DragonAge", this.getDragonAge());
         compound.putFloat("DragonYaw", this.getYaw());
         super.addAdditionalSaveData(compound);
@@ -214,8 +214,8 @@ public class EntityDragonSkull extends Animal implements IBlacklistedFromStatues
         return true;
     }
 
-    public int getDragonStage() {
-        return Math.max(getStage(), 1);
+    public DragonType.DragonLifeStages getDragonStage() {
+        return getStage();
     }
 
     @Override

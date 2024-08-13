@@ -16,6 +16,8 @@ import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.resources.ResourceLocation;
 import org.jetbrains.annotations.NotNull;
 
+import static com.github.alexthe666.iceandfire.entity.DragonType.DragonLifeStages.TriState.TRUE;
+
 public class RenderDragonSkull extends EntityRenderer<EntityDragonSkull> {
 
     public static final float[] growth_stage_1 = new float[]{1F, 3F};
@@ -66,24 +68,19 @@ public class RenderDragonSkull extends EntityRenderer<EntityDragonSkull> {
 
     @Override
     public @NotNull ResourceLocation getTextureLocation(EntityDragonSkull entity) {
-        return switch (entity.getDragonType()) {
-            case LIGHTNING -> EnumDragonTextures.getLightningDragonSkullTextures(entity);
-            case ICE -> EnumDragonTextures.getIceDragonSkullTextures(entity);
-            case FIRE -> EnumDragonTextures.getFireDragonSkullTextures(entity);
-        };
+        return entity.getDragonType().getSkeletonTexture(entity.getDragonStage());
     }
 
 
     public float getRenderSize(EntityDragonSkull skull) {
-        float step = (growth_stages[skull.getDragonStage() - 1][1] - growth_stages[skull.getDragonStage() - 1][0]) / 25;
+        float step = (growth_stages[skull.getDragonStage().ordinal() - 1][1] - growth_stages[skull.getDragonStage().ordinal() - 1][0]) / 25;
         if (skull.getDragonAge() > 125) {
-            return growth_stages[skull.getDragonStage() - 1][0] + ((step * 25));
+            return growth_stages[skull.getDragonStage().ordinal() - 1][0] + ((step * 25));
         }
-        return growth_stages[skull.getDragonStage() - 1][0] + ((step * this.getAgeFactor(skull)));
+        return growth_stages[skull.getDragonStage().ordinal() - 1][0] + ((step * this.getAgeFactor(skull)));
     }
 
     private int getAgeFactor(EntityDragonSkull skull) {
-        return (skull.getDragonStage() > 1 ? skull.getDragonAge() - (25 * (skull.getDragonStage() - 1)) : skull.getDragonAge());
+        return (skull.getDragonStage().older(DragonType.DragonLifeStages.HATCHLING) == TRUE ? skull.getDragonAge() - (25 * (skull.getDragonStage().ordinal() - 1)) : skull.getDragonAge());
     }
-
 }

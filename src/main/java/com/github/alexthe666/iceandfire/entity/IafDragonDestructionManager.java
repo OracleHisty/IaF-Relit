@@ -9,8 +9,10 @@ import com.github.alexthe666.iceandfire.entity.util.BlockLaunchExplosion;
 import com.github.alexthe666.iceandfire.entity.util.DragonUtils;
 import com.github.alexthe666.iceandfire.misc.IafDamageRegistry;
 import net.minecraft.core.BlockPos;
+import net.minecraft.resources.ResourceKey;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.world.damagesource.DamageType;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
@@ -23,6 +25,11 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.AABB;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.ForgeEventFactory;
+import org.jetbrains.annotations.Nullable;
+
+import static com.github.alexthe666.iceandfire.entity.DragonType.DragonLifeStages.ADULT;
+import static com.github.alexthe666.iceandfire.entity.DragonType.DragonLifeStages.TEEN;
+import static com.github.alexthe666.iceandfire.entity.DragonType.DragonLifeStages.TriState.TRUE;
 
 public class IafDragonDestructionManager {
     public static void destroyAreaBreath(final Level level, final BlockPos center, final EntityDragonBase dragon) {
@@ -34,10 +41,10 @@ public class IafDragonDestructionManager {
         float damageScale;
 
         if (dragon.dragonType == DragonType.FIRE) {
-            statusDuration = 5 + dragon.getDragonStage() * 5;
+            statusDuration = 5 + dragon.getDragonStage().ordinal() * 5;
             damageScale = (float) IafConfig.dragonAttackDamageFire;
         } else if (dragon.dragonType == DragonType.ICE) {
-            statusDuration = 50 * dragon.getDragonStage();
+            statusDuration = 50 * dragon.getDragonStage().ordinal();
             damageScale = (float) IafConfig.dragonAttackDamageIce;
         } else if (dragon.dragonType == DragonType.LIGHTNING) {
             statusDuration = 3;
@@ -49,7 +56,7 @@ public class IafDragonDestructionManager {
         double damageRadius = 3.5;
         boolean canBreakBlocks = ForgeEventFactory.getMobGriefingEvent(level, dragon);
 
-        if (dragon.getDragonStage() <= 3) {
+        if (dragon.getDragonStage().younger(ADULT) == TRUE) {
             BlockPos.betweenClosedStream(center.offset(-1, -1, -1), center.offset(1, 1, 1)).forEach(position -> {
                 if (level.getBlockEntity(position) instanceof TileEntityDragonforgeInput forge) {
                     forge.onHitWithFlame();
@@ -61,7 +68,7 @@ public class IafDragonDestructionManager {
                 }
             });
         } else {
-            final int radius = dragon.getDragonStage() == 4 ? 2 : 3;
+            final int radius = dragon.getDragonStage().older(DragonType.DragonLifeStages.TEEN) == TRUE ? 2 : 3;
             final int x = radius + level.random.nextInt(1);
             final int y = radius + level.random.nextInt(1);
             final int z = radius + level.random.nextInt(1);
@@ -85,7 +92,7 @@ public class IafDragonDestructionManager {
         }
 
         DamageSource damageSource = getDamageSource(dragon);
-        float stageDamage = dragon.getDragonStage() * damageScale;
+        float stageDamage = dragon.getDragonStage().ordinal() * damageScale;
 
         level.getEntitiesOfClass(
                 LivingEntity.class,
@@ -121,7 +128,7 @@ public class IafDragonDestructionManager {
         boolean canBreakBlocks = DragonUtils.canGrief(dragon) && ForgeEventFactory.getMobGriefingEvent(level, dragon);
 
         if (canBreakBlocks) {
-            if (dragon.getDragonStage() <= 3) {
+            if (dragon.getDragonStage().younger(ADULT) == TRUE) {
                 BlockPos.betweenClosedStream(center.offset(-x, -y, -z), center.offset(x, y, z)).forEach(position -> {
                     BlockState state = level.getBlockState(position);
 
@@ -138,7 +145,7 @@ public class IafDragonDestructionManager {
                     }
                 });
             } else {
-                final int radius = dragon.getDragonStage() == 4 ? 2 : 3;
+                final int radius = dragon.getDragonStage().older(TEEN) == TRUE ? 2 : 3;
                 x = radius + level.random.nextInt(2);
                 y = radius + level.random.nextInt(2);
                 z = radius + level.random.nextInt(2);
@@ -171,7 +178,7 @@ public class IafDragonDestructionManager {
             return;
         }
 
-        final float stageDamage = Math.max(1, dragon.getDragonStage() - 1) * 2F;
+        final float stageDamage = Math.max(1, dragon.getDragonStage().ordinal()) * 2F;
         DamageSource damageSource = getDamageSource(dragon);
 
         level.getEntitiesOfClass(
@@ -197,17 +204,14 @@ public class IafDragonDestructionManager {
     }
 
     private static DamageSource getDamageSource(final EntityDragonBase dragon) {
-        Player player = dragon.getRidingPlayer();
+        return dragon.dragonType.damageType()
+                .map(a -> getSource(a, dragon.getRidingPlayer(), dragon))
+                .orElse(dragon.level().damageSources().mobAttack(dragon));
+    }
 
-        if (dragon.dragonType == DragonType.FIRE) {
-            return player != null ? IafDamageRegistry.causeIndirectDragonFireDamage(dragon, player) : IafDamageRegistry.causeDragonFireDamage(dragon);
-        } else if (dragon.dragonType == DragonType.ICE) {
-            return player != null ? IafDamageRegistry.causeIndirectDragonIceDamage(dragon, player) : IafDamageRegistry.causeDragonIceDamage(dragon);
-        } else if (dragon.dragonType == DragonType.LIGHTNING) {
-            return player != null ? IafDamageRegistry.causeIndirectDragonLightningDamage(dragon, player) : IafDamageRegistry.causeDragonLightningDamage(dragon);
-        } else {
-            return dragon.level().damageSources().mobAttack(dragon);
-        }
+    public static DamageSource getSource(ResourceKey<DamageType> damageType, @Nullable Player player, EntityDragonBase dragon) {
+        if (player != null) return IafDamageRegistry.causeIndirectDragonDamage(damageType, dragon, player);
+        return IafDamageRegistry.causeDragonDamage(damageType, dragon);
     }
 
     private static void attackBlock(final Level level, final EntityDragonBase dragon, final BlockPos position, final BlockState state) {
@@ -267,9 +271,9 @@ public class IafDragonDestructionManager {
         }
     }
 
-    private static void causeExplosion(Level world, BlockPos center, EntityDragonBase destroyer, DamageSource source, int stage) {
+    private static void causeExplosion(Level world, BlockPos center, EntityDragonBase destroyer, DamageSource source, DragonType.DragonLifeStages stage) {
         Explosion.BlockInteraction mode = ForgeEventFactory.getMobGriefingEvent(world, destroyer) ? Explosion.BlockInteraction.DESTROY : Explosion.BlockInteraction.KEEP;
-        BlockLaunchExplosion explosion = new BlockLaunchExplosion(world, destroyer, source, center.getX(), center.getY(), center.getZ(), Math.min(2, stage - 2), mode);
+        BlockLaunchExplosion explosion = new BlockLaunchExplosion(world, destroyer, source, center.getX(), center.getY(), center.getZ(), Math.min(2, stage.ordinal() - 2), mode); //TODO: Make sure its minimally a child stage.
         explosion.explode();
         explosion.finalizeExplosion(true);
     }

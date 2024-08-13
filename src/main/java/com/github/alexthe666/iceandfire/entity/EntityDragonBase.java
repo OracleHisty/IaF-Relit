@@ -16,6 +16,7 @@ import com.github.alexthe666.iceandfire.entity.ai.*;
 import com.github.alexthe666.iceandfire.entity.props.EntityDataProvider;
 import com.github.alexthe666.iceandfire.entity.tile.TileEntityDragonforgeInput;
 import com.github.alexthe666.iceandfire.entity.util.*;
+import com.github.alexthe666.iceandfire.enums.EnumDragonEgg;
 import com.github.alexthe666.iceandfire.inventory.ContainerDragon;
 import com.github.alexthe666.iceandfire.item.DragonItems;
 import com.github.alexthe666.iceandfire.item.IafItemRegistry;
@@ -740,7 +741,7 @@ public abstract class EntityDragonBase extends TamableAnimal implements IPassabi
         compound.putInt("Hunger", this.getHunger());
         compound.putInt("AgeTicks", this.getAgeInTicks());
         compound.putBoolean("Gender", this.isMale());
-        compound.putInt("Variant", this.getVariant());
+        compound.putInt("Variant", this.getEggType().ordinal());
         compound.putBoolean("Sleeping", this.isSleeping());
         compound.putBoolean("TamedDragon", this.isTame());
         compound.putBoolean("FireBreathing", this.isBreathingFire());
@@ -944,8 +945,8 @@ public abstract class EntityDragonBase extends TamableAnimal implements IPassabi
         this.entityData.set(HUNGER, Mth.clamp(hunger, 0, 100));
     }
 
-    public int getVariant() {
-        return this.entityData.get(VARIANT);
+    public EnumDragonEgg getEggType() {
+        return dragonType.getEgg(this.entityData.get(VARIANT));
     }
 
     public void setVariant(int variant) {
@@ -1140,7 +1141,7 @@ public abstract class EntityDragonBase extends TamableAnimal implements IPassabi
                     this.remove(RemovalReason.DISCARDED);
                 } else if (this.getDeathStage() == (lastDeathStage / 2) - 1 && IafConfig.dragonDropHeart) {
                     ItemStack heart = new ItemStack(this.getHeartItem(), 1);
-                    ItemStack egg = new ItemStack(this.getVariantEgg(this.random.nextInt(4)), 1);
+                    ItemStack egg = new ItemStack(dragonType.getEgg(this.random.nextInt(4)).getEggItem(), 1);
                     if (!level().isClientSide) {
                         this.spawnAtLocation(heart, 1);
                         if (!this.isMale() && this.getDragonStage().older(TEEN) == TRUE) {
@@ -1603,8 +1604,8 @@ public abstract class EntityDragonBase extends TamableAnimal implements IPassabi
         return this.flyTicks > 6000 || isGoingDown() || flyTicks > 40 && this.flyProgress == 0 || this.isChained() && flyTicks > 100;
     }
 
-    public String getVariantName(int variant) {
-        return dragonType.getEgg(variant).getSerializedName() + "_";
+    public String getVariantName(EnumDragonEgg variant) {
+        return variant.getSerializedName() + "_";
     }
 
     @Override
@@ -2062,12 +2063,12 @@ public abstract class EntityDragonBase extends TamableAnimal implements IPassabi
         return f * f + f1 * f1 + f2 * f2;
     }
 
-    public Item getVariantScale(int variant) {
-        return dragonType.getEgg(variant).getScaleItem();
+    public Item getVariantScale(EnumDragonEgg variant) {
+        return variant.getScaleItem();
     }
 
-    public Item getVariantEgg(int variant) {
-        return dragonType.getEgg(variant).getEggItem();
+    public Item getVariantEgg(EnumDragonEgg variant) {
+        return variant.getEggItem();
     }
 
     public Item getSummoningCrystal() {

@@ -22,7 +22,7 @@ import org.jetbrains.annotations.NotNull;
 
 import javax.annotation.Nullable;
 
-public abstract class EntityDragonCharge extends Fireball implements IDragonProjectile {
+public abstract class EntityDragonCharge extends Fireball implements IDragonProjectile { //TODO: Refractor so we have universal dragon charge with attributes determined by dragon type.
 
 
     public EntityDragonCharge(EntityType<? extends Fireball> type, Level worldIn) {
@@ -111,7 +111,7 @@ public abstract class EntityDragonCharge extends Fireball implements IDragonProj
                         return;
                     }
                     if (shootingEntity instanceof EntityDragonBase) {
-                        float damageAmount = getDamage() * ((EntityDragonBase) shootingEntity).getDragonStage();
+                        float damageAmount = getDamage() * ((EntityDragonBase) shootingEntity).getDragonStage().ordinal();
 
                         EntityDragonBase shootingDragon = (EntityDragonBase) shootingEntity;
                         Entity cause = shootingDragon.getRidingPlayer() != null ? shootingDragon.getRidingPlayer() : shootingDragon;

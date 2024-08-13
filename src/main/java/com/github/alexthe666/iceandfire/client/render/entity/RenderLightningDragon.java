@@ -3,6 +3,7 @@ package com.github.alexthe666.iceandfire.client.render.entity;
 import com.github.alexthe666.citadel.client.model.AdvancedEntityModel;
 import com.github.alexthe666.iceandfire.client.particle.LightningBoltData;
 import com.github.alexthe666.iceandfire.client.particle.LightningRender;
+import com.github.alexthe666.iceandfire.entity.DragonType;
 import com.github.alexthe666.iceandfire.entity.EntityDragonBase;
 import com.github.alexthe666.iceandfire.entity.EntityLightningDragon;
 import com.mojang.blaze3d.vertex.PoseStack;
@@ -18,7 +19,7 @@ public class RenderLightningDragon extends RenderDragonBase {
 
     private final LightningRender lightningRender = new LightningRender();
 
-    public RenderLightningDragon(EntityRendererProvider.Context context, AdvancedEntityModel model, int dragonType) {
+    public RenderLightningDragon(EntityRendererProvider.Context context, AdvancedEntityModel model, DragonType dragonType) {
         super(context, model, dragonType);
     }
 

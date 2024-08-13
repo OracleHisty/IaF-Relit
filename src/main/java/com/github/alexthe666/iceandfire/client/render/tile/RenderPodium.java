@@ -24,20 +24,7 @@ public class RenderPodium<T extends TileEntityPodium> implements BlockEntityRend
     }
 
     protected static RenderType getEggTexture(EnumDragonEgg type) {
-        return switch (type) {
-            default -> RenderType.entityCutout(RenderDragonEgg.EGG_RED);
-            case GREEN -> RenderType.entityCutout(RenderDragonEgg.EGG_GREEN);
-            case BRONZE -> RenderType.entityCutout(RenderDragonEgg.EGG_BRONZE);
-            case GRAY -> RenderType.entityCutout(RenderDragonEgg.EGG_GREY);
-            case BLUE -> RenderType.entityCutout(RenderDragonEgg.EGG_BLUE);
-            case WHITE -> RenderType.entityCutout(RenderDragonEgg.EGG_WHITE);
-            case SAPPHIRE -> RenderType.entityCutout(RenderDragonEgg.EGG_SAPPHIRE);
-            case SILVER -> RenderType.entityCutout(RenderDragonEgg.EGG_SILVER);
-            case ELECTRIC -> RenderType.entityCutout(RenderDragonEgg.EGG_ELECTRIC);
-            case AMYTHEST -> RenderType.entityCutout(RenderDragonEgg.EGG_AMYTHEST);
-            case COPPER -> RenderType.entityCutout(RenderDragonEgg.EGG_COPPER);
-            case BLACK -> RenderType.entityCutout(RenderDragonEgg.EGG_BLACK);
-        };
+        return RenderType.entityCutout(type.getTextures().egg());
     }
 
     @Override

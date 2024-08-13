@@ -29,7 +29,7 @@ import static com.github.alexthe666.iceandfire.entity.DragonType.DragonLifeStage
 
 public class EntityFireDragon extends EntityDragonBase {
     public EntityFireDragon(EntityType<? extends EntityDragonBase> t, Level worldIn) {
-        super(t, worldIn, DragonType.FIRE, 1, 1 + IafConfig.dragonAttackDamage, IafConfig.dragonHealth * 0.04, IafConfig.dragonHealth, 0.15F, 0.4F);
+        super(t, worldIn, DragonType.FIRE);
         this.setPathfindingMalus(BlockPathTypes.DAMAGE_FIRE, 0.0F);
         this.setPathfindingMalus(BlockPathTypes.LAVA, 8.0F);
         ANIMATION_SPEAK = Animation.create(20);

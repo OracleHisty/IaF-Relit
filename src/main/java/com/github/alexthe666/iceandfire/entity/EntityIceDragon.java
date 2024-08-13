@@ -33,8 +33,8 @@ public class EntityIceDragon extends EntityDragonBase {
         this(IafEntityRegistry.ICE_DRAGON.get(), worldIn);
     }
 
-    public EntityIceDragon(EntityType<?> t, Level worldIn) {
-        super(t, worldIn, DragonType.ICE, 1, 1 + IafConfig.dragonAttackDamage, IafConfig.dragonHealth * 0.04, IafConfig.dragonHealth, 0.15F, 0.4F);
+    public EntityIceDragon(EntityType<? extends EntityDragonBase> t, Level worldIn) {
+        super(t, worldIn, DragonType.FIRE);
         ANIMATION_SPEAK = Animation.create(20);
         ANIMATION_BITE = Animation.create(35);
         ANIMATION_SHAKEPREY = Animation.create(65);

@@ -48,8 +48,8 @@ public class EntityLightningDragon extends EntityDragonBase {
         this(IafEntityRegistry.LIGHTNING_DRAGON.get(), worldIn);
     }
 
-    public EntityLightningDragon(EntityType<?> t, Level worldIn) {
-        super(t, worldIn, DragonType.LIGHTNING, 1, 1 + IafConfig.dragonAttackDamage, IafConfig.dragonHealth * 0.04, IafConfig.dragonHealth, 0.15F, 0.4F);
+    public EntityLightningDragon(EntityType<? extends EntityDragonBase> t, Level worldIn) {
+        super(t, worldIn, DragonType.LIGHTNING);
         this.setPathfindingMalus(BlockPathTypes.DANGER_FIRE, 0.0F);
         this.setPathfindingMalus(BlockPathTypes.LAVA, 8.0F);
         ANIMATION_SPEAK = Animation.create(20);

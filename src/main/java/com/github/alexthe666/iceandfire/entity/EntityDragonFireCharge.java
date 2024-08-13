@@ -53,7 +53,7 @@ public class EntityDragonFireCharge extends EntityDragonCharge {
 
     @Override
     public DamageSource causeDamage(@Nullable Entity cause) {
-        return IafDamageRegistry.causeDragonFireDamage(cause);
+        return IafDamageRegistry.causeDragonDamage(IafDamageRegistry.DRAGON_FIRE_TYPE, cause);
     }
 
     @Override

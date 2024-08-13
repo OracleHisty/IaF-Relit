@@ -91,7 +91,7 @@ public class DragonUtils {
     }
 
     public static BlockPos getWaterBlockInView(EntityDragonBase dragon) {
-        float radius = 0.75F * (0.7F * dragon.getRenderSize() / 3) * -7 - dragon.getRandom().nextInt(dragon.getDragonStage() * 6);
+        float radius = 0.75F * (0.7F * dragon.getRenderSize() / 3) * -7 - dragon.getRandom().nextInt(dragon.getDragonStage().ordinal() * 6);
         float neg = dragon.getRandom().nextBoolean() ? 1 : -1;
         float angle = (0.01745329251F * dragon.yBodyRot) + 3.15F + (dragon.getRandom().nextFloat() * neg);
         double extraX = radius * Mth.sin((float) (Math.PI + angle));

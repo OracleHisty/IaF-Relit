@@ -15,6 +15,8 @@ import net.minecraft.world.level.pathfinder.Node;
 import net.minecraft.world.level.pathfinder.Path;
 import net.minecraft.world.phys.Vec3;
 
+import static com.github.alexthe666.iceandfire.entity.DragonType.DragonLifeStages.TriState.TRUE;
+
 /*
     dragon logic separation for client, server and shared sides.
  */
@@ -235,7 +237,7 @@ public class IafDragonLogic {
                 dragon.setHunger(dragon.getHunger() - 1);
             }
         }
-        if ((dragon.groundAttack == IafDragonAttacks.Ground.FIRE) && dragon.getDragonStage() < 2) {
+        if ((dragon.groundAttack == IafDragonAttacks.Ground.FIRE) && dragon.getDragonStage().younger(DragonType.DragonLifeStages.CHILD) == TRUE) {
             dragon.usingGroundAttack = true;
             dragon.randomizeAttacks();
             dragon.playSound(dragon.getBabyFireSound(), 1, 1);
@@ -247,7 +249,7 @@ public class IafDragonLogic {
                 dragon.fireTicks = 0;
             }
             if (dragon.burningTarget == null) {
-                if (dragon.fireTicks > dragon.getDragonStage() * 25 || dragon.getOwner() != null && dragon.getPassengers().contains(dragon.getOwner()) && dragon.fireStopTicks <= 0) {
+                if (dragon.fireTicks > dragon.getDragonStage().ordinal() * 25 || dragon.getOwner() != null && dragon.getPassengers().contains(dragon.getOwner()) && dragon.fireStopTicks <= 0) {
                     dragon.setBreathingFire(false);
                     dragon.randomizeAttacks();
                     dragon.fireTicks = 0;
@@ -428,7 +430,7 @@ public class IafDragonLogic {
             dragon.hasHadHornUse = false;
         }
 
-        if ((dragon.groundAttack == IafDragonAttacks.Ground.FIRE) && dragon.getDragonStage() < 2) {
+        if ((dragon.groundAttack == IafDragonAttacks.Ground.FIRE) && dragon.getDragonStage().younger(DragonType.DragonLifeStages.CHILD) == TRUE) {
             if (dragon.level().isClientSide) {
                 dragon.spawnBabyParticles();
             }
@@ -455,14 +457,14 @@ public class IafDragonLogic {
                 } else if (dragon.getAnimation() == EntityDragonBase.ANIMATION_TAILWHACK) {
                     if (dragon.getAnimationTick() > 20 && dragon.getAnimationTick() < 30) {
                         attackTarget(target, ridingPlayer, (int) dragon.getAttribute(Attributes.ATTACK_DAMAGE).getValue());
-                        target.knockback(dragon.getDragonStage() * 0.6F, Mth.sin(dragon.getYRot() * 0.017453292F), -Mth.cos(dragon.getYRot() * 0.017453292F));
+                        target.knockback(dragon.getDragonStage().ordinal() * 0.6F, Mth.sin(dragon.getYRot() * 0.017453292F), -Mth.cos(dragon.getYRot() * 0.017453292F));
                         dragon.usingGroundAttack = dragon.getRandom().nextBoolean();
                         dragon.randomizeAttacks();
                     }
                 } else if (dragon.getAnimation() == EntityDragonBase.ANIMATION_WINGBLAST) {
                     if ((dragon.getAnimationTick() == 15 || dragon.getAnimationTick() == 25 || dragon.getAnimationTick() == 35)) {
                         attackTarget(target, ridingPlayer, (int) dragon.getAttribute(Attributes.ATTACK_DAMAGE).getValue());
-                        target.knockback(dragon.getDragonStage() * 0.6F, Mth.sin(dragon.getYRot() * 0.017453292F), -Mth.cos(dragon.getYRot() * 0.017453292F));
+                        target.knockback(dragon.getDragonStage().ordinal() * 0.6F, Mth.sin(dragon.getYRot() * 0.017453292F), -Mth.cos(dragon.getYRot() * 0.017453292F));
                         dragon.usingGroundAttack = dragon.getRandom().nextBoolean();
                         dragon.randomizeAttacks();
                     }
@@ -478,7 +480,7 @@ public class IafDragonLogic {
         IceAndFire.LOGGER.warn("DRAGON DEBUG[" + side + "]:"
                 + "\nStage: " + dragon.getDragonStage()
                 + "\nAge: " + dragon.getAgeInDays()
-                + "\nVariant: " + dragon.getVariantName(dragon.getVariant())
+                + "\nVariant: " + dragon.getVariantName(dragon.getEggType())
                 + "\nOwner: " + owner
                 + "\nAttack Target: " + attackTarget
                 + "\nFlying: " + dragon.isFlying()

@@ -2,20 +2,26 @@ package com.github.alexthe666.iceandfire.entity;
 
 import com.github.alexthe666.iceandfire.enums.EnumDragonEgg;
 import com.github.alexthe666.iceandfire.item.IafItemRegistry;
+import com.github.alexthe666.iceandfire.misc.IafDamageRegistry;
 import com.github.alexthe666.iceandfire.misc.IafSoundRegistry;
 import com.github.alexthe666.iceandfire.misc.IafTagRegistry;
 import net.minecraft.core.particles.ParticleOptions;
 import net.minecraft.core.particles.ParticleTypes;
+import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.util.RandomSource;
 import net.minecraft.util.StringRepresentable;
+import net.minecraft.world.damagesource.DamageType;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.level.Level;
+import net.minecraftforge.registries.RegistryObject;
 import org.jetbrains.annotations.NotNull;
 
 import javax.annotation.Nonnull;
 import java.util.Map;
+import java.util.Optional;
 import java.util.function.Supplier;
 
 import static com.github.alexthe666.iceandfire.entity.DragonType.DragonLifeStages.TriState.FALSE;
@@ -44,6 +50,14 @@ public enum DragonType implements StringRepresentable {
             IafItemRegistry.FIRE_STEW,
             IafTagRegistry.FIRE_DRAGON_TARGETS,
             new DragonStats(),
+            Map.of(
+                    DragonType.DragonLifeStages.HATCHLING, new ResourceLocation("iceandfire:textures/models/firedragon/skeleton_1.png"),
+                    DragonType.DragonLifeStages.CHILD, new ResourceLocation("iceandfire:textures/models/firedragon/skeleton_2.png"),
+                    DragonType.DragonLifeStages.TEEN, new ResourceLocation("iceandfire:textures/models/firedragon/skeleton_3.png"),
+                    DragonType.DragonLifeStages.ADULT, new ResourceLocation("iceandfire:textures/models/firedragon/skeleton_4.png"),
+                    DragonType.DragonLifeStages.ELDER, new ResourceLocation("iceandfire:textures/models/firedragon/skeleton_5.png")
+            ),
+            Optional.of(IafDamageRegistry.DRAGON_FIRE_TYPE),
             EnumDragonEgg.RED, EnumDragonEgg.GREEN, EnumDragonEgg.BRONZE, EnumDragonEgg.GRAY),
     ICE("ice", true,
             Map.of(
@@ -67,6 +81,14 @@ public enum DragonType implements StringRepresentable {
             IafItemRegistry.FROST_STEW,
             IafTagRegistry.ICE_DRAGON_TARGETS,
             new DragonStats(),
+            Map.of(
+                    DragonType.DragonLifeStages.HATCHLING, new ResourceLocation("iceandfire:textures/models/icedragon/skeleton_1.png"),
+                    DragonType.DragonLifeStages.CHILD, new ResourceLocation("iceandfire:textures/models/icedragon/skeleton_2.png"),
+                    DragonType.DragonLifeStages.TEEN, new ResourceLocation("iceandfire:textures/models/icedragon/skeleton_3.png"),
+                    DragonType.DragonLifeStages.ADULT, new ResourceLocation("iceandfire:textures/models/icedragon/skeleton_4.png"),
+                    DragonType.DragonLifeStages.ELDER, new ResourceLocation("iceandfire:textures/models/icedragon/skeleton_5.png")
+            ),
+            Optional.of(IafDamageRegistry.DRAGON_LIGHTNING_TYPE),
             EnumDragonEgg.BLUE, EnumDragonEgg.WHITE, EnumDragonEgg.SAPPHIRE, EnumDragonEgg.SILVER),
     LIGHTNING("lightning", false,
             Map.of(
@@ -90,6 +112,14 @@ public enum DragonType implements StringRepresentable {
             IafItemRegistry.LIGHTNING_STEW,
             IafTagRegistry.LIGHTNING_DRAGON_TARGETS,
             new DragonStats(),
+            Map.of(
+                    DragonType.DragonLifeStages.HATCHLING, new ResourceLocation("iceandfire:textures/models/lightningdragon/skeleton_1.png"),
+                    DragonType.DragonLifeStages.CHILD, new ResourceLocation("iceandfire:textures/models/lightningdragon/skeleton_2.png"),
+                    DragonType.DragonLifeStages.TEEN, new ResourceLocation("iceandfire:textures/models/lightningdragon/skeleton_3.png"),
+                    DragonType.DragonLifeStages.ADULT, new ResourceLocation("iceandfire:textures/models/lightningdragon/skeleton_4.png"),
+                    DragonType.DragonLifeStages.ELDER, new ResourceLocation("iceandfire:textures/models/lightningdragon/skeleton_5.png")
+            ),
+            Optional.of(IafDamageRegistry.DRAGON_LIGHTNING_TYPE),
             EnumDragonEgg.ELECTRIC, EnumDragonEgg.AMYTHEST, EnumDragonEgg.COPPER, EnumDragonEgg.BLACK);
 
     private final String name;
@@ -98,19 +128,25 @@ public enum DragonType implements StringRepresentable {
     private final ResourceLocation femaleLoot;
     private final ResourceLocation maleLoot;
     private final ResourceLocation skeletonLoot;
+
     private final DragonStats stats;
     private final EnumDragonEgg[] eggs;
     private final Map<DragonLifeStages, Map<DragonSoundType, SoundEvent>> sounds;
     private final Supplier<Item> breedingFood;
     private Supplier<ParticleOptions> deathParticle;
     private ResourceLocation targetTag;
+    private Optional<ResourceKey<DamageType>> damageType;
+    private Map<DragonLifeStages, ResourceLocation> skeletonTextures;
 
     DragonType(String name, boolean eatsFish,
                Map<DragonLifeStages, Map<DragonSoundType, SoundEvent>> sounds,
                Supplier<ParticleOptions> deathParticle,
                Supplier<Item> breedingFood,
                ResourceLocation targetTag,
-               DragonStats stats, EnumDragonEgg... eggs) {
+               DragonStats stats,
+               Map<DragonLifeStages, ResourceLocation> skeletonTextures,
+               Optional<ResourceKey<DamageType>> damageType,
+               EnumDragonEgg... eggs) {
         this.name = name;
         this.eatsFish = eatsFish;
         this.sounds = sounds;
@@ -120,13 +156,14 @@ public enum DragonType implements StringRepresentable {
         this.deathParticle = deathParticle;
         this.breedingFood = breedingFood;
         this.targetTag = targetTag;
+        this.damageType = damageType;
         this.stats = stats;
-
         this.eggs = eggs;
+        this.skeletonTextures = skeletonTextures;
     }
 
     public EnumDragonEgg getEgg(int variant) {
-        if(variant > eggs.length) throw new RuntimeException("Egg variant is higher than existing ones");
+        if(variant > eggs.length) throw new RuntimeException("Egg variant is higher than existing ones. " + variant);
         return eggs[variant];
     }
 
@@ -199,6 +236,14 @@ public enum DragonType implements StringRepresentable {
 
     public DragonStats stats() {
         return stats;
+    }
+
+    public Optional<ResourceKey<DamageType>> damageType() {
+        return damageType;
+    }
+
+    public ResourceLocation getSkeletonTexture(DragonLifeStages dragonStage) {
+        return skeletonTextures.get(dragonStage);
     }
 
     public enum DragonLifeStages {

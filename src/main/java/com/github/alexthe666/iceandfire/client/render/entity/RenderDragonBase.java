@@ -6,6 +6,7 @@ import com.github.alexthe666.iceandfire.client.render.entity.layer.LayerDragonBa
 import com.github.alexthe666.iceandfire.client.render.entity.layer.LayerDragonEyes;
 import com.github.alexthe666.iceandfire.client.render.entity.layer.LayerDragonRider;
 import com.github.alexthe666.iceandfire.client.texture.ArrayLayeredTexture;
+import com.github.alexthe666.iceandfire.entity.DragonType;
 import com.github.alexthe666.iceandfire.entity.EntityDragonBase;
 import com.github.alexthe666.iceandfire.enums.EnumDragonTextures;
 import com.google.common.collect.Maps;
@@ -26,14 +27,14 @@ import java.util.Map;
 public class RenderDragonBase extends MobRenderer<EntityDragonBase, AdvancedEntityModel<EntityDragonBase>> {
 
     private final Map<String, ResourceLocation> LAYERED_TEXTURE_CACHE = Maps.newHashMap();
-    private final int dragonType;
+    private final DragonType dragonType;
 
-    public RenderDragonBase(EntityRendererProvider.Context context, AdvancedEntityModel<EntityDragonBase> model, int dragonType) {
+    public RenderDragonBase(EntityRendererProvider.Context context, AdvancedEntityModel<EntityDragonBase> model, DragonType dragonType) {
         super(context, model, 0.15F);
         this.addLayer(new LayerDragonEyes(this));
         this.addLayer(new LayerDragonRider(this));
         this.addLayer(new LayerDragonBanner(this));
-        this.addLayer(new LayerDragonArmor(this, dragonType));
+        this.addLayer(new LayerDragonArmor(this));
         this.dragonType = dragonType;
     }
 
@@ -54,20 +55,14 @@ public class RenderDragonBase extends MobRenderer<EntityDragonBase, AdvancedEnti
 
     @Override
     public @NotNull ResourceLocation getTextureLocation(EntityDragonBase entity) {
-        String baseTexture = entity.getVariantName(entity.getVariant()) + entity.getDragonStage() + entity.isModelDead() + entity.isMale() + entity.isSkeletal() + entity.isSleeping() + entity.isBlinking();
+        String baseTexture = entity.getVariantName(entity.getEggType()) + entity.getDragonStage().name().toLowerCase() + entity.isModelDead() + entity.isMale() + entity.isSkeletal() + entity.isSleeping() + entity.isBlinking();
         ResourceLocation resourcelocation = LAYERED_TEXTURE_CACHE.get(baseTexture);
         if (resourcelocation == null) {
-            resourcelocation = new ResourceLocation("iceandfire:" + "dragon_texture_" + baseTexture);
+            resourcelocation = new ResourceLocation("iceandfire:dragon_texture_" + baseTexture);
             List<String> tex = new ArrayList<String>();
-            tex.add(EnumDragonTextures.getTextureFromDragon(entity).toString());
+            tex.add(getTextureFromDragon(entity).toString());
             if (entity.isMale() && !entity.isSkeletal()) {
-                if (dragonType == 0) {
-                    tex.add(EnumDragonTextures.getDragonEnum(entity).FIRE_MALE_OVERLAY.toString());
-                } else if (dragonType == 1) {
-                    tex.add(EnumDragonTextures.getDragonEnum(entity).ICE_MALE_OVERLAY.toString());
-                } else if (dragonType == 2) {
-                    tex.add(EnumDragonTextures.getDragonEnum(entity).LIGHTNING_MALE_OVERLAY.toString());
-                }
+                tex.add(entity.getEggType().getTextures().maleOverlay().toString());
             } else {
                 tex.add(EnumDragonTextures.Armor.EMPTY.FIRETEXTURE.toString());
 
@@ -77,6 +72,23 @@ public class RenderDragonBase extends MobRenderer<EntityDragonBase, AdvancedEnti
             LAYERED_TEXTURE_CACHE.put(baseTexture, resourcelocation);
         }
         return resourcelocation;
+    }
+
+    public static ResourceLocation getTextureFromDragon(EntityDragonBase dragon) {
+        var egg = dragon.getEggType();
+
+        if (dragon.isModelDead()) {
+            if (dragon.getDeathStage() >= (dragon.getAgeInDays() / 5) / 2) {
+                return dragon.dragonType.getSkeletonTexture(dragon.getDragonStage());
+            } else {
+                return egg.getTextures().sleeping().get(dragon.getDragonStage());
+            }
+        }
+        if (dragon.isSleeping() || dragon.isBlinking()) {
+            return egg.getTextures().sleeping().get(dragon.getDragonStage());
+        } else {
+            return egg.getTextures().regular().get(dragon.getDragonStage());
+        }
     }
 
 }

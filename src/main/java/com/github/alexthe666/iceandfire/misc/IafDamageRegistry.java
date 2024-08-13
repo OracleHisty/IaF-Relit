@@ -1,5 +1,6 @@
 package com.github.alexthe666.iceandfire.misc;
 
+import com.github.alexthe666.iceandfire.entity.DragonType;
 import net.minecraft.core.Holder;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.Registries;
@@ -63,6 +64,17 @@ public class IafDamageRegistry {
             return livingentity != null ? Component.translatable(s2, entityLivingBaseIn.getDisplayName(), livingentity.getDisplayName()) : Component.translatable(s1, entityLivingBaseIn.getDisplayName());
         }
     }
+
+    public static CustomEntityDamageSource causeDragonDamage(ResourceKey<DamageType> damageType, @Nullable Entity entity) {
+        Holder<DamageType> holder = entity.level().registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolder(damageType).get();
+        return new CustomEntityDamageSource(holder, entity);
+    }
+
+    public static CustomIndirectEntityDamageSource causeIndirectDragonDamage(ResourceKey<DamageType> damageType, Entity source, @Nullable Entity indirectEntityIn) {
+        Holder<DamageType> holder = indirectEntityIn.level().registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolder(damageType).get();
+        return new CustomIndirectEntityDamageSource(holder, source, indirectEntityIn);
+    }
+
 
     public static CustomEntityDamageSource causeDragonFireDamage(@Nullable Entity entity) {
         Holder<DamageType> holder = entity.level().registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolder(DRAGON_FIRE_TYPE).get();
