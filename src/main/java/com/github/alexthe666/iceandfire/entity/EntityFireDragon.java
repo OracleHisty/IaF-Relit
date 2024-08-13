@@ -1,16 +1,12 @@
 package com.github.alexthe666.iceandfire.entity;
 
 import com.github.alexthe666.citadel.animation.Animation;
-import com.github.alexthe666.citadel.animation.IAnimatedEntity;
 import com.github.alexthe666.iceandfire.IafConfig;
 import com.github.alexthe666.iceandfire.IceAndFire;
 import com.github.alexthe666.iceandfire.api.event.DragonFireEvent;
-import com.github.alexthe666.iceandfire.entity.util.DragonUtils;
 import com.github.alexthe666.iceandfire.enums.EnumParticles;
-import com.github.alexthe666.iceandfire.item.IafItemRegistry;
 import com.github.alexthe666.iceandfire.message.MessageDragonSyncFire;
 import com.github.alexthe666.iceandfire.misc.IafSoundRegistry;
-import com.github.alexthe666.iceandfire.misc.IafTagRegistry;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.tags.FluidTags;
@@ -21,8 +17,6 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.MoverType;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.goal.FloatGoal;
-import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.ClipContext;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.pathfinder.BlockPathTypes;
@@ -31,15 +25,10 @@ import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.common.MinecraftForge;
 import org.jetbrains.annotations.NotNull;
 
-import java.util.Random;
+import static com.github.alexthe666.iceandfire.entity.DragonType.DragonLifeStages.TriState.TRUE;
 
 public class EntityFireDragon extends EntityDragonBase {
-
-    public EntityFireDragon(Level worldIn) {
-        this(IafEntityRegistry.FIRE_DRAGON.get(), worldIn);
-    }
-
-    public EntityFireDragon(EntityType<?> t, Level worldIn) {
+    public EntityFireDragon(EntityType<? extends EntityDragonBase> t, Level worldIn) {
         super(t, worldIn, DragonType.FIRE, 1, 1 + IafConfig.dragonAttackDamage, IafConfig.dragonHealth * 0.04, IafConfig.dragonHealth, 0.15F, 0.4F);
         this.setPathfindingMalus(BlockPathTypes.DAMAGE_FIRE, 0.0F);
         this.setPathfindingMalus(BlockPathTypes.LAVA, 8.0F);
@@ -57,45 +46,6 @@ public class EntityFireDragon extends EntityDragonBase {
     protected void registerGoals() {
         super.registerGoals();
         this.goalSelector.addGoal(0, new FloatGoal(this));
-    }
-
-    @Override
-    protected boolean shouldTarget(Entity entity) {
-        if (entity instanceof EntityDragonBase && !this.isTame()) {
-            return entity.getType() != this.getType() && this.getBbWidth() >= entity.getBbWidth() && !((EntityDragonBase) entity).isMobDead();
-        }
-        return entity instanceof Player || DragonUtils.isDragonTargetable(entity, IafTagRegistry.FIRE_DRAGON_TARGETS) || !this.isTame() && DragonUtils.isFleeingDragonTarget(entity);
-    }
-
-/*    @Override
-    public boolean canBeControlledByRider() {
-        return true;
-    }*/
-
-    @Override
-    public boolean doHurtTarget(@NotNull Entity entityIn) {
-        this.getLookControl().setLookAt(entityIn, 30.0F, 30.0F);
-        if (!this.isPlayingAttackAnimation()) {
-            switch (groundAttack) {
-                case BITE -> this.setAnimation(ANIMATION_BITE);
-                case TAIL_WHIP -> this.setAnimation(ANIMATION_TAILWHACK);
-                case SHAKE_PREY -> {
-                    boolean flag = false;
-                    if (new Random().nextInt(2) == 0 && isDirectPathBetweenPoints(this, this.position().add(0, this.getBbHeight() / 2, 0), entityIn.position().add(0, entityIn.getBbHeight() / 2, 0)) &&
-                            entityIn.getBbWidth() < this.getBbWidth() * 0.5F && this.getControllingPassenger() == null && this.getDragonStage() > 1 && !(entityIn instanceof EntityDragonBase) && !DragonUtils.isAnimaniaMob(entityIn)) {
-                        this.setAnimation(ANIMATION_SHAKEPREY);
-                        flag = true;
-                        entityIn.startRiding(this);
-                    }
-                    if (!flag) {
-                        groundAttack = IafDragonAttacks.Ground.BITE;
-                        this.setAnimation(ANIMATION_BITE);
-                    }
-                }
-                case WING_BLAST -> this.setAnimation(ANIMATION_WINGBLAST);
-            }
-        }
-        return false;
     }
 
     @Override
@@ -172,7 +122,7 @@ public class EntityFireDragon extends EntityDragonBase {
                     if (this.tickCount % 5 == 0) {
                         this.playSound(IafSoundRegistry.FIREDRAGON_BREATH, 4, 1);
                     }
-                    HitResult mop = rayTraceRider(controller, 10 * this.getDragonStage(), 1.0F);
+                    HitResult mop = rayTraceRider(controller, 10 * this.getDragonStage().ordinal(), 1.0F);
                     if (mop != null) {
                         stimulateFire(mop.getLocation().x, mop.getLocation().y, mop.getLocation().z, 1);
                     }
@@ -187,7 +137,7 @@ public class EntityFireDragon extends EntityDragonBase {
     protected float getBlockSpeedFactor() {
         // Disable soul sand slow down
         if (this.onSoulSpeedBlock()) {
-            return this.getDragonStage() >= 2 ? 1.0f : 0.8f;
+            return this.getDragonStage().older(DragonType.DragonLifeStages.HATCHLING) == TRUE ? 1.0f : 0.8f;
         }
         return super.getBlockSpeedFactor();
     }
@@ -210,7 +160,7 @@ public class EntityFireDragon extends EntityDragonBase {
 
                 float speed = (float) this.getAttributeValue(Attributes.MOVEMENT_SPEED);
                 // Bigger difference in speed for young and elder dragons
-                float lavaSpeedMod = (float) (0.28f + 0.1 * Mth.map(speed, this.minimumSpeed, this.maximumSpeed, 0f, 1.5f));
+                float lavaSpeedMod = (float) (0.28f + 0.1 * Mth.map(speed, this.getMinimumSpeed(), this.getMaximumSpeed(), 0f, 1.5f));
                 speed *= lavaSpeedMod;
                 speed *= rider.isSprinting() ? 1.4f : 1.0f;
 
@@ -398,7 +348,7 @@ public class EntityFireDragon extends EntityDragonBase {
         double distance = Math.max(2.5F * this.distanceToSqr(burnX, burnY, burnZ), 0);
         double conqueredDistance = burnProgress / 40D * distance;
         int increment = (int) Math.ceil(conqueredDistance / 100);
-        int particleCount = this.getDragonStage() <= 3 ? 6 : 3;
+        int particleCount = this.getDragonStage().younger(DragonType.DragonLifeStages.TEEN) == TRUE ? 6 : 3;
         for (int i = 0; i < conqueredDistance; i += increment) {
             double progressX = headPos.x + d2 * (i / (float) distance);
             double progressY = headPos.y + d3 * (i / (float) distance);
@@ -422,28 +372,6 @@ public class EntityFireDragon extends EntityDragonBase {
             double spawnZ = burnZ + (random.nextFloat() * 3.0) - 1.5;
             if (!level().isClientSide) {
                 IafDragonDestructionManager.destroyAreaBreath(level(), BlockPos.containing(spawnX, spawnY, spawnZ), this);
-            }
-        }
-    }
-
-    @Override
-    public Animation[] getAnimations() {
-        return new Animation[]{IAnimatedEntity.NO_ANIMATION, EntityDragonBase.ANIMATION_EAT, EntityDragonBase.ANIMATION_SPEAK, EntityDragonBase.ANIMATION_BITE, EntityDragonBase.ANIMATION_SHAKEPREY, EntityFireDragon.ANIMATION_TAILWHACK, EntityFireDragon.ANIMATION_FIRECHARGE, EntityFireDragon.ANIMATION_WINGBLAST, EntityFireDragon.ANIMATION_ROAR, EntityFireDragon.ANIMATION_EPIC_ROAR};
-    }
-
-    @Override
-    public boolean isFood(ItemStack stack) {
-        return !stack.isEmpty() && stack.getItem() != null && stack.getItem() == IafItemRegistry.FIRE_STEW.get();
-    }
-
-    @Override
-    protected void spawnDeathParticles() {
-        for (int k = 0; k < 3; ++k) {
-            double d2 = this.random.nextGaussian() * 0.02D;
-            double d0 = this.random.nextGaussian() * 0.02D;
-            double d1 = this.random.nextGaussian() * 0.02D;
-            if (level().isClientSide) {
-                this.level().addParticle(ParticleTypes.FLAME, this.getX() + this.random.nextFloat() * this.getBbWidth() * 2.0F - this.getBbWidth(), this.getY() + this.random.nextFloat() * this.getBbHeight(), this.getZ() + this.random.nextFloat() * this.getBbWidth() * 2.0F - this.getBbWidth(), d2, d0, d1);
             }
         }
     }

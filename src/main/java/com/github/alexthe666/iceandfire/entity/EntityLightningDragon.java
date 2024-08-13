@@ -36,6 +36,8 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.Random;
 
+import static com.github.alexthe666.iceandfire.entity.DragonType.DragonLifeStages.TriState.TRUE;
+
 public class EntityLightningDragon extends EntityDragonBase {
     private static final EntityDataAccessor<Boolean> HAS_LIGHTNING_TARGET = SynchedEntityData.defineId(EntityLightningDragon.class, EntityDataSerializers.BOOLEAN);
     private static final EntityDataAccessor<Float> LIGHTNING_TARGET_X = SynchedEntityData.defineId(EntityLightningDragon.class, EntityDataSerializers.FLOAT);
@@ -72,14 +74,6 @@ public class EntityLightningDragon extends EntityDragonBase {
         this.entityData.define(LIGHTNING_TARGET_X, 0.0F);
         this.entityData.define(LIGHTNING_TARGET_Y, 0.0F);
         this.entityData.define(LIGHTNING_TARGET_Z, 0.0F);
-    }
-
-    @Override
-    protected boolean shouldTarget(Entity entity) {
-        if (entity instanceof EntityDragonBase && !this.isTame()) {
-            return entity.getType() != this.getType() && this.getBbWidth() >= entity.getBbWidth() && !((EntityDragonBase) entity).isMobDead();
-        }
-        return entity instanceof Player || DragonUtils.isDragonTargetable(entity, IafTagRegistry.LIGHTNING_DRAGON_TARGETS) || !this.isTame() && DragonUtils.isFleeingDragonTarget(entity);
     }
 
     @Override
@@ -129,36 +123,7 @@ public class EntityLightningDragon extends EntityDragonBase {
         return this.entityData.get(LIGHTNING_TARGET_Z);
     }
 
-/*    @Override
-    public boolean canBeControlledByRider() {
-        return true;
-    }*/
 
-    @Override
-    public boolean doHurtTarget(@NotNull Entity entityIn) {
-        this.getLookControl().setLookAt(entityIn, 30.0F, 30.0F);
-        if (!this.isPlayingAttackAnimation()) {
-            switch (groundAttack) {
-                case BITE -> this.setAnimation(ANIMATION_BITE);
-                case TAIL_WHIP -> this.setAnimation(ANIMATION_TAILWHACK);
-                case SHAKE_PREY -> {
-                    boolean flag = false;
-                    if (new Random().nextInt(2) == 0 && isDirectPathBetweenPoints(this, this.position().add(0, this.getBbHeight() / 2, 0), entityIn.position().add(0, entityIn.getBbHeight() / 2, 0)) &&
-                            entityIn.getBbWidth() < this.getBbWidth() * 0.5F && this.getControllingPassenger() == null && this.getDragonStage() > 1 && !(entityIn instanceof EntityDragonBase) && !DragonUtils.isAnimaniaMob(entityIn)) {
-                        this.setAnimation(ANIMATION_SHAKEPREY);
-                        flag = true;
-                        entityIn.startRiding(this);
-                    }
-                    if (!flag) {
-                        groundAttack = IafDragonAttacks.Ground.BITE;
-                        this.setAnimation(ANIMATION_BITE);
-                    }
-                }
-                case WING_BLAST -> this.setAnimation(ANIMATION_WINGBLAST);
-            }
-        }
-        return false;
-    }
 
     @Override
     public void aiStep() {
@@ -236,7 +201,7 @@ public class EntityLightningDragon extends EntityDragonBase {
                     if (this.fireTicks % 7 == 0) {
                         this.playSound(IafSoundRegistry.LIGHTNINGDRAGON_BREATH, 4, 1);
                     }
-                    HitResult mop = rayTraceRider(controller, 10 * this.getDragonStage(), 1.0F);
+                    HitResult mop = rayTraceRider(controller, 10 * this.getDragonStage().ordinal(), 1.0F);
                     if (mop != null) {
                         stimulateFire(mop.getLocation().x, mop.getLocation().y, mop.getLocation().z, 1);
                     }
@@ -379,31 +344,6 @@ public class EntityLightningDragon extends EntityDragonBase {
             setLightningTargetVec((float) spawnX, (float) spawnY, (float) spawnZ);
             if (!level().isClientSide) {
                 IafDragonDestructionManager.destroyAreaBreath(level(), BlockPos.containing(spawnX, spawnY, spawnZ), this);
-            }
-        }
-    }
-
-    @Override
-    public Animation[] getAnimations() {
-        return new Animation[]{IAnimatedEntity.NO_ANIMATION, EntityDragonBase.ANIMATION_EAT, EntityDragonBase.ANIMATION_SPEAK, EntityDragonBase.ANIMATION_BITE, EntityDragonBase.ANIMATION_SHAKEPREY, EntityLightningDragon.ANIMATION_TAILWHACK, EntityLightningDragon.ANIMATION_FIRECHARGE, EntityLightningDragon.ANIMATION_WINGBLAST, EntityLightningDragon.ANIMATION_ROAR, EntityLightningDragon.ANIMATION_EPIC_ROAR};
-    }
-
-    @Override
-    public boolean isFood(ItemStack stack) {
-        return !stack.isEmpty() && stack.getItem() != null && stack.getItem() == IafItemRegistry.LIGHTNING_STEW.get();
-    }
-
-    @Override
-    protected void spawnDeathParticles() {
-        for (int k = 0; k < 3; ++k) {
-            double d2 = this.random.nextGaussian() * 0.02D;
-            double d0 = this.random.nextGaussian() * 0.02D;
-            double d1 = this.random.nextGaussian() * 0.02D;
-            if (level().isClientSide) {
-                this.level().addParticle(ParticleTypes.RAIN,
-                    this.getX() + this.random.nextFloat() * this.getBbWidth() * 2.0F - this.getBbWidth(),
-                    this.getY() + this.random.nextFloat() * this.getBbHeight(),
-                    this.getZ() + this.random.nextFloat() * this.getBbWidth() * 2.0F - this.getBbWidth(), d2, d0, d1);
             }
         }
     }

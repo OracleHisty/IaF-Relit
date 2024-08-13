@@ -104,7 +104,7 @@ public class IafDragonLogic {
                 if (dragon.getBoundingBox().expandTowards(2.0D, 2.0D, 2.0D).intersects(dragon.getTarget().getBoundingBox())) {
                     dragon.usingGroundAttack = true;
                     dragon.randomizeAttacks();
-                    attackTarget(dragon.getTarget(), null, dragon.getDragonStage() * 3);
+                    attackTarget(dragon.getTarget(), null, dragon.getDragonStage().ordinal() * 3);
                     dragon.setFlying(false);
                     dragon.setHovering(false);
                 }

@@ -1,82 +1,126 @@
 package com.github.alexthe666.iceandfire.entity;
 
 import com.github.alexthe666.iceandfire.enums.EnumDragonEgg;
+import com.github.alexthe666.iceandfire.item.IafItemRegistry;
 import com.github.alexthe666.iceandfire.misc.IafSoundRegistry;
+import com.github.alexthe666.iceandfire.misc.IafTagRegistry;
+import net.minecraft.core.particles.ParticleOptions;
+import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvent;
-import net.minecraft.sounds.SoundEvents;
 import net.minecraft.util.RandomSource;
 import net.minecraft.util.StringRepresentable;
 import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.item.Item;
 import org.jetbrains.annotations.NotNull;
 
 import javax.annotation.Nonnull;
-import java.util.Arrays;
+import java.util.Map;
+import java.util.function.Supplier;
+
+import static com.github.alexthe666.iceandfire.entity.DragonType.DragonLifeStages.TriState.FALSE;
+import static com.github.alexthe666.iceandfire.entity.DragonType.DragonLifeStages.TriState.TRUE;
 
 public enum DragonType implements StringRepresentable {
     FIRE("fire", false,
-            IafSoundRegistry.FIREDRAGON_TEEN_IDLE, IafSoundRegistry.FIREDRAGON_ADULT_IDLE, IafSoundRegistry.FIREDRAGON_CHILD_IDLE,
-            IafSoundRegistry.FIREDRAGON_TEEN_HURT, IafSoundRegistry.FIREDRAGON_ADULT_HURT, IafSoundRegistry.FIREDRAGON_CHILD_HURT,
-            IafSoundRegistry.FIREDRAGON_TEEN_DEATH, IafSoundRegistry.FIREDRAGON_ADULT_DEATH, IafSoundRegistry.FIREDRAGON_CHILD_DEATH,
-            IafSoundRegistry.FIREDRAGON_TEEN_ROAR, IafSoundRegistry.FIREDRAGON_ADULT_ROAR, IafSoundRegistry.FIREDRAGON_CHILD_ROAR,
+            Map.of(
+                    DragonLifeStages.CHILD, Map.of(
+                            DragonSoundType.IDLE, IafSoundRegistry.FIREDRAGON_CHILD_IDLE,
+                            DragonSoundType.HURT, IafSoundRegistry.FIREDRAGON_CHILD_HURT,
+                            DragonSoundType.DEATH, IafSoundRegistry.FIREDRAGON_CHILD_DEATH,
+                            DragonSoundType.ROAR, IafSoundRegistry.FIREDRAGON_CHILD_ROAR),
+                    DragonLifeStages.TEEN, Map.of(
+                            DragonSoundType.IDLE, IafSoundRegistry.FIREDRAGON_TEEN_IDLE,
+                            DragonSoundType.HURT, IafSoundRegistry.FIREDRAGON_TEEN_HURT,
+                            DragonSoundType.DEATH, IafSoundRegistry.FIREDRAGON_TEEN_DEATH,
+                            DragonSoundType.ROAR, IafSoundRegistry.FIREDRAGON_TEEN_ROAR),
+                    DragonLifeStages.ADULT, Map.of(
+                            DragonSoundType.IDLE, IafSoundRegistry.FIREDRAGON_ADULT_IDLE,
+                            DragonSoundType.HURT, IafSoundRegistry.FIREDRAGON_ADULT_HURT,
+                            DragonSoundType.DEATH, IafSoundRegistry.FIREDRAGON_ADULT_DEATH,
+                            DragonSoundType.ROAR, IafSoundRegistry.FIREDRAGON_ADULT_ROAR)
+            ),
+            () -> ParticleTypes.FLAME,
+            IafItemRegistry.FIRE_STEW,
+            IafTagRegistry.FIRE_DRAGON_TARGETS,
+            new DragonStats(),
             EnumDragonEgg.RED, EnumDragonEgg.GREEN, EnumDragonEgg.BRONZE, EnumDragonEgg.GRAY),
     ICE("ice", true,
-            IafSoundRegistry.ICEDRAGON_TEEN_IDLE, IafSoundRegistry.ICEDRAGON_ADULT_IDLE, IafSoundRegistry.ICEDRAGON_CHILD_IDLE,
-            IafSoundRegistry.ICEDRAGON_TEEN_HURT, IafSoundRegistry.ICEDRAGON_ADULT_HURT, IafSoundRegistry.ICEDRAGON_CHILD_HURT,
-            IafSoundRegistry.ICEDRAGON_TEEN_DEATH, IafSoundRegistry.ICEDRAGON_ADULT_DEATH, IafSoundRegistry.ICEDRAGON_CHILD_DEATH,
-            IafSoundRegistry.ICEDRAGON_TEEN_ROAR, IafSoundRegistry.ICEDRAGON_ADULT_ROAR, IafSoundRegistry.ICEDRAGON_CHILD_ROAR,
+            Map.of(
+                    DragonLifeStages.CHILD, Map.of(
+                            DragonSoundType.IDLE, IafSoundRegistry.ICEDRAGON_CHILD_IDLE,
+                            DragonSoundType.HURT, IafSoundRegistry.ICEDRAGON_CHILD_HURT,
+                            DragonSoundType.DEATH, IafSoundRegistry.ICEDRAGON_CHILD_DEATH,
+                            DragonSoundType.ROAR, IafSoundRegistry.ICEDRAGON_CHILD_ROAR),
+                    DragonLifeStages.TEEN, Map.of(
+                            DragonSoundType.IDLE, IafSoundRegistry.ICEDRAGON_TEEN_IDLE,
+                            DragonSoundType.HURT, IafSoundRegistry.ICEDRAGON_TEEN_HURT,
+                            DragonSoundType.DEATH, IafSoundRegistry.ICEDRAGON_TEEN_DEATH,
+                            DragonSoundType.ROAR, IafSoundRegistry.ICEDRAGON_TEEN_ROAR),
+                    DragonLifeStages.ADULT, Map.of(
+                            DragonSoundType.IDLE, IafSoundRegistry.ICEDRAGON_ADULT_IDLE,
+                            DragonSoundType.HURT, IafSoundRegistry.ICEDRAGON_ADULT_HURT,
+                            DragonSoundType.DEATH, IafSoundRegistry.ICEDRAGON_ADULT_DEATH,
+                            DragonSoundType.ROAR, IafSoundRegistry.ICEDRAGON_ADULT_ROAR)
+            ),
+            () -> ParticleTypes.SNOWFLAKE,
+            IafItemRegistry.FROST_STEW,
+            IafTagRegistry.ICE_DRAGON_TARGETS,
+            new DragonStats(),
             EnumDragonEgg.BLUE, EnumDragonEgg.WHITE, EnumDragonEgg.SAPPHIRE, EnumDragonEgg.SILVER),
     LIGHTNING("lightning", false,
-            IafSoundRegistry.LIGHTNINGDRAGON_TEEN_IDLE, IafSoundRegistry.LIGHTNINGDRAGON_ADULT_IDLE, IafSoundRegistry.LIGHTNINGDRAGON_CHILD_IDLE,
-            IafSoundRegistry.LIGHTNINGDRAGON_TEEN_HURT, IafSoundRegistry.LIGHTNINGDRAGON_ADULT_HURT, IafSoundRegistry.LIGHTNINGDRAGON_CHILD_HURT,
-            IafSoundRegistry.LIGHTNINGDRAGON_TEEN_DEATH, IafSoundRegistry.LIGHTNINGDRAGON_ADULT_DEATH, IafSoundRegistry.LIGHTNINGDRAGON_CHILD_DEATH,
-            IafSoundRegistry.LIGHTNINGDRAGON_TEEN_ROAR, IafSoundRegistry.LIGHTNINGDRAGON_ADULT_ROAR, IafSoundRegistry.LIGHTNINGDRAGON_CHILD_ROAR,
+            Map.of(
+                    DragonLifeStages.CHILD, Map.of(
+                            DragonSoundType.IDLE, IafSoundRegistry.LIGHTNINGDRAGON_CHILD_IDLE,
+                            DragonSoundType.HURT, IafSoundRegistry.LIGHTNINGDRAGON_CHILD_HURT,
+                            DragonSoundType.DEATH, IafSoundRegistry.LIGHTNINGDRAGON_CHILD_DEATH,
+                            DragonSoundType.ROAR, IafSoundRegistry.LIGHTNINGDRAGON_CHILD_ROAR),
+                    DragonLifeStages.TEEN, Map.of(
+                            DragonSoundType.IDLE, IafSoundRegistry.LIGHTNINGDRAGON_TEEN_IDLE,
+                            DragonSoundType.HURT, IafSoundRegistry.LIGHTNINGDRAGON_TEEN_HURT,
+                            DragonSoundType.DEATH, IafSoundRegistry.LIGHTNINGDRAGON_TEEN_DEATH,
+                            DragonSoundType.ROAR, IafSoundRegistry.LIGHTNINGDRAGON_TEEN_ROAR),
+                    DragonLifeStages.ADULT, Map.of(
+                            DragonSoundType.IDLE, IafSoundRegistry.LIGHTNINGDRAGON_ADULT_IDLE,
+                            DragonSoundType.HURT, IafSoundRegistry.LIGHTNINGDRAGON_ADULT_HURT,
+                            DragonSoundType.DEATH, IafSoundRegistry.LIGHTNINGDRAGON_ADULT_DEATH,
+                            DragonSoundType.ROAR, IafSoundRegistry.LIGHTNINGDRAGON_ADULT_ROAR)
+            ),
+            () -> ParticleTypes.RAIN,
+            IafItemRegistry.LIGHTNING_STEW,
+            IafTagRegistry.LIGHTNING_DRAGON_TARGETS,
+            new DragonStats(),
             EnumDragonEgg.ELECTRIC, EnumDragonEgg.AMYTHEST, EnumDragonEgg.COPPER, EnumDragonEgg.BLACK);
 
     private final String name;
     private final boolean eatsFish;
-    private final SoundEvent teenIdle;
-    private final SoundEvent adultIdle;
-    private final SoundEvent childIdle;
-    private final SoundEvent teenHurt;
-    private final SoundEvent adultHurt;
-    private final SoundEvent childHurt;
-    private final SoundEvent teenDeath;
-    private final SoundEvent adultDeath;
-    private final SoundEvent childDeath;
-    private final SoundEvent teenRoar;
-    private final SoundEvent adultRoar;
-    private final SoundEvent childRoar;
 
     private final ResourceLocation femaleLoot;
     private final ResourceLocation maleLoot;
     private final ResourceLocation skeletonLoot;
+    private final DragonStats stats;
     private final EnumDragonEgg[] eggs;
+    private final Map<DragonLifeStages, Map<DragonSoundType, SoundEvent>> sounds;
+    private final Supplier<Item> breedingFood;
+    private Supplier<ParticleOptions> deathParticle;
+    private ResourceLocation targetTag;
 
     DragonType(String name, boolean eatsFish,
-               SoundEvent teenIdle, SoundEvent adultIdle, SoundEvent childIdle,
-               SoundEvent teenHurt, SoundEvent adultHurt, SoundEvent childHurt,
-               SoundEvent teenDeath, SoundEvent adultDeath, SoundEvent childDeath,
-               SoundEvent teenRoar, SoundEvent adultRoar, SoundEvent childRoar,
-            EnumDragonEgg... eggs) {
+               Map<DragonLifeStages, Map<DragonSoundType, SoundEvent>> sounds,
+               Supplier<ParticleOptions> deathParticle,
+               Supplier<Item> breedingFood,
+               ResourceLocation targetTag,
+               DragonStats stats, EnumDragonEgg... eggs) {
         this.name = name;
         this.eatsFish = eatsFish;
-        this.teenIdle = teenIdle;
-        this.adultIdle = adultIdle;
-        this.childIdle = childIdle;
-        this.teenHurt = teenHurt;
-        this.adultHurt = adultHurt;
-        this.childHurt = childHurt;
-        this.teenDeath = teenDeath;
-        this.adultDeath = adultDeath;
-        this.childDeath = childDeath;
-        this.teenRoar = teenRoar;
-        this.adultRoar = adultRoar;
-        this.childRoar = childRoar;
-
+        this.sounds = sounds;
         this.femaleLoot = new ResourceLocation("iceandfire", "entities/dragon/%s_dragon_female".formatted(name));
         this.maleLoot = new ResourceLocation("iceandfire", "entities/dragon/%s_dragon_male".formatted(name));
         this.skeletonLoot = new ResourceLocation("iceandfire", "entities/dragon/%s_dragon_skeleton".formatted(name));
+        this.deathParticle = deathParticle;
+        this.breedingFood = breedingFood;
+        this.targetTag = targetTag;
+        this.stats = stats;
 
         this.eggs = eggs;
     }
@@ -122,54 +166,6 @@ public enum DragonType implements StringRepresentable {
         return name;
     }
 
-    public SoundEvent teenIdleSound() {
-        return teenIdle;
-    }
-
-    public SoundEvent adultIdleSound() {
-        return adultIdle;
-    }
-
-    public SoundEvent childIdleSound() {
-        return adultIdle;
-    }
-
-    public SoundEvent teenHurtSound() {
-        return childIdle;
-    }
-
-    public SoundEvent adultHurtSound() {
-        return teenHurt;
-    }
-
-    public SoundEvent childHurtSound() {
-        return adultHurt;
-    }
-
-    public SoundEvent teenDeathSound() {
-        return childHurt;
-    }
-
-    public SoundEvent adultDeathSound() {
-        return teenDeath;
-    }
-
-    public SoundEvent childDeathSound() {
-        return adultDeath;
-    }
-
-    public SoundEvent teenRoarSound() {
-        return childDeath;
-    }
-
-    public SoundEvent adultRoarSound() {
-        return teenRoar;
-    }
-
-    public SoundEvent childRoarSound() {
-        return childRoar;
-    }
-
     public ResourceLocation femaleLoot() {
         return femaleLoot;
     }
@@ -183,5 +179,83 @@ public enum DragonType implements StringRepresentable {
     @Nonnull
     public EnumDragonEgg getRandomEgg(RandomSource random) {
         return eggs[random.nextInt(eggs.length)];
+    }
+
+    public SoundEvent getSound(DragonLifeStages age, DragonSoundType soundType) {
+        return this.sounds.get(age).get(soundType); //TODO: Generic default draogn sounds whenn switch to data driven occurs
+    }
+
+    public ParticleOptions getDeathParticle() {
+        return deathParticle.get();
+    }
+
+    public Supplier<Item> getBreedingFood() {
+        return breedingFood;
+    }
+
+    public ResourceLocation targetTag() {
+        return targetTag;
+    }
+
+    public DragonStats stats() {
+        return stats;
+    }
+
+    public enum DragonLifeStages {
+        EGG,
+        HATCHLING,
+        CHILD,
+        TEEN,
+        ADULT,
+        ELDER;
+
+        //sees if this LifeStage is younger than the paramater stage.
+        public TriState younger(DragonLifeStages stage) {
+            if(this == stage) return TriState.UNDEFINED;
+
+            return switch (this) {
+                case EGG -> TRUE;
+                case HATCHLING -> stage == EGG ? FALSE : TRUE;
+                case CHILD -> (stage == EGG || stage == HATCHLING) ? FALSE : TRUE;
+                case TEEN -> (stage == ADULT || stage == ELDER) ? TRUE : FALSE;
+                case ADULT -> stage == ELDER ? TRUE : FALSE;
+                case ELDER -> FALSE;
+            };
+        }
+
+        public enum TriState {
+            TRUE, FALSE, UNDEFINED;
+
+            public TriState invert() {
+                return this == UNDEFINED ? UNDEFINED : this == TRUE ? FALSE : TRUE;
+            }
+        }
+
+        public TriState older(DragonLifeStages stage) {
+            return younger(stage).invert();
+        }
+
+        public static DragonLifeStages[] aliveStages() {
+            return ALIVE_STAGES;
+        }
+
+        private static final DragonLifeStages[] ALIVE_STAGES;
+
+        static {
+            ALIVE_STAGES = new DragonLifeStages[] { EGG, HATCHLING, CHILD, TEEN, ADULT, ELDER};
+        }
+    }
+
+    public enum DragonSoundType {
+        IDLE,
+        HURT,
+        DEATH,
+        ROAR
+    }
+
+    public record DragonStats(double minimumDamage, double maximumDamage, double minimumHealth, double maximumHealth, double minimumSpeed, double maximumSpeed, double minimumArmor, double maximumArmor) {
+        DragonStats() {
+            this(1, 1 + 17, 500 * 0.04, 500, 0.15F, 0.4F, 1D, 20D);
+        }
     }
 }

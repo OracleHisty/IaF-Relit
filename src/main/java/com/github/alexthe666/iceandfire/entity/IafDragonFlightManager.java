@@ -61,7 +61,7 @@ public class IafDragonFlightManager {
                 target = new Vec3(entity.getX(), entity.getY() + entity.getBbHeight(), entity.getZ());
             }
             if (dragon.airAttack == IafDragonAttacks.Air.HOVER_BLAST) {
-                float distY = 5 + dragon.getDragonStage() * 2;
+                float distY = 5 + dragon.getDragonStage().ordinal() * 2;
                 int randomDist = 20;
                 if (dragon.distanceToSqr(entity.getX(), dragon.getY(), entity.getZ()) < 16 || dragon.distanceToSqr(entity.getX(), dragon.getY(), entity.getZ()) > 900) {
                     target = new Vec3(entity.getX() + dragon.getRandom().nextInt(randomDist) - randomDist / 2, entity.getY() + distY, entity.getZ() + dragon.getRandom().nextInt(randomDist) - randomDist / 2);
@@ -70,7 +70,7 @@ public class IafDragonFlightManager {
             }
             if (dragon.airAttack == IafDragonAttacks.Air.SCORCH_STREAM && startPreyVec != null && startAttackVec != null) {
                 float distX = (float) (startPreyVec.x - startAttackVec.x);
-                float distY = 5 + dragon.getDragonStage() * 2;
+                float distY = 5 + dragon.getDragonStage().ordinal() * 2;
                 float distZ = (float) (startPreyVec.z - startAttackVec.z);
                 target = new Vec3(entity.getX() + distX, entity.getY() + distY, entity.getZ() + distZ);
                 dragon.tryScorchTarget();

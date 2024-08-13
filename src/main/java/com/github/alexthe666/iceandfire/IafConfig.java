@@ -17,7 +17,7 @@ public class IafConfig {
     public static int glacierSpawnChance = 4;
     public static int oreToStoneRatioForDragonCaves = 45;
     public static int dragonEggTime = 7200;
-    public static int dragonGriefing = 0;
+    public static boolean dragonGriefing = false;
     public static boolean tamedDragonGriefing = true;
     public static int dragonFlapNoiseDistance = 4;
     public static int dragonFluteDistance = 8;

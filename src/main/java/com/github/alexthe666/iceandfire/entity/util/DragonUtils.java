@@ -215,12 +215,7 @@ public class DragonUtils {
 
 
     public static boolean canGrief(EntityDragonBase dragon) {
-        if (dragon.isTame() && !IafConfig.tamedDragonGriefing) {
-            return false;
-        }
-
-        return IafConfig.dragonGriefing < 2;
-
+        return (!dragon.isTame() || IafConfig.tamedDragonGriefing) && IafConfig.dragonGriefing;
     }
 
     public static boolean canHostilesTarget(Entity entity) {
