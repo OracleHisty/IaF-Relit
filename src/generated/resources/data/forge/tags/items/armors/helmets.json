@@ -1,6 +1,6 @@
 {
   "values": [
-    "iceandfire:armor_silver_metal_helmet",armor
+    "iceandfire:armor_silver_metal_helmet",
     "iceandfire:blindfold",
     "iceandfire:sheep_helmet",
     "iceandfire:earplugs",
@@ -16,7 +16,8 @@
     "iceandfire:armor_sapphire_helmet",
     "iceandfire:armor_silver_helmet",
     "iceandfire:armor_electric_helmet",
-    "iceandfire:armor_amythest_helmet",armor
+    "iceandfire:armor_amythest_helmet",
+    "iceandfire:armor_copper_helmet",
     "iceandfire:armor_black_helmet"
   ]
 }

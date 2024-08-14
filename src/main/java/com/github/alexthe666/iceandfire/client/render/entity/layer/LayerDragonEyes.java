@@ -15,6 +15,7 @@ import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.entity.MobRenderer;
 import net.minecraft.client.renderer.entity.layers.RenderLayer;
+import net.minecraft.client.renderer.texture.MissingTextureAtlasSprite;
 import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.resources.ResourceLocation;
 import org.jetbrains.annotations.NotNull;
@@ -47,7 +48,7 @@ public class LayerDragonEyes extends RenderLayer<EntityDragonBase, AdvancedEntit
     @Override
     public void render(@NotNull PoseStack matrixStackIn, @NotNull MultiBufferSource bufferIn, int packedLightIn, EntityDragonBase dragon, float limbSwing, float limbSwingAmount, float partialTicks, float ageInTicks, float netHeadYaw, float headPitch) {
         if (dragon.shouldRenderEyes()) {
-            RenderType eyes = RenderType.eyes(dragon.getEggType().getTextures().eyes().get(dragon.getDragonStage()));
+            RenderType eyes = RenderType.eyes(dragon.getEggType().getTextures().eyes().getOrDefault(dragon.getDragonStage(), MissingTextureAtlasSprite.getLocation()));
             VertexConsumer ivertexbuilder = bufferIn.getBuffer(eyes);
             if (dragon instanceof EntityLightningDragon && lightningHead != null) {
                 copyPositions(lightningHead, (TabulaModel) this.getParentModel());

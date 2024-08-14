@@ -946,7 +946,7 @@ public abstract class EntityDragonBase extends TamableAnimal implements IPassabi
     }
 
     public EnumDragonEgg getEggType() {
-        return dragonType.getEgg(this.entityData.get(VARIANT));
+        return EnumDragonEgg.values()[this.entityData.get(VARIANT)];
     }
 
     public void setVariant(int variant) {
@@ -2793,7 +2793,7 @@ public abstract class EntityDragonBase extends TamableAnimal implements IPassabi
                 if (this.isActuallyBreathingFire()) {
                     setYRot(yBodyRot);
                     if (this.tickCount % 5 == 0) {
-                        this.playSound(IafSoundRegistry.FIREDRAGON_BREATH, 4, 1);
+                        this.playSound(IafSoundRegistry.FIRE.breath(), 4, 1);
                     }
                     stimulateFire(this.getX() + distX * this.fireTicks / 40, entity.getY(), this.getZ() + distZ * this.fireTicks / 40, 1);
                 }

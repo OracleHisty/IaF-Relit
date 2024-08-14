@@ -3,6 +3,7 @@ package com.github.alexthe666.iceandfire;
 import com.github.alexthe666.iceandfire.block.IafBlockRegistry;
 import com.github.alexthe666.iceandfire.client.ClientProxy;
 import com.github.alexthe666.iceandfire.config.ConfigHolder;
+import com.github.alexthe666.iceandfire.entity.DragonType;
 import com.github.alexthe666.iceandfire.entity.IafEntityRegistry;
 import com.github.alexthe666.iceandfire.entity.IafVillagerRegistry;
 import com.github.alexthe666.iceandfire.entity.props.SyncEntityData;
@@ -86,6 +87,8 @@ public class IceAndFire {
         final DeferredRegister<Codec<? extends BiomeModifier>> biomeModifiers = DeferredRegister.create(ForgeRegistries.Keys.BIOME_MODIFIER_SERIALIZERS, IceAndFire.MODID);
         biomeModifiers.register(modBus);
         biomeModifiers.register("iaf_features", IafFeatureBiomeModifier::makeCodec);
+
+        DragonType.init();
 
         IafItemRegistry.register(modBus);
         IafBlockRegistry.register(modBus);
