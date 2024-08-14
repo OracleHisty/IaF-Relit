@@ -60,7 +60,14 @@ public class RenderDragonBase extends MobRenderer<EntityDragonBase, AdvancedEnti
         if (resourcelocation == null) {
             resourcelocation = new ResourceLocation("iceandfire:dragon_texture_" + baseTexture);
             List<String> tex = new ArrayList<String>();
-            tex.add(getTextureFromDragon(entity).toString());
+
+            var blep = getTextureFromDragon(entity);
+
+            if(blep == null) {
+                System.out.println(":O " + baseTexture);
+            } else {
+                tex.add(getTextureFromDragon(entity).toString());
+            }
             if (entity.isMale() && !entity.isSkeletal()) {
                 tex.add(entity.getEggType().getTextures().maleOverlay().toString());
             } else {

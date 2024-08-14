@@ -38,15 +38,15 @@ public class IafItemTags extends ItemTagsProvider {
     public static TagKey<Item> CRACKLED_BLOCKS = createKey("crackled_blocks");
     public static TagKey<Item> DRAGON_SKULLS = createKey("dragon_skulls");
     public static TagKey<Item> MOB_SKULLS = createKey("mob_skulls");
-    public static Map<DragonType, TagKey<Item>> SCALES_DRAGON = Util.make(new HashMap<>(), dragonTypeTagKeyHashMap -> {
-        for(var type : DragonType.values()) createKey("scales/dragon/%s".formatted(type.getSerializedName()));
+    public static Map<DragonType, TagKey<Item>> SCALES_DRAGON = Util.make(new HashMap<>(), map -> {
+        for(var type : DragonType.values()) map.put(type, createKey("scales/dragon/%s".formatted(type.getSerializedName())));
     });
     public static TagKey<Item> DRAGON_FOOD_MEAT = createKey("dragon_food_meat");
 
     // Forge (+ Recipes)
 
-    public static Map<DragonType, TagKey<Item>> STORAGE_BLOCKS_SCALES_DRAGON = Util.make(new HashMap<>(), dragonTypeTagKeyHashMap -> {
-        for(var type : DragonType.values()) createForgeKey(STORAGE_BLOCK_PATH + "/scales/dragon/%s".formatted(type.getSerializedName()));
+    public static Map<DragonType, TagKey<Item>> STORAGE_BLOCKS_SCALES_DRAGON = Util.make(new HashMap<>(), map -> {
+        for(var type : DragonType.values()) map.put(type, createForgeKey(STORAGE_BLOCK_PATH + "/scales/dragon/%s".formatted(type.getSerializedName())));
     });
 
     public static TagKey<Item> STORAGE_BLOCKS_SILVER = createForgeKey(STORAGE_BLOCK_PATH + "/silver");

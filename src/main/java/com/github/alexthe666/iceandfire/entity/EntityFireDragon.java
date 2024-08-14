@@ -82,7 +82,7 @@ public class EntityFireDragon extends EntityDragonBase {
             if (this.isActuallyBreathingFire()) {
                 setYRot(yBodyRot);
                 if (this.tickCount % 5 == 0) {
-                    this.playSound(IafSoundRegistry.FIREDRAGON_BREATH, 4, 1);
+                    this.playSound(IafSoundRegistry.FIRE.breath(), 4, 1);
                 }
                 stimulateFire(burningTarget.getX() + 0.5F, burningTarget.getY() + 0.5F, burningTarget.getZ() + 0.5F, 1);
             }
@@ -99,7 +99,7 @@ public class EntityFireDragon extends EntityDragonBase {
             } else if (this.getAnimationTick() == 20) {
                 setYRot(yBodyRot);
                 Vec3 headVec = this.getHeadPosition();
-                this.playSound(IafSoundRegistry.FIREDRAGON_BREATH, 4, 1);
+                this.playSound(IafSoundRegistry.FIRE.breath(), 4, 1);
                 double d2 = controller.getLookAngle().x;
                 double d3 = controller.getLookAngle().y;
                 double d4 = controller.getLookAngle().z;
@@ -120,7 +120,7 @@ public class EntityFireDragon extends EntityDragonBase {
                 if (this.isActuallyBreathingFire()) {
                     setYRot(yBodyRot);
                     if (this.tickCount % 5 == 0) {
-                        this.playSound(IafSoundRegistry.FIREDRAGON_BREATH, 4, 1);
+                        this.playSound(IafSoundRegistry.FIRE.breath(), 4, 1);
                     }
                     HitResult mop = rayTraceRider(controller, 10 * this.getDragonStage().ordinal(), 1.0F);
                     if (mop != null) {
@@ -260,7 +260,7 @@ public class EntityFireDragon extends EntityDragonBase {
                     d2 = d2 + this.random.nextGaussian() * 0.007499999832361937D * inaccuracy;
                     d3 = d3 + this.random.nextGaussian() * 0.007499999832361937D * inaccuracy;
                     d4 = d4 + this.random.nextGaussian() * 0.007499999832361937D * inaccuracy;
-                    this.playSound(IafSoundRegistry.FIREDRAGON_BREATH, 4, 1);
+                    this.playSound(IafSoundRegistry.FIRE.breath(), 4, 1);
                     EntityDragonFireCharge entitylargefireball = new EntityDragonFireCharge(
                         IafEntityRegistry.FIRE_DRAGON_CHARGE.get(), level(), this, d2, d3, d4);
 
@@ -278,7 +278,7 @@ public class EntityFireDragon extends EntityDragonBase {
                     if (this.isActuallyBreathingFire()) {
                         setYRot(yBodyRot);
                         if (this.tickCount % 5 == 0) {
-                            this.playSound(IafSoundRegistry.FIREDRAGON_BREATH, 4, 1);
+                            this.playSound(IafSoundRegistry.FIRE.breath(), 4, 1);
                         }
                         stimulateFire(entity.getX(), entity.getY(), entity.getZ(), 1);
                         if (!entity.isAlive() || entity == null) {
@@ -326,7 +326,7 @@ public class EntityFireDragon extends EntityDragonBase {
                 d2 = d2 + this.random.nextGaussian() * 0.007499999832361937D * inaccuracy;
                 d3 = d3 + this.random.nextGaussian() * 0.007499999832361937D * inaccuracy;
                 d4 = d4 + this.random.nextGaussian() * 0.007499999832361937D * inaccuracy;
-                this.playSound(IafSoundRegistry.FIREDRAGON_BREATH, 4, 1);
+                this.playSound(IafSoundRegistry.FIRE.breath(), 4, 1);
                 EntityDragonFireCharge entitylargefireball = new EntityDragonFireCharge(
                     IafEntityRegistry.FIRE_DRAGON_CHARGE.get(), level(), this, d2, d3, d4);
                 entitylargefireball.setPos(headVec.x, headVec.y, headVec.z);

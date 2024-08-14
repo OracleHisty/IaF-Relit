@@ -82,7 +82,7 @@ public enum DragonType implements StringRepresentable {
 
     private final DragonStats stats;
     private final EnumDragonEgg[] eggs;
-    private final Map<DragonLifeStages, Map<DragonSoundType, SoundEvent>> sounds;
+    private final IafSoundRegistry.DragonSoundGroup sounds;
     private final Supplier<Item> breedingFood;
     private final Supplier<ParticleOptions> deathParticle;
     private final ResourceLocation targetTag;
@@ -90,7 +90,7 @@ public enum DragonType implements StringRepresentable {
     private final Map<DragonLifeStages, ResourceLocation> skeletonTextures;
 
     DragonType(String name, boolean eatsFish,
-               Map<DragonLifeStages, Map<DragonSoundType, SoundEvent>> sounds,
+               IafSoundRegistry.DragonSoundGroup sounds,
                Supplier<ParticleOptions> deathParticle,
                Supplier<Item> breedingFood,
                ResourceLocation targetTag,
@@ -111,6 +111,9 @@ public enum DragonType implements StringRepresentable {
         this.stats = stats;
         this.eggs = eggs;
         this.skeletonTextures = skeletonTextures;
+    }
+
+    public static void init() {
     }
 
     public EnumDragonEgg getEgg(int variant) {
@@ -170,8 +173,8 @@ public enum DragonType implements StringRepresentable {
     }
 
     public SoundEvent getSound(DragonLifeStages age, DragonSoundType soundType) {
-        var Sound = this.sounds.getOrDefault(age, Collections.emptyMap()).getOrDefault(soundType, null);
-        return Sound != null ? Sound : IafSoundRegistry.GENERIC.getOrDefault(age, Collections.emptyMap()).getOrDefault(soundType, SoundEvents.GOAT_SCREAMING_DEATH);
+        var Sound = this.sounds.lifeStages().getOrDefault(age, Collections.emptyMap()).getOrDefault(soundType, null);
+        return Sound != null ? Sound : IafSoundRegistry.GENERIC.lifeStages().getOrDefault(age, Collections.emptyMap()).getOrDefault(soundType, SoundEvents.GOAT_SCREAMING_DEATH);
     }
 
     public ParticleOptions getDeathParticle() {
